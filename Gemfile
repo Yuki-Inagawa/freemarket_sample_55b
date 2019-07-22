@@ -75,3 +75,7 @@ gem 'payjp'
 gem 'ancestry'
 gem 'active_hash'
 gem 'mysql2'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
