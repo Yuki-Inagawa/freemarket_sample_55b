@@ -1,0 +1,2 @@
+class YukawaController < ApplicationController
+end
