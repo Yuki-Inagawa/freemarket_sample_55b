@@ -1,0 +1,2 @@
+module InagawaHelper
+end

@@ -1,0 +1,2 @@
+class InagawaController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class NoguchiController < ApplicationController
+end
