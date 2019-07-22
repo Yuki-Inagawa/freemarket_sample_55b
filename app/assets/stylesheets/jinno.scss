@@ -1,3 +1,245 @@
-// Place all the styles related to the jinno controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "font-awesome";
+.extra{
+  font-size:100px;
+}
+.footer-container{
+  overflow: hidden;
+}
+.app__banner{
+  width: 100%;
+  height: 100%;
+  background-image: url("download_bg_pc.jpg");
+  &__box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 260px;
+    width: 750px;
+    margin:0 auto;
+    &__left-side{
+      h2{
+        font-size: 24px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        color: #fff;
+        font-weight: bold;
+      }
+      p{
+        font-weight: 500;
+        color: #fff;
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__inner{
+        display: flex;
+        align-items: center;
+        margin: 20px 0 0;
+        &__left{
+          margin: 0;
+          img{
+            width: 68px;
+            height: 68px;
+            margin: 0;
+          }
+          // background-image: url("mercari_icon.png")
+        }
+        &__right{
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 282px;
+          margin-left: 24px;
+          &__apple :hover{
+            opacity: 0.8;
+          }
+          &__google :hover{
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+.global-footer{
+  width: 100%;
+  height: 391px;
+  background-color: #212121;
+  padding: 0 20px 10px 20px;
+  color: #fff;
+  .global-navigation{
+    width: 1020px;
+    margin: 0 auto;
+    height: 298px;
+    display: flex;
+    // align-items:center;
+    &__child-1{
+      width: 204px;
+      height: 241px;
+      padding: 20px 20px 0 0;
+      h2{
+        font-size:16px;
+        font-weight:600;
+      }
+      ul{
+        li{
+          margin-top: 16px;
+          font-size: 12px;
+          a{
+            text-decoration: none;
+            color: #fff;
+            opacity:0.7;
+          }
+          & :hover{
+            border-bottom: solid 1px;
+          }
+        }
+        & :nth-child(6){
+          display:inline-block;
+          color: #fff;
+          margin-right: 10px;
+          a{
+            display: block;
+            color: #fff;
+            width: 40px;
+            height: 42px;
+            opacity: 1;
+            i{
+              color: #fff;
+              display: block;
+              font-size:36px;
+              margin: 10px 15px 0 0;
+            }
+          }
+          & :hover{
+            border: none;
+          }
+        }
+        & :nth-child(7){
+          display:inline-block;
+          color: #fff;
+          a{
+            display: block;
+            color: #fff;
+            width: 48px;
+            height: 42px;
+            opacity: 1;
+            i{
+              width: 48px;
+              height: 42px;
+              color: #fff;
+              display: block;
+              font-size:35px;
+            }
+          }
+          & :hover{
+            border: none;
+          }
+        }
+      }
+    }
+    &__child-2{
+      width: 234px;
+      height: 280px;
+      padding: 20px 20px 0 0;
+      h2{
+        font-size:16px;
+        font-weight:600;
+      }
+      li{
+        margin-top: 16px;
+        font-size: 12px;
+        a{
+          text-decoration: none;
+          color: #fff;
+          opacity:0.7;
+        }
+        & :hover{
+          border-bottom: solid 1px;
+        }
+      }
+    }
+    &__child-3{
+      width: 194px;
+      height: 148px;
+      padding: 20px 20px 0 0;
+      h2{
+        font-size:16px;
+        font-weight:600;
+      }
+      li{
+        margin-top: 16px;
+        font-size: 12px;
+        a{
+          text-decoration: none;
+          color: #fff;
+          opacity:0.7;
+        }
+        & :hover{
+          border-bottom: solid 1px;
+        }
+      }
+    }
+    &__child-4{
+      width: 190px;
+      height: 148px;
+      padding: 45px 20px 0 0;
+      li{
+        margin-top: 16px;
+        font-size: 12px;
+        a{
+          text-decoration: none;
+          color: #fff;
+          opacity:0.7;
+        }
+        & :hover{
+          border-bottom: solid 1px;
+        }
+      }
+    }
+    &__child-5{
+      width: 97px;
+      height: 88px;
+      padding: 20px 20px 0 0;
+      h2{
+        font-size:16px;
+        font-weight:600;
+      }
+      li{
+        margin-top: 16px;
+        font-size: 12px;
+        a{
+          text-decoration: none;
+          color: #fff;
+          opacity:0.7;
+        }
+        & :hover{
+          border-bottom: solid 1px;
+        }
+      }
+    }
+  }
+  &__bottom{
+    width: 100%;
+    margin: 30px auto 20px;
+    display:flex;
+    justify-content: center;
+    a{
+      line-height: 1.5;
+      vertical-align: middle;
+      img{
+        margin-left: -460px;
+      }
+    }
+    &__copy-light{
+      width: 745px;
+      display: inline-block;
+      margin: 8px 0 0;
+      text-align: center;
+      vertical-align: sub;
+      small{
+        display:block;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,4 +1,19 @@
 class JinnoController < ApplicationController
-  def footer
+  def extra
+  end
+
+  def jinno
+  end
+
+  def asakura
+  end
+
+  def inagawa
+  end
+
+  def noguchi
+  end
+
+  def yukawa
   end
 end
