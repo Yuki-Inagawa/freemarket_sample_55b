@@ -1,3 +1,84 @@
-// Place all the styles related to the noguchi controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-details.l-single-container {
+  background-color: white;
+  margin: 40px;
+  .users-detail-profile-box {
+    padding-top: 50px;
+    background-image: url("merkari_user_page.jpg");
+    background-size: cover;
+    width: 700px;
+    margin: 0 auto;
+    .users-detail-photo_box.text-center{
+      text-align: center;
+      .member_photo_noimage_thumb{
+        border-radius: 50%;
+        height: 180px;
+        width: 180px;
+      }
+      .users-detail-photo {
+        
+        h2.users-detail-title{
+          margin: 8px 0 16px;
+          font-size: 18px;
+          font-weight: 400;
+          color: #333;
+        }
+      }
+      .users-detail-scores {
+        padding-bottom: 30px;
+        span.users-detail-score {
+          margin-left: 12px;
+          font-size: 14px;
+          font-weight: 600;
+          color: #333;
+        }
+      }
+    }
+  }
+  .white{
+    
+    .users-detail-ratings-box {
+      display: flex;
+      height: 50px;
+      padding-top: 14px;
+      width: 360px;
+      margin: 0 auto;
+      .user-detail-ratings-parent{
+        padding-right: 30px;
+        .users-detail-ratings{
+          display: flex;
+          line-height: 26px;
+          .fa.fa-search{
+            font-size: 24px;
+          }
+          .text-center.users-detail-ragtings-score{
+            vertical-align: middle;
+            margin: 0 0 0 14px;
+            width: 60px;
+        }
+      }
+    }
+    }
+  }
+  .item-social-media-box {
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    width: 700px;
+    .social-media-box{
+      margin: 16px 0 0;
+      text-align: center;
+      font-size: 30px;
+    }
+    li.social-media-box {
+      margin: 0 8px 8px 0;
+      vertical-align: middle;
+      display: inline-block;
+      text-align: center;
+      i.social-media-box-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        line-height: 44px;
+      }
+    }
+  }
+}
