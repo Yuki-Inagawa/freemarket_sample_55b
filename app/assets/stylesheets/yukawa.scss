@@ -1,3 +1,124 @@
-// Place all the styles related to the yukawa controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+    border-style: solid;
+    border-width: 0;
+    font-size: inherit;
+    line-height: inherit;
+    box-sizing: inherit;
+}
+
+.single-container {
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  // padding: 0 0 220px;
+  .single-header {
+    height: 128px;
+  }
+  .single-main {
+    .l-single-container {
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      .new-registration {
+        font-size: 22px;
+        text-align: center;
+        line-height: 1.5;
+        padding: 32px;
+        font-weight: 600;
+      }
+      .new-registration-form {
+        border-top: 1px solid #f5f5f5;
+        &__content {
+          max-width: 343px;
+          margin: 0 auto;
+          padding: 40px 40px 64px;
+          .mail-btn{
+            display: block;
+            color: #fff;
+            background-color: #ea352d;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+            text-decoration: none;
+            position: relative;
+            .mail-icon {
+              position: absolute;
+              top: 16px;
+              left: 16px;
+              font-size: 16px;
+              box-sizing: border-box;
+            }
+          }
+          .facebook-login {
+            border-radius: 4px;
+            margin: 16px 0 0;
+            background: #385185;
+            color: #fff;
+            position: relative;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+            box-sizing: border-box;
+            .facebook-icon {
+              font-weight: 400;
+              position: absolute;
+              top: 50%;
+              left: 16px;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+              font-size: 26px;
+            }
+          }
+          .btn-sns.btn-sns-google {
+            border-radius: 4px;
+            margin: 16px 0 0;
+            background: #fff url(google.svg) no-repeat 3px top;
+            border: solid 1px black !important;
+            color: #333;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            .google-icon {
+              font-weight: 400;
+              position: absolute;
+              top: 50%;
+              left: 16px;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+              font-size: 26px;
+              color: purple;
+            }
+          }
+        }
+      }
+    }
+  }
+  .single-footer {
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+  }
+}
