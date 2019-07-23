@@ -1,0 +1,59 @@
+.default-container  
+  .merkari-header
+    .nav-bar
+
+  %section.user-details
+    .profile-box
+      .profile-box__text-center
+        = image_tag("member_photo_noimage_thumb.png", alt: 'b', class: 'member_photo_noimage_thumb')
+        %a{:href => "https://www.mercari.com/jp/u/336544488/"}
+        .users-detail
+          %h2.users-detail__name 野口雄大
+          %i.fa.fa-line
+        .scores
+          %span.scores__score 評価 0
+          %span.scores__score 出品数 0
+    .profile-under
+      .users-detail-ratings-box
+        .user-detail-ratings-parent
+          .users-detail-ratings
+            = fa_icon 'search'
+            .text-center.users-detail-ragtings-score
+              0
+        .user-detail-ratings-parent
+          .users-detail-ratings
+            = fa_icon 'search'
+            .text-center.users-detail-ragtings-score
+              0
+        .user-detail-ratings-parent
+          .users-detail-ratings
+            = fa_icon 'search'
+            .text-center.users-detail-ragtings-score
+              0
+      .users-detail-description_box
+        %p.profile-text aaaaaaaaaaa
+
+    .item-social-media-box
+      %ul.social-media-box
+        %li.social-media-box
+          %a.share-btn{"data-window-name" => "facebook_window", :href => "http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.mercari.com%2Fjp%2Fu%2F336544488%2F", :target => "_blank"}
+            = fa_icon 'facebook-square', class: 'social-media-box-icon'
+        %li.social-media-box
+          %a.share-btn{"data-window-name" => "twitter_window", :href => "http://twitter.com/share?count=horizontal&original_referer=https%3A%2F%2Fwww.mercari.com%2Fjp%2Fu%2F336544488%2F&text=%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%20https%3A%2F%2Fwww.mercari.com%2Fjp%2Fu%2F336544488%2F", :target => "_blank"}
+            = fa_icon 'twitter-square', class: 'social-media-box-icon'
+        %li.social-media-box
+          %a{:href => "http://line.me/R/msg/text/?野口雄大%20%7C%20%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%E3%82%B9%E3%83%9E%E3%83%9B%E3%81%A7%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%0D%0Ahttps://www.mercari.com/jp/u/336544488/", :target => "_blank"}
+            = fa_icon 'facebook-square', class: 'social-media-box-icon'
+    %section.items-box-container
+      .items-box-content
+  
+    .exhibition-items
+      %h2.exhibition-items__title この出品者の商品
+      .items-box
+        .items-box__item
+        .items-box__item
+        .items-box__item
+        .items-box__item
+        .items-box__item
+
+  .footer3
