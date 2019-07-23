@@ -5,11 +5,11 @@
 |nickname|string|null: false|
 |ruby|string|null: false|
 |birthday|integer|null: false|
+|phone_number|string|null: false|
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 |image|string|
 |profile|text|
-|address_id|reference|null: false|
 
 ### Association
 - has_many :items
@@ -21,12 +21,12 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|reference|null: false|
 |postal_code|string|null: false|
 |region|reference|null: false|
 |municipality|string|null: false|
 |address|string|null: false|
 |building_name|string|null: false|
-|phone_number|string|null: false|
 
 
 ### Association
