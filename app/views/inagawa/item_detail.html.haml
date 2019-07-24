@@ -100,16 +100,16 @@
     .item-social-media
       %ul.item-social-media__list
         %li
-          = link_to inagawa_item_detail_path, class: "item-social-media__list__facebook" do
+          = link_to inagawa_item_detail_path, class: "facebook" do
             %i.fab.fa-facebook-square
         %li
-          = link_to inagawa_item_detail_path, class: "item-social-media__list__twitter" do
+          = link_to inagawa_item_detail_path, class: "twitter" do
             %i.fab.fa-twitter-square
         %li
-          = link_to inagawa_item_detail_path, class: "item-social-media__list__line" do
+          = link_to inagawa_item_detail_path, class: "line" do
             %i.fab.fa-line
         %li
-          = link_to inagawa_item_detail_path, class: "item-social-media__list__pinterest" do
+          = link_to inagawa_item_detail_path, class: "pinterest" do
             %i.fab.fa-pinterest-square
 
     .other-items
@@ -118,7 +118,16 @@
           = link_to '出品者さんのその他の出品', inagawa_item_detail_path 
         .other-items__user__contents
           %section.other-items__user__contents__content
-          %section.other-items__user__contents__content
+            .other-items__user__contents__content__box
+              = link_to inagawa_item_detail_path do
+                %figure.other-items__user__contents__content__box__photo
+                  = image_tag("mark-zuckerberg1.jpg")
+                .other-items__user__contents__content__box__body
+                  .other-items__user__contents__content__box__body__name ザック
+                  .other-items__user__contents__content__box__body__num
+                    .other-items__user__contents__content__box__body__num__price
+                    .other-items__user__contents__content__box__body__num__like
+
       %section.other-items__category
         .other-items__category__head
           = link_to 'ユニクロのパンツのその他の出品', inagawa_item_detail_path 
