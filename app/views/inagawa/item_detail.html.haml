@@ -77,12 +77,11 @@
           = link_to inagawa_item_detail_path, class: "item-box__btn--right__safety" do
             %i.fas.fa-lock
             %span あんしん・あんぜんへの取り組み
-
+    
     .item-message
       .item-message__container
         .item-message__container__content
           %form.item-message__container__content__form
-            %input
             %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
             %textarea
             %button.item-message__container__content__form__submit-btn
@@ -90,39 +89,39 @@
 
     %ul.item-link
       %li.item-link__prev
-        %a
-          %i.icon-arrow-left
+        = link_to inagawa_item_detail_path do
+          %i.fas.fa-chevron-left
           前の商品
       %li.item-link__next
-        %a
+        = link_to inagawa_item_detail_path do
           次の商品
-          %i.icon-arrow-right
+          %i.fas.fa-chevron-right
 
     .item-social-media
       %ul.item-social-media__list
         %li
-          %a.item-social-media__list__facebook
-            %i.icon-facebook
+          = link_to inagawa_item_detail_path, class: "item-social-media__list__facebook" do
+            %i.fab.fa-facebook-square
         %li
-          %a.item-social-media__list__twitter
-            %i.icon-twitter
+          = link_to inagawa_item_detail_path, class: "item-social-media__list__twitter" do
+            %i.fab.fa-twitter-square
         %li
-          %a.item-social-media__list__line
-            %i.icon-line
+          = link_to inagawa_item_detail_path, class: "item-social-media__list__line" do
+            %i.fab.fa-line
         %li
-          %a.item-social-media__list__pinterest
-            %i.icon-pinterest
+          = link_to inagawa_item_detail_path, class: "item-social-media__list__pinterest" do
+            %i.fab.fa-pinterest-square
 
     .other-items
       %section.other-items__user
         .other-items__user__head
-          %a 出品者さんのその他の出品
+          = link_to '出品者さんのその他の出品', inagawa_item_detail_path 
         .other-items__user__contents
           %section.other-items__user__contents__content
           %section.other-items__user__contents__content
       %section.other-items__category
         .other-items__category__head
-          %a ユニクロのパンツのその他の出品
+          = link_to 'ユニクロのパンツのその他の出品', inagawa_item_detail_path 
         .other-items__category__contents
           %section.other-items__category__contents__content
           %section.other-items__category__contents__content
