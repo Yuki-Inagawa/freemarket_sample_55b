@@ -231,23 +231,55 @@
         }
       }
     }
-
+   
     .item-message{
+      margin: 8px auto;
       &__container{
+        background: #fff;
+        padding: 24px 40px 40px;
         &__content{
           &__form{
-            input{}
-            p{}
-            textarea{}
+            p{
+              padding: 8px;
+              font-size: 14px;
+              background: #fff6de;
+            }
+            textarea{
+              margin: 8px 0 0;
+              display: block;
+              width: 100%;
+              max-width: 100%;
+              min-height: 104px;
+              padding: 10px;
+              border: 1px solid #ccc;
+              background: #fff;
+              font-size: 16px;
+              line-height: 1.5;
+            }
             &__submit-btn{
-              span{}
+              width: 100%;
+              margin: 8px 0 0;
+              text-align: center;
+              background: #aaa;
+              border: 1px solid #aaa;
+              color: #fff;
+              font: 400 11px system-ui;
+              line-height: 48px;
+              span{
+                font-size: 14px;
+                vertical-align: middle;
+              }
             }
           }
         }
       }
     }
     .item-link{
+      margin: 24px 4% 0;
       &__prev{
+        position: relative;
+        width: 43%;
+        word-wrap: break-word;
         a{
           i{}
         }
