@@ -39,9 +39,10 @@
         font-weight: bold;
         text-align: center;
       }
+      
       .sell-form {
         border-top: 1px solid #eee;
-        .sell-form__image{
+        &__image{
           padding: 40px;
           h3 {
             font-size: 16px;
