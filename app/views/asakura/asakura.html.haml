@@ -2,7 +2,7 @@
 
   .exhibiton-header
     .exhibition-wrapper
-      %img{alt: "mercari", heigh:"49", width: "185", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?891577966"}/
+      = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?891577966", alt: "mercari", heigh:"49", width: "185")
 
   .exhibition-main
     .exhibition-main__container
@@ -120,13 +120,13 @@
             %button.btn-default.btn-red{type: "submit"}
               出品する
             %a.btn-default.btn-gray もどる
-            
+
   .exhibition-footer
     .exhibition-footer__list
       = link_to 'プライバシーポリシー', 'https://www.mercari.com/jp/privacy/'
       = link_to 'メルカリ利用規約', 'https://www.mercari.com/jp/tos/'
       = link_to '特定商取引に関する表記', 'https://www.mercari.com/jp/tokutei/'
     .exhibition-footer__logo
-      %img{alt: "mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?891577966", width: "80"}/
+      = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?891577966", alt: "mercari", height: "65", src: "", width: "80")
       %p
         %small © 2019 Mercari
