@@ -1,0 +1,137 @@
+//商品詳細画面
+.container
+  %nav.bread-crumbs
+    %ul
+      %li 
+        %a
+          %span メルカリ  
+        %i.fas.fa-chevron-right
+      %li
+        %span ユニクロ七部丈パンツ
+  .item-wrapper
+    .item-box
+      %h1.item-box__item-name ユニクロ七部丈パンツ
+      .item-box__main-content
+        .item-box__main-content__photo
+          = image_tag("mark-zuckerberg1.jpg")
+        %table.item-box__main-content__detail
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                %a  名前
+                .item-box__main-content__detail__ratings
+                  .item-box__main-content__detail__ratings__rate
+                    %i.fas.fa-smile
+                    %span 100
+                  .item-box__main-content__detail__ratings__rate
+                    %i.item-box__main-content__detail__ratings__rate__icon--normal
+                      %span 50
+                  .item-box__main-content__detail__ratings__rate
+                    %i.item-box__main-content__detail__ratings__rate__icon--bad
+                      %span 10
+            %tr
+              %th カテゴリー
+              %td
+                %a ベビー・キッズ
+            %tr
+              %th ブランド
+              %td
+            %tr
+              %th
+              %td
+                %a ユニクロ
+            %tr
+              %th 商品のサイズ
+              %td 80cm
+            %tr
+              %th 商品の状態
+              %td 目立った傷や汚れなし
+            %tr
+              %th 配送料の負担
+              %td 送料込み
+            %tr
+              %th 配送の方法
+              %td 未定
+            %tr
+              %th 配送元地域
+              %td 神奈川県
+            %tr
+              %th 発送日の目安
+              %td １〜２日で発送
+        .item-box__main-content__price-box
+          %span.item-box__main-content__price-box__price ¥500
+          %span.item-box__main-content__price-box__tax 税込
+          %span.item-box__main-content__price-box__shipping-fee 送料込み
+        %section.item-box__main-content__buy
+          %a.item-box__main-content__buy__btn 購入画面に進む
+        
+      .item-box--price
+        %span.item-box--price__toal
+        %span.item-box--price__tax
+        %span.item-box--price__fee
+      %a 購入画面に進む
+      .item-box__description
+        %p.item-description-inner ユニクロの七分丈レギンスパンツ 詳細ーーーーーーーー
+      .item-box__btn
+        .item-box__btn--left
+          %button.item-box__btn--left--like
+            %i.icon-like-border
+            %span いいね! 0
+          %a.item-box__btn--left--report
+            %i.icon-flag
+            %span 不適切な商品の報告
+        .item-box__btn--right
+          %a
+            %i.icon-lock
+            %span あんしん・あんぜんへの取り組み
+
+    .item-message
+      .item-message__container
+        .item-message__container__content
+          %form.item-message__container__content__form
+            %input
+            %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %textarea
+            %button.item-message__container__content__form__submit-btn
+              %span コメントする
+
+    %ul.item-link
+      %li.item-link__prev
+        %a
+          %i.icon-arrow-left
+          前の商品
+      %li.item-link__next
+        %a
+          次の商品
+          %i.icon-arrow-right
+
+    .item-social-media
+      .text-center
+      %ul.item-social-media__list
+        %li
+          %a.item-social-media__list__facebook
+            %i.icon-facebook
+        %li
+          %a.item-social-media__list__twitter
+            %i.icon-twitter
+        %li
+          %a.item-social-media__list__line
+            %i.icon-line
+        %li
+          %a.item-social-media__list__pinterest
+            %i.icon-pinterest
+
+    .ohter-items
+      %section.ohter-items__user
+        .ohter-items__user__head
+          %a 出品者さんのその他の出品
+        .ohter-items__user__contents
+          %section.ohter-items__user__contents__content
+          %section.ohter-items__user__contents__content
+      %section.ohter-items__category
+        .ohter-items__category__head
+          %a ユニクロのパンツのその他の出品
+        .ohter-items__category__contents
+          %section.ohter-items__category__contents__content
+          %section.ohter-items__category__contents__content
