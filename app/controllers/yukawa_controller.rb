@@ -6,4 +6,7 @@ class YukawaController < ApplicationController
   def registration
   end
 
+  def sms_confirmation
+  end
+
 end
