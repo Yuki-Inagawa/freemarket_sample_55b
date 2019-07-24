@@ -2,54 +2,12 @@
   .merkari-header
     .nav-bar
 
-  %section.user-details
-    .profile-box
-      .profile-box__text-center
-      = link_to noguchi_path, class: 'text-center-link' do
-        = image_tag("member_photo_noimage_thumb.png", alt: 'noimage', class: 'member_photo_noimage_thumb')
-        .users-detail
-          %h2.users-detail__name 野口雄大
-        .scores
-          %span.scores__score 評価 0
-          %span.scores__score 出品数 0
-    .profile-under
-      .users-detail-ratings-box
-        .user-detail-ratings-parent
-          .users-detail-ratings
-            = fa_icon 'search'
-            .text-center.users-detail-ragtings-score
-              0
-        .user-detail-ratings-parent
-          .users-detail-ratings
-            = fa_icon 'search'
-            .text-center.users-detail-ragtings-score
-              0
-        .user-detail-ratings-parent
-          .users-detail-ratings
-            = fa_icon 'search'
-            .text-center.users-detail-ragtings-score
-              0
-      .users-detail-description_box
-        %p.profile-text aaaaaaaaaaa
+  %main.logout-content
+    %section.logout-card
+      %section.settings-logout-card
+        %button.logout-card-content
+          = link_to 'ログアウト', noguchi_path, class: 'logout-button'
+      
 
-    .item-social-media-box
-      %ul.social-media-box
-        %li.social-media-box
-          = fa_icon 'facebook-square', class: 'social-media-box-icon'
-        %li.social-media-box
-          = fa_icon 'twitter-square', class: 'social-media-box-icon'
-        %li.social-media-box
-          = fa_icon 'facebook-square', class: 'social-media-box-icon'
-    %section.items-box-container
-      .items-box-content
-  
-    .exhibition-items
-      %h2.exhibition-items__title この出品者の商品
-      .items-box
-        .items-box__item
-        .items-box__item
-        .items-box__item
-        .items-box__item
-        .items-box__item
-
-  .footer3
+    .mypage-card-side
+      = render 'shared/mypage_nav'
