@@ -1,10 +1,10 @@
+//header,footerは完成し次第renderします
 //商品詳細画面
 .container
   %nav.bread-crumbs
     %ul
       %li 
-        %a
-          %span メルカリ  
+        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
         %i.fas.fa-chevron-right
       %li
         %span ユニクロ七部丈パンツ
@@ -19,28 +19,25 @@
             %tr
               %th 出品者
               %td
-                %a  名前
+                = link_to '名前', inagawa_item_detail_path
                 .item-box__main-content__detail__ratings
                   .item-box__main-content__detail__ratings__rate
-                    %i.fas.fa-smile
+                    %i.fas.fa-grin
                     %span 100
                   .item-box__main-content__detail__ratings__rate
-                    %i.item-box__main-content__detail__ratings__rate__icon--normal
-                      %span 50
+                    %i.fas.fa-meh
+                    %span 50
                   .item-box__main-content__detail__ratings__rate
-                    %i.item-box__main-content__detail__ratings__rate__icon--bad
-                      %span 10
+                    %i.fas.fa-frown
+                    %span 10
             %tr
               %th カテゴリー
               %td
-                %a ベビー・キッズ
+                = link_to 'ベビー・キッズ', inagawa_item_detail_path 
             %tr
               %th ブランド
               %td
-            %tr
-              %th
-              %td
-                %a ユニクロ
+                = link_to 'ユニクロ', inagawa_item_detail_path
             %tr
               %th 商品のサイズ
               %td 80cm
@@ -66,24 +63,19 @@
         %section.item-box__main-content__buy
           %a.item-box__main-content__buy__btn 購入画面に進む
         
-      .item-box--price
-        %span.item-box--price__toal
-        %span.item-box--price__tax
-        %span.item-box--price__fee
-      %a 購入画面に進む
       .item-box__description
-        %p.item-description-inner ユニクロの七分丈レギンスパンツ 詳細ーーーーーーーー
+        %p.item-box__description__text ユニクロの七分丈パンツ 詳細ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
       .item-box__btn
         .item-box__btn--left
           %button.item-box__btn--left--like
-            %i.icon-like-border
+            %i.far.fa-heart
             %span いいね! 0
-          %a.item-box__btn--left--report
-            %i.icon-flag
+          = link_to inagawa_item_detail_path, class: "item-box__btn--left--report" do
+            %i.far.fa-flag
             %span 不適切な商品の報告
         .item-box__btn--right
-          %a
-            %i.icon-lock
+          = link_to inagawa_item_detail_path, class: "item-box__btn--right__safety" do
+            %i.fas.fa-lock
             %span あんしん・あんぜんへの取り組み
 
     .item-message
@@ -107,7 +99,6 @@
           %i.icon-arrow-right
 
     .item-social-media
-      .text-center
       %ul.item-social-media__list
         %li
           %a.item-social-media__list__facebook
@@ -122,16 +113,16 @@
           %a.item-social-media__list__pinterest
             %i.icon-pinterest
 
-    .ohter-items
-      %section.ohter-items__user
-        .ohter-items__user__head
+    .other-items
+      %section.other-items__user
+        .other-items__user__head
           %a 出品者さんのその他の出品
-        .ohter-items__user__contents
-          %section.ohter-items__user__contents__content
-          %section.ohter-items__user__contents__content
-      %section.ohter-items__category
-        .ohter-items__category__head
+        .other-items__user__contents
+          %section.other-items__user__contents__content
+          %section.other-items__user__contents__content
+      %section.other-items__category
+        .other-items__category__head
           %a ユニクロのパンツのその他の出品
-        .ohter-items__category__contents
-          %section.ohter-items__category__contents__content
-          %section.ohter-items__category__contents__content
+        .other-items__category__contents
+          %section.other-items__category__contents__content
+          %section.other-items__category__contents__content
