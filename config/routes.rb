@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   get '/asakura' => 'asakura#show'
   get '/inagawa' => 'inagawa#inagawa'
   get '/noguchi' => 'noguchi#noguchi'
-  resources :yukawa
+
+  resources :yukawa do
+    collection do
+      get 'registration'
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

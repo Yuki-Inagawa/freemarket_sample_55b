@@ -17,6 +17,98 @@
   // padding: 0 0 220px;
   .single-header {
     height: 128px;
+    text-align: center;
+    .mercari-logo {
+      margin: 40px 0 0;
+      display: inline-block;
+      box-sizing: border-box;
+      &__link {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        color: #0099e8;
+        text-decoration: none;
+        touch-action: manipulation;
+        img {
+          width: 185px;
+          height: 49px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .progress-bar {
+      padding: 40px 0 0 44px;
+      border: 0;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0;
+      text-align: center;
+      ol {
+        margin: 0;
+        list-style: none;
+        li {
+          box-sizing: border-box;
+          margin: 0 40px 0 0;
+          min-width: 60px;
+          font-size: 12px;
+          display: inline-block;
+          z-index: 1;
+          position: relative;
+          .progress-status {
+            background: #ccc;
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+          .progress-status:after {
+            left: 50%;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+            border-style: solid;
+            border-width: 0;
+            text-decoration: inherit;
+            vertical-align: inherit;
+            box-sizing: inherit;
+          }
+          .progress-status:before {
+            right: 50%;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+          }
+          .first:before {
+            content: none;
+          }
+          .last:after {
+            content: none;
+          }
+        }
+        .active {
+          font-weight: 600;
+          color: #ea352d;
+          .progress-status {
+            background: #ea352d;
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
   }
   .single-main {
     .l-single-container {
@@ -56,6 +148,77 @@
               left: 16px;
               font-size: 16px;
               box-sizing: border-box;
+            }
+          }
+          &--form {
+            margin-top: 32px;
+            label {
+              font-weight: 600;
+              display: inline-block;
+            }
+            .form-require {
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            .input-default {
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              min-height: 1.5em;
+              font-family: inherit;
+              -webkit-appearance: none;
+              touch-action: manipulation;
+              color: inherit;
+              box-sizing: border-box;
+              // clear: both;
+            }
+            .half {
+              width: calc(50% - 6px);
+              // margin-right: 8px;
+              display: inline-block;
+              // float: left;
+            }
+            .subhead-chapter {
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .subhead-text {
+              margin: 8px 0 0;
+              line-height: 1.5;
+            }
+            .birthday {
+              clear: both;
+              &__select {
+                width: 76px;
+                margin: 8px 0 0;
+                position: relative;
+                background: #fff;
+                display: inline-block;
+                .select-default {
+                  padding: 0 10px;
+                  width: 100%;
+                  position: relative;
+                  z-index: 2;
+                  height: 48px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                }
+              }
             }
           }
           .facebook-login {
@@ -113,6 +276,53 @@
             }
           }
         }
+        .robo {
+          border: solid 1px red;
+          background-color: rgb(240, 246, 255);
+          padding: 10px;
+          .robo-check {
+            margin-right: 30px;
+          }
+        }
+        .next-info-text {
+          line-height: 1.5;
+          text-align: center;
+          .guid {
+            text-decoration: none;
+            color: #0099e8;
+          }
+        }
+      }
+      .next-btn {
+        margin-top: 32px;
+        margin: 24px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .text-right {
+        text-align: right;
+        a {
+          text-decoration: none;
+          color: #0099e8;
+        }
+        .arrow-right {
+          font-weight: 600;
+          color: #0099e8;
+        }
+      }
+      .form-info-text {
+        margin: 8px 0 0;
+        line-height: 1.5;
+        color: #888;
       }
     }
   }
@@ -122,3 +332,4 @@
     margin: 0 auto;
   }
 }
+
