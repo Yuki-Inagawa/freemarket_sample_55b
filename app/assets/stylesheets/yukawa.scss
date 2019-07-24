@@ -17,6 +17,25 @@
   // padding: 0 0 220px;
   .single-header {
     height: 128px;
+    text-align: center;
+    .mercari-logo {
+      margin: 40px 0 0;
+      display: inline-block;
+      &__link {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        color: #0099e8;
+        text-decoration: none;
+        touch-action: manipulation;
+        img {
+          width: 185px;
+          height: 49px;
+          vertical-align: middle;
+        }
+      }
+    }
   }
   .single-main {
     .l-single-container {
@@ -56,6 +75,47 @@
               left: 16px;
               font-size: 16px;
               box-sizing: border-box;
+            }
+          }
+          &--form {
+            margin-top: 32px;
+            label {
+              font-weight: 600;
+              display: inline-block;
+            }
+            .form-require {
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            .input-default {
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              min-height: 1.5em;
+              font-family: inherit;
+              -webkit-appearance: none;
+              touch-action: manipulation;
+              color: inherit;
+              box-sizing: border-box;
+            }
+            .subhead-chapter {
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .subhead-text {
+              margin: 8px 0 0;
+              line-height: 1.5;
             }
           }
           .facebook-login {
@@ -122,3 +182,4 @@
     margin: 0 auto;
   }
 }
+

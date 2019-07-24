@@ -1,0 +1,30 @@
+.single-container
+  %header.single-header
+    %h1.mercari-logo
+      = link_to image_tag("logo.svg", alt: "Google Play画像"), "/yukawa/registration", class: "mercari-logo__link"
+  %main.single-main
+    %section.l-single-container
+      %h2.new-registration 会員情報入力
+      %form.new-registration-form
+        .new-registration-form__content
+          .new-registration-form__content--form{style: "margin-top: 0;"}
+            %label{for: "nickname"} ニックネーム
+            %span.form-require 必須
+            %input.input-default{type: "text", name: "nickname", placeholder: "例) メルカリ太郎"}
+          .new-registration-form__content--form
+            %label{for: "email"} メールアドレス
+            %span.form-require 必須
+            %input.input-default{type: "email", name: "email", placeholder: "PC・携帯どちらでも可"}
+          .new-registration-form__content--form
+            %label{for: "password"} パスワード
+            %span.form-require 必須
+            %input.input-default{type: "password", name: "passwaord", placeholder: "6文字以上"}
+          .new-registration-form__content--form
+            %label{for: "password"} パスワード (確認)
+            %span.form-require 必須
+            %input.input-default{type: "password", name: "passwaord2", placeholder: "6文字以上"}
+          .new-registration-form__content--form
+            %h3.subhead-chapter 本人確認
+            %p.subhead-text  安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+  %footer.single-footer
+    フッターは部分テンプレートです。
