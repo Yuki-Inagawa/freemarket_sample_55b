@@ -5,21 +5,33 @@
 |nickname|string|null: false|
 |ruby|string|null: false|
 |birthday|integer|null: false|
-|postal_code|string|null: false|
-|municipality|string|null: false|
-|address|string|null: false|
-|building_name|string|null: false|
 |phone_number|string|null: false|
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 |image|string|
-|text|text|
+|profile|text|
 
 ### Association
 - has_many :items
 - has_many :values
 - has_many :likes
 - has_many :comments
+- has_one :address
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false|
+|postal_code|string|null: false|
+|region|reference|null: false|
+|municipality|string|null: false|
+|address|string|null: false|
+|building_name|string|null: false|
+
+
+### Association
+- belongs_to :user
+- has_one :region
 
 ## itemsテーブル
 
@@ -30,26 +42,20 @@
 |price|integer|null: false|
 |saler_id|integer|null: false|
 |buyer_id|integer|
-|transaction|integer|
 |statas|integer|null: false|
-|transaction_stop|integer|
-|state_id|references|null: false, foreign_key: true|
-|postage_id|references|null: false, foreign_key: true|
-|region_id|references|null: false, foreign_key: true|
-|shopping_date_id|references|null: false, foreign_key: true|
-|delivery_metohd_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
+|state|string|null: false|
+|postage|string|
+|region_id|references|null: false|
+|shopping_date|string|null: false|
+|delivery_metohd|string|null: false|
+|category_id|references|null: false|
 
 ### Association
 - belongs_to :saler, class_name: "User"
 - belongs_to :buyer, class_name: "User"
-- belongs_to :like
-- belongs_to :state
-- belongs_to :region
-- belongs_to :shopping_date
-- belongs_to :postage
-- belongs_to :delivery_method
-- belongs_to :category
+- has_many :likes
+- has_one :region
+- belons_to :category
 
 ## commentsテーブル
 
@@ -85,38 +91,11 @@
 - has_many : ancestlry
 - has_many : items
 
-## statesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|
-
-### Association
-- has_many :items
-
-## shopping_datesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|
-
-### Association
-- has_many :items
-
 ## brandsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true|
-
-### Association
-- has_many :items
-
-## posgatesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|
 
 ### Association
 - has_many :items
@@ -128,7 +107,8 @@
 |name|string|
 
 ### Association
-- has_many :items
+- belongs_to :user
+- belongs_to :item
 
 ## valuesテーブル
 

@@ -1,0 +1,19 @@
+.default-container  
+  .merkari-header
+    .nav-bar
+
+  %main.user-profile
+    .profile-main
+      %i.fas.fa-line
+      %h2.profile-main__title プロフィール
+      .profile-form
+        .profile-icon
+          = image_tag("member_photo_noimage_thumb.png", alt: 'b', class: 'member_photo_noimage_thumb')
+          %input.profile-icon__input{placeholder: "ああ", type: "text"}
+        
+        .profile-text
+          %input.profile-text__input{placeholder: "プロフィール", type: "text_area"}
+          %button.profile-text__btn 変更する
+
+    .profile-side
+      = render 'shared/mypage_nav'
