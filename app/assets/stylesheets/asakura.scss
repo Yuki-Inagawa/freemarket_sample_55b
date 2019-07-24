@@ -44,7 +44,7 @@
         border-top: 1px solid #eee;
         &__image{
           padding: 40px;
-          h3 {
+          &__title {
             font-size: 16px;
             font-weight: bold;
             span {
@@ -79,12 +79,11 @@
             }
           }
         }
-      }
-      .sell-content {
-        padding: 40px;
-        border-top: 1px solid #eee;
-        .form-group__title {
-          label {
+      
+        &__information {
+          padding: 40px;
+          border-top: 1px solid #eee;
+          &__name {
             font-size: 14px;
             font-weight: bold;
             span {
@@ -96,59 +95,24 @@
               font-size: 12px;
               vertical-align: top;
             }
-          }
-          div {
-            display: block;
-            margin-top: 8px;
-            input {
-              width: 100%;
-              height: 48px;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: #fff;
-              line-height: 1.5;
-              font-size: 16px;
+            div {
+              display: block;
+              margin-top: 8px;
+              input {
+                width: 100%;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
             }
           }
-        }
-        .form-group__explanation {
-          margin-top: 40px;
-          label {
-            font-size: 14px;
-            font-weight: bold;
-            span {
-              background-color: #ea352d;
-              margin-left: 8px;
-              padding: 2px 4px;
-              border-radius: 2px;
-              color: #fff;
-              font-size: 12px;
-              vertical-align: top;
-            }
-          }
-          textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            border: 1px solid #ccc;
-          }
-        }
-      }
-      .sell-content-details {
-        padding: 40px;
-        border-top: 1px solid #eee;
-        overflow: hidden;
-        .sell-sub-head {
-          color: #888;
-          font-size: 14px;
-          font-weight: bold;
-          float: left;
-        }
-        .sell-form-box {
-          float: right;
-          width: 400px;
-          .form-group-category {
+        
+          &__explanation {
+            margin-top: 40px;
             label {
               font-size: 14px;
               font-weight: bold;
@@ -162,9 +126,87 @@
                 vertical-align: top;
               }
             }
-            div {
+            textarea {
+              width: 100%;
+              padding: 10px;
               margin-top: 8px;
+              border: 1px solid #ccc;
+            }
+          }
+        }
+
+        &__details {
+          padding: 40px;
+          border-top: 1px solid #eee;
+          overflow: hidden;
+          &__title {
+            color: #888;
+            font-size: 14px;
+            font-weight: bold;
+            float: left;
+          }
+          &__box {
+            float: right;
+            width: 400px;
+            &__group {
+              font-size: 14px;
+              font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+              div {
+                margin-top: 8px;
+                .select-wrap {
+                  position: relative;
+                  background: #fff;
+                  .select-default {
+                    width: 100%;
+                    position: relative;
+                    z-index: 2;
+                    height: 48px;
+                    padding: 0 16px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: 0;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    cursor: pointer;
+                    h3 {
+                      line-height: 48px;
+                      float: left;
+                    }
+                    .icon-arrow {
+                      float: right;
+                      line-height: 48px;
+                      color: #888;
+                      font-size: 18px;
+                    }
+                  }
+                }
+              }
+            }
+            &__status {
+              margin-top: 40px;
+              label {
+                font-weight: bold;
+                span {
+                  background-color: #ea352d;
+                  margin-left: 8px;
+                  padding: 2px 4px;
+                  border-radius: 2px;
+                  color: #fff;
+                  font-size: 12px;
+                  vertical-align: top;
+                }
+              }
               .select-wrap {
+                margin-top: 8px;
                 position: relative;
                 background: #fff;
                 .select-default {
@@ -193,294 +235,289 @@
               }
             }
           }
-          .form-group-status {
-            margin-top: 40px;
-            label {
-              font-weight: bold;
-              span {
-                background-color: #ea352d;
-                margin-left: 8px;
-                padding: 2px 4px;
-                border-radius: 2px;
-                color: #fff;
-                font-size: 12px;
-                vertical-align: top;
-              }
-            }
-            .select-wrap {
-              margin-top: 8px;
-              position: relative;
-              background: #fff;
-              .select-default {
-                width: 100%;
-                position: relative;
-                z-index: 2;
-                height: 48px;
-                padding: 0 16px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: 0;
-                font-size: 16px;
-                line-height: 1.5;
-                cursor: pointer;
-                h3 {
-                  line-height: 48px;
-                  float: left;
-                }
-                .icon-arrow {
-                  float: right;
-                  line-height: 48px;
-                  color: #888;
-                  font-size: 18px;
-                }
-              }
-            }
-          }
         }
-      }
-      .sell-content-shipping {
-        padding: 40px;
-        border-top: 1px solid #eee;
-        overflow: hidden;
-        .sell-sub-head {
-          color: #888;
-          font-size: 14px;
-          font-weight: bold;
-          float: left;
-        }
-        .icon-question {
-          display: inline-block;
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          background: #fff;
-          color: #0099e8;
-          line-height: 14px;
-          font-size: 16px;
-          font-weight: 900;
-          text-align: center;
-        }
-        .sell-form-box {
-          float: right;
-          width: 400px;
-          .form-group-cost {
-            label {
-              font-size: 14px;
-              font-weight: bold;
-              span {
-                background-color: #ea352d;
-                margin-left: 8px;
-                padding: 2px 4px;
-                border-radius: 2px;
-                color: #fff;
-                font-size: 12px;
-                vertical-align: top;
-              }
-            }
-            .select-wrap {
-              margin-top: 8px;
-              position: relative;
-              background: #fff;
-              .select-default {
-                width: 100%;
-                position: relative;
-                z-index: 2;
-                height: 48px;
-                padding: 0 16px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: 0;
-                font-size: 16px;
-                line-height: 1.5;
-                cursor: pointer;
-                h3 {
-                  line-height: 48px;
-                  float: left;
-                }
-                .icon-arrow {
-                  float: right;
-                  line-height: 48px;
-                  color: #888;
-                  font-size: 18px;
-                }
-              }
-            }
-          }
-          .form-group {
-            margin-top: 40px;
-            label {
-              font-size: 14px;
-              font-weight: bold;
-              span {
-                background-color: #ea352d;
-                margin-left: 8px;
-                padding: 2px 4px;
-                border-radius: 2px;
-                color: #fff;
-                font-size: 12px;
-                vertical-align: top;
-              }  
-            }
-            .select-wrap {
-              margin-top: 8px;
-              position: relative;
-              background: #fff;
-              .select-default {
-                width: 100%;
-                position: relative;
-                z-index: 2;
-                height: 48px;
-                padding: 0 16px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: 0;
-                font-size: 16px;
-                line-height: 1.5;
-                cursor: pointer;
-                h3 {
-                  line-height: 48px;
-                  float: left;
-                }
-                .icon-arrow {
-                  float: right;
-                  line-height: 48px;
-                  color: #888;
-                  font-size: 18px;
-                }
-              }
-            }
-          }
-        }
-      }
 
-      .sell-content-price {
-        padding: 40px;
-        border-top: 1px solid #eee;
-        overflow: hidden;
-        .sell-sub-head {
-          color: #888;
-          font-size: 14px;
-          font-weight: bold;
-          float: left;
-        }
-        .icon-question {
-          display: inline-block;
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          background: #fff;
-          color: #0099e8;
-          line-height: 14px;
-          font-size: 16px;
-          font-weight: 900;
-          text-align: center;
-        }
-        .sell-form-box {
-          float: right;
-          width: 400px;
-          .sell-price {
-            .form-group {
-              padding-bottom: 24px;
-              .price-content {
-                .l-left {
-                  width: 50%;
+        &__shipping {
+          padding: 40px;
+          border-top: 1px solid #eee;
+          overflow: hidden;
+          &__title {
+            color: #888;
+            font-size: 14px;
+            font-weight: bold;
+            float: left;
+          }
+          .icon-question {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0099e8;
+            line-height: 14px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+          }
+          &__box {
+            float: right;
+            width: 400px;
+            &__cost {
+              font-size: 14px;
+              font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            .select-wrap {
+              margin-top: 8px;
+              position: relative;
+              background: #fff;
+              .select-default {
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+                h3 {
                   line-height: 48px;
-                  font-size: 14px;
-                  font-weight: bold;
-                  span {
-                    background-color: #ea352d;
-                    margin-left: 8px;
-                    padding: 2px 4px;
-                    border-radius: 2px;
-                    color: #fff;
-                    font-size: 12px;
+                  float: left;
+                }
+                .icon-arrow {
+                  float: right;
+                  line-height: 48px;
+                  color: #888;
+                  font-size: 18px;
+                }
+              }
+            }
+            &__area {
+              margin-top: 40px;
+              font-size: 14px;
+              font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            .select-wrap {
+              margin-top: 8px;
+              position: relative;
+              background: #fff;
+              .select-default {
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+                h3 {
+                  line-height: 48px;
+                  float: left;
+                }
+                .icon-arrow {
+                  float: right;
+                  line-height: 48px;
+                  color: #888;
+                  font-size: 18px;
+                }
+              }
+            }
+            &__days {
+              margin-top: 40px;
+              font-size: 14px;
+              font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+              .select-wrap {
+                margin-top: 8px;
+                position: relative;
+                background: #fff;
+                .select-default {
+                  width: 100%;
+                  position: relative;
+                  z-index: 2;
+                  height: 48px;
+                  padding: 0 16px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                  h3 {
+                    line-height: 48px;
+                    float: left;
+                  }
+                  .icon-arrow {
+                    float: right;
+                    line-height: 48px;
+                    color: #888;
+                    font-size: 18px;
                   }
                 }
-                .l-right.sell-price-input {
-                  width: 50%;
-                  float: right;
-                  div {
-                    display: inline-block;
-                    width: 80%;
-                    margin-left: 5%;
-                    .input-default {
-                      -webkit-appearance: none;
-                      width: 112%;
-                      height: 48px;
-                      text-align: right;
-                      padding: 10px 16px 8px;
-                      border-radius: 4px;
-                      border: 1px solid #ccc;
-                      background: #fff;
-                      line-height: 1.5;
-                      font-size: 16px;
+              }
+            }
+          }
+        }
+
+        &__price {
+          padding: 40px;
+          border-top: 1px solid #eee;
+          overflow: hidden;
+          &__title {
+            color: #888;
+            font-size: 14px;
+            font-weight: bold;
+            float: left;
+          }
+          .icon-question {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0099e8;
+            line-height: 14px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+          }
+          &__box {
+            float: right;
+            width: 400px;
+            .sell-price {
+              .form-group {
+                padding-bottom: 24px;
+                .price-content {
+                  .l-left {
+                    width: 50%;
+                    line-height: 48px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    span {
+                      background-color: #ea352d;
+                      margin-left: 8px;
+                      padding: 2px 4px;
+                      border-radius: 2px;
+                      color: #fff;
+                      font-size: 12px;
+                    }
+                  }
+                  .l-right.sell-price-input {
+                    width: 50%;
+                    float: right;
+                    div {
+                      display: inline-block;
+                      width: 80%;
+                      margin-left: 5%;
+                      .input-default {
+                        -webkit-appearance: none;
+                        width: 112%;
+                        height: 48px;
+                        text-align: right;
+                        padding: 10px 16px 8px;
+                        border-radius: 4px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        line-height: 1.5;
+                        font-size: 16px;
+                      }
                     }
                   }
                 }
               }
-            }
-            .margin {
-              padding: 24px 0;
-              border-top: 1px solid #ccc;
-              overflow: hidden;
-              .l-left {
-                float: left;
+              .margin {
+                padding: 24px 0;
+                border-top: 1px solid #ccc;
+                overflow: hidden;
+                .l-left {
+                  float: left;
+                }
+                .l-right {
+                  float: right;
+                }
               }
-              .l-right {
-                float: right;
+              .income {
+                padding: 24px 0;
+                border-top: 1px solid #ccc;
+                .l-left {
+                  font-size: 16px;
+                  font-weight: bold;
+                  float: left;
+                }
+                .l-right {
+                  font-size: 34px;
+                  float: right;
+                }
               }
-            }
-            .income {
-              padding: 24px 0;
-              border-top: 1px solid #ccc;
-              .l-left {
-                font-size: 16px;
-                font-weight: bold;
-                float: left;
-              }
-              .l-right {
-                font-size: 34px;
-                float: right;
-              }
-            }
-          }
-        }
-      }
-
-      .sell-content.sell-btn-box {
-        padding: 40px;
-        border-top: 1px solid #eee;
-        div {
-          p {
-            line-height: 1.5;
-            a {
-              color: #0099e8;
-              text-decoration: none;
             }
           }
         }
-        .btn-default.btn-red {
-          display: block;
-          margin: 0 auto;
-          margin-top: 40px;
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-        }
-        .btn-default.btn-gray {
-          display: block;
-          width: 45%;
-          margin: 24px auto 0;
-          line-height: 48px;
-          font-size: 14px;
-          background: #aaa;
-          border: 1px solid #aaa;
-          color: #fff;
-          cursor: pointer;
-          text-align: center;
+        &__btn-box {
+          padding: 40px;
+          border-top: 1px solid #eee;
+          div {
+            p {
+              line-height: 1.5;
+              a {
+                color: #0099e8;
+                text-decoration: none;
+              }
+            }
+          }
+          .btn-default.btn-red {
+            display: block;
+            margin: 0 auto;
+            margin-top: 40px;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+          }
+          .btn-default.btn-gray {
+            display: block;
+            width: 45%;
+            margin: 24px auto 0;
+            line-height: 48px;
+            font-size: 14px;
+            background: #aaa;
+            border: 1px solid #aaa;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+          }
         }
       }
     }
@@ -493,10 +530,6 @@
       word-spacing: 0.4rem;
       margin: 16px 0 0;
       list-style: none;
-      a {
-      text-decoration: none;
-      font-size: 12px;
-      }
     }
     &__logo {
       display: block;
@@ -510,3 +543,4 @@
     }
   }
 }
+    
