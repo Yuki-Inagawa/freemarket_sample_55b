@@ -2,11 +2,11 @@ class JinnoController < ApplicationController
   def extra
   end
 
-  def footer
+  def global_footer
   end
 
-  # def asakura
-  # end
+  def global_header
+  end
 
   # def inagawa
   # end
