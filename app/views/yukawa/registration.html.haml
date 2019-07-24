@@ -2,6 +2,23 @@
   %header.single-header
     %h1.mercari-logo
       = link_to image_tag("logo.svg", alt: "Google Play画像"), "/yukawa/registration", class: "mercari-logo__link"
+    %nav.progress-bar
+      %ol.clearfix
+        %li.active
+          会員情報
+          .progress-status.first
+        %li 
+          電話番号認証
+          .progress-status
+        %li 
+          お届け先住所入力
+          .progress-status
+        %li 
+          支払い方法
+          .progress-status
+        %li 
+          完了
+          .progress-status.last
   %main.single-main
     %section.l-single-container
       %h2.new-registration 会員情報入力
@@ -10,7 +27,7 @@
           .new-registration-form__content--form{style: "margin-top: 0;"}
             %label{for: "nickname"} ニックネーム
             %span.form-require 必須
-            %input.input-default{type: "text", name: "nickname", placeholder: "例) メルカリ太郎"}
+            %input.input-default{type: "text", name: "nickname", placeholder: "例) おでん君"}
           .new-registration-form__content--form
             %label{for: "email"} メールアドレス
             %span.form-require 必須
