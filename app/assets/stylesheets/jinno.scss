@@ -1,19 +1,16 @@
 @import "font-awesome";
-.extra{
+.extra{///////////リンクテストページ〜〜後で消す
   font-size:100px;
 }
-.footer-container{
+.footer-container__over-flow-reset{
   overflow: hidden;
 }
-// .clearfix::after{
-//   content: "";
-//   display: block;
-//   clear: both;
-// }
+
 .app__banner{
   width: 100%;
   height: 100%;
   background-image: url("download_bg_pc.jpg");
+  background-size: cover;
   &__box{
     display: flex;
     align-items: center;
@@ -225,7 +222,9 @@
     margin: 30px auto 20px;
     display:flex;
     justify-content: center;
+    flex-flow: row wrap;
     a{
+      text-align: left;
       line-height: 1.5;
       vertical-align: middle;
       img{
@@ -284,7 +283,6 @@
         background: #f5f5f5;
         border-radius: 4px;
         border: 1px solid #ccc;
-        // border-width: 0;
         padding: 0 42px 0 10px;
         width: 100%;
         height: 40px;
@@ -308,17 +306,14 @@
     margin-top: 8px;
     display: flex;
     justify-content: space-between;
-    // align-content: center;
     &__left{
       display: flex;
-      // width: 320px;
       &-list{
         width:100%;
         &__child{
           padding-right: 15px;
           position: relative;
           display: inline-block;
-          // padding: 0 11px;
           cursor: pointer;
           &-text{
             font-size: 14px;
@@ -336,7 +331,6 @@
                 font-size: 14px;
                 margin-right: 4px;
                 display: inline-block;
-                // border:
               }
               span{
                 vertical-align: middle;
@@ -357,7 +351,6 @@
           &__link{
             position: relative;
             display: block;
-            // font-size: 0;
             color: #333;
             &--heart{
               color: #ccc;
@@ -407,9 +400,6 @@
                 width: 32px;
                 height: 32px;
                 margin-top: -10px;
-                img{
-                  // vertical-align: text-bottom;
-                }
               }
             }
             &__text{
@@ -423,47 +413,6 @@
         }
       }
     }
-    // &__right{
-    //   display: flex;
-    //   width: 521px;
-    //   font-size: 14px;
-    //   align-items: center;
-    //   font-weight: 100;
-    //   &-list{
-    //     height: 32px;
-    //     display: flex;
-    //     width: 521px;
-    //     &__child{
-    //       padding: 0 16px;
-    //       &-text{
-    //         font-size: 14px;
-    //         font-weight: 400;
-    //         &__person-image{
-    //           width: 32px;
-    //           height: 32px;
-    //           border-radius: 50%;
-    //           overflow: hidden;
-    //           margin-top: -5px;
-    //           margin-left: 5px;
-    //           img{
-    //             vertical-align: bottom;
-                
-    //           }
-    //         }
-    //         i{
-    //           font-size: 16px;
-    //           color: #ccc;
-    //         }
-    //       }
-    //     }
-    //     & :first-child{
-    //       padding-left: 0;
-    //     }
-    //     & :last-child{
-    //       padding-right: 0;
-    //     }
-    //   }
-    // }
   }
 }
 .top-main-visual{
@@ -513,7 +462,7 @@
 }
 //ここまでヘッダー＆メインヴィジュアル
 //メインコンテンツ
-.top-main__contents{//全体のはこ
+.top-main__contents{
   padding: 40px 0;
   background-color: #f5f5f5;
   &__topic{
@@ -528,7 +477,7 @@
     margin: 0 auto;
     width: 940px;
     height: 442px;
-    .top-main__contents__category{//h3
+    .top-main__contents__category{
       margin: 26px 11px;
       font-size: 22px;
       text-align: center;
@@ -544,9 +493,9 @@
     .top-main__contents__items-wrap{
       display: flex;
       width: 940px;
-      height: 330px;///理想は330
+      height: 330px;
       overflow: hidden;
-      .top-main__contents__item-box{///section
+      .top-main__contents__item-box{
         margin: 0 0 0 20px;
         width: 213px;
         overflow: hidden;
@@ -554,11 +503,11 @@
         &__image{
           overflow: hidden;
           &__img{
-            display: block;////外すかも
+            display: block;
           }
         }
       }
-      .top-main__contents__item-box__body{///アイテムのbody
+      .top-main__contents__item-box__body{
         padding: 16px;
         height: 110px;
         &__text{
@@ -599,106 +548,3 @@
     }
   }
 }
-
-
-
-// .top-main__contents{
-//   padding: 40px 0;
-//   background: #f5f5f5;
-//   &__topic{
-//     font-size: 28px;
-//     text-align: center;
-//     line-height: 1.4;
-//   }
-//   &__container{
-//     margin: 0 auto;
-//     width: 940px;
-//     .top-main__contents__category{
-//       font-size: 22px;
-//       margin: 26px 11px;
-//       text-align: center;
-//       &__link{
-//         color: #0099e8;
-//       }
-//     }
-//     // .top-main__contents__items{
-//     //   margin: 0 auto;
-//     //   display: flex;
-//     //   align-items: center;
-//     //   height: 330px;
-//     //   // width: auto;
-//     //   &__item{
-//     //     margin: 0 0 0 20px;
-//     //     width: 213px;
-//     //     &__link{
-//     //       display: block;
-//     //       color: #333;
-//     //       &__photo{
-//     //         height: 220px;
-//     //         overflow: hidden;
-//     //         position: relative;
-//     //         padding: 0 0 100%;
-//     //         img{
-//     //           position: absolute;
-//     //           top: 0;
-//     //           right: 0;
-//     //           bottom: 0;
-//     //           left: 0;
-//     //           z-index: 1;
-//     //           width: 100%;
-//     //           vertical-align: middle;
-//     //         }
-//     //       }
-//     //       &__body{
-//     //         height: 110px;
-//     //         padding: 16px;
-//     //         &__title{
-//     //           color: #333;
-//     //           font-size: 16px;
-//     //           overflow: hidden;
-//     //           position: relative;
-//     //           font-weight: 400;
-//     //           height: 3em;
-//     //           line-height: 1.5;
-//     //           word-break: break-word;
-//     //           white-space: normal;
-//     //         }
-//     //         &__flex{
-//     //           justify-content: space-between;
-//     //           margin: 8px 0 0;
-//     //           align-items: center;
-//     //           -webkit-box-pack: justify;
-//     //           display: flex;
-//     //           -webkit-box-align: center;
-//     //           &--price{
-//     //             font-size: 17px;///
-//     //             font-weight: 600;
-//     //             color: #333;
-//     //           }
-//     //           &--good-count{
-//     //             font-size: 16px;
-//     //             font-weight: 400;
-//     //             color: #333;
-//     //             &__icon{
-//     //               color: #ccc;
-//     //               display: inline-block;
-//     //               font-family: 'icon-font';
-//     //               speak: none;
-//     //               font-style: normal;
-//     //               font-weight: 400;
-//     //               font-variant: normal;
-//     //               text-transform: none;
-//     //               line-height: 1;
-//     //               -webkit-font-smoothing: antialiased;
-//     //             }
-//     //             // &__number{
-
-//     //             // }
-//     //           }
-//     //         }
-//     //       }
-//     //     }
-//     //   }
-//     // }
-//   }
-// }

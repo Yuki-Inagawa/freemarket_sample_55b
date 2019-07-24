@@ -7,9 +7,6 @@
         %input.global-header__top-form__input{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
         %i.global-header__top-icon
         = fa_icon "search", class: "global-header__top-icon__glass"
-      -# %input.input-default{:name => "keyword", :type => "submit", :value => ""}/
-      -# %i.global-header__top-icon
-      -#   = fa_icon "search", class: "global-header__top-icon__glass"
     .global-header__bottom
       %nav.global-header__bottom__left
         %ul.global-header__bottom__left-list
@@ -43,29 +40,8 @@
                 .global-header__bottom__right__list__child--my-page__link__person__box
                   = image_tag("member_photo_noimage_thumb.png", width: '32', height: '32', alt: "マイページアイコン画像")
               %span.global-header__bottom__right__list__child--my-page__link__text マイページ
-      -# .global-header__bottom__right
-      -#   %ul.global-header__bottom__right-list
-      -#     %li.global-header__bottom__right-list__child
-      -#       .global-header__bottom__right-list__child-text
-      -#         = link_to extra_view_path, class: "global-header__bottom__right-list__child-text-link" do
-      -#           = fa_icon "heart", class: "global-header__bottom__right-list__child-text-link--icon"
-      -#           %span いいね！一覧
-      -#     %li.global-header__bottom__right-list__child
-      -#       .global-header__bottom__right-list__child-text
-      -#         = link_to extra_view_path, class: "global-header__bottom__right-list__child-text-link" do
-      -#           = fa_icon "bell", class: "global-header__bottom__lright-list__child-text-link--icon"
-      -#           %span お知らせ
-      -#           -# .global-header__bottom__right-list__child  お知らせのカウント作るなら
-      -#     %li.global-header__bottom__right-list__child
-      -#       .global-header__bottom__right-list__child-text
-      -#         = link_to extra_view_path, class: "global-header__bottom__right-list__child-text-link" do
-      -#           = fa_icon "check", class: "global-header__bottom__lright-list__child-text-link--icon"
-      -#           %span やることリスト
-      -#     %li.global-header__bottom__right-list__child
-      -#       .global-header__bottom__right-list__child-text
-      -#         .global-header__bottom__right-list__child-text__person-image
-      -#           = link_to image_tag("member_photo_noimage_thumb.png", width: '32', height: '32', alt: "マイページ画像"), extra_view_path, class: ""
-      -#     = link_to "マイページ",extra_view_path, class: "global-header__bottom__right-list__child-text-link"
+/////グローバルヘッダーここまで
+////ここからメインヴィジュアル
 .top-main-visual
   .top-main-visual__inner
     .top-main-visual__inner__contents
@@ -146,173 +122,63 @@
     .top-main__contents__all-links
       = link_to "すべての商品を見る", extra_view_path, class: "top-main__contents__all-links__text"
     -# 新着アイテム一まとまりここまで
-    -# %section.top-main__contents__wrapper
-    -#   %h3.top-main__contents__category
-    -#     = link_to "レディース 新着アイテム", extra_view_path, class: "top-main__contents__category__link"
-    -#   .top-main__contents__items-wrap
-    -#     %section.top-main__contents__item-box
-    -#       .top-main__contents__item-box__image
-    -#         = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
-    -#       .top-main__contents__item-box__body
-    -#         %h3.top-main__contents__item-box__body__text
-    -#           テキストテキストテキスト
-    -#         .top-main__contents__item-box__body__flex-box
-    -#           .top-main__contents__item-box__body__flex-box--price
-    -#             &yen;&ensp;3,000
-    -#           .top-main__contents__item-box__body__flex-box--status
-    -#             = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
-    -#             %span.top-main__contents__item-box__body__flex-box--status--good-count
-    -#               9
-    -#     %section.top-main__contents__item-box
-    -#       .top-main__contents__item-box__image
-    -#         = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
-    -#       .top-main__contents__item-box__body
-    -#         %h3.top-main__contents__item-box__body__text
-    -#           テキストテキストテキスト
-    -#         .top-main__contents__item-box__body__flex-box
-    -#           .top-main__contents__item-box__body__flex-box--price
-    -#             &yen;&ensp;3,000
-    -#           .top-main__contents__item-box__body__flex-box--status
-    -#             = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
-    -#             %span.top-main__contents__item-box__body__flex-box--status--good-count
-    -#               9
-    -#     %section.top-main__contents__item-box
-    -#       .top-main__contents__item-box__image
-    -#         = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
-    -#       .top-main__contents__item-box__body
-    -#         %h3.top-main__contents__item-box__body__text
-    -#           テキストテキストテキスト
-    -#         .top-main__contents__item-box__body__flex-box
-    -#           .top-main__contents__item-box__body__flex-box--price
-    -#             &yen;&ensp;3,000
-    -#           .top-main__contents__item-box__body__flex-box--status
-    -#             = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
-    -#             %span.top-main__contents__item-box__body__flex-box--status--good-count
-    -#               9
-    -#     %section.top-main__contents__item-box
-    -#       .top-main__contents__item-box__image
-    -#         = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
-    -#       .top-main__contents__item-box__body
-    -#         %h3.top-main__contents__item-box__body__text
-    -#           テキストテキストテキスト
-    -#         .top-main__contents__item-box__body__flex-box
-    -#           .top-main__contents__item-box__body__flex-box--price
-    -#             &yen;&ensp;3,000
-    -#           .top-main__contents__item-box__body__flex-box--status
-    -#             = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
-    -#             %span.top-main__contents__item-box__body__flex-box--status--good-count
-    -#               9
-    -#   .top-main__contents__all-links
-    -#     = link_to "すべての商品を見る", extra_view_path, class: "top-main__contents__all-links__text"
-
-
-
--# %section.top-main__contents
--#   %h2.top-main__contents__topic
--#     ピックアップカテゴリー
--#   %section.top-main__contents__container
--#     %h3.top-main__contents__category
--#       = link_to "レディース 新着アイテム",extra_view_path, class: "top-main__contents__category__link"
--#     .top-main__contents__items
--#       -# %section.top-main__contents__items__item
--#       -#   = link_to extra_view_path, class: "top-main__contents__items__item__link" do
--#       -#     %figure.top-main__contents__items__item__link__photo
--#       -#       = image_tag("face.svg", width: '213', height: '213', alt: "商品個別写真")
--#       -#     .top-main__contents__items__item__link__body
--#       -#       %h3.top-main__contents__items__item__link__body__title
--#       -#       .top-main__contents__items__item__link__body__flex
--#       -#         .top-main__contents__items__item__link__body__flex--price
--#       -#           ５５００円
--#       -#         .top-main__contents__items__item__link__body__flex--good-count
--#       -#           = fa_icon "check", class: "top-main__contents__items__item__link__body__flex--good-count__icon"
--#       -#           %span.top-main__contents__items__item__link__body__flex--good-count__number
--#       -# %section.top-main__contents__items__item
--#       -#   = link_to extra_view_path, class: "top-main__contents__items__item__link" do
--#       -#     %figure.top-main__contents__items__item__link__photo
--#       -#       = image_tag("face.svg", width: '213', height: '213', alt: "商品個別写真")
--#       -#     .top-main__contents__items__item__link__body
--#       -#       %h3.top-main__contents__items__item__link__body__title
--#       -#       .top-main__contents__items__item__link__body__flex
--#       -#         .top-main__contents__items__item__link__body__flex--price
--#       -#           ５５００円
--#       -#         .top-main__contents__items__item__link__body__flex--good-count
--#       -#           = fa_icon "check", class: "top-main__contents__items__item__link__body__flex--good-count__icon"
--#       -#           %span.top-main__contents__items__item__link__body__flex--good-count__number
--#       -# %section.top-main__contents__items__item
--#       -#   = link_to extra_view_path, class: "top-main__contents__items__item__link" do
--#       -#     %figure.top-main__contents__items__item__link__photo
--#       -#       = image_tag("face.svg", width: '213', height: '213', alt: "商品個別写真")
--#       -#     .top-main__contents__items__item__link__body
--#       -#       %h3.top-main__contents__items__item__link__body__title
--#       -#       .top-main__contents__items__item__link__body__flex
--#       -#         .top-main__contents__items__item__link__body__flex--price
--#       -#           ５５００円
--#       -#         .top-main__contents__items__item__link__body__flex--good-count
--#       -#           = fa_icon "check", class: "top-main__contents__items__item__link__body__flex--good-count__icon"
--#       -#           %span.top-main__contents__items__item__link__body__flex--good-count__number
--#       -# %section.top-main__contents__items__item
--#       -#   = link_to extra_view_path, class: "top-main__contents__items__item__link" do
--#       -#     %figure.top-main__contents__items__item__link__photo
--#       -#       = image_tag("face.svg", width: '213', height: '213', alt: "商品個別写真")
--#       -#     .top-main__contents__items__item__link__body
--#       -#       %h3.top-main__contents__items__item__link__body__title
--#       -#       .top-main__contents__items__item__link__body__flex
--#       -#         .top-main__contents__items__item__link__body__flex--price
--#       -#           ５５００円
--#       -#         .top-main__contents__items__item__link__body__flex--good-count
--#       -#           = fa_icon "check", class: "top-main__contents__items__item__link__body__flex--good-count__icon"
--#       -#           %span.top-main__contents__items__item__link__body__flex--good-count__number
-
-
-
-
--#   -# %h2.top-main__contents__topic
--#   -# %section.top-main__contents__container
--#   -#   %h3.top-main__contents__category
--#   -#     = link_to "レディース 新着アイテム",extra_view_path, class: "top-main__contents__category__link"
--#   -#   .top-main__contents__items
--#   -#     %section.top-main__contents__items__item
--#   -#       = link_to extra_view_path, class: "top-main__contents__items__item__link" do
--#   -#         %figure.top-main__contents__items__item__link__photo
--#   -#           = image_tag("face.svg", width: '213', height: '213', alt: "商品個別写真")
--#   -#         .top-main__contents__items__item__link__body
--#   -#           %h3.top-main__contents__items__item__link__body__title
--#   -#           .top-main__contents__items__item__link__body__flex
--#   -#             .top-main__contents__items__item__link__body__flex--price
--#   -#             .top-main__contents__items__item__link__body__flex--good-count
--#   -#               = fa_icon "check", class: "top-main__contents__items__item__link__body__flex--good-count__icon"
--#   -#               %span.top-main__contents__items__item__link__body__flex--good-count__number
--#   -# %h2.top-main__contents__topic
--#   -# %section.top-main__contents__container
--#   -#   %h3.top-main__contents__category
--#   -#     = link_to "レディース 新着アイテム",extra_view_path, class: "top-main__contents__category__link"
--#   -#   .top-main__contents__items
--#   -#     %section.top-main__contents__items__item
--#   -#       = link_to extra_view_path, class: "top-main__contents__items__item__link" do
--#   -#         %figure.top-main__contents__items__item__link__photo
--#   -#           = image_tag("face.svg", width: '213', height: '213', alt: "商品個別写真")
--#   -#         .top-main__contents__items__item__link__body
--#   -#           %h3.top-main__contents__items__item__link__body__title
--#   -#           .top-main__contents__items__item__link__body__flex
--#   -#             .top-main__contents__items__item__link__body__flex--price
--#   -#             .top-main__contents__items__item__link__body__flex--good-count
--#   -#               = fa_icon "check", class: "top-main__contents__items__item__link__body__flex--good-count__icon"
--#   -#               %span.top-main__contents__items__item__link__body__flex--good-count__number
--#   -# %h2.top-main__contents__topic
--#   -# %section.top-main__contents__container
--#   -#   %h3.top-main__contents__category
--#   -#     = link_to "レディース 新着アイテム",extra_view_path, class: "top-main__contents__category__link"
--#   -#   .top-main__contents__items
--#   -#     %section.top-main__contents__items__item
--#   -#       = link_to extra_view_path, class: "top-main__contents__items__item__link" do
--#   -#         %figure.top-main__contents__items__item__link__photo
--#   -#           = image_tag("face.svg", width: '213', height: '213', alt: "商品個別写真")
--#   -#         .top-main__contents__items__item__link__body
--#   -#           %h3.top-main__contents__items__item__link__body__title
--#   -#           .top-main__contents__items__item__link__body__flex
--#   -#             .top-main__contents__items__item__link__body__flex--price
--#   -#             .top-main__contents__items__item__link__body__flex--good-count
--#   -#               = fa_icon "check", class: "top-main__contents__items__item__link__body__flex--good-count__icon"
--#   -#               %span.top-main__contents__items__item__link__body__flex--good-count__number
--#   -#   .top-main__contents__all
--#   -#     = link_to extra_view_path, class: "top-main__contents__all__link"
+    -# ここから下を複数繰り返す
+%section.top-main__contents
+  %section.top-main__contents__wrapper
+    %h3.top-main__contents__category
+      = link_to "メンズ 新着アイテム", extra_view_path, class: "top-main__contents__category__link"
+    .top-main__contents__items-wrap
+      %section.top-main__contents__item-box
+        .top-main__contents__item-box__image
+          = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
+        .top-main__contents__item-box__body
+          %h3.top-main__contents__item-box__body__text
+            テキストテキストテキスト
+          .top-main__contents__item-box__body__flex-box
+            .top-main__contents__item-box__body__flex-box--price
+              &yen;&ensp;3,000
+            .top-main__contents__item-box__body__flex-box--status
+              = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+              %span.top-main__contents__item-box__body__flex-box--status--good-count
+                9
+      %section.top-main__contents__item-box
+        .top-main__contents__item-box__image
+          = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
+        .top-main__contents__item-box__body
+          %h3.top-main__contents__item-box__body__text
+            テキストテキストテキスト
+          .top-main__contents__item-box__body__flex-box
+            .top-main__contents__item-box__body__flex-box--price
+              &yen;&ensp;3,000
+            .top-main__contents__item-box__body__flex-box--status
+              = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+              %span.top-main__contents__item-box__body__flex-box--status--good-count
+                9
+      %section.top-main__contents__item-box
+        .top-main__contents__item-box__image
+          = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
+        .top-main__contents__item-box__body
+          %h3.top-main__contents__item-box__body__text
+            テキストテキストテキスト
+          .top-main__contents__item-box__body__flex-box
+            .top-main__contents__item-box__body__flex-box--price
+              &yen;&ensp;3,000
+            .top-main__contents__item-box__body__flex-box--status
+              = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+              %span.top-main__contents__item-box__body__flex-box--status--good-count
+                9
+      %section.top-main__contents__item-box
+        .top-main__contents__item-box__image
+          = link_to image_tag("tokage.png", width: '213', height: '213', alt: "アイテム個別画像"), extra_view_path, class: "top-main__contents__item-box__image__img"
+        .top-main__contents__item-box__body
+          %h3.top-main__contents__item-box__body__text
+            テキストテキストテキスト
+          .top-main__contents__item-box__body__flex-box
+            .top-main__contents__item-box__body__flex-box--price
+              &yen;&ensp;3,000
+            .top-main__contents__item-box__body__flex-box--status
+              = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+              %span.top-main__contents__item-box__body__flex-box--status--good-count
+                9
+    .top-main__contents__all-links
+      = link_to "すべての商品を見る", extra_view_path, class: "top-main__contents__all-links__text"
