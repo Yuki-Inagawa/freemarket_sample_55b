@@ -1,0 +1,13 @@
+.default-container  
+  .merkari-header
+    .nav-bar
+
+  %main.logout-content
+    %section.logout-card
+      %section.settings-logout-card
+        %button.logout-card-content
+          = link_to 'ログアウト', noguchi_path, class: 'logout-button'
+      
+
+    .mypage-card-side
+      = render 'shared/mypage_nav'
