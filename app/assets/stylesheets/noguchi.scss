@@ -1,3 +1,209 @@
-// Place all the styles related to the noguchi controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.default-container{
+  background-color: #f5f5f5;
+  .merkari-header {
+    height: 100px;
+    width: 100%;
+    background-color: pink;
+    .nav-var {
+      height: 49px;
+      width: 1090px; 
+      background-color: pink;
+    }
+  }
+  main.user-profile {
+    margin: 40px auto 0;
+    width: 1020px;
+    display: block;
+    overflow: auto;
+    .profile-main {
+      float: right;
+      width: 700px;
+      background: #fff; 
+      margin-top: 8px;
+      .profile-icon {
+        background-image: url("user-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        padding: 50px;
+        .member_photo_noimage_thumb {
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+        h2.users-detail__name{
+          font-weight: 600;
+          margin: 8px 0 0;
+        }
+        .scores {
+          margin: 8px 0 0;
+          &__score {
+            margin: 0 0 0 8px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+      .mypage-tab-todo {
+        background: #fff;
+        .mypage-tabs { 
+          width: 700px;
+          display: flex;
+          height: 74px;
+          ul.mypage-tabs-left {
+            width: 50%;
+            text-align: center;
+            padding-top: 25px;
+            border-right: 1px solid #ccc;
+            border-top: 2px solid #ea352d;
+            li.mypage-tabs-left__tab {
+            vertical-align: top;
+            font-weight: 600;
+              h3.tabs-title {
+              font-weight: 600;
+              }
+            }
+          }
+          ul.mypage-tabs-right {
+            width: 50%;
+            text-align: center;
+            padding-top: 25px;
+            li.mypge-tabs-right__tab {
+              vertical-align: top;
+              h3.tabs-title{
+                font-weight: 600;
+              }
+            }
+          }
+        }
+        .mypage-tab-content {
+          display: block;
+          ul.mypage-tabs-information {
+          
+            li.mypage-tabs-information__list {
+              border-bottom: 1px solid #eee;
+              height: 94px;
+              position: relative;
+              a.information-link {
+                display: block;
+                min-height: 80px;
+                color: #333;
+                text-decoration: none;
+                padding: 16px 16px 0;
+                .list-figure {
+                  overflow: hidden;
+                  float: left;
+                  position: relative;
+                }
+                .list-body {
+                  margin: 0 40px 0 68px;
+                  &__text {
+                    display: -webkit-box;
+                    max-height: 4.4em;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    line-height: 1.5;
+                  }
+                  &__icon {
+                    display: inline-block;
+                    color: #888;
+                  }
+                }
+                .information-list-icon {
+                  position: absolute;
+                  top: 50%;
+                  right: 16px;
+                  height: 20px;
+                  width: 20px;
+                  color: #888;
+                }
+                .information-list-icon:hover {
+                  color: black;
+                }
+
+              }
+            }
+            li.mypage-tabs-information__lists{
+              height: 72px;
+              padding: 16px;
+              a.informations-link {
+                display: block;
+                height: 56px;
+                margin: 0 auto;
+                background: #eee;
+                color: #333;
+                line-height: 56px;
+                text-align: center;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+      .mypage-tab {
+        margin: 40px 0 0;
+        background: #fff;
+        h2.mypage-tab-head {
+          padding: 0 16px;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: 600;
+        }
+          .mypage-tabs { 
+            width: 700px;
+            display: flex;
+            height: 74px;
+            .mypage-tabs-left {
+              width: 50%;
+              text-align: center;
+              padding-top: 25px;
+              border-right: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypage-tabs-left__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
+            }
+            ul.mypage-tabs-right {
+              width: 50%;
+              text-align: center;
+              padding-top: 25px;
+              li.mypge-tabs-right__tab{
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+          .mypage-tab-content {
+            background: #fff;
+            height: 236px;
+            ul.transaction-now {
+              display: block;
+            li.transaction-not-found {
+                background-image: url("logo-gray-icon.svg");
+                padding: 160px 0 60px;
+                background-repeat: no-repeat;
+                background-position: center 40px;
+                background-size: 78px 85px;
+                text-align: center;
+                font-size: 16px;
+                color: #ccc;
+            
+              }
+            }
+          }
+      } 
+    }
+    .profile-side {
+      float: left;
+      margin: 0 40px 0 0;
+      height: 1440px;
+    }
+  }
+}

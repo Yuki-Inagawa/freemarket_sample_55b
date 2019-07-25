@@ -1,24 +1,124 @@
-# README
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|nickname|string|null: false|
+|family_name_ruby|string|null: false|
+|first_name_ruby|string|null: false|
+|birthday|integer|null: false|
+|phone_number|string|null: false|
+|mail|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+|image|string|
+|profile|text|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :items
+- has_many :values
+- has_many :likes
+- has_many :comments
+- has_one :address
 
-Things you may want to cover:
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false|
+|postal_code|string|null: false|
+|region|reference|null: false|
+|municipality|string|null: false|
+|address|string|null: false|
+|building_name|string|null: false|
 
-* Ruby version
 
-* System dependencies
+### Association
+- belongs_to :user
+- has_one :region
 
-* Configuration
+## itemsテーブル
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|name|string|null: false, index: true|
+|price|integer|null: false|
+|saler_id|integer|null: false|
+|buyer_id|integer|
+|statas|integer|null: false|
+|state|string|null: false|
+|postage|string|
+|region_id|references|null: false|
+|shopping_date|string|null: false|
+|delivery_metohd|string|null: false|
+|category_id|references|null: false|
 
-* Database initialization
+### Association
+- belongs_to :saler, class_name: "User"
+- belongs_to :buyer, class_name: "User"
+- has_many :likes
+- has_one :region
+- belons_to :category
 
-* How to run the test suite
+## commentsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|text|text|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
-* Deployment instructions
+### Association
+- belongs_to :item
+- belongs_to :user
 
-* ...
+## likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :user
+
+## categorysテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestlry|references||
+
+### Association
+- has_many : ancestlry
+- has_many : items
+
+## brandsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|index: true|
+
+### Association
+- has_many :items
+
+## regionsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+## valuesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|assessment|integer|
+|comment|text|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
