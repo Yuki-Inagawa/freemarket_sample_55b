@@ -1,6 +1,6 @@
 .default-container  
-  .merkari-header
-    .nav-bar
+  = render 'shared/header'
+
 
   %main.user-profile
     .profile-main
@@ -17,3 +17,5 @@
 
     .profile-side
       = render 'shared/mypage_nav'
+    
+  = render 'shared/footer'

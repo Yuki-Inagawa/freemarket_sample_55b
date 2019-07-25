@@ -1,0 +1,43 @@
+%header.global-header
+  .global-header-inner
+    .global-header__top
+      %h1
+        = link_to image_tag("logo.svg", width: '134', height: '36', alt: 'メインアイコン'), extra_view_path, class: 'global-header__top__main-logo' 
+      %form.global-header__top-form{action: "https://www.mercari.com/jp/search/"}
+        %input.global-header__top-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+        -# %input.global-header__top-form__input--btn{:type => "submit", :value => ""}/・・・・・現在なにも検索できません。。
+        %i.global-header__top-icon
+        = fa_icon "search", class: "global-header__top-icon__glass"
+    .global-header__bottom
+      %nav.global-header__bottom__left
+        %ul.global-header__bottom__left-list
+          %li.global-header__bottom__left-list__child
+            %h2.global-header__bottom__left-list__child-text
+              = link_to extra_view_path, class: "global-header__bottom__left-list__child-text-link" do
+                = fa_icon "list-ul", class: "global-header__bottom__left-list__child-text-link--icon"
+                %span カテゴリーから探す
+          %li.global-header__bottom__left-list__child
+            %h2.global-header__bottom__left-list__child-text
+              = link_to extra_view_path, class: "global-header__bottom__left-list__child-text-link" do
+                = fa_icon "tag", class: "global-header__bottom__left-list__child-text-link--icon"
+                %span ブランドから探す
+      .global-header__bottom__right
+        %ul.global-header__bottom__right__list
+          %li.global-header__bottom__right__list__child
+            = link_to extra_view_path, class: "global-header__bottom__right__list__child__link" do
+              = fa_icon "heart", class: "global-header__bottom__right__list__child__link--heart"
+              %span.global-header__bottom__right__list__child__link--icon いいね！一覧
+          %li.global-header__bottom__right__list__child
+            = link_to extra_view_path, class: "global-header__bottom__right__list__child__link" do
+              = fa_icon "bell", class: "global-header__bottom__right__list__child__link--bell"
+              %span.global-header__bottom__right__list__child__link--icon お知らせ
+          %li.global-header__bottom__right__list__child
+            = link_to extra_view_path, class: "global-header__bottom__right__list__child__link" do
+              = fa_icon "check", class: "global-header__bottom__right__list__child__link--check"
+              %span.global-header__bottom__right__list__child__link--icon やることリスト
+          %li.global-header__bottom__right__list__child--my-page
+            = link_to extra_view_path, class: "global-header__bottom__right__list__child--my-page__link" do
+              %figure.global-header__bottom__right__list__child--my-page__link__person
+                .global-header__bottom__right__list__child--my-page__link__person__box
+                  = image_tag("member_photo_noimage_thumb.png", width: '32', height: '32', alt: "マイページアイコン画像")
+              %span.global-header__bottom__right__list__child--my-page__link__text マイページ
