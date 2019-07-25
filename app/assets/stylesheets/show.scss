@@ -31,6 +31,79 @@
         text-align: center;
         font-weight: bold;
       }
+
+      &__details {
+        margin: 0;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        text-align: center;
+        &__box {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 320px;
+          margin: 0 auto;
+        }
+      }
+
+      &__user-info {
+        margin-top: 40px;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+      }
+
+      &__payment {
+        margin-top: 40px;
+        padding: 24px 12.5% 40px;
+        border-top: 1px solid #f5f5f5;
+        &__box {
+          max-width: 320px;
+          margin: 0 auto;
+          h3 {
+            font-weight: bold;
+          }
+          p {
+            margin-top: 8px;
+            line-height: 1.4;
+          }
+          figure {
+            margin: 0;
+          }
+          a {
+            display: block;
+            text-align: right;
+            color: #0099e8;
+            text-decoration: none;
+            span {
+              vertical-align: middle;
+            }
+            i {
+              margin-left: 8px;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .buy_comfirmation-footer {
+    text-align: center;
+    padding: 10px 0;
+    &__list {
+      word-spacing: 0.4rem;
+      margin: 16px 0 0;
+      list-style: none;
+      font-size: 12px;
+    }
+    &__logo {
+      display: block;
+      margin: 40px 188px;
+      p {
+        margin: 8px 0 0;
+        small {
+          font-size: 12px;
+        }
+      }
     }
   }
 }
