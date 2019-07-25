@@ -9,57 +9,25 @@
       .buy-item-container__title 購入内容の確認
 
       .buy-item-container__details
-        .buy-item-container__box
-          .wrapper-image
-            %img.lazyloaded{alt: "", "data-src" => "https://static.mercdn.net/thumb/photos/m40752623834_1.jpg?1559433518", src: "https://static.mercdn.net/thumb/photos/m40752623834_1.jpg?1559433518"}/
-          .wrapper-name ユニクロ ハイウエストデニム パンツ
-          %form.buy-form{:action => "https://www.mercari.com/jp/transaction/buy/done/m40752623834/", :method => "POST", :novalidate => "novalidate"}
-            %p.buy-price-ja.bold
+        .buy-item-container__details__box
+          .box-wrapper 
+            %h3
+              = image_tag("https://static.mercdn.net/thumb/photos/m40752623834_1.jpg?1559433518", src: "https://static.mercdn.net/thumb/photos/m40752623834_1.jpg?1559433518", class: "lazyloaded")
+            %p.buy-item-name ユニクロ ハイウエストデニム パンツ
+          .payment-form{action: "https://www.mercari.com/jp/transaction/buy/done/m40752623834/", method: "POST", novalidate: "novalidate"}
+            %p.buy-price
               ¥ 900
-              %span.item-shipping-fee.f14.bold 送料込み
-            %ul.buy-accordion.not-have
-              %li.accordion-parent
-                .accordion-toggle
+              %span.shipping-fee 送料込み
+            %ul.user-point
+              %li.user-point-box
+                .now-point
                   ポイントはありません
-            %ul.buy-price-table
-              %li.buy-price-row.buy-you-pay.bold
-                .buy-price-cell 支払い金額
-                .buy-price-cell
-                  %span{"data-buy-pay" => "900"} ¥ 900
-            %input{:name => "seller_id", :type => "hidden", :value => "381139179"}/
-            %input{:name => "payment_fee", :type => "hidden", :value => "0"}/
-            %input{:name => "payment_amount", :type => "hidden", :value => "900"}/
-            %input{:name => "price", :type => "hidden", :value => "900"}/
-            %input{:name => "category_id", :type => "hidden", :value => "156"}/
-            %input{:name => "item_condition", :type => "hidden", :value => "1"}/
-            %input{:name => "size", :type => "hidden", :value => "5"}/
-            %input{:name => "shipping_payer", :type => "hidden", :value => "2"}/
-            %input{:name => "shipping_method", :type => "hidden", :value => "5"}/
-            %input{:name => "shipping_duration", :type => "hidden", :value => "1"}/
-            %input{:name => "shipping_class", :type => "hidden", :value => "0"}/
-            %input{:name => "zip_code1", :type => "hidden", :value => "240"}/
-            %input{:name => "zip_code2", :type => "hidden", :value => "0012"}/
-            %input{:name => "paid_method", :type => "hidden", :value => "card"}/
-            %input{:name => "checksum", :type => "hidden", :value => "6f0213ea821e444ca75be74005ef51b7"}/
-            %input{:name => "payment_card_sequence_no", :type => "hidden", :value => ""}/
-            %input{:name => "payment_use_last_card_base64", :type => "hidden", :value => "eWVz"}/
-            %input{:name => "item_name_base64", :type => "hidden", :value => "44Om44OL44Kv44OtIOODj+OCpOOCpuOCqOOCueODiOODh+ODi+ODoCDjg5Hjg7Pjg4Q="}/
-            %input{:name => "description_base64", :type => "hidden", :value => "44OH44OL44OgIOODr+OCpOODieODkeODs+ODhOOCkuOBlOimp+OBhOOBn+OBoOOBjeOBguOCiuOBjOOBqOOBhuOBlOOBluOBhOOBvuOBmeOAggrjgZPjgaHjgonjga/jg4fjg4vjg6Av44K444O844Oz44K644Gn44GZ44CCCgrjgZTkuI3mmI7ngrnjgYzjgYLjgozjgbDjgrPjg6Hjg7Pjg4jjgojjgo3jgZfjgY/jgYrpoZjjgYTjgYTjgZ/jgZfjgb7jgZnjgIIKCuiCoeS4iyA3MCDjgqbjgqjjgrnjg4jlubPnva4gMzc="}/
-            %input{:name => "brand_name_base64", :type => "hidden", :value => "MTI1MA=="}/
-            %input{:name => "shipping_from_area_base64", :type => "hidden", :value => "MTA="}/
-            %input{:name => "family_name_base64", :type => "hidden", :value => "5pyd5YCJ"}/
-            %input{:name => "first_name_base64", :type => "hidden", :value => "5ZWT"}/
-            %input{:name => "family_name_kana_base64", :type => "hidden", :value => "44Ki44K144Kv44Op"}/
-            %input{:name => "first_name_kana_base64", :type => "hidden", :value => "44Kx44Kk"}/
-            %input{:name => "prefecture_base64", :type => "hidden", :value => "56We5aWI5bed55yM"}/
-            %input{:name => "city_base64", :type => "hidden", :value => "5qiq5rWc5biC5L+d5Zyf44Kx6LC35Yy6"}/
-            %input{:name => "address1_base64", :type => "hidden", :value => "5pyI6KaL5Y+wOC0zNw=="}/
-            %input{:name => "address2_base64", :type => "hidden", :value => "R+ODu0Hjg5Ljg6vjgrrkv53lnJ/jg7bosLdJSTEwMw=="}/
-            %input{:name => "telephone_base64", :type => "hidden", :value => "MDgwMTY1Mjk4MzY="}/
-            %input{:name => "__csrf_value", :type => "hidden", :value => "f6b5fe2e3ff6b13f2d590a2b3b042d823acb30249f08828c682d031b5e68125660036151afbdf98a071c51193b8216a6ea7a53fb796f6a627cbd87ec0ecdee771"}/
-            %p.has-error-text 配送先と支払い方法の入力を完了してください。
-            %button.btn-default.btn-red.bold{:disabled => "disabled", :type => "submit"} 購入する
-            %input#user_info_is_not_complete{:type => "hidden"}/
+            %ul.price-table
+              %li.final-price-box
+                .price-cell-left 支払い金額
+                .price-cell-right
+                  %span ¥ 900
+            %button.buy-btn{disabled: "disabled", type: "submit"} 購入する
       
       .buy-item-container__user-info
         .buy-item-container__user-info__box
