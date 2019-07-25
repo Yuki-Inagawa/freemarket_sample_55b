@@ -15,4 +15,7 @@ class YukawaController < ApplicationController
   def how_pay
   end
 
+  def create 
+  end
+
 end
