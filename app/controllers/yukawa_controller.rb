@@ -21,4 +21,7 @@ class YukawaController < ApplicationController
   def clear_compleate
   end
 
+  def login
+  end
+
 end
