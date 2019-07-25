@@ -1,11 +1,58 @@
 .default-container  
   = render 'shared/header'
-  .mypage-card
-    .mypage-card-main
-      = render 'shared/credit_card'
+  
+  %nav.bread-crumbs
+    %ul
+      %li 
+        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        %i.fa.fa-chevron-right
+      %li
+        %span ユニクロ七部丈パンツ
 
+  %section.user-details
+    .profile-box
+      .profile-box__text-center
+      = link_to noguchi_path, class: 'text-center-link' do
+        = image_tag("member_photo_noimage_thumb.png", alt: 'noimage', class: 'member_photo_noimage_thumb')
+        .users-detail
+          %h2.users-detail__name 野口雄大
+        .scores
+          %span.scores__score 評価 0
+          %span.scores__score 出品数 0
+    .profile-under
+      .users-detail-ratings-box
+        .user-detail-ratings-parent
+          .users-detail-ratings
+            = image_tag("smile.svg", alt: 'smail', height: 24, width: 24)
+            .text-center.users-detail-ragtings-score
+              0
+        .user-detail-ratings-parent
+          .users-detail-ratings
+            = image_tag("face.svg", alt: 'smail', height: 24, width: 24)
+            .text-center.users-detail-ragtings-score
+              0
+        .user-detail-ratings-parent
+          .users-detail-ratings
+            = image_tag("bad.svg", alt: 'smail', height: 24, width: 24)
+            .text-center.users-detail-ragtings-score
+              0
+      .users-detail-description_box
+        %p.profile-text aaaaaaaaaaa
 
+    .item-social-media-box
+      %ul.social-media-box
+        %li.social-media-box
+          %i.fa.fa-facebook-square
+        %li.social-media-box
+          %i.fa.fa-twitter-square
+        %li.social-media-box
+          %i.fa.fa-line
+    %section.items-box-container
+      .items-box-content
+  
+    .exhibition-items
+      %h2.exhibition-items__title この出品者の商品
+      .items-box
+        = render 'shared/items'
 
-    .mypage-card-side
-      = render 'shared/mypage_nav'
   = render 'shared/footer'

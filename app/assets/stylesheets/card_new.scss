@@ -1,0 +1,22 @@
+.default-container{
+  background-color: #f5f5f5;
+
+  .mypage-card{
+    overflow: hidden;
+    margin: 40px auto 0;
+    width: 1020px;
+    display: block;
+    
+    .mypage-card-main{
+      float: right; 
+      margin-top: 8px; 
+    }
+
+    .mypage-card-side {
+      float: left;
+      margin: 0 40px 0 0;
+      height: 1440px;
+
+    }
+  }
+}

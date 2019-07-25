@@ -9,14 +9,12 @@
       %li
       %span ユニクロ七部丈パンツ
 
-  %main.logout-content
-    %section.logout-card
-      %section.settings-logout-card
-        %button.logout-card-content
-          = link_to 'ログアウト', noguchi_path, class: 'logout-button'
-      
+  .mypage-card
+    .mypage-card-main
+      = render 'shared/credit_card'
+
+
 
     .mypage-card-side
       = render 'shared/mypage_nav'
-  
   = render 'shared/footer'
