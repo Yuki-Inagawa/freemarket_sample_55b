@@ -1,6 +1,13 @@
 .default-container  
-  .merkari-header
-    .nav-bar
+  = render 'shared/header'
+
+  %nav.bread-crumbs
+    %ul
+      %li 
+        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        %i.fa.fa-chevron-right
+      %li
+        %span.name マイページ
 
   %main.user-profile
     .profile-main
@@ -32,7 +39,7 @@
                   .list-body__icon
                     = fa_icon 'clock-o'
                     %sapn 29分前
-                = image_tag("carousel-next.png", class: 'information-list-icon')
+                %i.fa.fa-chevron-right.information-list-icon
             
             %li.mypage-tabs-information__list
               = link_to noguchi_path, class: 'information-link' do
@@ -43,7 +50,7 @@
                   .list-body__icon
                     = fa_icon 'clock-o'
                     %sapn 29分前
-                = image_tag("carousel-next.png", class: 'information-list-icon')
+                %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__list
               = link_to noguchi_path, class: 'information-link' do
                 .list-figure
@@ -53,7 +60,7 @@
                   .list-body__icon
                     = fa_icon 'clock-o'
                     %sapn 29分前
-                = image_tag("carousel-next.png", class: 'information-list-icon')
+                %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__list
               = link_to noguchi_path, class: 'information-link' do
                 .list-figure
@@ -63,7 +70,7 @@
                   .list-body__icon
                     = fa_icon 'clock-o'
                     %sapn 29分前
-                = image_tag("carousel-next.png", class: 'information-list-icon')
+                %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__list
               = link_to noguchi_path, class: 'information-link' do
                 .list-figure
@@ -73,7 +80,7 @@
                   .list-body__icon
                     = fa_icon 'clock-o'
                     %sapn 29分前
-                = image_tag("carousel-next.png", class: 'information-list-icon')
+                %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__lists
               = link_to '一覧をみる', noguchi_path, class: 'informations-link' 
       
@@ -95,3 +102,6 @@
 
     .profile-side
       = render 'shared/mypage_nav'
+  
+  = render 'shared/footer'
+  = render 'shared/sell_page_btn'

@@ -1,13 +1,47 @@
 .default-container{
   background-color: #f5f5f5;
-  .merkari-header {
-    height: 100px;
-    width: 100%;
-    background-color: pink;
-    .nav-var {
-      height: 49px;
-      width: 1090px; 
-      background-color: pink;
+  .bread-crumbs{
+    list-style: none;
+    position: relative;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    background: #fff;
+    ul{
+      width: 1020px;
+      padding: 16px;
+      margin: 0 auto;
+      display: block;
+      padding-inline-start: 40px;
+      li{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.2;
+        .bread-crumbs__link{
+          color: #333;
+          text-decoration: none;
+          touch-action: manipulation;
+          border-style: solid;
+          border-width: 0;
+          opacity:0.7;
+          cursor: pointer;
+          cursor: hand;
+        }
+        & :hover{
+          border-bottom: solid 1px;
+        }
+        i.fa.fa-chevron-right{
+          font-size: 9px;
+          color: #888;
+        }
+      }
+      li{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.2;
+        span.name {
+          font-weight: 600;
+        }
+      }
     }
   }
   main.user-profile {
@@ -21,7 +55,7 @@
       background: #fff; 
       margin-top: 8px;
       .profile-icon {
-        background-image: url("user-bg.jpg");
+        background-image: image-url("user-bg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         text-align: center;
@@ -56,17 +90,24 @@
             text-align: center;
             padding-top: 25px;
             border-right: 1px solid #ccc;
-            &__tab {
+            border-top: 2px solid #ea352d;
+            li.mypage-tabs-left__tab {
             vertical-align: top;
+            font-weight: 600;
+              h3.tabs-title {
+              font-weight: 600;
+              }
             }
           }
           ul.mypage-tabs-right {
             width: 50%;
             text-align: center;
             padding-top: 25px;
-            &__tab {
-              text-align: center;
+            li.mypge-tabs-right__tab {
               vertical-align: top;
+              h3.tabs-title{
+                font-weight: 600;
+              }
             }
           }
         }
@@ -110,7 +151,12 @@
                   right: 16px;
                   height: 20px;
                   width: 20px;
+                  color: #888;
                 }
+                .information-list-icon:hover {
+                  color: black;
+                }
+
               }
             }
             li.mypage-tabs-information__lists{
@@ -137,6 +183,7 @@
           padding: 0 16px;
           font-size: 16px;
           line-height: 72px;
+          font-weight: 600;
         }
           .mypage-tabs { 
             width: 700px;
@@ -147,11 +194,24 @@
               text-align: center;
               padding-top: 25px;
               border-right: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypage-tabs-left__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
             }
             ul.mypage-tabs-right {
               width: 50%;
               text-align: center;
               padding-top: 25px;
+              li.mypge-tabs-right__tab{
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
             }
           }
           .mypage-tab-content {

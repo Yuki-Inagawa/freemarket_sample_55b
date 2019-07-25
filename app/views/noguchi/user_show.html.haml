@@ -1,6 +1,13 @@
 .default-container  
-  .merkari-header
-    .nav-bar
+  = render 'shared/header'
+  
+  %nav.bread-crumbs
+    %ul
+      %li 
+        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        %i.fa.fa-chevron-right
+      %li 
+        %span.name name
 
   %section.user-details
     .profile-box
@@ -16,17 +23,17 @@
       .users-detail-ratings-box
         .user-detail-ratings-parent
           .users-detail-ratings
-            = fa_icon 'search'
+            = image_tag("smile.svg", alt: 'smail', height: 24, width: 24)
             .text-center.users-detail-ragtings-score
               0
         .user-detail-ratings-parent
           .users-detail-ratings
-            = fa_icon 'search'
+            = image_tag("face.svg", alt: 'smail', height: 24, width: 24)
             .text-center.users-detail-ragtings-score
               0
         .user-detail-ratings-parent
           .users-detail-ratings
-            = fa_icon 'search'
+            = image_tag("bad.svg", alt: 'smail', height: 24, width: 24)
             .text-center.users-detail-ragtings-score
               0
       .users-detail-description_box
@@ -35,21 +42,18 @@
     .item-social-media-box
       %ul.social-media-box
         %li.social-media-box
-          = fa_icon 'facebook-square', class: 'social-media-box-icon'
+          %i.fa.fa-facebook-square
         %li.social-media-box
-          = fa_icon 'twitter-square', class: 'social-media-box-icon'
+          %i.fa.fa-twitter-square
         %li.social-media-box
-          = fa_icon 'facebook-square', class: 'social-media-box-icon'
+          %i.fa.fa-line
     %section.items-box-container
       .items-box-content
   
     .exhibition-items
       %h2.exhibition-items__title この出品者の商品
       .items-box
-        .items-box__item
-        .items-box__item
-        .items-box__item
-        .items-box__item
-        .items-box__item
+        = render 'shared/items'
 
-  .footer3
+  = render 'shared/footer'
+  = render 'shared/sell_page_btn'
