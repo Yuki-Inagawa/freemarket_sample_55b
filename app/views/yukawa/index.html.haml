@@ -1,6 +1,6 @@
 .single-container
   %header.single-header
-    ヘッダーは部分テンプレート
+    = render 'shared/ex_header'
   %main.single-main
     %section.l-single-container
       %h2.new-registration 新規会員登録
@@ -17,4 +17,4 @@
             Googleで登録する
 
   %footer.single-footer
-    フッターは部分テンプレート
+    = render 'shared/ex_footer'
