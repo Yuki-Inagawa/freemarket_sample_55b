@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get '/extra_view' => 'jinno#extra'
   get '/jinno' => 'jinno#footer'
-  get '/asakura' => 'asakura#asakura'
-  get '/inagawa' => 'inagawa#inagawa'
+  get '/asakura' => 'asakura#show'
+  get '/inagawa/item/detail' => 'inagawa#item_detail'
   get '/noguchi' => 'noguchi#noguchi'
 
   resources :yukawa do
