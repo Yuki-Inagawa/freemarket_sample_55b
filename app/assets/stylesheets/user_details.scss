@@ -94,15 +94,20 @@
         font-size: 30px;
       }
       li.social-media-box {
-        margin: 0 8px 8px 0;
+        margin: 0 0px 8px 0;
         vertical-align: middle;
         display: inline-block;
         text-align: center;
-        .social-media-box-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: 4px;
-          line-height: 44px;
+        border-radius: 4px;
+        font-size: 44px;
+        i.fab.fa-facebook-square {
+          color:#385185;
+        }
+        i.fab.fa-twitter-square {
+          color: #5d9dc9;
+        }
+        i.fab.fa-line {
+          color:#00c137;
         }
       }
     }

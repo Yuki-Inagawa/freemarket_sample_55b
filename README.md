@@ -1,9 +1,11 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
 |nickname|string|null: false|
-|ruby|string|null: false|
+|family_name_ruby|string|null: false|
+|first_name_ruby|string|null: false|
 |birthday|integer|null: false|
 |phone_number|string|null: false|
 |mail|string|null: false, unique: true|
