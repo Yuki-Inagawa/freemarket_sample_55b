@@ -1,0 +1,74 @@
+.buy_comfirmation
+
+  .buy_comfirmation-header
+    .buy_comfirmation-wrapper
+      = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?891577966", alt: "mercari", heigh:"49", width: "185")
+
+  .buy_comfirmation-main
+    .buy-item-container
+      .buy-item-container__title 購入内容の確認
+
+      .buy-item-container__details
+        .buy-item-container__details__box
+          .box-wrapper 
+            %h3
+              = image_tag("https://static.mercdn.net/item/detail/orig/photos/m44272910738_1.jpg?1555209996", src: "https://static.mercdn.net/item/detail/orig/photos/m44272910738_1.jpg?1555209996", class: "lazyloaded")
+            %p.buy-item-name マイクロフォーサーズ単焦点レンズ  LAOWA 7.5mm F2 MFT
+          .payment-form{action: "https://www.mercari.com/jp/transaction/buy/done/m40752623834/", method: "POST", novalidate: "novalidate"}
+            %p.buy-price
+              ¥ 50,000
+              %span.shipping-fee 送料込み
+            %ul.user-point
+              %li.user-point-box
+                .now-point
+                  ポイントはありません
+            %ul.price-table
+              %li.final-price-box
+                .price-cell-left 支払い金額
+                .price-cell-right
+                  %span ¥ 50,000
+            %button.buy-btn{disabled: "disabled", type: "submit"} 購入する
+      
+      .buy-item-container__user-info
+        .buy-item-container__user-info__box
+          %h3 配送先
+          %address.user-address
+            〒150-0041
+            %br/
+            東京都渋谷区
+            神南1-12-16
+            TECH::EXPERT アジアビル9F校
+            %br/
+            開発 太朗
+          %p.user-info-text
+          %a.user-info-fix
+          = link_to 'https://www.mercari.com/jp/transaction/address/m40752623834/' do
+            %span 変更する
+            %icon
+            = fa_icon 'chevron-right', class: 'icon-arrow'
+
+      .buy-item-container__payment
+        .buy-item-container__payment__box
+          %h3 支払い方法
+          %p.user-card-info
+            ************2345
+            %br
+            01/23
+          %figure
+            = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?732810650", alt: "visa", height: "15", width: "49", src: "")
+          %p
+          %a.user-card-info-fix
+          = link_to 'https://www.mercari.com/jp/transaction/card/m40752623834/' do
+            %span 変更する
+            %icon
+            = fa_icon 'chevron-right', class: 'icon-arrow'
+
+  .buy_comfirmation-footer
+    .buy_comfirmation-footer__list
+      = link_to 'プライバシーポリシー', 'https://www.mercari.com/jp/privacy/'
+      = link_to 'メルカリ利用規約', 'https://www.mercari.com/jp/tos/'
+      = link_to '特定商取引に関する表記', 'https://www.mercari.com/jp/tokutei/'
+    .buy_comfirmation-footer__logo
+      = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?891577966", alt: "mercari", height: "65", src: "", width: "80")
+      %p
+        %small © 2019 Mercari
