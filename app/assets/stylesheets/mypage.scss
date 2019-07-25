@@ -29,12 +29,16 @@
         & :hover{
           border-bottom: solid 1px;
         }
+        i.fa.fa-chevron-right{
+          font-size: 9px;
+          color: #888;
+        }
       }
       li{
         display: inline-block;
         font-size: 14px;
         line-height: 1.2;
-        span{
+        span.name {
           font-weight: 600;
         }
       }
