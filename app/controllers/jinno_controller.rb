@@ -5,7 +5,7 @@ class JinnoController < ApplicationController
   def global_footer
   end
 
-  def global_header
+  def global_top_index
   end
 
   # def inagawa
