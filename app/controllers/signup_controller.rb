@@ -1,4 +1,4 @@
-class YukawaController < ApplicationController
+class SignupController < ApplicationController
 
   def index
   end

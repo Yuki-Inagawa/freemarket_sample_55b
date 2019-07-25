@@ -6,7 +6,7 @@
     %section.l-single-container.login
       .new-registration-login
         %p.not-have-acount アカウントをお持ちでない方はこちら
-        =link_to "新規会員登録", "/yukawa/login", class: "new-registration-btn"
+        =link_to "新規会員登録", "/signup/login", class: "new-registration-btn"
       .new-registration-form
         .new-registration-form__content{style: "padding: 32px 64px 32px;"}
           %button.facebook-login{style: "margin-top: 0;"}
@@ -22,7 +22,7 @@
           .new-registration-form__content--form.robo
             %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
           %button{type: "submit", class: "next-btn"}ログイン
-          =link_to "パスワードをお忘れの方", "login", class: "foreine-passward" 
+          =link_to "パスワードをお忘れの方", "signup", class: "foreine-passward" 
 
   %footer.single-footer
     フッターは部分テンプレート
