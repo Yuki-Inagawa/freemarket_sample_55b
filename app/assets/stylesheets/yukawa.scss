@@ -306,6 +306,10 @@
               font-size: 26px;
             }
           }
+          .compleate-message {
+            text-align: center;
+            line-height: 1.5;
+          }
           .btn-sns.btn-sns-google {
             border-radius: 4px;
             margin: 16px 0 0;
@@ -340,6 +344,61 @@
             li {
               display: inline-block;
               margin: 0 0 0 8px;
+            }
+          }
+        }
+        .last-image {
+          background: url('download_bg_pc.jpg');
+          background-position: center;
+          background-size: cover;
+          height: 260px;
+          &__pc {
+            display: flex;
+            &--inner{
+              padding: 30px 10px;
+              h2 {
+                font-size: 24px;
+                text-shadow: 0 0 5px rgba(0,0,0,0.4);
+                color: #fff;
+              }
+              p {
+                font-size: 35px;
+                text-shadow: 0 0 5px rgba(0,0,0,0.4);
+                color: #fff;
+              }
+            }
+            .app-image {
+              position: relative;
+              a {
+                img {
+                  height: 260px;
+                }
+              }
+
+            }
+            &--icon {
+              display: flex;
+              position: relative;
+              top: 35px;
+              left: 50px;
+              .mercari-icon {
+                display: inline-block;
+                position: relative;
+                // top: 20px;
+              }
+              .store {
+                display: inline-block;
+                position: relative;
+                left: 40px;
+                bottom: 10px;
+                li {
+                  margin-bottom: 10px;
+                  font-size: 0;
+                }
+                li:hover {
+                  opacity: 0.8;
+                }
+              }
             }
           }
         }

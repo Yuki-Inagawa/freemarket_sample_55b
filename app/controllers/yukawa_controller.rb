@@ -18,4 +18,7 @@ class YukawaController < ApplicationController
   def create 
   end
 
+  def clear_compleate
+  end
+
 end
