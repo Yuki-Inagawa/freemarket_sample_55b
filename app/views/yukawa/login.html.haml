@@ -1,20 +1,28 @@
 .single-container
-  %header.single-header
-    ヘッダーは部分テンプレート
+  .exhibiton-header
+    .exhibition-wrapper
+      = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?891577966", alt: "mercari", heigh:"49", width: "185")
   %main.single-main
-    %section.l-single-container
-      %h2.new-registration 新規会員登録
+    %section.l-single-container.login
+      .new-registration-login
+        %p.not-have-acount アカウントをお持ちでない方はこちら
+        =link_to "新規会員登録", "/yukawa/login", class: "new-registration-btn"
       .new-registration-form
-        .new-registration-form__content
-          =link_to "/yukawa/registration", class: "mail-btn" do
-            =fa_icon "envelope", class: "mail-icon"
-            メールアドレスで登録する
-          %button.facebook-login
+        .new-registration-form__content{style: "padding: 32px 64px 32px;"}
+          %button.facebook-login{style: "margin-top: 0;"}
             =fa_icon "facebook", class: "facebook-icon"
-            Facebookで登録する
+            Facebookでログイン
           %button#google-login.btn-default.btn-sns.btn-sns-google
             -# =fa_icon "google", class: "google-icon"
-            Googleで登録する
+            Googleでログイン
+          .new-registration-form__content--form{style: "margin-top: 50px;"}
+            %input.input-default{type: "email", name: "email", placeholder: "メールアドレス"}
+          .new-registration-form__content--form{style: "margin-top: 16px;"}
+            %input.input-default{type: "password", name: "password", placeholder: "パスワード"}
+          .new-registration-form__content--form.robo
+            %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
+          %button{type: "submit", class: "next-btn"}ログイン
+          =link_to "パスワードをお忘れの方", "yukawa/login", class: "foreine-passward" 
 
   %footer.single-footer
     フッターは部分テンプレート

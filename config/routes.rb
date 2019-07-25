@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/jinno' => 'jinno#global_footer'
   get '/jinno/global_top_index' => 'jinno#global_top_index'
   get '/jinno/mypage/identification' => 'jinno#mypage'
-  get '/asakura' => 'asakura#show'
+  get '/asakura' => 'asakura#asakura'
   get '/inagawa/item/detail' => 'inagawa#item_detail'
   get '/noguchi' => 'noguchi#noguchi'
 
