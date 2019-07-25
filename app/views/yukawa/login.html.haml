@@ -1,7 +1,7 @@
 .single-container
   .exhibiton-header
     .exhibition-wrapper
-      = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?891577966", alt: "mercari", heigh:"49", width: "185")
+      = image_tag("logo.svg", alt: "mercari", heigh:"49", width: "185")
   %main.single-main
     %section.l-single-container.login
       .new-registration-login
@@ -22,7 +22,7 @@
           .new-registration-form__content--form.robo
             %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
           %button{type: "submit", class: "next-btn"}ログイン
-          =link_to "パスワードをお忘れの方", "yukawa/login", class: "foreine-passward" 
+          =link_to "パスワードをお忘れの方", "login", class: "foreine-passward" 
 
   %footer.single-footer
     フッターは部分テンプレート
