@@ -8,12 +8,7 @@ class JinnoController < ApplicationController
   def global_top_index
   end
 
-  # def inagawa
-  # end
+  def mypage
+  end
 
-  # def noguchi
-  # end
-
-  # def yukawa
-  # end
 end

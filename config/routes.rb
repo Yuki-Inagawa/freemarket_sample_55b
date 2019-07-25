@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get '/extra_view' => 'jinno#extra'
-  # get '/jinno' => 'jinno#global_footer'
+  get '/jinno' => 'jinno#global_footer'
   get '/jinno/global_top_index' => 'jinno#global_top_index'
+  get '/jinno/mypage/identification' => 'jinno#mypage'
   get '/asakura' => 'asakura#show'
   get '/inagawa' => 'inagawa#inagawa'
   get '/noguchi' => 'noguchi#noguchi'
