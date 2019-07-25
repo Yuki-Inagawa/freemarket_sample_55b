@@ -12,4 +12,10 @@ class YukawaController < ApplicationController
   def address
   end
 
+  def how_pay
+  end
+
+  def create 
+  end
+
 end
