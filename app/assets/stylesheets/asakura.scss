@@ -8,8 +8,7 @@
       height: 49px;
       line-height: 49px;
       margin: 0 auto;
-      font-size: 22px;
-      font-weight: bold;
+      padding-top: 40px;
     }
   }
 
@@ -88,7 +87,7 @@
               display: block;
               margin-top: 8px;
               input {
-                width: 100%;
+                width: 94%;
                 height: 48px;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
@@ -96,6 +95,7 @@
                 background: #fff;
                 line-height: 1.5;
                 font-size: 16px;
+                font-weight: normal;
               }
             }
           }
@@ -116,7 +116,7 @@
               }
             }
             textarea {
-              width: 100%;
+              width: 96%;
               padding: 10px;
               margin-top: 8px;
               border: 1px solid #ccc;
@@ -155,7 +155,7 @@
                   position: relative;
                   background: #fff;
                   .select-default {
-                    width: 100%;
+                    width: 91%;
                     position: relative;
                     z-index: 2;
                     height: 48px;
@@ -199,7 +199,7 @@
                 position: relative;
                 background: #fff;
                 .select-default {
-                  width: 100%;
+                  width: 91%;
                   position: relative;
                   z-index: 2;
                   height: 48px;
@@ -239,11 +239,11 @@
           .icon-question {
             display: inline-block;
             width: 14px;
-            height: 14px;
+            height: 20px;
             border-radius: 50%;
             background: #fff;
             color: #0099e8;
-            line-height: 14px;
+            line-height: 20px;
             font-size: 16px;
             font-weight: 900;
             text-align: center;
@@ -269,7 +269,7 @@
               position: relative;
               background: #fff;
               .select-default {
-                width: 100%;
+                width: 91%;
                 position: relative;
                 z-index: 2;
                 height: 48px;
@@ -311,7 +311,7 @@
               position: relative;
               background: #fff;
               .select-default {
-                width: 100%;
+                width: 91%;
                 position: relative;
                 z-index: 2;
                 height: 48px;
@@ -352,7 +352,7 @@
                 position: relative;
                 background: #fff;
                 .select-default {
-                  width: 100%;
+                  width: 93%;
                   position: relative;
                   z-index: 2;
                   height: 48px;
@@ -392,11 +392,11 @@
           .icon-question {
             display: inline-block;
             width: 14px;
-            height: 14px;
+            height: 20px;
             border-radius: 50%;
             background: #fff;
             color: #0099e8;
-            line-height: 14px;
+            line-height: 20px;
             font-size: 16px;
             font-weight: 900;
             text-align: center;
@@ -431,8 +431,8 @@
                       margin-left: 5%;
                       .input-default {
                         -webkit-appearance: none;
-                        width: 112%;
-                        height: 48px;
+                        width: 90%;
+                        height: 30px;
                         text-align: right;
                         padding: 10px 16px 8px;
                         border-radius: 4px;
@@ -491,7 +491,7 @@
             background: #ea352d;
             border: 1px solid #ea352d;
             color: #fff;
-            width: 100%;
+            width: 98%;
             line-height: 48px;
             font-size: 14px;
           }
@@ -519,6 +519,7 @@
       word-spacing: 0.4rem;
       margin: 16px 0 0;
       list-style: none;
+      font-size: 12px;
     }
     &__logo {
       display: block;
