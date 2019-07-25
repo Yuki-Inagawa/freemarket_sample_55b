@@ -62,20 +62,22 @@
             %input#user_info_is_not_complete{:type => "hidden"}/
       
       .buy-item-container__user-info
-        .buy-content-inner
+        .buy-item-container__user-info__box
           %h3 配送先
-          %address.buy-user-info-text
-            〒240-0012
+          %address.user-address
+            〒150-0041
             %br/
-            神奈川県 横浜市保土ケ谷区
-            月見台8-37
-            G・Aヒルズ保土ヶ谷II103
+            東京都渋谷区
+            神南1-12-16
+            TECH::EXPERT アジアビル9F校
             %br/
             朝倉 啓
-          %p.buy-user-info-text
-          %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/address/m40752623834/"}
+          %p.user-info-text
+          %a.user-info-fix
+          = link_to 'https://www.mercari.com/jp/transaction/address/m40752623834/' do
             %span 変更する
-            %i.icon-arrow-right
+            %icon
+            = fa_icon 'chevron-right', class: 'icon-arrow'
 
       .buy-item-container__payment
         .buy-item-container__payment__box
@@ -90,6 +92,7 @@
           %a.user-card-info-fix
           = link_to 'https://www.mercari.com/jp/transaction/card/m40752623834/' do
             %span 変更する
+            %icon
             = fa_icon 'chevron-right', class: 'icon-arrow'
 
   .buy_comfirmation-footer
