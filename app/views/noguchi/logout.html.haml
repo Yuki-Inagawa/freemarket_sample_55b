@@ -1,6 +1,5 @@
 .default-container  
-  .merkari-header
-    .nav-bar
+  = render 'shared/header'
 
   %main.logout-content
     %section.logout-card
@@ -11,3 +10,5 @@
 
     .mypage-card-side
       = render 'shared/mypage_nav'
+  
+  = render 'shared/footer'
