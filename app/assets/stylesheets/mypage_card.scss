@@ -1,0 +1,99 @@
+.default-container{
+  background-color: #f5f5f5;
+  .merkari-header {
+    height: 100px;
+    width: 100%;
+    background-color: pink;
+    .nav-var {
+      height: 49px;
+      width: 1090px; 
+      background-color: pink;
+    }
+  }
+  main.mypage-card {
+    margin: 40px auto 0;
+    width: 1020px;
+    display: block;
+    overflow: auto;
+    section.payment-info {
+      float: right;
+      background: #fff; 
+      width: 700px;
+      margin-top: 8px;
+      h2.payment-info__head {
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        text-align: center;
+        font-weight: 600;
+      }
+      .payment-info-contents {
+        padding: 64px;
+        section.payment-info-content {
+
+          .payment-info-content__title {
+            max-width: 320px;
+            margin: 0 auto;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+        section.settings-add-card {
+          padding: 24px 0;
+          border-bottom: 1px solid #eee;
+          text-align: center;
+          button.add-card-content {
+            max-width: 320px;
+            margin: 0 auto;
+            height: 50px;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            margin-bottom: 8px;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            
+            .card-submit-button {
+              color: #fff;
+              text-decoration: none;
+            }
+            .card-submit-button-icon {
+              color: white;
+              margin-right: 16px
+            }
+          }
+        }
+        .settings-not-regist {
+          
+          .settings-not-regist-link {
+            display: block;
+            margin: 40px 0 0;
+            text-align: right;
+            text-decoration: none;
+            color: #0099e8;
+            position: relative;
+          }
+          .settings-not-regist-icon {
+            height: 17px;
+            width: 17px;
+            position: absolute;
+            top: 15%;
+            color: #0099e8;
+          }
+          span.settings-not-regist-text {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .mypage-card-side {
+      float: left;
+      margin: 0 40px 0 0;
+      height: 1440px;
+    }
+  }
+
+}
