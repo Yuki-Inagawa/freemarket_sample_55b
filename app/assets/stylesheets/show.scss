@@ -84,22 +84,21 @@
               }
             }
             .price-table {
-              display: table;
-              border-collapse: collapse;
-              width: 100%;
               .final-price-box {
-                border: 0;
                 font-size: 18px;
                 font-weight: 600;
+                width: 100%;
                 .price-cell-left {
                   text-align: left;
                   display: table-cell;
-                  padding: 0 16px;
+                  padding: 16px 0;
+                  width: 187px;
                 }
                 .price-cell-right {
                   text-align: right;
                   display: table-cell;
                   padding: 16px 0;
+                  width: 133px;
                   span {
                     font-size: 28px;
                     text-align: right;
