@@ -8,7 +8,7 @@ class JinnoController < ApplicationController
   def global_top_index
   end
 
-  def mypage
+  def mypage_identification
   end
 
 end
