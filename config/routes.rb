@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get '/inagawa/item/detail' => 'inagawa#item_detail'
   get '/noguchi' => 'noguchi#noguchi'
 
-  resources :yukawa do
+  # 湯川淳輝のルーティング
+  resources :signup do
     collection do
       get 'registration'
       get 'sms_confirmation'

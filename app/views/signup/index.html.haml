@@ -1,12 +1,13 @@
 .single-container
-  %header.single-header
-    ヘッダーは部分テンプレート
+  .exhibiton-header
+    .exhibition-wrapper
+      = image_tag("logo.svg", alt: "mercari", heigh:"49", width: "185")
   %main.single-main
     %section.l-single-container
       %h2.new-registration 新規会員登録
       .new-registration-form
         .new-registration-form__content
-          =link_to "/yukawa/registration", class: "mail-btn" do
+          =link_to "/signup/registration", class: "mail-btn" do
             =fa_icon "envelope", class: "mail-icon"
             メールアドレスで登録する
           %button.facebook-login
