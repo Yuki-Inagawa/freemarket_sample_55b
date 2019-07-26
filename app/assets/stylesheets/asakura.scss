@@ -25,6 +25,15 @@
           &__title {
             font-size: 16px;
             font-weight: bold;
+            span {
+              background-color: #ea352d;
+              margin-left: 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
           }
           p {
             margin-top: 8px;
@@ -55,6 +64,15 @@
           &__name {
             font-size: 14px;
             font-weight: bold;
+            span {
+              background-color: #ea352d;
+              margin-left: 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
             div {
               display: block;
               margin-top: 8px;
@@ -77,6 +95,15 @@
             label {
               font-size: 14px;
               font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
             }
             textarea {
               width: 96%;
@@ -103,6 +130,15 @@
             &__group {
               font-size: 14px;
               font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
               div {
                 margin-top: 8px;
                 .select-wrap {
@@ -139,6 +175,15 @@
               label {
                 font-size: 14px;
                 font-weight: bold;
+                span {
+                  background-color: #ea352d;
+                  margin-left: 8px;
+                  padding: 2px 4px;
+                  border-radius: 2px;
+                  color: #fff;
+                  font-size: 12px;
+                  vertical-align: top;
+                }
               }
               .select-wrap {
                 margin-top: 8px;
@@ -182,12 +227,33 @@
             font-weight: bold;
             float: left;
           }
+          .icon-question {
+            display: inline-block;
+            width: 14px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0099e8;
+            line-height: 20px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+          }
           &__box {
             float: right;
             width: 400px;
             &__cost {
               font-size: 14px;
               font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
             }
             .select-wrap {
               margin-top: 8px;
@@ -221,6 +287,15 @@
               margin-top: 40px;
               font-size: 14px;
               font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
             }
             .select-wrap {
               margin-top: 8px;
@@ -254,6 +329,15 @@
               margin-top: 40px;
               font-size: 14px;
               font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
               .select-wrap {
                 margin-top: 8px;
                 position: relative;
@@ -296,6 +380,18 @@
             font-weight: bold;
             float: left;
           }
+          .icon-question {
+            display: inline-block;
+            width: 14px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0099e8;
+            line-height: 20px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+          }
           &__box {
             float: right;
             width: 400px;
@@ -308,6 +404,15 @@
                     line-height: 48px;
                     font-size: 14px;
                     font-weight: bold;
+                    span {
+                      background-color: #ea352d;
+                      margin-left: 8px;
+                      padding: 2px 4px;
+                      border-radius: 2px;
+                      color: #fff;
+                      font-size: 12px;
+                      vertical-align: top;
+                    }
                   }
                   .l-right.sell-price-input {
                     width: 50%;
@@ -431,25 +536,3 @@
   }
 }
     
-span {
-  background-color: #ea352d;
-  margin-left: 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  vertical-align: top;
-}
-
-.icon-question {
-  display: inline-block;
-  width: 14px;
-  height: 20px;
-  border-radius: 50%;
-  background: #fff;
-  color: #0099e8;
-  line-height: 20px;
-  font-size: 16px;
-  font-weight: 900;
-  text-align: center;
-}
