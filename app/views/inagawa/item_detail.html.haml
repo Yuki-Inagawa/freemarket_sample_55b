@@ -1,4 +1,4 @@
-//header,footerは完成し次第renderします
+= render 'shared/header'
 //商品詳細画面
 .container
   %nav.bread-crumbs
@@ -22,13 +22,13 @@
                 = link_to '名前', inagawa_item_detail_path
                 .item-box__main-content__detail__ratings
                   .item-box__main-content__detail__ratings__rate
-                    %i.fa.fa-grin
+                    = image_tag("smile.svg", alt: 'smail', height: 16, width: 16)
                     %span 100
                   .item-box__main-content__detail__ratings__rate
-                    %i.fa.fa-meh
+                    = image_tag("face.svg", alt: 'smail', height: 16, width: 16)
                     %span 50
                   .item-box__main-content__detail__ratings__rate
-                    %i.fa.fa-frown
+                    = image_tag("bad.svg", alt: 'smail', height: 16, width: 16)
                     %span 10
             %tr
               %th カテゴリー
@@ -106,9 +106,6 @@
           = link_to inagawa_item_detail_path, class: "twitter" do
             %i.fa.fa-twitter-square
         %li
-          = link_to inagawa_item_detail_path, class: "line" do
-            %i.fa.fa-line
-        %li
           = link_to inagawa_item_detail_path, class: "pinterest" do
             %i.fa.fa-pinterest-square
     .other-items
@@ -116,50 +113,10 @@
         .other-items__user__head
           = link_to '出品者さんのその他の出品', inagawa_item_detail_path 
         .other-items__user__contents
-          %section.other-items__user__contents__content
-            = link_to inagawa_item_detail_path do
-              .other-items__user__contents__content__photo
-                = image_tag("mark-zuckerberg1.jpg")
-              .other-items__user__contents__content__body
-                .other-items__user__contents__content__body__name ザック
-                .other-items__user__contents__content__body__num
-                  .other-items__user__contents__content__body__num__price ¥100
-                  .other-items__user__contents__content__body__num__like
-                    %i.fa.fa-heart
-                      %span 2
-          %section.other-items__user__contents__content
-            = link_to inagawa_item_detail_path do
-              .other-items__user__contents__content__photo
-                = image_tag("mark-zuckerberg1.jpg")
-              .other-items__user__contents__content__body
-                .other-items__user__contents__content__body__name ザック
-                .other-items__user__contents__content__body__num
-                  .other-items__user__contents__content__body__num__price ¥100
-                  .other-items__user__contents__content__body__num__like
-                    %i.fa.fa-heart
-                      %span 2
-          %section.other-items__user__contents__content
-            = link_to inagawa_item_detail_path do
-              .other-items__user__contents__content__photo
-                = image_tag("mark-zuckerberg1.jpg")
-              .other-items__user__contents__content__body
-                .other-items__user__contents__content__body__name ザック
-                .other-items__user__contents__content__body__num
-                  .other-items__user__contents__content__body__num__price ¥100
-                  .other-items__user__contents__content__body__num__like
-                    %i.fa.fa-heart
-                      %span 2
-          %section.other-items__user__contents__content
-            = link_to inagawa_item_detail_path do
-              .other-items__user__contents__content__photo
-                = image_tag("mark-zuckerberg1.jpg")
-              .other-items__user__contents__content__body
-                .other-items__user__contents__content__body__name ザック
-                .other-items__user__contents__content__body__num
-                  .other-items__user__contents__content__body__num__price ¥100
-                  .other-items__user__contents__content__body__num__like
-                    %i.fa.fa-heart
-                      %span 2
+          = render 'shared/item'
+          = render 'shared/item'
+          = render 'shared/item'
+          = render 'shared/item'
 
       %section.other-items__user
         .other-items__user__head
@@ -209,5 +166,4 @@
                   .other-items__user__contents__content__body__num__like
                     %i.fa.fa-heart
                       %span 2
-
-            
+= render 'shared/footer'
