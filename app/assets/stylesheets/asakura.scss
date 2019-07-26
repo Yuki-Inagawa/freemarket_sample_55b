@@ -1,5 +1,6 @@
 .exhibition {
   background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 
   .exhibition-main {
     display: block;
@@ -172,6 +173,7 @@
             &__status {
               margin-top: 40px;
               label {
+                font-size: 14px;
                 font-weight: bold;
                 span {
                   background-color: #ea352d;
@@ -409,6 +411,7 @@
                       border-radius: 2px;
                       color: #fff;
                       font-size: 12px;
+                      vertical-align: top;
                     }
                   }
                   .l-right.sell-price-input {
