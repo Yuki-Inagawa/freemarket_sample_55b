@@ -13,7 +13,7 @@
               %br
               登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
             %p.user-identification-form__body__forms__content__up-link
-              = link_to extra_view_path, class: "user-identification-form__body__forms__content__up-link__text" do
+              = link_to root_path, class: "user-identification-form__body__forms__content__up-link__text" do
                 本人確認書類のアップロードについて
                 = fa_icon "chevron-right", class: "user-identification-form__body__forms__content__up-link__icon"
           .user-identification-form__body__forms__content__form-groups
@@ -115,7 +115,7 @@
             %button.user-identification-form__body__forms__content__form-groups--btn{type: "submit"} 登録する
             .user-identification-form__body__forms__content__form-groups__question
               %p.user-identification-form__body__forms__content__form-groups__question__text
-                = link_to extra_view_path, class: "user-identification-form__body__forms__content__form-groups__question__text__link" do
+                = link_to root_path, class: "user-identification-form__body__forms__content__form-groups__question__text__link" do
                   本人情報の登録について
                   = fa_icon "chevron-right", class: "user-identification-form__body__forms__content__form-groups__question__text__link__icon"
 = render 'shared/footer'

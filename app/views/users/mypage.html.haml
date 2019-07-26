@@ -4,7 +4,7 @@
   %nav.bread-crumbs
     %ul
       %li 
-        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
         %i.fa.fa-chevron-right
       %li
         %span.name マイページ
@@ -31,7 +31,7 @@
         .mypage-tab-content
           %ul.mypage-tabs-information 
             %li.mypage-tabs-information__list
-              = link_to noguchi_path, class: 'information-link' do
+              = link_to  root_path, class: 'information-link' do
                 .list-figure
                   = image_tag("mercari_profile.png", alt: 'icon', width: '48', height: '48', class: 'mecari_icon')
                 .list-body
@@ -42,7 +42,7 @@
                 %i.fa.fa-chevron-right.information-list-icon
             
             %li.mypage-tabs-information__list
-              = link_to noguchi_path, class: 'information-link' do
+              = link_to  root_path, class: 'information-link' do
                 .list-figure
                   = image_tag("mercari_profile.png", alt: 'icon', width: '48', height: '48', class: 'mecari_icon')
                 .list-body
@@ -52,7 +52,7 @@
                     %sapn 29分前
                 %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__list
-              = link_to noguchi_path, class: 'information-link' do
+              = link_to  root_path, class: 'information-link' do
                 .list-figure
                   = image_tag("mercari_profile.png", alt: 'icon', width: '48', height: '48', class: 'mecari_icon')
                 .list-body
@@ -62,7 +62,7 @@
                     %sapn 29分前
                 %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__list
-              = link_to noguchi_path, class: 'information-link' do
+              = link_to  root_path, class: 'information-link' do
                 .list-figure
                   = image_tag("mercari_profile.png", alt: 'icon', width: '48', height: '48', class: 'mecari_icon')
                 .list-body
@@ -72,7 +72,7 @@
                     %sapn 29分前
                 %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__list
-              = link_to noguchi_path, class: 'information-link' do
+              = link_to  root_path, class: 'information-link' do
                 .list-figure
                   = image_tag("mercari_profile.png", alt: 'icon', width: '48', height: '48', class: 'mecari_icon')
                 .list-body
@@ -82,7 +82,7 @@
                     %sapn 29分前
                 %i.fa.fa-chevron-right.information-list-icon
             %li.mypage-tabs-information__lists
-              = link_to '一覧をみる', noguchi_path, class: 'informations-link' 
+              = link_to '一覧をみる',  root_path, class: 'informations-link' 
       
       .mypage-tab
         %h2.mypage-tab-head 

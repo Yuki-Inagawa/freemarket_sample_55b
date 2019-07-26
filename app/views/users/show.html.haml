@@ -4,7 +4,7 @@
   %nav.bread-crumbs
     %ul
       %li 
-        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
         %i.fa.fa-chevron-right
       %li 
         %span.name name
@@ -12,7 +12,7 @@
   %section.user-details
     .profile-box
       .profile-box__text-center
-      = link_to noguchi_path, class: 'text-center-link' do
+      = link_to  root_path, class: 'text-center-link' do
         = image_tag("member_photo_noimage_thumb.png", alt: 'noimage', class: 'member_photo_noimage_thumb')
         .users-detail
           %h2.users-detail__name 野口雄大

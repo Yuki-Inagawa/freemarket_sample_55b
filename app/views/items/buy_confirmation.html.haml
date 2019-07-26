@@ -12,7 +12,7 @@
         .buy-item-container__details__box
           .box-wrapper 
             %h3
-              = image_tag("https://static.mercdn.net/item/detail/orig/photos/m44272910738_1.jpg?1555209996", src: "https://static.mercdn.net/item/detail/orig/photos/m44272910738_1.jpg?1555209996", class: "lazyloaded")
+              = image_tag("mark-zuckerberg1.jpg", class: "lazyloaded")
             %p.buy-item-name マイクロフォーサーズ単焦点レンズ  LAOWA 7.5mm F2 MFT
           .payment-form{action: "https://www.mercari.com/jp/transaction/buy/done/m40752623834/", method: "POST", novalidate: "novalidate"}
             %p.buy-price
@@ -42,7 +42,7 @@
             開発 太朗
           %p.user-info-text
           %a.user-info-fix
-          = link_to 'https://www.mercari.com/jp/transaction/address/m40752623834/' do
+          = link_to root_path do
             %span 変更する
             %icon
             = fa_icon 'chevron-right', class: 'icon-arrow'
@@ -63,4 +63,6 @@
             %icon
             = fa_icon 'chevron-right', class: 'icon-arrow'
 
+
   = render 'shared/ex_footer'
+

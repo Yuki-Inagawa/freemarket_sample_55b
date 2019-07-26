@@ -4,10 +4,10 @@
   %nav.bread-crumbs
     %ul
       %li 
-        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
         %i.fa.fa-chevron-right
       %li 
-        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
         %i.fa.fa-chevron-right
       %li
       %span.name ログアウト
@@ -16,7 +16,7 @@
     %section.logout-card
       %section.settings-logout-card
         %button.logout-card-content
-          = link_to 'ログアウト', noguchi_path, class: 'logout-button'
+          = link_to 'ログアウト',  root_path, class: 'logout-button'
       
 
     .mypage-card-side
