@@ -4,10 +4,10 @@
   %nav.bread-crumbs
     %ul
       %li 
-        = link_to 'メルカリ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
         %i.fa.fa-chevron-right
       %li 
-        = link_to 'マイページ', inagawa_item_detail_path, class: "bread-crumbs__link"  
+        = link_to 'マイページ',  root_path, class: "bread-crumbs__link"  
         %i.fa.fa-chevron-right
       %li
       %span.name 支払い方法
@@ -24,10 +24,10 @@
         %section.settings-add-card
           %button.add-card-content
             = fa_icon 'credit-card', class: 'card-submit-button-icon'
-            = link_to 'クレジットカードを追加する', noguchi_path, class: 'card-submit-button'
+            = link_to 'クレジットカードを追加する',  root_path, class: 'card-submit-button'
         
         .settings-not-regist
-          = link_to noguchi_path, class: 'settings-not-regist-link' do
+          = link_to  root_path, class: 'settings-not-regist-link' do
             %span.settings-not-regist-text 支払い方法について
             = image_tag("carousel-next.png", class: 'settings-not-regist-icon')
 
