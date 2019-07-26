@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :signups
   get '/extra_view' => 'jinno#extra'
   get '/jinno' => 'jinno#global_footer'
   get '/jinno/global_top_index' => 'jinno#global_top_index'
