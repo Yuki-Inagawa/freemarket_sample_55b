@@ -132,6 +132,23 @@
         padding: 32px;
         font-weight: 600;
       }
+      .new-registration-login {
+        text-align: center;
+        padding: 40px 64px;
+        .not-have-acount {
+          font-size: 14px;
+          font-weight: 400;
+        }
+        .new-registration-btn {
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          font-weight: 400;
+        }
+      }
       .new-registration-form {
         border-top: 1px solid #f5f5f5;
         &__content {
@@ -313,7 +330,7 @@
           .btn-sns.btn-sns-google {
             border-radius: 4px;
             margin: 16px 0 0;
-            background: #fff url(google.svg) no-repeat 3px top;
+            background: #fff image-url('google.svg') no-repeat 3px top;
             border: solid 1px black !important;
             color: #333;
             display: block;
@@ -348,7 +365,7 @@
           }
         }
         .last-image {
-          background: url('download_bg_pc.jpg');
+          background: image-url('download_bg_pc.jpg');
           background-position: center;
           background-size: cover;
           height: 260px;
@@ -418,6 +435,12 @@
             color: #0099e8;
           }
         }
+        .foreine-passward {
+          margin-top: 40px;
+          display: block;
+          color: #0099e8;
+          text-decoration: none;
+        }
       }
       .next-btn {
         margin-top: 32px;
@@ -468,6 +491,9 @@
         color: #888;
       }
     }
+    .login {
+      width: 456px;
+    }
   }
   .single-footer {
     width: 456px;
@@ -475,4 +501,3 @@
     margin: 0 auto;
   }
 }
-
