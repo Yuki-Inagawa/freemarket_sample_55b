@@ -6,34 +6,36 @@
 |nickname|string|null: false|
 |family_name_ruby|string|null: false|
 |first_name_ruby|string|null: false|
-|birthday|integer|null: false| #年月日で分ける方が良い？
+|birthday_year|integer|null: false| 
+|birthday_month|integer|null: false|
+|birthday_day|integer|null: false|
 |mail|string|null: false, unique: true|
 |image|string|
 |profile|text|
-|value_id|reference|
 
 ### Association
-- has_many :items, through: transactions
+- has_many :items
 - has_many :values
 - has_many :likes
 - has_many :comments
 - has_one :address
 - has_many :cards
+- has_many :transaction
+
 
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false|
+|user_id|references|null: false|
 |postal_code|string|null: false|
-|region|reference|null: false|
+|region|string|null: false|
 |city|string|null: false|
 |address_number|string|null: false|
-|building_name|string||
+|building_name|string|
 |phone_number|string|
 
 ### Association
 - belons_to :user
-- belongs_to :region
 
 ## itemsテーブル
 
@@ -41,22 +43,22 @@
 |------|----|-------|
 |user_id|reference|null: false|
 |text|text|null: false|
-|image_id|reference|null: false|
 |name|string|null: false, index: true|
 |price|integer|null: false|
-|statas|integer|null: false|
+|status|integer|null: false|
 |state|string|null: false|
-|postage|string|
-|region_id|references|null: false|
+|postage_type|string|null: false|
+|region|string|null: false|
 |shopping_date|string|null: false|
 |delivery_metohd|string|null: false|
 |category_id|references|null: false|
 
 ### Association
-- has_many :users, through: transactions
+- belongs_to :user
 - has_many :likes
-- has_one :region
 - belons_to :category
+- has_one :transaction
+- has_many :images
 
 ## commentsテーブル
 
@@ -101,15 +103,6 @@
 ### Association
 - has_many :items
 
-## regionsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|
-
-### Association
-- belongs_to :user
-- belongs_to :item
 
 ## valuesテーブル
 
@@ -149,6 +142,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|item_id|reference|null: false|
 |image|string|null: false|
 
 ### Association
