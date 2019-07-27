@@ -95,15 +95,16 @@
             label {
               font-size: 14px;
               font-weight: bold;
-              span {
-                background-color: #ea352d;
-                margin-left: 8px;
-                padding: 2px 4px;
-                border-radius: 2px;
-                color: #fff;
-                font-size: 12px;
-                vertical-align: top;
-              }
+            }
+            span {
+              background-color: #ea352d;
+              margin-left: 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              font-weight: bold;
             }
             textarea {
               width: 96%;
