@@ -6,7 +6,7 @@
 |nickname|string|null: false|
 |family_name_ruby|string|null: false|
 |first_name_ruby|string|null: false|
-|birthday_year|integer|null: false| #年月日で分ける方が良い？
+|birthday_year|integer|null: false| 
 |birthday_month|integer|null: false|
 |birthday_day|integer|null: false|
 |mail|string|null: false, unique: true|
@@ -47,17 +47,18 @@
 |price|integer|null: false|
 |status|integer|null: false|
 |state|string|null: false|
-|postage|string|
+|postage_type|string|null: false|
 |region|string|null: false|
 |shopping_date|string|null: false|
 |delivery_metohd|string|null: false|
 |category_id|references|null: false|
 
 ### Association
-- has_many :users
+- belongs_to :user
 - has_many :likes
 - belons_to :category
 - has_one :transaction
+- has_many :images
 
 ## commentsテーブル
 
