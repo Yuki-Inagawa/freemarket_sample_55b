@@ -17,14 +17,19 @@ Rails.application.routes.draw do
       get 'mypage/profile' => 'users#profile'
       get 'mypage/card'   => 'users#mypage_card'
       get 'mypage/card/create' => 'users#mypage_card_create'
-      get 'registration' 
+      get 'login'
+      get 'show' #現状idがないため model生成後 showに直す
+    end
+  end
+
+  # 新規登録画面
+  resources :signup, only: [:index, :create] do
+    collection do
+      get 'registration'
       get 'sms_confirmation'
       get 'address'
       get 'how_pay'
       get 'clear_compleate'
-      get 'login'
-      get 'signup'
-      get 'show' #現状idがないため model生成後 showに直す
     end
   end
 end
