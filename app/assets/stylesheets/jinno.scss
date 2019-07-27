@@ -75,7 +75,7 @@
     margin: 0 auto;
     height: 298px;
     display: flex;
-    &__child-1{
+    &__child--1{
       width: 204px;
       height: 241px;
       padding: 20px 20px 0 0;
@@ -140,7 +140,7 @@
         }
       }
     }
-    &__child-2{
+    &__child--2{
       width: 234px;
       height: 280px;
       padding: 20px 20px 0 0;
@@ -161,7 +161,7 @@
         }
       }
     }
-    &__child-3{
+    &__child--3{
       width: 194px;
       height: 148px;
       padding: 20px 20px 0 0;
@@ -182,7 +182,7 @@
         }
       }
     }
-    &__child-4{
+    &__child--4{
       width: 190px;
       height: 148px;
       padding: 45px 20px 0 0;
@@ -199,7 +199,7 @@
         }
       }
     }
-    &__child-5{
+    &__child--5{
       width: 97px;
       height: 88px;
       padding: 20px 20px 0 0;
@@ -397,7 +397,6 @@
           display: inline-block;
           padding: 0 14px;
           padding-right: 0;
-          float: right;
           // font-size: 0;
           &__link{
             position: relative;
