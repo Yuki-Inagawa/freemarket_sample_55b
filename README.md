@@ -52,6 +52,7 @@
 |shopping_date|string|null: false|
 |delivery_metohd|string|null: false|
 |category_id|references|null: false|
+|brand_id|references|null: false|
 
 ### Association
 - belongs_to :user
