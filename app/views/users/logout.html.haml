@@ -1,0 +1,26 @@
+.default-container  
+  = render 'shared/header'
+
+  %nav.bread-crumbs
+    %ul
+      %li 
+        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
+        %i.fa.fa-chevron-right
+      %li 
+        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
+        %i.fa.fa-chevron-right
+      %li
+      %span.name ログアウト
+
+  %main.logout-content
+    %section.logout-card
+      %section.settings-logout-card
+        %button.logout-card-content
+          = link_to 'ログアウト',  root_path, class: 'logout-button'
+      
+
+    .mypage-card-side
+      = render 'shared/mypage_nav'
+  
+  = render 'shared/footer'
+  = render 'shared/sell_page_btn'

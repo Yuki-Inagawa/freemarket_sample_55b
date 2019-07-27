@@ -1,4 +1,4 @@
 class AsakuraController < ApplicationController
-  def show
+  def asakura
   end
 end

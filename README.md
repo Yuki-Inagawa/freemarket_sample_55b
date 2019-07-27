@@ -6,10 +6,10 @@
 |nickname|string|null: false|
 |family_name_ruby|string|null: false|
 |first_name_ruby|string|null: false|
-|birthday|integer|null: false|
-|phone_number|string|null: false|
+|birthday_year|integer|null: false| 
+|birthday_month|integer|null: false|
+|birthday_day|integer|null: false|
 |mail|string|null: false, unique: true|
-|password|string|null: false, unique: true|
 |image|string|
 |profile|text|
 
@@ -19,45 +19,47 @@
 - has_many :likes
 - has_many :comments
 - has_one :address
+- has_many :cards
+- has_many :transaction
+
 
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false|
+|user_id|references|null: false|
 |postal_code|string|null: false|
-|region|reference|null: false|
-|municipality|string|null: false|
-|address|string|null: false|
-|building_name|string|null: false|
-
+|region|string|null: false|
+|city|string|null: false|
+|address_number|string|null: false|
+|building_name|string|
+|phone_number|string|
 
 ### Association
-- belongs_to :user
-- has_one :region
+- belons_to :user
 
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|reference|null: false|
 |text|text|null: false|
 |name|string|null: false, index: true|
 |price|integer|null: false|
-|saler_id|integer|null: false|
-|buyer_id|integer|
-|statas|integer|null: false|
+|status|integer|null: false|
 |state|string|null: false|
-|postage|string|
-|region_id|references|null: false|
+|postage_type|string|null: false|
+|region|string|null: false|
 |shopping_date|string|null: false|
 |delivery_metohd|string|null: false|
 |category_id|references|null: false|
+|brand_id|references|null: false|
 
 ### Association
-- belongs_to :saler, class_name: "User"
-- belongs_to :buyer, class_name: "User"
+- belongs_to :user
 - has_many :likes
-- has_one :region
 - belons_to :category
+- has_one :transaction
+- has_many :images
 
 ## commentsテーブル
 
@@ -82,12 +84,12 @@
 - belongs_to :item
 - belongs_to :user
 
-## categorysテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestlry|references||
+|ancestlry|references|
 
 ### Association
 - has_many : ancestlry
@@ -102,15 +104,6 @@
 ### Association
 - has_many :items
 
-## regionsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|
-
-### Association
-- belongs_to :user
-- belongs_to :item
 
 ## valuesテーブル
 
@@ -122,3 +115,36 @@
 
 ### Association
 - belongs_to :user
+
+## cardsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|card_id|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|customer_id|string|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :transaction
+
+## transactionsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|item_id|reference|null: false|
+|image|string|null: false|
+
+### Association
+- belongs_to :item
