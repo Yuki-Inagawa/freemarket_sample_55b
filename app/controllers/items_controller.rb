@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = @item.images
-    @other_items = Item.where("user_id= #{@item.user.id}")
+    @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
   end
 
   def buy_confirmation
