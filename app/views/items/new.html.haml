@@ -17,7 +17,8 @@
                 %span.mandatory 必須
               %p 最大10枚までアップロードできます
               .sell-form__image__container
-                = f.file_field :image
+              = f.fields_for :images do |i|
+                = i.file_field :image
                 %pre
                   :preserve
                     ドラッグアンドドロップ
