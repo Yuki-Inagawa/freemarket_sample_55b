@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
   
-  root to: 'items#index'
-  resources :items, only: [:index, :new, :show] do
+
+  root 'items#index'
+  resources :items, only: [:index, :new, :show, :create] do
     collection do
     get 'buy/confirmation', to: 'items#buy_confirmation'    
     end
