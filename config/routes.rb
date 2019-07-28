@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get 'mypage/profile' => 'users#profile'
       get 'mypage/card'   => 'users#mypage_card'
       get 'mypage/card/create' => 'users#mypage_card_create'
+      get 'mypage/listing/list' => 'users#mypage_listing_list'
       get 'registration' 
       get 'sms_confirmation'
       get 'address'
