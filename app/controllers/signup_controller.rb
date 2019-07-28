@@ -62,12 +62,10 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       phone_number: session[:phone_number]
     )
-    
     if address.save
       redirect_to "/"
     else
       redirect_to "/signup"
-      alert("登録に失敗しました")
     end
   end
 
