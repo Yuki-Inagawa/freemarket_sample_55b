@@ -8,17 +8,21 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
+  
   def create
     Item.create(item_params) 
       redirect_to root_path
-
   end
-
-  # def show
-  # end
+  
+  def show
+    @item = Item.find(params[:id])
+    @images = @item.images
+    @other_items = Item.where("user_id= #{@item.user.id}")
+  end
 
   def buy_confirmation
   end
+
 
   private
   def item_params
