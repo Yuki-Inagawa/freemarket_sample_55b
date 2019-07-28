@@ -4,14 +4,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
 
-      t.string :nickname, null: false
-      t.string :family_name, null: false
-      t.string :farst_name, null: false
-      t.string :family_name_ruby, null: false
-      t.string :farst_name_ruby, null: false
-      t.integer :birthday_yiar, null: false
-      t.integer :birthday_month, null: false
-      t.integer :birthday_day, null: false
+      t.string :nickname,           null: false
+      t.string :family_name,        null: false
+      t.string :farst_name,         null: false
+      t.string :family_name_ruby,   null: false
+      t.string :farst_name_ruby,    null: false
+      t.integer :birthday_yiar,     null: false
+      t.integer :birthday_month,    null: false
+      t.integer :birthday_day,      null: false
       t.string :image
       t.text :profile
 
