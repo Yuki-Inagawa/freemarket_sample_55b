@@ -1,7 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_many :images
-  
+  has_many :comments
+
   validates :name, presence: true
   validates :text, presence: true
   validates :price, presence: true
