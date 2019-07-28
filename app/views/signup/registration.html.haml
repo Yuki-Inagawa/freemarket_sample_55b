@@ -70,12 +70,12 @@
 
                 .birthday__select.month
                   %i.icon-arrow-bottom
-                  =f.select :birthday_yiar, @birthday_month_set, {}, class: "select-default"
+                  =f.select :birthday_month, @birthday_month_set, {}, class: "select-default"
                 %span 月
 
                 .birthday__select.day
                   %i.icon-arrow-bottom
-                  =f.select :birthday_yiar, @birthday_day_set, {}, class: "select-default"
+                  =f.select :birthday_day, @birthday_day_set, {}, class: "select-default"
                 %span 日
 
             %p.form-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -86,7 +86,7 @@
                 「次へ進む」のボタンを押すことにより、
                 =link_to "利用規約", "/users/clear_compleate", class: "guid"
                 に同意したものとみなします
-            %button{type: "submit", class: "next-btn"}次へ進む
+            = f.submit '次へ進む', class: 'next-btn'
             .new-registration-form__content--form.text-right
               %p
                 =link_to "本人情報の登録について", "/users/sms_confirmation", method: 'get'

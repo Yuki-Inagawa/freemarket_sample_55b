@@ -12,17 +12,63 @@ class SignupController < ApplicationController
   end
 
   def sms_confirmation
-  @user = User.new(signup_params)
-  binding.pry
+    session[:nickname] = signup_user_params[:nickname]
+    session[:email] = signup_user_params[:email]
+    session[:password] = signup_user_params[:password]
+    session[:password_confirmation] = signup_user_params[:password_confirmation]
+    session[:family_name] = signup_user_params[:family_name]
+    session[:farst_name] = signup_user_params[:farst_name]
+    session[:family_name_ruby] = signup_user_params[:family_name_ruby]
+    session[:farst_name_ruby] = signup_user_params[:farst_name_ruby]
+    session[:birthday_yiar] = signup_user_params[:birthday_yiar]
+    session[:birthday_month] = signup_user_params[:birthday_month]
+    session[:birthday_day] = signup_user_params[:birthday_day]
   end
 
   def address
+    @address = Address.new
+
   end
 
   def how_pay
+    session[:postal_code] = signup_address_params[:postal_code]
+    session[:region] = signup_address_params[:region]
+    session[:city] = signup_address_params[:city]
+    session[:address_number] = signup_address_params[:address_number]
+    session[:building_name] = signup_address_params[:building_name]
+    session[:phone_number] = signup_address_params[:phone_number]
   end
 
   def create 
+    user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      family_name: session[:family_name],
+      farst_name: session[:farst_name],
+      family_name_ruby: session[:family_name_ruby],
+      farst_name_ruby: session[:farst_name_ruby],
+      birthday_yiar: session[:birthday_yiar],
+      birthday_month: session[:birthday_month],
+      birthday_day: session[:birthday_day]
+    )
+    address = user.addresses.new(
+      user_id: user.id,
+      postal_code: session[:postal_code],
+      region: session[:region],
+      city: session[:city],
+      address_number: session[:address_number],
+      building_name: session[:building_name],
+      phone_number: session[:phone_number]
+    )
+    
+    if address.save
+      redirect_to "/"
+    else
+      redirect_to "/signup"
+      alert("登録に失敗しました")
+    end
   end
 
   def clear_compleate
@@ -33,8 +79,12 @@ class SignupController < ApplicationController
 
   private
 
-  def signup_params
-    params.require(:user).permit(:nickname, :family_name, :farst_name, :family_name_ruby, :farst_name_ruby, :birthday_yiar, :birthday_month, :birthday_day, :image, :profile, :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at)
+  def signup_user_params
+    params.require(:user).permit(:nickname, :family_name, :farst_name, :family_name_ruby, :farst_name_ruby, :birthday_yiar, :birthday_month, :birthday_day, :image, :profile, :email,:password, :password_confirmation, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at)
+  end
+
+  def signup_address_params
+    params.require(:address).permit(:postal_code, :region, :city, :address_number, :building_name, :phone_number)
   end
 
 end
