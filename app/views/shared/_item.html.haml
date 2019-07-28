@@ -8,7 +8,7 @@
           = item.name
         .item__body__num
           .item__body__num__price 
-            = @item.price
+            = number_to_currency(item.price, :unit => "￥", :precision =>0)
           .item__body__num__like
             %i.fa.fa-heart
               %span 2

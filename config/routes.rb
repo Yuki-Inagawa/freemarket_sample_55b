@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :items, only: [:index, :new, :show, :create] do
+    resources :comments, only: [:create]
     collection do
     get 'buy/confirmation', to: 'items#buy_confirmation'    
     end
