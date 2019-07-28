@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :addresses
+  has_many :items
+  has_many :comments
 
   validates :nickname, presence: true
   validates :family_name, presence: true
