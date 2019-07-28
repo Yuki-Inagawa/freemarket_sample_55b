@@ -66,7 +66,7 @@
                 = @item.shopping_date
         .item-box__main-content__price-box
           %span.item-box__main-content__price-box__price
-            = @item.price 
+            = number_to_currency(@item.price, :unit => "￥", :precision =>0)
           %span.item-box__main-content__price-box__tax 税込
           %span.item-box__main-content__price-box__shipping-fee
             = @item.postage_type
