@@ -17,7 +17,7 @@
                 %span.mandatory 必須
               %p 最大10枚までアップロードできます
               .sell-form__image__container
-                = f.file_field :image, multiple: true
+                = f.file_field :image
                 %pre
                   :preserve
                     ドラッグアンドドロップ
@@ -122,8 +122,7 @@
                   また、出品をもちまして
                   = link_to '加盟店規約', 'https://www.mercari.com/jp/seller_terms/'
                   に同意したことになります。
-              %button.btn-default.btn-red{type: "submit"}
-                出品する
-              %a.btn-default.btn-gray もどる
+              = f.submit '出品する', class: 'sell-item-btn'
+              -# = f.submit 'もどる', class: 'return-top'
   
   = render 'shared/signup_footer'
