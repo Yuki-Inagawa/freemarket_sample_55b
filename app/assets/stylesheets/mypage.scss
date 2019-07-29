@@ -217,8 +217,53 @@
           .mypage-tab-content {
             background: #fff;
             height: 236px;
-            ul.transaction-now {
+            ul.transaction {
               display: block;
+              li.transaction-now {
+                border-bottom: 1px solid #eee;
+                position: relative;
+                .figure {
+                  position: relative;
+                  overflow: hidden;
+                  float: left;
+                  width: 48px;
+                  height: 48px;
+                }
+                i {
+                  position: absolute;
+                  top: 50%;
+                  right: 16px;
+                }
+                .mypage-item-body {
+                  margin-right: 100px;
+                  &__text {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    max-height: 4.4em;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    line-height: 1.5;
+                  }
+                  .mypage-item-body-icon {
+                    vertical-align: 2px;
+                    margin: 0 6px 0 0;
+                    span.listing-item-count {
+                      vertical-align: middle;
+                      color: #ccc;
+                    }
+                    .mypage-item-status {
+                      background: #ea352d;
+                      display: inline-block;
+                      margin: 8px 0 0 0;
+                      padding: 5px 6px;
+                      border-radius: 2px;
+                      font-size: 12px;
+                      color: #fff;
+                    }
+                  }
+                }
+              }
             li.transaction-not-found {
                 background-image: url("logo-gray-icon.svg");
                 padding: 160px 0 60px;
