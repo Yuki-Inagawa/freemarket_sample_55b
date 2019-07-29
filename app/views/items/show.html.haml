@@ -10,16 +10,19 @@
         %span ユニクロ七部丈パンツ
   .item-wrapper
     .item-box
-      %h1.item-box__item-name ユニクロ七部丈パンツ
+      %h1.item-box__item-name 
+        = @item.name
       .item-box__main-content
         .item-box__main-content__photo
-          = image_tag("mark-zuckerberg1.jpg")
+          - @images.each do |image|
+            = image_tag(image.image.url)
+          
         %table.item-box__main-content__detail
           %tbody
             %tr
               %th 出品者
               %td
-                = link_to '名前',  root_path
+                = link_to "#{@item.user.nickname}",  root_path
                 .item-box__main-content__detail__ratings
                   .item-box__main-content__detail__ratings__rate
                     = image_tag("smile.svg", alt: 'smail', height: 16, width: 16)
@@ -43,28 +46,36 @@
               %td 80cm
             %tr
               %th 商品の状態
-              %td 目立った傷や汚れなし
+              %td 
+                = @item.state
             %tr
               %th 配送料の負担
-              %td 送料込み
+              %td 
+                = @item.postage_type
             %tr
               %th 配送の方法
-              %td 未定
+              %td
+                = @item.delivery_method
             %tr
               %th 配送元地域
-              %td 神奈川県
+              %td 
+                = @item.region
             %tr
               %th 発送日の目安
-              %td １〜２日で発送
+              %td 
+                = @item.shopping_date
         .item-box__main-content__price-box
-          %span.item-box__main-content__price-box__price ¥500
+          %span.item-box__main-content__price-box__price
+            = number_to_currency(@item.price, :unit => "￥", :precision =>0)
           %span.item-box__main-content__price-box__tax 税込
-          %span.item-box__main-content__price-box__shipping-fee 送料込み
+          %span.item-box__main-content__price-box__shipping-fee
+            = @item.postage_type
         %section.item-box__main-content__buy
-          %a.item-box__main-content__buy__btn 購入画面に進む
+          = link_to '購入画面に進む', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
         
       .item-box__description
-        %p.item-box__description__text ユニクロの七分丈パンツ 詳細ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+        %p.item-box__description__text
+          = @item.text
       .item-box__btn
         .item-box__btn--left
           %button.item-box__btn--left--like
@@ -114,15 +125,9 @@
           = link_to '出品者さんのその他の出品',  root_path 
         .other-items__user__contents
           = render 'shared/item'
-          = render 'shared/item'
-          = render 'shared/item'
-          = render 'shared/item'
       %section.other-items__user
         .other-items__user__head
           = link_to 'ユニクロのその他の出品',  root_path 
         .other-items__user__contents
-          = render 'shared/item'
-          = render 'shared/item'
-          = render 'shared/item'
           = render 'shared/item'
 = render 'shared/footer'

@@ -41,5 +41,7 @@ class UsersController < ApplicationController
   def signup
   end
 
+  def mypage_listing_list
+  end
 
 end

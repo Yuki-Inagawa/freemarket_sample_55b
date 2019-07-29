@@ -1,11 +1,14 @@
-%section.item
-  = link_to  root_path do
-    .item__photo
-      = image_tag("mark-zuckerberg1.jpg")
-    .item__body
-      .item__body__name ザック
-      .item__body__num
-        .item__body__num__price ¥100
-        .item__body__num__like
-          %i.fa.fa-heart
-            %span 2
+- @other_items.each do |item|
+  %section.item
+    = link_to  root_path do
+      .item__photo
+        = image_tag("mark-zuckerberg1.jpg")
+      .item__body
+        .item__body__name 
+          = item.name
+        .item__body__num
+          .item__body__num__price 
+            = number_to_currency(item.price, :unit => "￥", :precision =>0)
+          .item__body__num__like
+            %i.fa.fa-heart
+              %span 2
