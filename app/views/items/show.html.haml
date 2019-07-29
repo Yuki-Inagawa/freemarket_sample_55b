@@ -14,8 +14,7 @@
         = @item.name
       .item-box__main-content
         .item-box__main-content__photo
-          - @images.each do |image|
-            = image_tag(image.image.url)
+          = image_tag(@image.image.url)
           
         %table.item-box__main-content__detail
           %tbody
