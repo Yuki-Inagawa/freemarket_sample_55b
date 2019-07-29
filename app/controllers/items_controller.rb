@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
+
     10.times { @item.images.build }
+
   end
 
   
@@ -42,7 +44,7 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
-    @images = @item.images
+    @image = @item.images[0]
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
   end
 
