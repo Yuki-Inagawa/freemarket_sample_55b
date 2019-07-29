@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
   def create
     @user = User.find(1)
     @item = @user.items.build(item_params)
+    # binding.pry
     @item.save
       redirect_to root_path
   end

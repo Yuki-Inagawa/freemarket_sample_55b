@@ -83,3 +83,6 @@
     .top-main__contents__all-links
       = link_to "すべての商品を見る", root_path, class: "top-main__contents__all-links__text"
 = render 'shared/footer'
+= link_to  new_item_path, class: 'submit-btn-link' do
+  .submit-btn 出品
+  = fa_icon 'camera', class: 'submit-button-icon'
