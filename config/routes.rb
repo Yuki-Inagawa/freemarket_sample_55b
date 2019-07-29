@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items, only: [:index, :new] do
     collection do
+    get 'category/list'   , to: 'items#category_list'
     get 'show' 
     get 'buy/confirmation', to: 'items#buy_confirmation'    
     end
