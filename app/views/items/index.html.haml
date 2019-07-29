@@ -41,7 +41,7 @@
                   = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                   %span.top-main__contents__item-box__body__flex-box--status--good-count
     .top-main__contents__all-links
-      = link_to "すべての商品を見る", root_path, class: "top-main__contents__all-links__text"
+      = link_to "すべての商品を見る", category_list_items_path, class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
     %h3.top-main__contents__category
       = link_to "メンズ 新着アイテム", root_path, class: "top-main__contents__category__link"
@@ -61,7 +61,7 @@
                   = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                   %span.top-main__contents__item-box__body__flex-box--status--good-count
     .top-main__contents__all-links
-      = link_to "すべての商品を見る", root_path, class: "top-main__contents__all-links__text"
+      = link_to "すべての商品を見る", category_list_items_path, class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
     %h3.top-main__contents__category
       = link_to "ベビー・キッズ 新着アイテム", root_path, class: "top-main__contents__category__link"
@@ -81,5 +81,5 @@
                   = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                   %span.top-main__contents__item-box__body__flex-box--status--good-count
     .top-main__contents__all-links
-      = link_to "すべての商品を見る", root_path, class: "top-main__contents__all-links__text"
+      = link_to "すべての商品を見る", category_list_items_path, class: "top-main__contents__all-links__text"
 = render 'shared/footer'
