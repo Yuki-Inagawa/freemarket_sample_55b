@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
-    @item.images.build
+    10.times {@item.images.build}
   end
 
   
@@ -30,10 +30,6 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, images_attributes:[:image]).merge(user_id: current_user.id)
-  end
-
-  def image_params
-    parmas.require(:image).permit(:user_id, :image[])
   end
   
 end

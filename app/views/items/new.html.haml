@@ -17,18 +17,8 @@
                 %span.mandatory 必須
               %p 最大10枚までアップロードできます
               .sell-form__image__container
-              = f.fields_for :images do |image|
-                .dropzone-container.clearfix
-                  #preview
-                  .dropzone-area
-                    = image.label :image, class: "dropzone-box", for: "upload-image" do
-                      .input_area
-                        = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                  #preview
-                  .dropzone-area
-                    = image.label :image, class: "dropzone-box", for: "upload-image" do
-                      .input_area
-                        = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+              = f.fields_for :images do |i|
+                = i.file_field :image
                     
             .sell-form__information
               .sell-form__information__name
