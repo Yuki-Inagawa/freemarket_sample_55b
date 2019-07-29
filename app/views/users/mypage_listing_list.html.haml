@@ -26,10 +26,21 @@
               %h3.tabs-title 売却済み
 
         .mypage-tab-content
-          %ul.transaction-now
-            %li.transaction-not-found 取引中の商品がありません
-
-
+          %ul.transaction
+            - @items.each do |item|
+              %li.transaction-now
+                .figure a
+                .mypage-item-body
+                  .mypage-item-body__text
+                    = item.name
+                  .mypage-item-body-icon
+                    %span.listing-item-count
+                      こめ
+                    %span.listing-item-count
+                      ハート
+                    .mypage-item-status
+                      公開中
+                  = fa_icon "chevron-right"
 
     .profile-side
       = render 'shared/mypage_nav'

@@ -42,6 +42,8 @@ class UsersController < ApplicationController
   end
 
   def mypage_listing_list
+    @user = User.find(1)
+    @items = @user.items
   end
 
 end
