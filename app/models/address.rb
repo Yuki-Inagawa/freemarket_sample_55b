@@ -5,6 +5,4 @@ class Address < ApplicationRecord
   validates :region, presence: true
   validates :city, presence: true
   validates :address_number, presence: true
-  validates :building_name, presence: true
-  validates :phone_number, presence: true
 end
