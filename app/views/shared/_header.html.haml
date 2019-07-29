@@ -21,6 +21,8 @@
               = link_to root_path, class: "global-header__bottom__left-list__child-text-link" do
                 = fa_icon "tag", class: "global-header__bottom__left-list__child-text-link--icon"
                 %span ブランドから探す
+
+    - if user_signed_in?
       .global-header__bottom__right
         %ul.global-header__bottom__right__list
           %li.global-header__bottom__right__list__child
@@ -41,3 +43,10 @@
                 .global-header__bottom__right__list__child--my-page__link__person__box
                   = image_tag("member_photo_noimage_thumb.png", width: '32', height: '32', alt: "マイページアイコン画像")
               %span.global-header__bottom__right__list__child--my-page__link__text マイページ
+    - else
+      .global-header__bottom__right
+        %ul.header-login-nav
+          %li
+            =link_to "新規会員登録", signup_index_path, class: "header-new-registration"
+          %li
+            =link_to "ログイン", new_user_session_path, class: "header-new-login"
