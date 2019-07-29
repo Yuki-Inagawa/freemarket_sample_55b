@@ -12,8 +12,8 @@ class ItemsController < ApplicationController
 
   
   def create
-    @user = User.find(1)
-    @item = @user.items.build(item_params)
+    # @user = User.find(1)
+    @item = Item.new(item_params)
     @item.save
       redirect_to root_path
   end
@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, images_attributes:[:image]).merge(user_id:1)
+    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, images_attributes:[:image]).merge(user_id:current_user.id)
   end
 
   def image_params
