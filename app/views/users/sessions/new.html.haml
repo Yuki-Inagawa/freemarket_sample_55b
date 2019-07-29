@@ -1,0 +1,28 @@
+.single-container
+  .exhibiton-header
+    .exhibition-wrapper
+      = image_tag("logo.svg", alt: "mercari", heigh:"49", width: "185")
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    %main.single-main
+      %section.l-single-container.login
+        .new-registration-login
+          %p.not-have-acount アカウントをお持ちでない方はこちら
+          =link_to "新規会員登録", "/signup", class: "new-registration-btn"
+        .new-registration-form
+          .new-registration-form__content{style: "padding: 32px 64px 32px;"}
+            %button.facebook-login{style: "margin-top: 0;"}
+              =fa_icon "facebook", class: "facebook-icon"
+              Facebookでログイン
+            %button#google-login.btn-default.btn-sns.btn-sns-google
+              -# =fa_icon "google", class: "google-icon"
+              Googleでログイン
+            .new-registration-form__content--form{style: "margin-top: 50px;"}
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-default", placeholder: "メールアドレス"
+            .new-registration-form__content--form{style: "margin-top: 16px;"}
+              = f.password_field :password, autocomplete: "current-password", class: "input-default", placeholder: "パスワード"
+            .new-registration-form__content--form.robo
+              %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
+            = f.submit "ログイン", class: "next-btn"
+            =link_to "パスワードをお忘れの方", "signup", class: "foreine-passward" 
+
+  = render 'shared/signup_footer'
