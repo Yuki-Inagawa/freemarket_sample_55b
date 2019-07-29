@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  before_action :move_to_index, except: :index
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
-    @images = @item.images
+    @image = @item.images[0]
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
   end
 
@@ -27,9 +27,13 @@ class ItemsController < ApplicationController
   end
 
 
-  private
+private
   def item_params
     params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, images_attributes:[:image]).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
   
 end
