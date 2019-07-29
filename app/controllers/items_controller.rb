@@ -12,9 +12,7 @@ class ItemsController < ApplicationController
 
   
   def create
-    @user = User.find(current_user.id)
-    @item = @user.items.new(item_params)
-    binding.pry
+    @item = Item.new(item_params)
     @item.save
       redirect_to root_path
   end
