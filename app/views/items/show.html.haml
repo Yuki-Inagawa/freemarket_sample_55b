@@ -70,13 +70,24 @@
           %span.item-box__main-content__price-box__tax 税込
           %span.item-box__main-content__price-box__shipping-fee
             = @item.postage_type
+      - if user_signed_in? && current_user.id != @item.user_id
         %section.item-box__main-content__buy
           = link_to '購入画面に進む', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
         
       .item-box__description
         %p.item-box__description__text
           = @item.text
+ 
+      .item-box__change-box
+      - if user_signed_in? && current_user.id == @item.user_id
+        %section.item-box__main-content__buy
+          = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn"
+        %section.item-box__main-content__buy
+          = link_to '販売停止', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
+        %section.item-box__main-content__buy
+          = link_to 'この商品を削除する', "/items/#{@item.id}",class: "item-box__main-content__buy__btn", method: :delete
       .item-box__btn
+      - if user_signed_in? && current_user.id != @item.user_id
         .item-box__btn--left
           %button.item-box__btn--left--like
             %i.fa.fa-heart
