@@ -88,6 +88,6 @@
             %span.form-question ?
             カード裏面の番号とは?
           #card_token
-          = submit_tag "追加する", id: "token_submit", class: "next-btn"
+          =link_to "次へ進む", signup_index_path, class: "next-btn", method: "POST" 
   
   = render 'shared/signup_footer'

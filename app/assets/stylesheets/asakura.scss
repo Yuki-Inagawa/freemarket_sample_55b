@@ -95,22 +95,24 @@
             label {
               font-size: 14px;
               font-weight: bold;
-              span {
-                background-color: #ea352d;
-                margin-left: 8px;
-                padding: 2px 4px;
-                border-radius: 2px;
-                color: #fff;
-                font-size: 12px;
-                vertical-align: top;
-              }
             }
-            textarea {
-              width: 96%;
-              padding: 10px;
-              margin-top: 8px;
-              border: 1px solid #ccc;
+            span {
+              background-color: #ea352d;
+              margin-left: 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              font-weight: bold;
             }
+          }
+          .long-text {
+            width: 96%;
+            min-height: 104px;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
           }
         }
 
@@ -187,12 +189,22 @@
               }
               .select-wrap {
                 margin-top: 8px;
+                height: 48px;
                 position: relative;
                 background: #fff;
-                .select-default {
-                  width: 91%;
-                  position: relative;
+                .icon-arrow {
+                  float: right;
+                  position: absolute;
+                  top : 30%;
+                  right: 16px;
+                  color: #888;
+                  font-size: 18px;
                   z-index: 2;
+                }
+                select#item_state{
+                  z-index: 1;
+                  width: 100%;
+                  position: relative;
                   height: 48px;
                   padding: 0 16px;
                   border-radius: 4px;
@@ -200,17 +212,7 @@
                   background: 0;
                   font-size: 16px;
                   line-height: 1.5;
-                  cursor: pointer;
-                  h3 {
-                    line-height: 48px;
-                    float: left;
-                  }
-                  .icon-arrow {
-                    float: right;
-                    line-height: 48px;
-                    color: #888;
-                    font-size: 18px;
-                  }
+
                 }
               }
             }
@@ -259,10 +261,19 @@
               margin-top: 8px;
               position: relative;
               background: #fff;
-              .select-default {
-                width: 91%;
-                position: relative;
+              .icon-arrow {
+                float: right;
+                position: absolute;
+                top : 30%;
+                right: 16px;
+                color: #888;
+                font-size: 18px;
                 z-index: 2;
+              }
+              select#item_postage_type {
+                z-index: 1;
+                width: 100%;
+                position: relative;
                 height: 48px;
                 padding: 0 16px;
                 border-radius: 4px;
@@ -270,17 +281,46 @@
                 background: 0;
                 font-size: 16px;
                 line-height: 1.5;
-                cursor: pointer;
-                h3 {
-                  line-height: 48px;
-                  float: left;
-                }
-                .icon-arrow {
-                  float: right;
-                  line-height: 48px;
-                  color: #888;
-                  font-size: 18px;
-                }
+              }
+            }
+            &__method {
+              margin-top: 40px;
+              font-size: 14px;
+              font-weight: bold;
+              span {
+                background-color: #ea352d;
+                margin-left: 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            .select-wrap {
+              margin-top: 8px;
+              position: relative;
+              background: #fff;
+              .icon-arrow {
+                float: right;
+                position: absolute;
+                top : 30%;
+                right: 16px;
+                color: #888;
+                font-size: 18px;
+                z-index: 2;
+              }
+              select#item_delivery_method {
+                z-index: 1;
+                width: 100%;
+                position: relative;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
               }
             }
             &__area {
@@ -301,10 +341,19 @@
               margin-top: 8px;
               position: relative;
               background: #fff;
-              .select-default {
-                width: 91%;
-                position: relative;
+              .icon-arrow {
+                float: right;
+                position: absolute;
+                top : 30%;
+                right: 16px;
+                color: #888;
+                font-size: 18px;
                 z-index: 2;
+              }
+              select#item_region {
+                z-index: 1;
+                width: 100%;
+                position: relative;
                 height: 48px;
                 padding: 0 16px;
                 border-radius: 4px;
@@ -312,17 +361,6 @@
                 background: 0;
                 font-size: 16px;
                 line-height: 1.5;
-                cursor: pointer;
-                h3 {
-                  line-height: 48px;
-                  float: left;
-                }
-                .icon-arrow {
-                  float: right;
-                  line-height: 48px;
-                  color: #888;
-                  font-size: 18px;
-                }
               }
             }
             &__days {
@@ -338,33 +376,31 @@
                 font-size: 12px;
                 vertical-align: top;
               }
-              .select-wrap {
-                margin-top: 8px;
+            }
+            .select-wrap {
+              margin-top: 8px;
+              position: relative;
+              background: #fff;
+              .icon-arrow {
+                float: right;
+                position: absolute;
+                top : 30%;
+                right: 16px;
+                color: #888;
+                font-size: 18px;
+                z-index: 2;
+              }
+              select#item_shopping_date {
+                z-index: 1;
+                width: 100%;
                 position: relative;
-                background: #fff;
-                .select-default {
-                  width: 93%;
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  padding: 0 16px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                  h3 {
-                    line-height: 48px;
-                    float: left;
-                  }
-                  .icon-arrow {
-                    float: right;
-                    line-height: 48px;
-                    color: #888;
-                    font-size: 18px;
-                  }
-                }
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
               }
             }
           }
@@ -414,25 +450,25 @@
                       vertical-align: top;
                     }
                   }
-                  .l-right.sell-price-input {
+                  .l-right-box{
                     width: 50%;
                     float: right;
-                    div {
+                    display: flex;
+                    .l-right.sell-price-input {
+                      margin-top: 20px;
+                    }
+                    .sell-price {
                       display: inline-block;
-                      width: 80%;
+                      width: 78%;
                       margin-left: 5%;
-                      .input-default {
-                        -webkit-appearance: none;
-                        width: 90%;
-                        height: 30px;
-                        text-align: right;
-                        padding: 10px 16px 8px;
-                        border-radius: 4px;
-                        border: 1px solid #ccc;
-                        background: #fff;
-                        line-height: 1.5;
-                        font-size: 16px;
-                      }
+                      height: 30px;
+                      text-align: right;
+                      padding: 10px 16px 8px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background: #fff;
+                      line-height: 1.5;
+                      font-size: 16px;
                     }
                   }
                 }
@@ -476,7 +512,7 @@
               }
             }
           }
-          .btn-default.btn-red {
+          .sell-item-btn {
             display: block;
             margin: 0 auto;
             margin-top: 40px;
@@ -487,7 +523,7 @@
             line-height: 48px;
             font-size: 14px;
           }
-          .btn-default.btn-gray {
+          .btn__default-gray {
             display: block;
             width: 45%;
             margin: 24px auto 0;
@@ -536,3 +572,14 @@
   }
 }
     
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 22px;
+  z-index: 3;
+}
+  
+select::-ms-expand{
+  display: none;
+}

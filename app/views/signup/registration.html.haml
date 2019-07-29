@@ -1,0 +1,95 @@
+.single-container
+  %header.single-header
+    %h1.mercari-logo
+      = link_to image_tag("logo.svg", alt: "mercari"), "/users/registration", class: "mercari-logo__link"
+    %nav.progress-bar
+      %ol.clearfix
+        %li.active
+          会員情報
+          .progress-status.first.right-gray
+        %li 
+          電話番号認証
+          .progress-status.gray
+        %li 
+          お届け先住所入力
+          .progress-status.gray
+        %li 
+          支払い方法
+          .progress-status.gray
+        %li 
+          完了
+          .progress-status.last.gray
+  %main.single-main
+    %section.l-single-container
+      %h2.new-registration 会員情報入力
+      .new-registration-form
+        =form_for @user, url: sms_confirmation_signup_index_path, method: :get do |f|
+          .new-registration-form__content
+            .new-registration-form__content--form{style: "margin-top: 0;"}
+              %label{for: "nickname"} ニックネーム
+              %span.form-require 必須
+              = f.text_field :nickname, placeholder: "例) おでん君", class: 'input-default'
+            .new-registration-form__content--form
+              %label{for: "email"} メールアドレス
+              %span.form-require 必須
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: 'input-default'
+            .new-registration-form__content--form
+              %label{for: "password"} パスワード
+              %span.form-require 必須
+              = f.password_field :password, placeholder: '6文字以上', class: 'input-default'
+            .new-registration-form__content--form
+              %label{for: "password"} パスワード (確認)
+              %span.form-require 必須
+              = f.password_field :password_confirmation, placeholder: '6文字以上', class: 'input-default'
+            .new-registration-form__content--form
+              %h3.subhead-chapter 本人確認
+              %p.subhead-text  安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .new-registration-form__content--form
+              %div
+                %label お名前(全角)
+                %span.form-require 必須
+              %div
+                = f.text_field :family_name, placeholder: "例) 金木", class: 'input-default half'
+                = f.text_field :farst_name, placeholder: "例) 研", class: 'input-default half'
+            .new-registration-form__content--form
+              %div
+                %label お名前(カナ)
+                %span.form-require 必須
+              %div
+                = f.text_field :family_name_ruby, placeholder: "例) カネキ", class: 'input-default half'
+                = f.text_field :farst_name_ruby, placeholder: "例) ケン", class: 'input-default half'
+            .new-registration-form__content--form
+              %label 生年月日
+              %span.form-require 必須
+              %br
+              .birthday
+                .birthday__select.yier
+                  %i.icon-arrow-bottom
+                  =f.select :birthday_yiar, @birthday_year_set, {}, class: "select-default"
+                %span 年
+
+                .birthday__select.month
+                  %i.icon-arrow-bottom
+                  =f.select :birthday_month, @birthday_month_set, {}, class: "select-default"
+                %span 月
+
+                .birthday__select.day
+                  %i.icon-arrow-bottom
+                  =f.select :birthday_day, @birthday_day_set, {}, class: "select-default"
+                %span 日
+
+            %p.form-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+            .new-registration-form__content--form.robo
+              %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
+            .new-registration-form__content--form
+              %p.next-info-text
+                「次へ進む」のボタンを押すことにより、
+                =link_to "利用規約", "/users/clear_compleate", class: "guid"
+                に同意したものとみなします
+            = f.submit '次へ進む', class: 'next-btn'
+            .new-registration-form__content--form.text-right
+              %p
+                =link_to "本人情報の登録について", "/users/sms_confirmation", method: 'get'
+                =fa_icon "angle-right", class: "arrow-right"
+    
+  = render 'shared/signup_footer'
