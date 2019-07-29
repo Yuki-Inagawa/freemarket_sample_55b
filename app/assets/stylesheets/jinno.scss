@@ -429,6 +429,29 @@
           }
         }
       }
+      .header-login-nav {
+        li {
+          display: inline-block;
+          .header-new-registration {
+            display: block;
+            padding: 0 10px;
+            line-height: 30px;
+            border-radius: 4px;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+          }
+          .header-new-login {
+            display: block;
+            padding: 0 10px;
+            line-height: 30px;
+            border-radius: 4px;
+            border: 1px solid #0099e8;
+            background: #fff;
+            color: #0099e8;
+          }
+        }
+      }
     }
   }
 }

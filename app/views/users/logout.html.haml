@@ -15,8 +15,8 @@
   %main.logout-content
     %section.logout-card
       %section.settings-logout-card
-        %button.logout-card-content
-          = link_to 'ログアウト',  root_path, class: 'logout-button'
+        .logout-card-content
+          = link_to 'ログアウト',  destroy_user_session_path, class: 'logout-button', method: :delete
       
 
     .mypage-card-side
