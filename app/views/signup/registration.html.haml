@@ -29,6 +29,7 @@
               %label{for: "nickname"} ニックネーム
               %span.form-require 必須
               = f.text_field :nickname, placeholder: "例) おでん君", class: 'input-default'
+              = render 'layouts/error_messages', model: f.object
             .new-registration-form__content--form
               %label{for: "email"} メールアドレス
               %span.form-require 必須
