@@ -16,14 +16,25 @@
                 出品画像
                 %span.mandatory 必須
               %p 最大10枚までアップロードできます
-              .sell-form__image__container
-              = f.fields_for :images do |i|
-                = i.file_field :image
-
-                %pre
-                  :preserve
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
+      
+              = f.fields_for :images, @item.images.first do |image|
+                .sell-form__image__container
+                  = image.label :image, for: "upload-image" do
+                    .input-area
+                      = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+                  %pre
+                    :preserve
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+              
+                .sell-form__image__container2
+                  = image.label :image, for: "upload-image" do
+                    .input-area
+                      = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+                  %pre
+                    :preserve
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
 
                     
             .sell-form__information
