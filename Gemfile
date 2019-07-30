@@ -76,6 +76,7 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'mysql2'
 gem 'faker'
+gem 'rails-i18n'
 
 group :production do
   gem 'unicorn', '5.4.1'

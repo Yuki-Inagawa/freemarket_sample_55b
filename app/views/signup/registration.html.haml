@@ -29,19 +29,38 @@
               %label{for: "nickname"} ニックネーム
               %span.form-require 必須
               = f.text_field :nickname, placeholder: "例) おでん君", class: 'input-default'
-              = render 'layouts/error_messages', model: f.object
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:nickname).each do |message|
+                      %li= message
             .new-registration-form__content--form
               %label{for: "email"} メールアドレス
               %span.form-require 必須
               = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: 'input-default'
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:email).each do |message|
+                      %li= message
             .new-registration-form__content--form
               %label{for: "password"} パスワード
               %span.form-require 必須
               = f.password_field :password, placeholder: '6文字以上', class: 'input-default'
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:password).each do |message|
+                      %li= message
             .new-registration-form__content--form
               %label{for: "password"} パスワード (確認)
               %span.form-require 必須
               = f.password_field :password_confirmation, placeholder: '6文字以上', class: 'input-default'
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:password_confirmation).each do |message|
+                      %li= message
             .new-registration-form__content--form
               %h3.subhead-chapter 本人確認
               %p.subhead-text  安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -52,6 +71,16 @@
               %div
                 = f.text_field :family_name, placeholder: "例) 金木", class: 'input-default half'
                 = f.text_field :farst_name, placeholder: "例) 研", class: 'input-default half'
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:family_name).each do |message|
+                      %li= message
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:farst_name).each do |message|
+                      %li= message
             .new-registration-form__content--form
               %div
                 %label お名前(カナ)
@@ -59,6 +88,16 @@
               %div
                 = f.text_field :family_name_ruby, placeholder: "例) カネキ", class: 'input-default half'
                 = f.text_field :farst_name_ruby, placeholder: "例) ケン", class: 'input-default half'
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:family_name_ruby).each do |message|
+                      %li= message
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:farst_name_ruby).each do |message|
+                      %li= message
             .new-registration-form__content--form
               %label 生年月日
               %span.form-require 必須
@@ -78,6 +117,21 @@
                   %i.icon-arrow-bottom
                   =f.select :birthday_day, @birthday_day_set, {}, class: "select-default"
                 %span 日
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:birthday_yiar).each do |message|
+                      %li= message
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:birthday_month).each do |message|
+                      %li= message
+              - if @user.errors.any?
+                .alert.alert-warning
+                  %ul
+                    - @user.errors.full_messages_for(:birthday_day).each do |message|
+                      %li= message
 
             %p.form-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
             .new-registration-form__content--form.robo
