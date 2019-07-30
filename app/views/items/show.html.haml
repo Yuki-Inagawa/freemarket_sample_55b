@@ -14,8 +14,7 @@
         = @item.name
       .item-box__main-content
         .item-box__main-content__photo
-          - @images.each do |image|
-            = image_tag(image.image.url)
+          = image_tag(@image.image.url)
           
         %table.item-box__main-content__detail
           %tbody
@@ -70,13 +69,24 @@
           %span.item-box__main-content__price-box__tax 税込
           %span.item-box__main-content__price-box__shipping-fee
             = @item.postage_type
+      - if user_signed_in? && current_user.id != @item.user_id
         %section.item-box__main-content__buy
           = link_to '購入画面に進む', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
         
       .item-box__description
         %p.item-box__description__text
           = @item.text
+ 
+      .item-box__change-box
+      - if user_signed_in? && current_user.id == @item.user_id
+        %section.item-box__main-content__buy
+          = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn"
+        %section.item-box__main-content__buy
+          = link_to '販売停止', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
+        %section.item-box__main-content__buy
+          = link_to 'この商品を削除する', "/items/#{@item.id}",class: "item-box__main-content__buy__btn", method: :delete
       .item-box__btn
+      - if user_signed_in? && current_user.id != @item.user_id
         .item-box__btn--left
           %button.item-box__btn--left--like
             %i.fa.fa-heart
@@ -100,12 +110,12 @@
 
     %ul.item-link
       %li.item-link__prev
-        = link_to  root_path do
+        = link_to `/items/#{@item.previous.id}` do
           %i.fa.fa-chevron-left
-          前の商品
+          = @item.previous.name
       %li.item-link__next
-        = link_to  root_path do
-          次の商品
+        = link_to  `/items/#{@item.next.id}` do
+          = @item.next.name
           %i.fa.fa-chevron-right
 
     .item-social-media
@@ -125,9 +135,9 @@
           = link_to '出品者さんのその他の出品',  root_path 
         .other-items__user__contents
           = render 'shared/item'
-      %section.other-items__user
-        .other-items__user__head
-          = link_to 'ユニクロのその他の出品',  root_path 
-        .other-items__user__contents
-          = render 'shared/item'
+      -# %section.other-items__user
+      -#   .other-items__user__head
+      -#     = link_to 'ユニクロのその他の出品',  root_path 
+      -#   .other-items__user__contents
+      -#     = render 'shared/item'
 = render 'shared/footer'

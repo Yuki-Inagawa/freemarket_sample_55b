@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  before_action :move_to_index, except: :index
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
@@ -7,19 +7,47 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
-    @item.images.build
+
+    10.times { @item.images.build }
+
   end
 
   
   def create
     @item = Item.new(item_params)
-    @item.save
+    if @item.save
       redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+      @item.update(item_params)
+        redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+      @item.destroy
+      redirect_to root_path
+    end
   end
   
   def show
     @item = Item.find(params[:id])
-    @images = @item.images
+    @image = @item.images[0]
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
   end
 
@@ -27,13 +55,13 @@ class ItemsController < ApplicationController
   end
 
 
-  private
+private
   def item_params
     params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, images_attributes:[:image]).merge(user_id: current_user.id)
   end
 
-  def image_params
-    parmas.require(:image).permit(:user_id, :image[])
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
   
 end
