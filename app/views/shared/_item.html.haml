@@ -2,7 +2,7 @@
   %section.item
     = link_to  root_path do
       .item__photo
-        = image_tag("mark-zuckerberg1.jpg")
+        = image_tag("#{item.images.first.image}")
       .item__body
         .item__body__name 
           = item.name
