@@ -11,4 +11,6 @@ ja:
         farst_name: 名
         family_name_ruby: 姓カナ 
         farst_name_ruby: 名カナ
-        birthday_yiar: 生年月日
+        birthday_yiar: 生年月日(年)
+        birthday_month: 生年月日(月)
+        birthday_day: 生年月日(日)
