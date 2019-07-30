@@ -11,9 +11,9 @@
             = image_tag("mercari_icon.png")
           %ul.app__banner__box__left-side__inner__right
             %li.app__banner__box__left-side__inner__right__apple
-              = link_to image_tag("app-store.svg", width: '133', height: '40', alt: "App store画像"), root_path, class: "app__banner__left-side__inner-right__apple-icon"
+              = link_to image_tag("app-store.svg", width: '133', height: '40', alt: "App store画像"), "https://apps.apple.com/jp/app/id667861049?l=ja", class: "app__banner__left-side__inner-right__apple-icon", target: '_blank'
             %li.app__banner__box__left-side__inner__right__google
-              = link_to image_tag("google-play.svg", width: '133', height: '40', alt: "Google Play画像"), root_path, class: "app__banner__left-side__inner-right__google-icon"
+              = link_to image_tag("google-play.svg", width: '133', height: '40', alt: "Google Play画像"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "app__banner__left-side__inner-right__google-icon", target: '_blank'
       .app__banner__box__right-side
         = image_tag("download_content_pc.png", width: '300', height: '262', alt: "メルカリモバイル画像")
   %footer.global-footer
