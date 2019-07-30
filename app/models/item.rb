@@ -15,4 +15,12 @@ class Item < ApplicationRecord
   validates :region, presence: true
   validates :shopping_date, presence: true
   validates :delivery_method, presence: true
+
+  def previous
+    Item.where("id < ?", self.id).order("id DESC").first
+  end
+
+  def next
+    Item.where("id > ?", self.id).order("id ASC").first
+  end  
 end
