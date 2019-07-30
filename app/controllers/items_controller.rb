@@ -7,14 +7,42 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
-    @item.images.build
+
+    10.times { @item.images.build }
+
   end
 
   
   def create
     @item = Item.new(item_params)
-    @item.save
+    if @item.save
       redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+      @item.update(item_params)
+        redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+      @item.destroy
+      redirect_to root_path
+    end
   end
   
   def show
