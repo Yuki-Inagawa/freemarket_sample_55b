@@ -20,25 +20,26 @@
               = f.fields_for :images do |i|
                 = i.file_field :image
               - if @item.errors.any?
-                %ul
-                  %li 画像がありません
+                -# -# %ul
+                -#   %li 画像がありません
             .sell-form__information
               .sell-form__information__name
                 商品名
                 %span.mandatory 必須
                 %div
                   = f.text_field :name, class: 'form__message', placeholder: '商品名（必須 40文字まで)'
-              - if @item.errors.any?
-                %ul
-                  %li 入力してください
+                - @item.errors.full_messages_for(:name).each do |message|
+                  = message
 
               .sell-form__information__explanation
                 = f.label :商品の説明
                 %span.mandatory 必須
               %p
                 = f.text_field :text, class: 'long-text', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
-              - if @item.errors.any?
-                %ul
+              - @item.errors.full_messages_for(:text).each do |message|
+                = message
+              -# - if @item.errors.any?
+              -#   %ul
                   %li 入力してください
             .sell-form__details
               .sell-form__details__title 商品の詳細
@@ -51,9 +52,9 @@
                       .select-default
                         %h3 ---
                         = fa_icon 'chevron-down', class: 'icon-arrow'
-                    - if @item.errors.any?
-                      %ul
-                        %li 選択してください
+                    -# - if @item.errors.full_messages_for(:category)
+                    -#   %ul
+                    -#     %li 選択してください
                 .sell-form__details__box__status
                   %label
                     商品の状態

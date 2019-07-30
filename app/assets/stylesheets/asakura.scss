@@ -101,6 +101,7 @@
             line-height: 1.5;
             font-size: 14px;
             margin-top: 8px;
+            font-weight: normal;
           }
         
           &__explanation {
@@ -296,6 +297,7 @@
                   z-index: 2;
                 }
                 select#item_postage_type {
+                  font-weight: normal;
                   z-index: 1;
                   width: 100%;
                   position: relative;
@@ -343,6 +345,7 @@
                   z-index: 2;
                 }
                 select#item_delivery_method {
+                  font-weight: normal;
                   z-index: 1;
                   width: 100%;
                   position: relative;
@@ -390,6 +393,7 @@
                   z-index: 2;
                 }
                 select#item_region {
+                  font-weight: normal;
                   z-index: 1;
                   width: 100%;
                   position: relative;
@@ -437,6 +441,7 @@
                   z-index: 2;
                 }
                 select#item_shopping_date {
+                  font-weight: normal;
                   z-index: 1;
                   width: 100%;
                   position: relative;
