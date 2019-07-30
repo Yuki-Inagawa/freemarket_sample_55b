@@ -17,5 +17,6 @@ class User < ApplicationRecord
   validates :birthday_month, presence: true
   validates :birthday_day, presence: true
   validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  validates :encrypted_password, presence: true
+  validates :password, presence: true, length: { in: 6..128 }, confirmation: true
+  validates :password_confirmation, presence: true, length: { in: 6..128 }
 end

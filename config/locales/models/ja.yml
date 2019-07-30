@@ -7,6 +7,7 @@ ja:
         nickname: ニックネーム
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード(確認)
         family_name: 姓
         farst_name: 名
         family_name_ruby: 姓カナ 
