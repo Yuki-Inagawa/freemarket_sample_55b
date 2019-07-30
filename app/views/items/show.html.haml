@@ -1,13 +1,10 @@
 = render 'shared/header'
 //商品詳細画面
 .container
-  -# %nav.bread-crumbs
-  -#   %ul
-  -#     %li 
-  -#       = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-  -#       %i.fa.fa-chevron-right
-  -#     %li
-  -#       %span ユニクロ七部丈パンツ
+
+  - breadcrumb :item_show_page
+  = render "./shared/breadcrumbs"
+  
   .item-wrapper
     .item-box
       %h1.item-box__item-name 

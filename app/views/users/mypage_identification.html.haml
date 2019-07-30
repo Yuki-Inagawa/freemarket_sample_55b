@@ -1,5 +1,7 @@
 .user-identification-form__body__page--body
   = render 'shared/header'
+  - breadcrumb :personal_information_registration
+  = render "./shared/breadcrumbs"
   .user-identification-form__body-wrapper
     = render 'shared/mypage_nav'
     .user-identification-form

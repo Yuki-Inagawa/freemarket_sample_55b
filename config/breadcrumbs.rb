@@ -1,11 +1,66 @@
 crumb :root do
-  link "Home", root_path
+  link "メルカリ", root_path
+end
+
+# 以下マイページ関連のパン
+# マイページのトップのパン
+crumb :mypage_top do
+  link "マイページ", "/users/#{current_user.id}"
+  # parent: root
+end
+
+# マイページの２ページ目、顔でかいやつ
+# まだ書けない
+
+# プロフィールページ用のパン
+crumb :profile do
+  link "プロフィール", "/users/#{current_user.id}/profile"
+  parent :mypage_top
+end
+
+# 出品した商品ページのぱん
+crumb :exhibition_list do
+  link "出品した商品、出品中", "/users/#{current_user.id}/listing/list"
+  parent :mypage_top
+end
+
+# 本人情報の登録ページのパン
+crumb :personal_information_registration do
+  link "本人情報の登録", "/users/#{current_user.id}/identification"
+  parent :mypage_top
+end
+
+# 支払い方法の追加のページのぱん
+crumb :payment_information do
+  link "支払い方法", "/users/#{current_user.id}/card" 
+  parent :mypage_top
+end
+
+# クレジットカード情報入力
+crumb :credit_card_data_input do
+  link "クレジットカード情報入力", "/users/#{current_user.id}/card/create"
+  parent :payment_information
+end
+# ログアウトページのぱん
+crumb :user_logout do
+  link "ログアウト", "/users/logout"
+  parent :mypage_top
+end
+
+# 以下からアイテム関連のパン
+# アイテム詳細ページのパン
+crumb :item_show_page do
+  item = Item.find_by(id: params[:id])
+  link item.name, "/items/#{item.id}"
 end
 
 
-crumb :mypage do
-  link "マイページ", mypage_users_path
-end
+
+
+
+
+
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

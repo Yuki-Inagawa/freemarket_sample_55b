@@ -1,19 +1,8 @@
 .default-container  
   = render 'shared/header'
 
-  %nav.bread-crumbs
-    %ul
-      %li 
-        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li 
-        = link_to 'マイページ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li 
-        = link_to '支払い情報',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li 
-      %span.name クレジットカード情報入力
+  - breadcrumb :credit_card_data_input
+  = render "./shared/breadcrumbs"
 
   .mypage-card
     .mypage-card-main

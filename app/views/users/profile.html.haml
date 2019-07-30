@@ -1,16 +1,8 @@
 .default-container  
   = render 'shared/header'
 
-  %nav.bread-crumbs
-    %ul
-      %li 
-        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li 
-        = link_to 'マイページ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li
-        %span.name プロフィール
+  - breadcrumb :profile
+  = render "./shared/breadcrumbs"
 
   %main.user-profile
     .profile-main

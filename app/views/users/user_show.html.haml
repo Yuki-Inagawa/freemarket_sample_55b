@@ -1,13 +1,16 @@
 .default-container  
   = render 'shared/header'
   
-  %nav.bread-crumbs
-    %ul
-      %li 
-        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li 
-        %span.name name
+
+    -# あとでパンくず追加！！！！！！！！
+
+  -# %nav.bread-crumbs
+  -#   %ul
+  -#     %li 
+  -#       = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
+  -#       %i.fa.fa-chevron-right
+  -#     %li 
+  -#       %span.name name
 
   %section.user-details
     .profile-box
