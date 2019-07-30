@@ -110,12 +110,12 @@
 
     %ul.item-link
       %li.item-link__prev
-        = link_to  root_path do
+        = link_to `/items/#{@item.previous.id}` do
           %i.fa.fa-chevron-left
-          前の商品
+          = @item.previous.name
       %li.item-link__next
-        = link_to  root_path do
-          次の商品
+        = link_to  `/items/#{@item.next.id}` do
+          = @item.next.name
           %i.fa.fa-chevron-right
 
     .item-social-media
@@ -135,9 +135,9 @@
           = link_to '出品者さんのその他の出品',  root_path 
         .other-items__user__contents
           = render 'shared/item'
-      %section.other-items__user
-        .other-items__user__head
-          = link_to 'ユニクロのその他の出品',  root_path 
-        .other-items__user__contents
-          = render 'shared/item'
+      -# %section.other-items__user
+      -#   .other-items__user__head
+      -#     = link_to 'ユニクロのその他の出品',  root_path 
+      -#   .other-items__user__contents
+      -#     = render 'shared/item'
 = render 'shared/footer'
