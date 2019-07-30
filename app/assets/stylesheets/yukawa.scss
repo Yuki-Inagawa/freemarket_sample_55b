@@ -335,6 +335,14 @@
                 cursor: pointer;
               }
             }
+            .alert-warning {
+              color: rgb(235, 14, 14);
+              ul {
+                li {
+                  margin: 8px 0 0;
+                }
+              }
+            }
           }
           .facebook-login {
             border-radius: 4px;
@@ -539,8 +547,4 @@
     height: 220px;
     margin: 0 auto;
   }
-}
-
-.alert.alert-warning {
-  color: rgb(235, 14, 14);
 }

@@ -40,12 +40,17 @@ class SignupController < ApplicationController
   end
 
   def how_pay
-    session[:postal_code] = signup_address_params[:postal_code]
-    session[:region] = signup_address_params[:region]
-    session[:city] = signup_address_params[:city]
-    session[:address_number] = signup_address_params[:address_number]
-    session[:building_name] = signup_address_params[:building_name]
-    session[:phone_number] = signup_address_params[:phone_number]
+    @address = Address.new(signup_address_params)
+    if @address.valid?
+      session[:postal_code] = signup_address_params[:postal_code]
+      session[:region] = signup_address_params[:region]
+      session[:city] = signup_address_params[:city]
+      session[:address_number] = signup_address_params[:address_number]
+      session[:building_name] = signup_address_params[:building_name]
+      session[:phone_number] = signup_address_params[:phone_number]
+    else
+      render action: :address
+    end
   end
 
   def create 

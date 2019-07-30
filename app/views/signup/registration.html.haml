@@ -34,7 +34,6 @@
                   %ul
                     - @user.errors.full_messages_for(:nickname).each do |message|
                       %li= message
-                      %script
                         $("input-default").css( "border": "solid 1px tomato";)
             .new-registration-form__content--form
               %label{for: "email"} メールアドレス

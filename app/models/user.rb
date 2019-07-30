@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :addresses
   has_many :comments
 
-  validates :nickname, presence: true
+  validates :nickname, presence: true, length: { maximum: 20 }
   validates :family_name, presence: true
   validates :farst_name, presence: true
   validates :family_name_ruby, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }

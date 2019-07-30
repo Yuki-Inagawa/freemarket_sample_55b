@@ -15,3 +15,12 @@ ja:
         birthday_yiar: 生年月日(年)
         birthday_month: 生年月日(月)
         birthday_day: 生年月日(日)
+  
+  activerecord:
+    models:
+      address: アドレス
+    attributes:
+      address:
+        postal_code: 郵便番号
+        city: 市区町村
+        address_number: 番地
