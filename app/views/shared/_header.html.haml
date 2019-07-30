@@ -2,7 +2,7 @@
   .global-header-inner
     .global-header__top
       %h1
-        = link_to image_tag("logo.svg", width: '134', height: '36', alt: 'メインアイコン'), root_path, class: 'global-header__top__main-logo' 
+        = link_to image_tag("logo.svg", width: '134', height: '36', alt: 'メインアイコン'), root_path, class: 'global-header__top__main-logo'
       %form.global-header__top-form{action: "https://www.mercari.com/jp/search/"}
         %input.global-header__top-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
         -# %input.global-header__top-form__input--btn{:type => "submit", :value => ""}/・・・・・現在なにも検索できません。。
@@ -38,7 +38,7 @@
               = fa_icon "check", class: "global-header__bottom__right__list__child__link--check"
               %span.global-header__bottom__right__list__child__link--icon やることリスト
           %li.global-header__bottom__right__list__child--my-page
-            = link_to root_path, class: "global-header__bottom__right__list__child--my-page__link" do
+            = link_to "/users/#{current_user.id}", class: "global-header__bottom__right__list__child--my-page__link" do
               %figure.global-header__bottom__right__list__child--my-page__link__person
                 .global-header__bottom__right__list__child--my-page__link__person__box
                   = image_tag("member_photo_noimage_thumb.png", width: '32', height: '32', alt: "マイページアイコン画像")

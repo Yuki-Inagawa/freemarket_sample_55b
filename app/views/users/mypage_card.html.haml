@@ -24,7 +24,7 @@
         %section.settings-add-card
           %button.add-card-content
             = fa_icon 'credit-card', class: 'card-submit-button-icon'
-            = link_to 'クレジットカードを追加する',  root_path, class: 'card-submit-button'
+            = link_to 'クレジットカードを追加する', '/users/#{current_user.id}/card/create', class: 'card-submit-button'
         
         .settings-not-regist
           = link_to  root_path, class: 'settings-not-regist-link' do
