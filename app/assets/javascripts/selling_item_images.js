@@ -14,7 +14,6 @@ $( document ).on('turbolinks:load', function() {
 
   $(document).on("change", 'input[type= "file"].upload-image', function() {
   $(document).on('dragover',function(e){
-    console.log(this)
     e.preventDefault();
 });
 
