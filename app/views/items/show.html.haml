@@ -11,7 +11,7 @@
         = @item.name
       .item-box__main-content
         .item-box__main-content__photo
-          = image_tag(@image.image.url)
+          = image_tag(@image.image)
           
         %table.item-box__main-content__detail
           %tbody
@@ -107,13 +107,15 @@
 
     %ul.item-link
       %li.item-link__prev
-        = link_to `/items/#{@item.previous.id}` do
-          %i.fa.fa-chevron-left
-          = @item.previous.name
+        - if @item.next.present?
+          = link_to `/items/#{@item.previous.id}` do
+            %i.fa.fa-chevron-left
+            = @item.previous.name
       %li.item-link__next
-        = link_to  `/items/#{@item.next.id}` do
-          = @item.next.name
-          %i.fa.fa-chevron-right
+        - if @item.next.present?
+          = link_to  `/items/#{@item.next.id}` do
+            = @item.next.name
+            %i.fa.fa-chevron-right
 
     .item-social-media
       %ul.item-social-media__list
@@ -132,9 +134,4 @@
           = link_to '出品者さんのその他の出品',  root_path 
         .other-items__user__contents
           = render 'shared/item'
-      -# %section.other-items__user
-      -#   .other-items__user__head
-      -#     = link_to 'ユニクロのその他の出品',  root_path 
-      -#   .other-items__user__contents
-      -#     = render 'shared/item'
 = render 'shared/footer'

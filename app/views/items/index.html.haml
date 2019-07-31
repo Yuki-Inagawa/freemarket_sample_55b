@@ -30,7 +30,7 @@
         - item.images.each do |image|
           %section.top-main__contents__item-box
             .top-main__contents__item-box__image
-              = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), root_path, class: "top-main__contents__item-box__image__img"
+              = link_to image_tag("#{image.image}", width: '213', height: '213', alt: "アイテム個別画像"), root_path, class: "top-main__contents__item-box__image__img"
             .top-main__contents__item-box__body
               %h3.top-main__contents__item-box__body__text
                 = item.name

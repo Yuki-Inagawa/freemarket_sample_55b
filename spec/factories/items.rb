@@ -1,6 +1,7 @@
 FactoryBot.define do
 
   factory :item do
+    user_id         {1}
     name            {"inagawa"}
     text            {"これは商品の詳細です"}
     state           {"新品"}
