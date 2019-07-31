@@ -49,12 +49,14 @@
                 %div
                   = f.text_field :name, class: 'form__message', placeholder: '商品名（必須 40文字まで)'
                   %p.error_message.type2
+                  %p.error_message.type10
               .sell-form__information__explanation
                 = f.label :商品の説明
                 %span.mandatory 必須
               %p
                 = f.text_field :text, class: 'long-text', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
                 %p.error_message.type3
+                %p.error_message.type11
 
             .sell-form__details
               .sell-form__details__title 商品の詳細

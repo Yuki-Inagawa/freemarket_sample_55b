@@ -17,8 +17,14 @@ $(document).on('turbolinks:load', function () {
     if (name_val == "") {
       $('.error_message.type2').text("入力してください");
     };
+    if (name_val.length > 40) {
+      $('.error_message.type10').text("40文字以下で入力してください");
+    };
     if (explanation_val == "") {
       $('.error_message.type3').text("入力してください");
+    }
+    if (explanation_val.length > 1000) {
+      $('.error_message.type11').text("1000文字以下で入力してください");
     }
     if (state_select_val == "") {
       $('.error_message.type4').text("選択してください");
@@ -35,10 +41,10 @@ $(document).on('turbolinks:load', function () {
     if (shopping_date_select_val == "") {
       $('.error_message.type8').text("選択してください");
     } 
-    if (price_val == "") {
+    if (price_val == "" || price_val < 300 || price_val >  10000000) {
       $('.error_message.type9').text("300以上9999999以下で入力してください");
     }
-    if (image_val == "" || name_val == "" || explanation_val == "" || price_val == "" || state_select_val == "" || postage_type_select_val == "" || delivery_method_select_val == "") {
+    if (image_val == "" || name_val == "" || name_val.length > 40 || explanation_val == "" || explanation_val.length > 1000 || state_select_val == "" || postage_type_select_val == "" || delivery_method_select_val == "" || price_val == "" || price_val < 300 || price_val >  10000000) {
       return false;
     } 
     $('.exhibition').submit();
