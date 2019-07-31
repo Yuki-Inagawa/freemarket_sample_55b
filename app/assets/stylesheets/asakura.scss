@@ -40,6 +40,17 @@
           }
           &__container {
             position: relative;
+            #preview {
+              display: flex;
+              .add_img {
+                height: 140px;
+                width: 93px;
+                .image {
+                  height: 140px;
+                  width: 93px;  
+                }
+              }
+            }
             .input-area { 
               cursor: pointer;
               min-height: 162px;
@@ -64,7 +75,7 @@
           }
           &__container2 {
             position: relative;
-            .input-area{
+            .input-area2{
               margin: 16px auto 0;
               padding: 40px;
               min-height: 162px;
