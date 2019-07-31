@@ -9,7 +9,7 @@ RSpec.describe Image do
     it "画像が１枚もアップロードされないと保存されない" do
       image = build(:image, image: nil)
       image.valid?
-      expect(image.errors[:image]).to include("can't be blank")
+      expect(image.errors[:image]).to include("を入力してください")
     end
     it "画像がアップロードされていれば保存される" do
       # image = build(:image)
