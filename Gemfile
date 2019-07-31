@@ -78,9 +78,9 @@ gem 'payjp'
 gem 'ancestry'
 gem 'active_hash'
 gem 'mysql2'
+gem 'jquery-rails'
 gem 'gretel'
 gem 'rails-i18n'
-
 
 
 group :production do
