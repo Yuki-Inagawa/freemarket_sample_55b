@@ -1,0 +1,14 @@
+- @items.each do |item|
+  %section.item
+    = link_to  root_path do
+      .item__photo
+        = image_tag("#{item.images.first.image}")
+      .item__body
+        .item__body__name 
+          = item.name
+        .item__body__num
+          .item__body__num__price 
+            = number_to_currency(item.price, :unit => "￥", :precision =>0)
+          .item__body__num__like
+            %i.fa.fa-heart
+              %span 2

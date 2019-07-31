@@ -16,18 +16,18 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :show] do
-    collection do
-      get 'logout'
-      get ':id/identification' => 'users#mypage_identification'
-      get ':id/profile' => 'users#profile'
-      get ':id/card'   => 'users#mypage_card'
-      get ':id/card/create' => 'users#mypage_card_create'
-      get ':id/listing/list' => 'users#mypage_listing_list'
-      get 'login'
-      get 'show' #現状idがないため model生成後 showに直す
+  resources :users, only: [:show]
+
+
+  resources :mypages, only: [:show] do
+      get 'profile', on: :member
+      get 'listing_list',  on: :member
+      get 'identification',  on: :member
+      get 'card',  on: :member
+      get 'card_create',  on: :member
+      get 'logout',  on: :member
     end
-  end
+
 
   # 新規登録画面
   resources :signup, only: [:index, :create] do

@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
+    
+    # binding.pry
   end
 
   def new 
@@ -27,7 +29,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    
     @item = Item.find(params[:id])
     if @item.user_id == current_user.id
       @item.update(item_params)
