@@ -1,6 +1,6 @@
 - @other_items.each do |item|
   %section.item
-    = link_to  root_path do
+    = link_to  `/items/#{item.id}` do
       .item__photo
         = image_tag("#{item.images.first.image}")
       .item__body

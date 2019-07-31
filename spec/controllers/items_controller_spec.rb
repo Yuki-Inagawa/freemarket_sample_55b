@@ -37,9 +37,6 @@ describe ItemsController do
 
   describe 'POST #create' do
     it 'データベースに新しい商品が登録されること' do
-      # expect{
-      #   post :create, item: @item
-      # }.to change(Item, :count).by(1)
     end
   end
 
