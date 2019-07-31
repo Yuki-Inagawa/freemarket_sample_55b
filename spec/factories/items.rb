@@ -10,6 +10,5 @@ FactoryBot.define do
     region          {"千葉県"}
     shopping_date   {"2~3日で発送"}
     price           {"1000"}
-    # created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
   end
 end
