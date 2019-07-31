@@ -41,6 +41,7 @@ class SignupController < ApplicationController
 
   def how_pay
     @address = Address.new(signup_address_params)
+    binding.pry
     if @address.valid?
       session[:postal_code] = signup_address_params[:postal_code]
       session[:region] = signup_address_params[:region]

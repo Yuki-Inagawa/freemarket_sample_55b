@@ -1,7 +1,7 @@
 class Address < ApplicationRecord
   include ActiveModel::Validations
 
-  attr_accessor :address_id
+  # attr_accessor :address_id
 
   belongs_to :user
 

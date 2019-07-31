@@ -79,6 +79,7 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'mysql2'
 gem 'rails-i18n'
+gem 'jquery-rails'
 
 
 group :production do
