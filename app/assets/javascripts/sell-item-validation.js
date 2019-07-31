@@ -1,6 +1,7 @@
 $(document).on('turbolinks:load', function () {
   $('.exhibition').submit(function() {
 
+    var image_val = $('#upload-image').val();
     var name_val = $('[name="item[name]"]').val();
     var explanation_val = $('[name="item[text]"]').val();
     var state_select_val = $('[name="item[state]"]').val();
@@ -10,7 +11,9 @@ $(document).on('turbolinks:load', function () {
     var shopping_date_select_val = $('[name="item[shopping_date]"]').val();
     var price_val = $('[name="item[price]"]').val();
 
-
+    if (image_val == "") {
+      $('.error_message.type1').text("画像がありません");
+    }
     if (name_val == "") {
       $('.error_message.type2').text("入力してください");
     };
@@ -35,7 +38,7 @@ $(document).on('turbolinks:load', function () {
     if (price_val == "") {
       $('.error_message.type9').text("300以上9999999以下で入力してください");
     }
-    if (name_val == "" || explanation_val == "" || price_val == "" || state_select_val == "" || postage_type_select_val == "" || delivery_method_select_val == "") {
+    if (image_val == "" || name_val == "" || explanation_val == "" || price_val == "" || state_select_val == "" || postage_type_select_val == "" || delivery_method_select_val == "") {
       return false;
     } 
     $('.exhibition').submit();
