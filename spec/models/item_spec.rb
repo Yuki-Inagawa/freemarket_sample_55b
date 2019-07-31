@@ -15,12 +15,12 @@ RSpec.describe Item do
       it "商品名が空欄だと保存されない" do
         item = build(:item, name: nil)
         item.valid?
-        expect(item.errors[:name]).to include("can't be blank")
+        expect(item.errors[:name]).to include("を入力してください")
       end
       it "商品名が４１文字だと保存されない" do
         item = build(:item,name: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
         item.valid?
-        expect(item.errors[:name]).to include("is too long (maximum is 40 characters)")
+        expect(item.errors[:name]).to include("は40文字以内で入力してください")
       end
       it "商品名が４０文字だと保存される" do
         item = build(:item,name: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
@@ -32,12 +32,12 @@ RSpec.describe Item do
       it "説明が空欄だと保存されない" do
         item = build(:item, text: nil)
         item.valid?
-        expect(item.errors[:text]).to include("can't be blank")
+        expect(item.errors[:text]).to include("を入力してください")
       end
       it "1001文字だと保存されない" do
         item = build(:item, text: "この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きo")
         item.valid?
-        expect(item.errors[:text]).to include("is too long (maximum is 1000 characters)")
+        expect(item.errors[:text]).to include("は1000文字以内で入力してください")
       end
       it "1000文字だと保存される" do
         item = build(:item, text: "この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大き")
@@ -49,7 +49,7 @@ RSpec.describe Item do
       it "選択されていないと保存されない" do
         item = build(:item, state: nil)
         item.valid?
-        expect(item.errors[:state]).to include("can't be blank")
+        expect(item.errors[:state]).to include("を入力してください")
       end
     end
 
@@ -57,7 +57,7 @@ RSpec.describe Item do
       it "選択されていないと保存されない" do
         item = build(:item, postage_type: nil)
         item.valid?
-        expect(item.errors[:postage_type]).to include("can't be blank")
+        expect(item.errors[:postage_type]).to include("を入力してください")
       end
     end
 
@@ -65,7 +65,7 @@ RSpec.describe Item do
       it "選択されていないと保存されない" do
         item = build(:item, delivery_method: nil)
         item.valid?
-        expect(item.errors[:delivery_method]).to include("can't be blank")
+        expect(item.errors[:delivery_method]).to include("を入力してください")
       end
     end
 
@@ -73,7 +73,7 @@ RSpec.describe Item do
       it "選択されていないと保存されない" do
         item = build(:item, region: nil)
         item.valid?
-        expect(item.errors[:region]).to include("can't be blank")
+        expect(item.errors[:region]).to include("を入力してください")
       end
     end
 
@@ -81,7 +81,7 @@ RSpec.describe Item do
       it "選択されていないと保存されない" do
         item = build(:item, shopping_date: nil)
         item.valid?
-        expect(item.errors[:shopping_date]).to include("can't be blank")
+        expect(item.errors[:shopping_date]).to include("を入力してください")
       end
     end
 
@@ -89,22 +89,22 @@ RSpec.describe Item do
       it "空欄だと保存されない" do
         item = build(:item, price: nil)
         item.valid?
-        expect(item.errors[:price]).to include("can't be blank")
+        expect(item.errors[:price]).to include("を入力してください")
       end
       it "文字だと保存されない" do
         item = build(:item, price: "あ")
         item.valid?
-        expect(item.errors[:price]).to include("is not a number")
+        expect(item.errors[:price]).to include("は数値で入力してください")
       end
       it "全角の数字だと保存されない" do
         item = build(:item, price: "１")
         item.valid?
-        expect(item.errors[:price]).to include("is not a number")
+        expect(item.errors[:price]).to include("は数値で入力してください")
       end
       it "２９９円だと保存されない" do
         item = build(:item, price: "299")
         item.valid?
-        expect(item.errors[:price]).to include("must be greater than or equal to 300")
+        expect(item.errors[:price]).to include("は300以上の値にしてください")
       end
       it "３００円だと保存される" do
         item = build(:item, price: "300")
@@ -113,7 +113,7 @@ RSpec.describe Item do
       it "10,000,000円だと保存されない" do
         item = build(:item, price: "10000000")
         item.valid?
-        expect(item.errors[:price]).to include("must be less than or equal to 9999999")
+        expect(item.errors[:price]).to include("は9999999以下の値にしてください")
       end
       it "9,999,999円だと保存される" do
         item = build(:item, price: "9999999")
