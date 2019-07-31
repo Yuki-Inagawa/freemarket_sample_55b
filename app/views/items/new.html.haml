@@ -15,7 +15,7 @@
               .sell-form__image__title
                 出品画像
                 %span.mandatory 必須
-              %p 最大10枚までアップロードできます
+              .subtitle 最大10枚までアップロードできます
 
       
               = f.fields_for :images, @item.images.first do |image|
@@ -41,7 +41,7 @@
                   -#   :preserve
                   -#     ドラッグアンドドロップ
                   -#     またはクリックしてファイルをアップロード
-
+                %p.error_message.type1
                     
 
             .sell-form__information
