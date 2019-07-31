@@ -26,18 +26,23 @@
         .new-registration-form__content
           .new-registration-form__content--form{style: "margin-top: 0;"}
             %label{for: "name"} お名前
-            %span.form-require 必須
+            %span.form-require{style: "background-color: #ccc;"} 入れなくてもOK(笑)
             %input.input-default{type: "text", name: "famiy_name", placeholder: "例）東京"}
             %input.input-default{type: "text", name: "first_name", placeholder: "例）喰種"}
           .new-registration-form__content--form
             %label{for: "name"} お名前カナ
-            %span.form-require 必須
+            %span.form-require{style: "background-color: #ccc;"} 入れなくてもOK(笑)
             %input.input-default{type: "text", name: "famiy_name", placeholder: "例）トウキョウ"}
             %input.input-default{type: "text", name: "first_name", placeholder: "例）グール"}
           .new-registration-form__content--form
             %label{for: "name"} 郵便番号
             %span.form-require 必須
             = f.text_field :postal_code, placeholder: "例）123-4567", class: 'input-default'
+            - if @address.errors.any?
+              .alert.alert-warning
+                %ul
+                  - @address.errors.full_messages_for(:postal_code).each do |message|
+                    %li= message
           .new-registration-form__content--form
             %label 都道府県
             %span.form-require 必須
@@ -47,11 +52,21 @@
           .new-registration-form__content--form
             %label{for: "name"} 市区町村
             %span.form-require 必須
-            = f.text_field :city, placeholder: "例）東京都渋谷区", class: 'input-default'
+            = f.text_field :city, placeholder: "例）渋谷区", class: 'input-default'
+            - if @address.errors.any?
+              .alert.alert-warning
+                %ul
+                  - @address.errors.full_messages_for(:city).each do |message|
+                    %li= message
           .new-registration-form__content--form
             %label{for: "name"} 番地
             %span.form-require 必須
             = f.text_field :address_number, placeholder: "例）123-45", class: 'input-default'
+            - if @address.errors.any?
+              .alert.alert-warning
+                %ul
+                  - @address.errors.full_messages_for(:address_number).each do |message|
+                    %li= message
           .new-registration-form__content--form
             %label{for: "name"} 建物名
             %span.form-require{style: "background: #ccc;"} 任意
@@ -59,7 +74,7 @@
           .new-registration-form__content--form
             %label{for: "name"} 電話
             %span.form-require{style: "background: #ccc;"} 任意
-            = f.text_field :phone_number, placeholder: "11111111111", class: 'input-default'
+            = f.text_field :phone_number, placeholder: "例) 11111111111", class: 'input-default'
           = f.submit '次へ進む', class: 'next-btn'
   
   = render 'shared/signup_footer'

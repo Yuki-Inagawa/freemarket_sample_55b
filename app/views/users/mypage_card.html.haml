@@ -1,21 +1,13 @@
 .default-container  
   = render 'shared/header'
 
-  %nav.bread-crumbs
-    %ul
-      %li 
-        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li 
-        = link_to 'マイページ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li
-      %span.name 支払い方法
+  - breadcrumb :payment_information
+  = render "./shared/breadcrumbs"
 
   %main.mypage-card
     %section.payment-info
       %h2.payment-info__head 
-        支払い情報
+        支払い方法
       
       .payment-info-contents
         %section.payment-info-content
@@ -24,7 +16,7 @@
         %section.settings-add-card
           %button.add-card-content
             = fa_icon 'credit-card', class: 'card-submit-button-icon'
-            = link_to 'クレジットカードを追加する',  root_path, class: 'card-submit-button'
+            = link_to 'クレジットカードを追加する', "/users/#{current_user.id}/card/create", class: 'card-submit-button'
         
         .settings-not-regist
           = link_to  root_path, class: 'settings-not-regist-link' do
