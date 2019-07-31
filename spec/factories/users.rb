@@ -12,6 +12,7 @@ FactoryBot.define do
     birthday_day        {"10"}
     email               {"i@gmail.com"}
     password            {14833123}
+    password_confirmation {14833123}
     encrypted_password  {"$2a$11$9FGTBO3NnCOUb9fKUUulm.VEeolfAhQ19N10GxS0Kx4RzlRsks4vG"}
   end
 end
