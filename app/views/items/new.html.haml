@@ -47,9 +47,9 @@
                 %span.mandatory 必須
                 %div
                   = f.text_field :name, class: 'form__message', placeholder: '商品名（必須 40文字まで)'
-                - @item.errors.full_messages_for(:name).each do |message|
-                  %p
-                    = message
+                -# - @item.errors.full_messages_for(:name).each do |message|
+                -#   %p
+                -#     = message
 
               .sell-form__information__explanation
                 = f.label :商品の説明
