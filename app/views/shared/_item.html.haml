@@ -1,14 +1,18 @@
 - @other_items.each do |item|
   %section.item
-    = link_to  root_path do
+    = link_to  "/items/#{item.id}" do
       .item__photo
-        = image_tag("#{item.images.first.image}")
+        - item.images.each_with_index do |image, index|
+          - if index == 0
+            = image_tag("#{image.image.url}")
+            - break
+            
       .item__body
         .item__body__name 
           = item.name
         .item__body__num
           .item__body__num__price 
-            = number_to_currency(item.price, :unit => "￥", :precision =>0)
+            = number_to_currency(item.price, :unit => "￥", :precision =>0,:format => "%u%n")
           .item__body__num__like
             %i.fa.fa-heart
               %span 2
