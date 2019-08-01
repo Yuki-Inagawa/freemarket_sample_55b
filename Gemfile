@@ -82,6 +82,7 @@ gem 'mysql2'
 gem 'jquery-rails'
 gem 'gretel'
 gem 'rails-i18n'
+gem 'jquery-rails'
 
 
 group :production do
