@@ -284,7 +284,6 @@
   height: 100px;
   width: 100vw;
   background-color: #fff;
-  // position: relative
   &-inner{
     width:1020px;
     margin: 0 auto;
@@ -293,10 +292,6 @@
   &__top{
     display: flex;
     align-items: center;
-    // -webkit-box-pack: justify;
-    // -webkit-box-align: center;
-    // -webkit-box-flex: 1;
-    // flex: 1;
     justify-content: space-between;
     h1{
       a{
@@ -311,8 +306,6 @@
       position: relative;
       margin-left: 45px;
       width: 100%;
-      // -webkit-box-flex: 1;
-      // flex: 1;
       &__input{
         background: #f5f5f5;
         border-radius: 4px;
@@ -327,47 +320,33 @@
         top: 0;
         right: 0;
         display: flex;
-        // -webkit-box-align: center;
         align-items: center;
-        // -webkit-box-pack: center;
         justify-content: center;
         width: 40px;
         height: 40px;
         cursor: pointer;
-        // border-width: 0;
       }
     }
   }
   &__bottom{
     margin-top: 8px;
-    // display: flex;
-    // justify-content: space-between;
     &__left{
       float:left;
-      // display: flex;
       &-list{
-        // width:100%;
         &__child{
           padding-right: 11px;
           position: relative;
           display: inline-block;
-          // cursor: pointer;
           &-text{
             font-size: 14px;
-            // font-weight: 400;
             &-link{
               font-weight: bold;
-              // text-decoration: none;
               display: block;
-              // color: #333;
-              // position: relative;
               height: 44px;
               line-height: 32px;
               &--icon{
                 color: #ea352d;
-                // font-size: 14px;
                 margin-right: 4px;
-                // display: inline-block;
               }
               span{
                 vertical-align: middle;
@@ -379,8 +358,6 @@
     }
     &__right{
       float: right;
-      // display: flex;
-      // align-items: center;
       &__list{
         font-size: 0;
         &__child{
@@ -406,7 +383,6 @@
               font-size: 16px;
             }
             span{
-              // vertical-align: middle;
               margin-left: 10px;
               font-size: 14px;
             }
@@ -418,14 +394,10 @@
         & :hover{
           color: #0099e8
         }
-        // & :first-child{
-        //   // padding-left: 0;
-        // }
         &__child--my-page{
           display: inline-block;
           padding: 0 14px;
           padding-right: 0;
-          // font-size: 0;
           &__link{
             position: relative;
             display: block;
