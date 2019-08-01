@@ -2,7 +2,8 @@
   %section.item
     = link_to  `/items/#{item.id}` do
       .item__photo
-        = image_tag("#{item.images.first.image}")
+        - item.images.each do |image|
+          = image_tag("#{image.image.url}")
       .item__body
         .item__body__name 
           = item.name
