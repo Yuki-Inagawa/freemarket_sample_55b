@@ -1,3 +1,6 @@
+before_exec do |server|
+  ENV["BUNDLE_GEMFILE"] = "/path/to/app/current/Gemfile"
+end
 server '52.194.206.221', user: 'ec2-user', roles: %w{app db web}
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
