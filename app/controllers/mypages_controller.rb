@@ -9,6 +9,11 @@ class MypagesController < ApplicationController
   end
 
   def identification
+    # binding.pry
+    @user = User.find(params[:id])
+    # binding.pry
+    @address = @user.address
+    # binding.pry
   end
 
   def card
@@ -24,4 +29,5 @@ class MypagesController < ApplicationController
     @user = User.find(1)
     @items = @user.items
   end
+
 end

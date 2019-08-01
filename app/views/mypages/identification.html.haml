@@ -22,23 +22,23 @@
             %label.user-identification-form__body__forms__content__form-groups__name
               お名前
             %p.user-identification-form__body__forms__content__form-groups__name--user
-              犬
+              = current_user.family_name + current_user.farst_name
           .user-identification-form__body__forms__content__form-groups
             %label.user-identification-form__body__forms__content__form-groups__kana
               お名前カナ
             %p.user-identification-form__body__forms__content__form-groups__kana
-              イヌ
+              = current_user.family_name_ruby + current_user.farst_name_ruby
           .user-identification-form__body__forms__content__form-groups
             %label.user-identification-form__body__forms__content__form-groups__birth-day
               生年月日
             %p.user-identification-form__body__forms__content__form-groups__birth-day
-              2000/05/19
+              = current_user.birthday_yiar.to_s + "/" + current_user.birthday_month.to_s + "/" + current_user.birthday_day.to_s
           .user-identification-form__body__forms__content__form-groups
             %label{for: "zip_code", class: "user-identification-form__body__forms__content__form-groups__"}
               郵便番号
             %span.user-identification-form__body__forms__content__form-groups__any--tag 
               任意
-            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", :type => "text", :value => "0000000"}/
+            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", type: "text", value: "#{@address.postal_code}"}/
           .user-identification-form__body__forms__content__form-groups
             %label{for: "zip_code", class: "user-identification-form__body__forms__content__form-groups__"}
               都道府県
@@ -46,7 +46,7 @@
               任意
             .user-identification-form__body__forms__content__form-groups__prefectures
               = fa_icon "chevron-down", class:"user-identification-form__body__forms__content__form-groups__prefectures--icon"
-              %select.user-identification-form__body__forms__content__form-groups__prefectures--list{name: "prefecture"}
+              %select.user-identification-form__body__forms__content__form-groups__prefectures--list{name: "prefecture", value: "#{@address.region}"}
                 %option --
                 %option 北海道
                 %option 青森県
@@ -57,7 +57,7 @@
                 %option 福島県
                 %option 東京都
                 %option 神奈川県
-                %option{selected: "selected"} 埼玉県
+                %option 埼玉県
                 %option 千葉県
                 %option 茨城県
                 %option 栃木県
@@ -101,19 +101,19 @@
               市区町村
             %span.user-identification-form__body__forms__content__form-groups__any--tag 
               任意
-            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", :type => "text", :value => "しぶや"}/
+            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", type: "text", value: "#{@address.city}"}/
             .user-identification-form__body__forms__content__form-groups
             %label{for: "zip_code", class: "user-identification-form__body__forms__content__form-groups__"}
               番地
             %span.user-identification-form__body__forms__content__form-groups__any--tag 
               任意
-            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", :type => "text", :value => "１０３"}/
+            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", type: "text", value: "#{@address.address_number}"}/
             .user-identification-form__body__forms__content__form-groups
             %label{for: "zip_code", class: "user-identification-form__body__forms__content__form-groups__"}
               建物名
             %span.user-identification-form__body__forms__content__form-groups__any--tag 
               任意
-            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", :type => "text", :value => "アジアビル"}/
+            %input.user-identification-form__body__forms__content__form-groups__input-area{name: "zip_code", placeholder: "例）1234567", type: "text", value: "#{@address.building_name}"}/
             %button.user-identification-form__body__forms__content__form-groups--btn{type: "submit"} 登録する
             .user-identification-form__body__forms__content__form-groups__question
               %p.user-identification-form__body__forms__content__form-groups__question__text
