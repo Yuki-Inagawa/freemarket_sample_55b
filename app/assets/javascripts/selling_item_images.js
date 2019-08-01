@@ -1,9 +1,8 @@
 $( document ).on('turbolinks:load', function() {
-  var dropzone = $('.sell-form__image__container');
-  var dropzone2 = $('.sell-form__image__container2');
-  var dropzone_box = $('.dropzone-box');
+  var dropzone = $('.sell-form__image__container__input');
+  var dropzone2 = $('.sell-form__image__container__input2');
+  var appendzone = $('.sell-form__image__container2');
   var input_area = $('.input-area');
-  var input_area2 = $('.input-area2');
   var preview = $('#preview');
   var preview2 = $('#preview2');
 
@@ -12,19 +11,29 @@ $( document ).on('turbolinks:load', function() {
   // 新規追加画像を格納する配列（DB用）
   var new_image_files = [];
 
+
   $(document).on("change", 'input[type= "file"].upload-image', function() {
+  $(document).on('dragover',function(e){
+    e.preventDefault();
+});
 
     var file = $(this).prop("files")[0];
 
     new_image_files.push(file)
     var reader = new FileReader();
 
-    var img = $(`<div class= "add_img"><div class="img_area"><img class="image"></div></div>`);
+    var img = $(
+      `<div class= "add_img">
+        <div class="img_area">
+          <img class="image">
+          </div>
+        <div class="btn_wrapper">
+          <a class="btn_edit">編集</a>
+          <a class="btn_delete">削除</a>
+        </div>
+      </div>`
+      );
 
-    var btn_wrapper = $('<div class="btn_wrapper"><a class="btn_edit">編集</a><a class="btn_delete">削除</a></div>');
-
-    // 画像に編集・削除ボタンをつける
-    img.append(btn_wrapper);
 
     reader.onload = function(e) {
       img.find("img").attr({
@@ -46,7 +55,7 @@ $( document ).on('turbolinks:load', function() {
         'width': `calc(100% - (20% * ${images.length}))`
       })
 
-      // 画像が５枚のとき１段目の枠を消し、２段目の枠を出す
+      // 画像が5枚以上のとき
     } else if (images.length == 5) {
       $("#preview").empty();
       $.each(images, function(index, image) {
@@ -63,7 +72,6 @@ $( document ).on('turbolinks:load', function() {
 
       // 画像が６枚以上のとき
     } else if (images.length >= 6) {
-      // 配列から６枚目以降の画像を抽出
       var pickup_images = images.slice(5);
 
       $.each(pickup_images, function(index, image) {
@@ -74,7 +82,7 @@ $( document ).on('turbolinks:load', function() {
         });
       });
 
-      // 画像が１０枚になったら枠を消す
+      // 画像が１０枚になった時
       if (images.length == 10) {
         dropzone2.css({
           display: "none"
@@ -91,14 +99,8 @@ $( document ).on('turbolinks:load', function() {
 
   // 削除ボタンを押した時
   $(document).on('click', '.btn_delete', function() {
-
-    // 削除ボタンを押した画像を取得
     var target_image = $(this).parent().parent();
-
-    // 削除画像のdata-image番号を取得
     var target_image_num = target_image.data('image');
-
-    // 対象の画像を削除
     target_image.remove();
 
     // 対象の画像を削除した新たな配列を生成
@@ -111,7 +113,6 @@ $( document ).on('turbolinks:load', function() {
       })
     }
 
-    // 削除後の配列の中身の数で条件分岐
     // 画像が４枚以下のとき
     if (images.length <= 4) {
       $('#preview').empty();
@@ -148,20 +149,16 @@ $( document ).on('turbolinks:load', function() {
       // 画像が６枚以上のとき
 
     } else {
-      // １〜５枚目の画像を抽出
       var pickup_images1 = images.slice(0, 5);
 
-      // １〜５枚目を１段目に表示
       $('#preview').empty();
       $.each(pickup_images1, function(index, image) {
         image.data('image', index);
         preview.append(image);
       })
 
-      // ６枚目以降の画像を抽出
       var pickup_images2 = images.slice(5);
 
-      // ６枚目以降を２段目に表示
       $.each(pickup_images2, function(index, image) {
           image.data('image', index + 5);
           preview2.append(image);
@@ -175,15 +172,10 @@ $( document ).on('turbolinks:load', function() {
 
 
   $('#new_item').on('submit', function(e){
-    // 通常のsubmitイベントを止める
     e.preventDefault();
-    // images以外のform情報をformDataに追加
     var formData = new FormData($(this).get(0));
-
-    // imagesがない場合は便宜的に空の文字列を入れる
     if (new_image_files.length == 0) {
       formData.append("new_images[images][]", " ")
-    // imagesがある場合はformDataに追加する
     } else {
       new_image_files.forEach(function(file){
         formData.append("new_images[images][]", file)
