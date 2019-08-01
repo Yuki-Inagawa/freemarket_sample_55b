@@ -1,4 +1,6 @@
 $( document ).on('turbolinks:load', function() {
+  if(window.location.href.match(/\/items\/new/)){
+    
   var dropzone = $('.sell-form__image__container__input');
   var dropzone2 = $('.sell-form__image__container__input2');
   var appendzone = $('.sell-form__image__container2');
@@ -11,11 +13,8 @@ $( document ).on('turbolinks:load', function() {
   // 新規追加画像を格納する配列（DB用）
   var new_image_files = [];
 
+  $('#new_item').on("change", 'input[type= "file"].upload-image', function() {
 
-  $(document).on("change", 'input[type= "file"].upload-image', function() {
-  $(document).on('dragover',function(e){
-    e.preventDefault();
-});
 
     var file = $(this).prop("files")[0];
 
@@ -190,4 +189,5 @@ $( document ).on('turbolinks:load', function() {
       processData: false,
     })
   });
+  }
 });

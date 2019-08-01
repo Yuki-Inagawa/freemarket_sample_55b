@@ -73,11 +73,11 @@
       .item-box__description
         %p.item-box__description__text
           = @item.text
- 
+
       .item-box__change-box
       - if user_signed_in? && current_user.id == @item.user_id
         %section.item-box__main-content__buy
-          = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn"
+          = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn",  data: {"turbolinks" => false}
         %section.item-box__main-content__buy
           = link_to '販売停止', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
         %section.item-box__main-content__buy
@@ -109,10 +109,12 @@
       %li.item-link__prev
         - if @item.next.present?
           = link_to "/items/#{@item.previous.id}" do
+
             %i.fa.fa-chevron-left
             = @item.previous.name
       %li.item-link__next
         - if @item.next.present?
+        
           = link_to  "/items/#{@item.next.id}" do
             = @item.next.name
             %i.fa.fa-chevron-right
