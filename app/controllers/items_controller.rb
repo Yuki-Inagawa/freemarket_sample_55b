@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
+    
+    # binding.pry
   end
 
   def new 

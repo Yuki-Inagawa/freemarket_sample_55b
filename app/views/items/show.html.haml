@@ -18,7 +18,7 @@
             %tr
               %th 出品者
               %td
-                = link_to "#{@item.user.nickname}",  root_path
+                = link_to "#{@item.user.nickname}",  ""
                 .item-box__main-content__detail__ratings
                   .item-box__main-content__detail__ratings__rate
                     = image_tag("smile.svg", alt: 'smail', height: 16, width: 16)
@@ -62,7 +62,7 @@
                 = @item.shopping_date
         .item-box__main-content__price-box
           %span.item-box__main-content__price-box__price
-            = number_to_currency(@item.price, :unit => "￥", :precision =>0)
+            = number_to_currency(@item.price, :unit => "￥", :precision =>0, :format => "%u%n")
           %span.item-box__main-content__price-box__tax 税込
           %span.item-box__main-content__price-box__shipping-fee
             = @item.postage_type
@@ -108,12 +108,14 @@
     %ul.item-link
       %li.item-link__prev
         - if @item.next.present?
-          = link_to '/items/#{@item.previous.id}' do
+          = link_to "/items/#{@item.previous.id}" do
+
             %i.fa.fa-chevron-left
             = @item.previous.name
       %li.item-link__next
         - if @item.next.present?
-          = link_to  '/items/#{@item.next.id}' do
+        
+          = link_to  "/items/#{@item.next.id}" do
             = @item.next.name
             %i.fa.fa-chevron-right
 

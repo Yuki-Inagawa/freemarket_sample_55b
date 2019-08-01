@@ -41,7 +41,7 @@ class SignupController < ApplicationController
 
   def how_pay
     @address = Address.new(signup_address_params)
-    if @address.valid?
+    unless @address.valid?
       session[:postal_code] = signup_address_params[:postal_code]
       session[:region] = signup_address_params[:region]
       session[:city] = signup_address_params[:city]
