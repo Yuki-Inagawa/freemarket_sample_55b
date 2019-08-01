@@ -2,7 +2,6 @@
   %section.item
     = link_to  "/items/#{item.id}" do
       .item__photo
-        -# = image_tag("#{item.images.image.url}")
         - item.images.each_with_index do |image, index|
           - if index == 0
             = image_tag("#{image.image.url}")
