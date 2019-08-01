@@ -1,16 +1,18 @@
 .default-container  
   = render 'shared/header'
 
-  %nav.bread-crumbs
-    %ul
-      %li 
-        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li 
-        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li
-      %span.name ログアウト
+  -# %nav.bread-crumbs
+  -#   %ul
+  -#     %li 
+  -#       = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
+  -#       %i.fa.fa-chevron-right
+  -#     %li 
+  -#       = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
+  -#       %i.fa.fa-chevron-right
+  -#     %li
+  -#     %span.name ログアウト
+  - breadcrumb :user_logout
+  = render "./shared/breadcrumbs"
 
   %main.logout-content
     %section.logout-card

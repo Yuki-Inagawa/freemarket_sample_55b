@@ -1,19 +1,14 @@
 .default-container  
   = render 'shared/header'
 
-  %nav.bread-crumbs
-    %ul
-      %li 
-        = link_to 'メルカリ',  root_path, class: "bread-crumbs__link"  
-        %i.fa.fa-chevron-right
-      %li
-        %span.name マイページ
+  - breadcrumb :mypage_top
+  = render "./shared/breadcrumbs"
 
   %main.user-profile
     .profile-main
       .profile-icon
-        = image_tag("member_photo_noimage_thumb.png", alt: 'b', class: 'member_photo_noimage_thumb')
-        %h2.users-detail__name 野口雄大
+        = link_to image_tag("member_photo_noimage_thumb.png", alt: 'b', class: 'member_photo_noimage_thumb'), root_path
+        %h2.users-detail__name #{current_user.nickname}
         .scores
           %span.scores__name 評価
           %span.scores__score  0

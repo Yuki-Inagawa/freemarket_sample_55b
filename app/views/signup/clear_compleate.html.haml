@@ -1,7 +1,7 @@
 .single-container
   %header.single-header
     %h1.mercari-logo
-      = link_to image_tag("logo.svg", alt: "mercari"), "/users/signup", class: "mercari-logo__link"
+      = link_to image_tag("logo.svg", alt: "mercari"), root_path, class: "mercari-logo__link"
     %nav.progress-bar
       %ol.clearfix
         %li
@@ -28,6 +28,7 @@
             %p ありがとうございます。
             %p 会員登録が完了しました。
           =link_to "メルカリをはじめる", "/login", class: "next-btn"
+
         .last-image
           .last-image__pc
             .last-image__pc--inner

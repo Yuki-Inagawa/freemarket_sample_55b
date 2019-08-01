@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: :index
+  # before_action :move_to_index, except: :index
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
@@ -7,15 +7,15 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
-
-    10.times { @item.images.build }
-
+    @item.images.build
   end
-
   
   def create
     @item = Item.new(item_params)
     if @item.save
+      image_params[:images].each do |image|
+      @item.images.create(image: image)
+      end
       redirect_to root_path
     else
       render :new
@@ -57,11 +57,15 @@ class ItemsController < ApplicationController
 
 private
   def item_params
-    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, images_attributes:[:image]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price).merge(user_id: current_user.id)
   end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def image_params
+    params.require(:new_images).permit({images: []})
   end
   
 end
