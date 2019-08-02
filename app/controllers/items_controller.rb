@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
                             access_key_id: Rails.application.credentials.aws[:access_key_id],
                             secret_access_key: Rails.application.credentials.aws[:secret_access_key],
                             )
-      @item.item_images.each do |image|
+      @item.images.each do |image|
         binary_data = client.get_object(bucket: 'freemarket-sample-55b', key: image.image_url.file.path).body.read
         gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
       end
