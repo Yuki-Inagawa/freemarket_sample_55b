@@ -83,7 +83,7 @@ gem 'jquery-rails'
 gem 'gretel'
 gem 'rails-i18n'
 gem 'gon'
-
+gem 'aws-sdk'
 
 
 

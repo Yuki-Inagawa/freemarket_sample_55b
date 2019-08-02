@@ -30,10 +30,11 @@ class ItemsController < ApplicationController
     gon.item_images = @item.images
     
     require 'base64'
+    require 'aws-sdk'
+
     gon.item_images_binary_datas = []
     
     if Rails.env.production?
-    require 'aws-sdk'
       client = Aws::S3::Client.new(
                             region: 'ap-northeast-1',
                             access_key_id: Rails.application.credentials.aws[:access_key_id],
@@ -55,7 +56,6 @@ end
 
   def update
     @item = Item.find(params[:id])
-
     # 登録済画像のidの配列を生成
     ids = @item.images.map{|image| image.id }
     # 登録済画像のうち、編集後もまだ残っている画像のidの配列を生成(文字列から数値に変換)
