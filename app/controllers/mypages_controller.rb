@@ -9,6 +9,8 @@ class MypagesController < ApplicationController
   end
 
   def identification
+    @user = User.find(params[:id])
+    @address = @user.address
   end
 
   def card
@@ -24,4 +26,5 @@ class MypagesController < ApplicationController
     @user = User.find(1)
     @items = @user.items
   end
+
 end

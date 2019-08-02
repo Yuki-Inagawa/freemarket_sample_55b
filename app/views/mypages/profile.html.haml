@@ -11,10 +11,10 @@
       .profile-form
         .profile-icon
           = image_tag("member_photo_noimage_thumb.png", alt: 'b', class: 'member_photo_noimage_thumb')
-          %input.profile-icon__input{placeholder: "ああ", type: "text"}
+          %input.profile-icon__input{placeholder: "#{current_user.nickname}", type: "text"}
         
         .profile-text
-          %input.profile-text__input{placeholder: "プロフィール", type: "text_area"}
+          %textarea.profile-text__input{placeholder: "例）こんにちは☆ご覧いただきありがとうごさいます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に９号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問ありましたらお気が図にどうぞ♪;", type: "text_area"}
           %button.profile-text__btn 変更する
 
     .profile-side
