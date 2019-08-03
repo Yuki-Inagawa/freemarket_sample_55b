@@ -6,6 +6,7 @@
     %script{:src => "https://js.pay.jp/", :type => "text/javascript"}
     = csrf_meta_tags
     = csp_meta_tag
+    = include_gon
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     -# 以下Swiperの読み込み
     -# = stylesheet_link_tag    "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
