@@ -34,4 +34,3 @@
 # Ignore Byebug command history file.
 /.byebug_history
 /public/uploads/*
-/config/credentials.yml.enc
