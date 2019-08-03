@@ -67,8 +67,12 @@
           %span.item-box__main-content__price-box__shipping-fee
             = @item.postage_type
       - if user_signed_in? && current_user.id != @item.user_id
-        %section.item-box__main-content__buy
-          = link_to '購入画面に進む', item_transaction_index_path(@item), class: "item-box__main-content__buy__btn"
+        -if @item.status == 0
+          %section.item-box__main-content__buy
+            = link_to '購入画面に進む', item_transaction_index_path(@item), class: "item-box__main-content__buy__btn"
+        -elsif @item.status == 1
+          %section.item-box__main-content__buy
+            %a.item-box__main-content__buy__btn{style: "background-color: #888;"} 売り切れました
         
       .item-box__description
         %p.item-box__description__text
