@@ -12,11 +12,11 @@
         .buy-item-container__details__box
           .box-wrapper 
             %h3
-              = image_tag("mark-zuckerberg1.jpg", class: "lazyloaded")
-            %p.buy-item-name マイクロフォーサーズ単焦点レンズ  LAOWA 7.5mm F2 MFT
+              = image_tag("#{@image.image}", class: "lazyloaded")
+            %p.buy-item-name #{@item.name}
           .payment-form{action: "https://www.mercari.com/jp/transaction/buy/done/m40752623834/", method: "POST", novalidate: "novalidate"}
             %p.buy-price
-              ¥ 50,000
+              ￥ #{@item.price}
               %span.shipping-fee 送料込み
             %ul.user-point
               %li.user-point-box
@@ -26,20 +26,21 @@
               %li.final-price-box
                 .price-cell-left 支払い金額
                 .price-cell-right
-                  %span ¥ 50,000
-            %button.buy-btn{disabled: "disabled", type: "submit"} 購入する
+                  %span ￥ #{@item.price}
+            =link_to "購入する", pay_item_transaction_index_path, class: "buy-btn", method: "post"
       
       .buy-item-container__user-info
         .buy-item-container__user-info__box
           %h3 配送先
           %address.user-address
-            〒150-0041
+            〒#{@address.first.postal_code}
             %br/
-            東京都渋谷区
-            神南1-12-16
-            TECH::EXPERT アジアビル9F校
+            #{@address.first.region}
+            #{@address.first.city}
+            #{@address.first.address_number}
             %br/
-            開発 太朗
+            #{@user.family_name}
+            #{@user.farst_name}
           %p.user-info-text
           %a.user-info-fix
           = link_to root_path do
