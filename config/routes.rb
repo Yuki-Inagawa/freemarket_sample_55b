@@ -15,8 +15,9 @@ Rails.application.routes.draw do
 
     end
     resources :transaction, only: [:index] do
-      # collection do
-      #   get 'transaction/buy/:item.id'
+      collection do
+        post 'pay'
+      end
     end
   end
 

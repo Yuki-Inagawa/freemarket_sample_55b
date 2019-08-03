@@ -27,7 +27,7 @@
                 .price-cell-left 支払い金額
                 .price-cell-right
                   %span ￥ #{@item.price}
-            %button.buy-btn{disabled: "disabled", type: "submit"} 購入する
+            =link_to "購入する", pay_item_transaction_index_path, class: "buy-btn", method: "post"
       
       .buy-item-container__user-info
         .buy-item-container__user-info__box
