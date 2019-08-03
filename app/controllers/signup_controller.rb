@@ -76,11 +76,22 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       phone_number: session[:phone_number]
     )
+
     if address.save
       # session[:id] = user.id
-      redirect_to clear_compleate_signup_index_path
+      # redirect_to clear_compleate_signup_index_path
     else
       redirect_to "/signup"
+    end
+
+    respond_to do |format|
+      format.json {
+        require 'payjp'
+        Payjp.api_key = "sk_test_8a3bd63574f274676a543f16"
+        user.update(Token: params[:token])
+        customer = Payjp::Customer.create(card: params[:token])
+        card = Card.create(user_id: user.id, customer_id: customer.id, card_id: customer.default_card)
+      }
     end
   end
 
