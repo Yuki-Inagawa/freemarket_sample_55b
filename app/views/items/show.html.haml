@@ -68,7 +68,7 @@
             = @item.postage_type
       - if user_signed_in? && current_user.id != @item.user_id
         %section.item-box__main-content__buy
-          = link_to '購入画面に進む', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
+          = link_to '購入画面に進む', item_transaction_index_path(@item), class: "item-box__main-content__buy__btn"
         
       .item-box__description
         %p.item-box__description__text
