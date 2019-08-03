@@ -11,7 +11,6 @@ $(function(){
     Payjp.createToken(card, function(status, response) {
       if (status == 200) {
         var token = response.id;
-        console.log("OK")
         $.ajax({
           url: "/signup",
           type: "POST",
@@ -19,7 +18,7 @@ $(function(){
           dataType: 'json',
         })
         .done(function(){
-          //非同期通信失敗時の処理
+          window.location.href = "/signup/clear_compleate";
         })
         .fail(function(){
           //非同期通信失敗時の処理
