@@ -27,6 +27,12 @@ class TransactionController < ApplicationController
     :currency => 'jpy', #日本円
   )
   item = @item.update(status: 1)
+
+  transaction = Transaction.create(
+    user_id: @user.id,
+    item_id: @item.id
+  )
+
   redirect_to '/' #完了画面に移動
   end
 
