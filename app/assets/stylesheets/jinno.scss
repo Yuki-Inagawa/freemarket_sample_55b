@@ -547,6 +547,17 @@
             display: block;
           }
         }
+        .sold {
+          position: absolute;
+          top: 20px;
+          font-size: 26px;
+          left: 0;
+          z-index: 10;
+          color: #fff;
+          transform: rotate(-45deg);
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
       }
       .top-main__contents__item-box__body{
         padding: 16px;

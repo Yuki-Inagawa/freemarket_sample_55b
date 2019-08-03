@@ -26,6 +26,7 @@ class TransactionController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
+  item = @item.update(status: 1)
   redirect_to '/' #完了画面に移動
   end
 
