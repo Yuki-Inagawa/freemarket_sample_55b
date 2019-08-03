@@ -7,7 +7,7 @@
       = link_to  root_path, class: 'text-center-link' do
         = image_tag("member_photo_noimage_thumb.png", alt: 'noimage', class: 'member_photo_noimage_thumb')
         .users-detail
-          %h2.users-detail__name #{current_user.nickname}
+          %h2.users-detail__name #{@user.nickname}
         .scores
           %span.scores__score 評価 0
           %span.scores__score 出品数 0
