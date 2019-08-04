@@ -134,8 +134,7 @@
                       %li= message
 
             %p.form-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-            .new-registration-form__content--form.robo
-              %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
+            .g-recaptcha{"data-sitekey" => "6LeBL7EUAAAAAPuc9A1oD1oe3Ro4hSs_AyxKBzEm", "data-secretkey" => "6LeBL7EUAAAAAAfDRuftjXdbZ8blN_GzjaEc7AJq"}
             .new-registration-form__content--form
               %p.next-info-text
                 「次へ進む」のボタンを押すことにより、

@@ -20,8 +20,9 @@
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-default", placeholder: "メールアドレス"
             .new-registration-form__content--form{style: "margin-top: 16px;"}
               = f.password_field :password, autocomplete: "current-password", class: "input-default", placeholder: "パスワード"
-            .new-registration-form__content--form.robo
-              %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
+            .g-recaptcha{"data-sitekey" => "6LeBL7EUAAAAAPuc9A1oD1oe3Ro4hSs_AyxKBzEm", "data-secretkey" => "6LeBL7EUAAAAAAfDRuftjXdbZ8blN_GzjaEc7AJq"}
+            -# .new-registration-form__content--form.robo
+              -# %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
             = f.submit "ログイン", class: "next-btn"
             =link_to "パスワードをお忘れの方", "signup", class: "foreine-passward" 
 
