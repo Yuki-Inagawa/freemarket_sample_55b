@@ -86,6 +86,7 @@ gem 'gon'
 gem 'aws-sdk'
 gem 'rubocop'
 gem "recaptcha"
+gem 'ransack'
 
 
 
