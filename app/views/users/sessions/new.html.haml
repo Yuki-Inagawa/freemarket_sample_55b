@@ -1,7 +1,7 @@
 .single-container
   .exhibiton-header
     .exhibition-wrapper
-      = image_tag("logo.svg", alt: "mercari", heigh:"49", width: "185")
+      =link_to image_tag("logo.svg", alt: "mercari", heigh:"49", width: "185"), '/'
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     %main.single-main
       %section.l-single-container.login
