@@ -3,8 +3,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
-    
-    # binding.pry
+
+    @q = Item.ransack(params[:q])
+    @search_items = @q.result(distinct: true)
   end
 
   def new 
@@ -110,8 +111,14 @@ end
   def buy_confirmation
   end
 
+  def search
+    @q = Item.search(search_params)
+    @items = @q.result(distinct: true)
+  end
+
 
 private
+
   def item_params
     params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price).merge(user_id: current_user.id)
   end
@@ -126,6 +133,10 @@ private
 
   def image_params
     params.require(:new_images).permit({images: []})
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
   
 end

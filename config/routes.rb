@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection do
 
     get 'buy/confirmation', to: 'items#buy_confirmation'
+    get 'search', to: 'items#search'
 
     end
     resources :transaction, only: [:index] do
