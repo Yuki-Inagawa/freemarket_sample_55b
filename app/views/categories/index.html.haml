@@ -1,0 +1,85 @@
+%header
+  .header
+    %ul.parent-wrap
+      %li.parent
+        %h3
+          =link_to '/' do
+            %spna 
+        %ul.child-wrap
+          %li.child
+            =link_to '/' do
+              %span 
+            %ul.grand-child-wrap
+              %li.grand-child
+                =link_to '/' do
+                  %span apple-pan
+              %li.grand-child
+                =link_to '/' do
+                  %span apple-pen
+              %li.grand-child
+                =link_to '/' do
+                  %span pan
+          %li.child
+            =link_to '/' do
+              %span pan
+
+          %li.child
+            =link_to '/' do
+              %span pan
+
+      %li.parent
+        %h3
+          =link_to '/' do
+            %span pan
+        %ul.child-wrap
+          %li.child
+            =link_to '/' do
+              %span pan
+            %ul.grand-child-wrap
+              %li.grand-child
+                =link_to '/' do
+                  %span pan
+              %li.grand-child
+                =link_to '/' do
+                  %span pan
+              %li.grand-child
+                =link_to '/' do
+                  %span pam
+          %li.child
+            =link_to '/' do
+              %span pam
+          %li.child
+            =link_to '/' do
+              %span pam
+
+      %li.parent
+        %h3
+          =link_to '/' do
+            %span pam
+        %ul.child-wrap
+          %li.child
+            =link_to '/' do
+              %span pam
+          %li.child
+            =link_to '/' do
+              %span pam
+          %li.child
+            =link_to '/' do
+              %span pam
+
+      %li.parent
+        %h3
+          =link_to '/' do
+            %span
+            = @category.name
+        %ul.child-wrap
+          %li.child
+            =link_to '/' do
+              %span 
+              = @children.name
+          %li.child
+            =link_to '/' do
+              %span pame
+          %li.child
+            =link_to '/' do
+              %span pam

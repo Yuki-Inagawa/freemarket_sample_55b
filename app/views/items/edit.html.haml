@@ -44,8 +44,6 @@
                   -#     ドラッグアンドドロップ
                   -#     またはクリックしてファイルをアップロード
 
-                    
-
             .sell-form__information
               .sell-form__information__name
                 商品名
@@ -69,11 +67,20 @@
                 .sell-form__details__box__group
                   カテゴリー
                   %span.mandatory 必須
-                  %div
-                    .select-wrap
-                      .select-default
-                        %h3 ---
+                  .sell-form-category
+                    .sell_form_box__tab
+                      .select-wrap
+                        = f.collection_select :category_id, @category_parent, :name, :name, {selected: @category.root.name},   {class: "select-default", id: "parent_category"}
                         = fa_icon 'chevron-down', class: 'icon-arrow'
+                    .sell_form_box__tab#children_wrapper
+                      .select-wrap 
+                        = f.select :category_id, options_for_select(@category_children.map{|c|[c[:name], c[:id], {'data-category'=>c[:id]}]}), {selected: @category.parent.name}, {class: "select-default", id: "child_category", "data-category": "#{@category.parent.id}"}
+                        = fa_icon 'chevron-down', class: 'icon-arrow'
+                    .sell_form_box__tab#grandchildren_wrapper
+                      .select-wrap
+                        = f.select :category_id, options_for_select(@category_grandchildren.map{|c|[c[:name], c[:id], {'data-category'=>c[:id]}]}), {selected: @category.name}, {class: "select-default", id: "grandchild_category"}
+                        = fa_icon 'chevron-down', class: 'icon-arrow'
+
                     -# - if @item.errors.full_messages_for(:category)
                     -#   %ul
                     -#     %li 選択してください

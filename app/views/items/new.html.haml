@@ -59,18 +59,19 @@
                 = f.text_field :text, class: 'long-text', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
                 %p.error_message.type3
                 %p.error_message.type11
-
+              
             .sell-form__details
               .sell-form__details__title 商品の詳細
               .sell-form__details__box
                 .sell-form__details__box__group
                   カテゴリー
                   %span.mandatory 必須
-                  %div
-                    .select-wrap
-                      .select-default
-                        %h3 ---
+                  .sell-form-category
+                    .sell_form_box__tab
+                      .select-wrap
+                        = f.select :category_id, @category_parent_array, {}, class: "select-default", id: 'parent_category'
                         = fa_icon 'chevron-down', class: 'icon-arrow'
+
                 .sell-form__details__box__status
                   %label
                     商品の状態
