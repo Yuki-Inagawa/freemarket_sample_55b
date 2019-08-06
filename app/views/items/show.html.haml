@@ -15,13 +15,12 @@
             %ul#slider
               - @images.each do |image|
                 %li.slide-item
-                  %img{alt: "画像", "data-lazy": "#{image.image.url}"}/
-
+                  = image_tag "#{image.image.url}", height: 300, width: 300, alt: '画像'
                   
             %ul#thumbnail-list
               - @images.each do |image|
                 %li.thumbnail-item
-                  %img{alt: "画像", src: "#{image.image.url}"}/
+                  = image_tag "#{image.image.url}", height: 60, width: 60, alt: 'サムネイル'
               
           
         %table.item-box__main-content__detail
