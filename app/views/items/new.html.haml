@@ -66,11 +66,11 @@
                 .sell-form__details__box__group
                   カテゴリー
                   %span.mandatory 必須
-                  .sell-forom-category
-                    .select-wrap
-                      = fa_icon 'chevron-down', class: 'icon-arrow'
-                      = f.select :category_id, @category_parent_array, {}, class: 'listing-select-wrapper__box--select', id: 'parent_category'
-                    
+                  .sell-form-category
+                    .sell_form_box__tab
+                      .select-wrap
+                        = f.select :category_id, @category_parent_array, {}, class: "select-default", id: 'parent_category'
+                        = fa_icon 'chevron-down', class: 'icon-arrow'
 
                 .sell-form__details__box__status
                   %label

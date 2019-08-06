@@ -12,9 +12,10 @@ $(document).on('turbolinks:load', function(){
                             <option value= "---" data-category= "---">---</option>
                             ${insertHTML}
                           </select>
+                          <i class="fa fa-chevron-down icon-arrow"></i>
                         </div>
                       </div>`;
-    $('.sell-forom-category').append(childSelectHtml);
+    $('.sell-form-category').append(childSelectHtml);
   }
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
@@ -24,13 +25,13 @@ $(document).on('turbolinks:load', function(){
                                   <option value= "---" data-category= "---">---</option>
                                   ${insertHTML}
                                 </select>
+                                <i class="fa fa-chevron-down icon-arrow"></i>
                               </div>
                             </div>`;
-    $('.sell-forom-category').append(grandchildSelectHtml);
+    $('.sell-form-category').append(grandchildSelectHtml);
   }
 
   $("#parent_category").on("change", function() {
-    console.log(this)
     var parentCategory = document.getElementById('parent_category').value;
     if (parentCategory != "---"){
       $.ajax({
@@ -57,7 +58,7 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  $(".sell-forom-category").on("change", "#child_category", function(){
+  $(".sell-form-category").on("change", "#child_category", function(){
     var childId = $('#child_category option:selected').data('category');
     if (childId != "---"){
       $.ajax({
