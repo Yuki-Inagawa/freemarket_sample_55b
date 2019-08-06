@@ -11,7 +11,17 @@
         = @item.name
       .item-box__main-content
         .item-box__main-content__photo
-          = image_tag(@image.image.url)
+          #wrap
+            %ul#slider
+              - @images.each do |image|
+                %li.slide-item
+                  = image_tag "#{image.image.url}", height: 300, width: 300, alt: '画像'
+                  
+            %ul#thumbnail-list
+              - @images.each do |image|
+                %li.thumbnail-item
+                  = image_tag "#{image.image.url}", height: 60, width: 60, alt: 'サムネイル'
+              
           
         %table.item-box__main-content__detail
           %tbody
@@ -81,7 +91,7 @@
       .item-box__change-box
       - if user_signed_in? && current_user.id == @item.user_id
         %section.item-box__main-content__buy
-          = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn",  data: {"turbolinks" => false}
+          = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn",  data: {"turbolinks": false}
         %section.item-box__main-content__buy
           = link_to '販売停止', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
         %section.item-box__main-content__buy
@@ -140,4 +150,5 @@
           = link_to '出品者さんのその他の出品',  root_path 
         .other-items__user__contents
           = render 'shared/item'
+
 = render 'shared/footer'

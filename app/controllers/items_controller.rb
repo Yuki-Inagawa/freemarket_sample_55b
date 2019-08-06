@@ -102,7 +102,7 @@ end
   
   def show
     @item = Item.find(params[:id])
-    @image = @item.images[0]
+    @images = @item.images
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
     
   end
