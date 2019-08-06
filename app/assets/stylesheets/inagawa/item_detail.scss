@@ -64,15 +64,14 @@
           margin: 0 auto;
           background: #fafafa;
           float: left;
-          min-width: 300px;
-          max-width: 300px;
-          min-height: 375px;
-          img{
-            border: 0;
-            min-width: 300px;
-            max-width: 300px;
-            min-height: 375px;
-          }
+          width: 300px;
+          height: 420px;
+          // img{
+          //   border: 0;
+          //   min-width: 300px;
+          //   max-width: 300px;
+          //   min-height: 375px;
+          // }
         }
         &__detail{
           float: right;
