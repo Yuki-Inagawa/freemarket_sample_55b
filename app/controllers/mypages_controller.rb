@@ -9,8 +9,7 @@ class MypagesController < ApplicationController
   end
 
   def identification
-    @user = User.find(params[:id])
-    @address = @user.address
+    @address = Address.find(current_user.id)
   end
 
   def card

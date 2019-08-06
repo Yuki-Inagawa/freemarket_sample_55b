@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   root 'items#index'
-  resources :items, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
+  resources :items do
     resources :comments, only: [:create]
     collection do
 
@@ -15,6 +15,11 @@ Rails.application.routes.draw do
     get 'get_category_children', defaults: { format: 'json' }
     get 'get_category_grandchildren', defaults: { format: 'json' }
 
+    end
+    resources :transaction, only: [:index] do
+      collection do
+        post 'pay'
+      end
     end
   end
 

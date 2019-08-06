@@ -1,22 +1,32 @@
 = render 'shared/header'
 /////グローバルヘッダーここまで
-////ここからメインヴィジュアル
-.top-main-visual
-  .top-main-visual__inner
-    .top-main-visual__inner__contents
-      %h2.top-main-visual__inner__contents__text-main
-        スマホでかんたん
-        %br
-        フリマアプリ
-      %p.top-main-visual__inner__contents__text-sub
-        メルカリはスマホカメラからすぐに出品できる
-        %br
-        購入時も安心な独自システムのアプリです
-      .top-main-visual__inner__contents__links
-        = link_to image_tag("app-store.svg", width: '170', height: '50', alt: "App store画像"), "https://apps.apple.com/jp/app/id667861049?l=ja", class: "top-main-visual__inner__contents__links--apple-icon", target: '_brank'
-        = link_to image_tag("google-play.svg", width: '170', height: '50', alt: "Google play画像"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "top-main-visual__inner__contents__links--apple-icon", target: '_blank'
-    .top-main-visual__inner--mobile-visual
-      = image_tag("main_content_pc.png", width: '440', height: '390', alt: "メルカリスマホアプリ画像")
+////ここからメインヴィジュアル(スライダー)
+.swiper-parent
+  .maincontainer
+    .swiper-container
+      .swiper-wrapper
+        .top-main-visual.swiper-slide
+          .top-main-visual__inner
+            .top-main-visual__inner__contents
+              %h2.top-main-visual__inner__contents__text-main
+                スマホでかんたん
+                %br
+                フリマアプリ
+              %p.top-main-visual__inner__contents__text-sub
+                メルカリはスマホカメラからすぐに出品できる
+                %br
+                購入時も安心な独自システムのアプリです
+              .top-main-visual__inner__contents__links
+                = link_to image_tag("app-store.svg", width: '170', height: '50', alt: "App store画像"), "https://apps.apple.com/jp/app/id667861049?l=ja", class: "top-main-visual__inner__contents__links--apple-icon", target: '_brank'
+                = link_to image_tag("google-play.svg", width: '170', height: '50', alt: "Google play画像"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "top-main-visual__inner__contents__links--apple-icon", target: '_blank'
+            .top-main-visual__inner--mobile-visual
+              = image_tag("main_content_pc.png", width: '440', height: '390', alt: "メルカリスマホアプリ画像")
+        .swiper-slide
+          .top-sub-visual
+            -# = image_tag("banner-camp.jpg")
+      .swiper-button-prev
+      .swiper-button-next
+      .swiper-pagination.swiper-pagination-black
 //ヘッダー＆メインヴィジュアル終了
 //ここからメインコンテンツ
 %section.top-main__contents
@@ -28,6 +38,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
@@ -50,6 +64,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
@@ -72,6 +90,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
@@ -94,6 +116,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
@@ -119,6 +145,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
@@ -141,6 +171,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
@@ -163,6 +197,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
@@ -185,6 +223,10 @@
     .top-main__contents__items-wrap
       - @items.each do |item|
         %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0

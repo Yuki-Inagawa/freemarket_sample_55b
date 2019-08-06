@@ -84,6 +84,9 @@ gem 'gretel'
 gem 'rails-i18n'
 gem 'gon'
 gem 'aws-sdk'
+gem 'rubocop'
+gem "recaptcha"
+gem 'ransack'
 
 
 

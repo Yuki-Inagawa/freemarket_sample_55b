@@ -51,11 +51,11 @@ class ItemsController < ApplicationController
     if Rails.env.production?
       client = Aws::S3::Client.new(
                             region: 'ap-northeast-1',
-                            access_key_id: ENV["AWS_ACESS_KEY_ID"],
-                            secret_access_key: ENV['AWS_SECRET_ACESS_KEY_ID'],
+                            access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+                            secret_access_key: ENV['AWS_SECRET_ACESS_KEY']
                             )
       @item.images.each do |image|
-        binary_data = client.get_object(bucket: 'freemarket-sample-55b', key: image.image_url.file.path).body.read
+        binary_data = client.get_object(bucket: 'freemarket-sample55b', key: image.image.file.path).body.read
         gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
       end
 
@@ -119,7 +119,7 @@ end
   
   def show
     @item = Item.find(params[:id])
-    @image = @item.images[0]
+    @images = @item.images
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
     
   end

@@ -1,17 +1,28 @@
-
 $(function(){
-  $(document).on('click','(登録ボタンのIDやクラス名)', function(e) {
+  $(document).on('click','#token_submit', function(e) {
     e.preventDefault();
-    Payjp.setPublicKey('（Pay.jpを登録した時に取得できる公開鍵）');
+    Payjp.setPublicKey('pk_test_108a697aae6e6d3ec73f365d');
     var card = {
-      number: parseInt($("（カード番号入力欄のIDやクラス名）").val()),
-      cvc: parseInt($("（セキュリティーコード入力欄のIDやクラス名）").val()),
-      exp_month: parseInt($("（有効月入力欄のIDやクラス名）").val()),
-      exp_year: parseInt($("（有効年入力欄のIDやクラス名）").val())
+      number: parseInt($("#card_number").val()),
+      cvc: parseInt($("#cvc").val()),
+      exp_month: parseInt($("#exp_month").val()),
+      exp_year: parseInt($("#exp_year").val())
     };
     Payjp.createToken(card, function(status, response) {
       if (status == 200) {
-        //トークン作成成功時の処理
+        var token = response.id;
+        $.ajax({
+          url: "/signup",
+          type: "POST",
+          data: { token: token },
+          dataType: 'json',
+        })
+        .done(function(){
+          window.location.href = "/signup/clear_compleate";
+        })
+        .fail(function(){
+          //非同期通信失敗時の処理
+        })
       }
       else {
         //トークン作成失敗時の処理
