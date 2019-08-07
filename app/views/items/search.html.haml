@@ -26,11 +26,10 @@
                   %h3.top-main__contents__item-box__body__text
                     = item.name
                   .top-main__contents__item-box__body__flex-box
-                    .top-main__contents__item-box__body__flex-box--price
-                      = number_to_currency(item.price, unit: "￥", precision: 0, format: "%u%n")
-                    .top-main__contents__item-box__body__flex-box--status
-                      = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
-                      %span.top-main__contents__item-box__body__flex-box--status--good-count
+                    = number_to_currency(item.price, unit: "￥", precision: 0, format: "%u%n")
+                  .top-main__contents__item-box__body__status
+                    = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+                    %span.top-main__contents__item-box__body__flex-box--status--good-count
             - else
               %section.item{style: "margin-right: 0;"}
                 .top-main__contents__item-box__image
@@ -38,15 +37,14 @@
                     - if index == 0
                       = link_to image_tag("#{image.image.url}", width: '160', height: '160', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
                       - break
-                  .top-main__contents__item-box__body
-                    %h3.top-main__contents__item-box__body__text
-                      = item.name
-                    .top-main__contents__item-box__body__flex-box
-                      .top-main__contents__item-box__body__flex-box--price
-                        = number_to_currency(item.price, unit: "￥", precision: 0, format: "%u%n")
-                      .top-main__contents__item-box__body__flex-box--status
-                        = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
-                        %span.top-main__contents__item-box__body__flex-box--status--good-count
+                .top-main__contents__item-box__body
+                  %h3.top-main__contents__item-box__body__text
+                    = item.name
+                  .top-main__contents__item-box__body__flex-box
+                    = number_to_currency(item.price, unit: "￥", precision: 0, format: "%u%n")
+                  .top-main__contents__item-box__body__status
+                    = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+                    %span.top-main__contents__item-box__body__flex-box--status--good-count
 
       -# - @items.each do |item|
       -#   #{item.name}
