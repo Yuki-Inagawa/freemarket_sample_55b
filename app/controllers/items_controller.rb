@@ -112,8 +112,8 @@ end
   end
 
   def search
-    @q = Item.search(search_params)
-    @items = @q.result(distinct: true)
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @keyword = "#{params[:keyword]}"
   end
 
 
