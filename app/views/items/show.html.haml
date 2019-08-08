@@ -42,7 +42,13 @@
             %tr
               %th カテゴリー
               %td
-                = link_to 'ベビー・キッズ',  root_path 
+                = link_to @item.category.parent.parent.name
+                %p
+                  = fa_icon 'chevron-right', class: 'icon-arrow'
+                  = link_to @item.category.parent.name
+                  %p
+                    = fa_icon 'chevron-right', class: 'icon-arrow'
+                    = link_to @item.category.name
             %tr
               %th ブランド
               %td
