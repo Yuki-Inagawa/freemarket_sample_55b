@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: :index
+  before_action :set_category, only: [:new]
 
+  
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
 
@@ -11,6 +13,19 @@ class ItemsController < ApplicationController
   def new 
     @item = Item.new
     @item.images.build
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+  end
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
   
   def create
@@ -24,6 +39,7 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
 
   def edit
     @item = Item.find(params[:id])
@@ -51,8 +67,11 @@ class ItemsController < ApplicationController
         binary_data = File.read(image.image.file.file)
         gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
       end
-    
-  end
+    end
+    @category               = @item.category
+    @category_parent        = @category.parent.parent.siblings
+    @category_children      = @category.parent.siblings
+    @category_grandchildren = @category.siblings
 end
 
   def update
@@ -103,7 +122,7 @@ end
   
   def show
     @item = Item.find(params[:id])
-    @image = @item.images[0]
+    @images = @item.images
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
     
   end
@@ -120,7 +139,7 @@ end
 private
 
   def item_params
-    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, :category_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -139,4 +158,9 @@ private
     params.require(:q).permit!
   end
   
+  def set_category
+    @category = Category.all
+  end  
+
+
 end

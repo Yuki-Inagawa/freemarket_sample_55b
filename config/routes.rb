@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
     get 'buy/confirmation', to: 'items#buy_confirmation'
     get 'search', to: 'items#search'
+    get 'get_category_children', defaults: { format: 'json' }
+    get 'get_category_grandchildren', defaults: { format: 'json' }
 
     end
     resources :transaction, only: [:index] do
@@ -33,6 +35,8 @@ Rails.application.routes.draw do
       get 'card_create',  on: :member
       get 'logout',  on: :member
     end
+
+  resources :categories, only: [:index] 
 
 
   # 新規登録画面
