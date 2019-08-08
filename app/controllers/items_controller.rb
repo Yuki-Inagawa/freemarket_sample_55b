@@ -124,7 +124,7 @@ end
     @item = Item.find(params[:id])
     @images = @item.images
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
-
+    @comment = Comment.new
   end
 
   def buy_confirmation
