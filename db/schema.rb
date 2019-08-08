@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_04_042710) do
+ActiveRecord::Schema.define(version: 2019_08_07_030201) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.string "postal_code", null: false
     t.string "region", null: false
     t.string "city", null: false
@@ -78,6 +78,15 @@ ActiveRecord::Schema.define(version: 2019_08_04_042710) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "item_id"
@@ -115,6 +124,7 @@ ActiveRecord::Schema.define(version: 2019_08_04_042710) do
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "transactions", "items"
   add_foreign_key "transactions", "users"
 end

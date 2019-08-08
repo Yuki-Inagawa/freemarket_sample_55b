@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    :omniauth_callbacks =>  "users/omniauth_callbacks"
+  }
   devise_scope :user do
     get 'login', to: 'users/sessions#new'
   end
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
     collection do
 
     get 'buy/confirmation', to: 'items#buy_confirmation'
+    get 'search', to: 'items#search'
     get 'get_category_children', defaults: { format: 'json' }
     get 'get_category_grandchildren', defaults: { format: 'json' }
 

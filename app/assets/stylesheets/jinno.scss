@@ -314,6 +314,7 @@
         height: 40px;
         border-width: 0;
         border: solid 1px #ccc;
+        box-sizing: border-box;
       }
       i{
         position: absolute;
@@ -325,6 +326,16 @@
         width: 40px;
         height: 40px;
         cursor: pointer;
+        .search-btn {
+          opacity: 0;
+          position: relative;
+          z-index: 2;
+        }
+        .grass {
+          position: relative;
+          right: 10px;
+          z-index: 1;
+        }
       }
     }
   }

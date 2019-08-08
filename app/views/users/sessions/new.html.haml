@@ -10,19 +10,23 @@
           =link_to "新規会員登録", "/signup", class: "new-registration-btn"
         .new-registration-form
           .new-registration-form__content{style: "padding: 32px 64px 32px;"}
-            %button.facebook-login{style: "margin-top: 0;"}
-              =fa_icon "facebook", class: "facebook-icon"
-              Facebookでログイン
-            %button#google-login.btn-default.btn-sns.btn-sns-google
-              -# =fa_icon "google", class: "google-icon"
-              Googleでログイン
+            - if Rails.env.development?
+              =link_to user_facebook_omniauth_authorize_path, class: "facebook-login", method: :post do
+                =fa_icon "facebook", class: "facebook-icon"
+                Facebookでログイン
+              =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login", method: :post do
+                Googleでログイン
+            - else
+              %button.facebook-login{style: "margin-top: 0;"}
+                =fa_icon "facebook", class: "facebook-icon"
+                Facebookでログイン
+              %button.google-login
+                Googleでログイン
             .new-registration-form__content--form{style: "margin-top: 50px;"}
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-default", placeholder: "メールアドレス"
             .new-registration-form__content--form{style: "margin-top: 16px;"}
               = f.password_field :password, autocomplete: "current-password", class: "input-default", placeholder: "パスワード"
             .g-recaptcha{"data-sitekey" => "6LeBL7EUAAAAAPuc9A1oD1oe3Ro4hSs_AyxKBzEm", "data-secretkey" => "6LeBL7EUAAAAAAfDRuftjXdbZ8blN_GzjaEc7AJq"}
-            -# .new-registration-form__content--form.robo
-              -# %input{type: "checkbox", name: "no-robot", class: "robo-check"}私はロボットじゃないんだよなぁ
             = f.submit "ログイン", class: "next-btn"
             =link_to "パスワードをお忘れの方", "signup", class: "foreine-passward" 
 
