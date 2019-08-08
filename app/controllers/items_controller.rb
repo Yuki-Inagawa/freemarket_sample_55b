@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: :index
-  before_action :set_category, only: [:new]
+  before_action :set_category, only: [:index, :new]
 
   
   def index

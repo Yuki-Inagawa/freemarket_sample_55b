@@ -1,4 +1,5 @@
 class MypagesController < ApplicationController
+  before_action :set_category
   def show
     # @item = Item.find(params[:id])
     # @image = @item.images[0]
@@ -25,5 +26,12 @@ class MypagesController < ApplicationController
     @user = User.find(1)
     @items = @user.items
   end
+
+private
+    
+  def set_category
+    @category = Category.all
+  end  
+
 
 end
