@@ -131,7 +131,7 @@ end
   end
 
   def search
-    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order('id DESC').page(params[:page]).per(132)
     @keyword = "#{params[:keyword]}"
   end
 
