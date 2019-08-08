@@ -10,11 +10,17 @@
           =link_to "/signup/registration", class: "mail-btn", data: {"turbolinks" => false} do
             =fa_icon "envelope", class: "mail-icon"
             メールアドレスで登録する
-          %button.facebook-login
-            =fa_icon "facebook", class: "facebook-icon"
-            Facebookで登録する
-          %button#google-login.btn-default.btn-sns.btn-sns-google
-            -# =fa_icon "google", class: "google-icon"
-            Googleで登録する
+          - if Rails.env.development?
+            =link_to user_facebook_omniauth_authorize_path, class: "facebook-login", method: :post do
+              =fa_icon "facebook", class: "facebook-icon"
+              Facebookで登録する
+            =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login", method: :post do
+              Googleで登録する
+          - else
+            %button.facebook-login
+              =fa_icon "facebook", class: "facebook-icon"
+              Facebookで登録する
+            %button.google-login
+              Googleで登録する
 
   = render 'shared/signup_footer'

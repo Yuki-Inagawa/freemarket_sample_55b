@@ -1,17 +1,33 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: :index
+  before_action :set_categories, except: [:create]
+  before_action :authenticate_user!, except: [:index, :search, :show]
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
-    
-    # binding.pry
+
+    @q = Item.ransack(params[:q])
+    @search_items = @q.result(distinct: true)
   end
 
-  def new 
+  def new
     @item = Item.new
     @item.images.build
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
   end
-  
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -24,16 +40,17 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def edit
     @item = Item.find(params[:id])
     gon.item = @item
     gon.item_images = @item.images
-    
+
     require 'base64'
     require 'aws-sdk'
 
     gon.item_images_binary_datas = []
-    
+
     if Rails.env.production?
       client = Aws::S3::Client.new(
                             region: 'ap-northeast-1',
@@ -50,8 +67,11 @@ class ItemsController < ApplicationController
         binary_data = File.read(image.image.file.file)
         gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
       end
-    
-  end
+    end
+    @category               = @item.category
+    @category_parent        = @category.parent.parent.siblings
+    @category_children      = @category.parent.siblings
+    @category_grandchildren = @category.siblings
 end
 
   def update
@@ -99,22 +119,27 @@ end
       redirect_to root_path
     end
   end
-  
+
   def show
     @item = Item.find(params[:id])
     @images = @item.images
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
     @comment = Comment.new
-    # binding.pry
   end
 
   def buy_confirmation
   end
 
+  def search
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order('id DESC').page(params[:page]).per(132)
+    @keyword = "#{params[:keyword]}"
+  end
+
 
 private
+
   def item_params
-    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, :category_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -128,5 +153,14 @@ private
   def image_params
     params.require(:new_images).permit({images: []})
   end
-  
+
+  def search_params
+    params.require(:q).permit!
+  end
+
+  def set_categories
+    @category = Category.all
+  end
+
+
 end
