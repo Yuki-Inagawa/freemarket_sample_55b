@@ -28,7 +28,7 @@
             .new-registration-form__content--form{style: "margin-top: 0;"}
               %label{for: "nickname"} ニックネーム
               %span.form-require 必須
-              = f.text_field :nickname, placeholder: "例) おでん君", class: 'input-default'
+              = f.text_field :nickname, placeholder: "例) おでん君", class: 'input-default',value: session[:nickname]
               - if @user.errors.any?
                 .alert.alert-warning
                   %ul
@@ -37,7 +37,7 @@
             .new-registration-form__content--form
               %label{for: "email"} メールアドレス
               %span.form-require 必須
-              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: 'input-default'
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: 'input-default',value: session[:email]
               - if @user.errors.any?
                 .alert.alert-warning
                   %ul
