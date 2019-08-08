@@ -1,0 +1,172 @@
+.single-container
+  = render 'shared/header'
+
+  %main.serch-container.clearfix
+    .serch-container__content
+      %section.items-box
+        %h2.search-result
+          -if @keyword != ""
+            #{@keyword}
+            %span.search-result__nal の検索結果
+          -else 
+            新着商品
+          
+        .result-number
+          1 - 132件表示
+        .items-box__content
+          - @items.each_with_index do |item,i|
+            - if (i+1)%4 != 0
+              %section.item
+                .top-main__contents__item-box__image
+                  - item.images.each_with_index do |image, index|
+                    - if index == 0
+                      = link_to image_tag("#{image.image.url}", width: '160', height: '160', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                      - break
+                .top-main__contents__item-box__body
+                  %h3.top-main__contents__item-box__body__text
+                    = item.name
+                  .top-main__contents__item-box__body__flex-box
+                    = number_to_currency(item.price, unit: "￥", precision: 0, format: "%u%n")
+                  .top-main__contents__item-box__body__status
+                    = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+                    %span.top-main__contents__item-box__body__flex-box--status--good-count
+            - else
+              %section.item{style: "margin-right: 0;"}
+                .top-main__contents__item-box__image
+                  - item.images.each_with_index do |image, index|
+                    - if index == 0
+                      = link_to image_tag("#{image.image.url}", width: '160', height: '160', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                      - break
+                .top-main__contents__item-box__body
+                  %h3.top-main__contents__item-box__body__text
+                    = item.name
+                  .top-main__contents__item-box__body__flex-box
+                    = number_to_currency(item.price, unit: "￥", precision: 0, format: "%u%n")
+                  .top-main__contents__item-box__body__status
+                    = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+                    %span.top-main__contents__item-box__body__flex-box--status--good-count
+
+      -# - @items.each do |item|
+      -#   #{item.name}
+    .serch-container__side
+      %form.search-extend
+        .search-sort
+          .form-group
+            %i.icon-arrow-bottom
+            %select.select-default
+              %option 並び替え
+              %option 価格の安い順
+              %option 価格の高い順
+              %option 出品の古い順
+              %option 出品の新しい順
+              %option いいね!の多い順
+        .search-dropdown
+          %h3 詳細検索
+          .form-group
+            %label
+              %i.icon-plus
+              %span キーワードを追加する
+            %input.input-default{placeholder: "例) 値下げ"}
+          .form-group
+            %label
+              %i.icon-plus
+              %span カテゴリーを選択する
+            .select-wrap
+              %i.icon-arrow-bottom
+              %select
+                %option 全て
+                %option レディース
+                %option メンズ
+                %option 僕の宝物
+          .form-group.search-brand
+            %label
+              %i.icon-plus
+              %span ブランド名から探す
+            %input.input-default{placeholder: "例) シャネル"}
+          .form-group 
+            %label
+              %i.icon-size
+              %span サイズを指定する
+            .select-wrap
+              %i.icon-arrow-bottom
+              %select
+                %option 全て
+                %option 洋服のサイズ
+                %option 靴のサイズ
+                %option パンツのサイズ
+          .form-group.search-price
+            %label
+              %i.icon-coin
+              %span 値段
+            .select-wrap
+              %i.icon-arrow-bottom
+              %select
+                %option 300 ~ 1000
+                %option 1001 ~ 10000
+                %option 10001 ~ 100000
+              %input.input-default.herf{placeholder: "¥ Min"}
+              %span ~
+              %input.input-default.herf{placeholder: "¥ Max"}
+          .form-group.crerfix
+            %label
+              %i.icon-coin
+              %span 商品の状態
+            .pfom-check
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label すべて
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 新品、未使用
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 未使用に近い
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 目立った傷や汚れなし
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label やや傷や汚れあり
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 傷や汚れあり
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 全体的に状態が悪い
+          .form-group.crerfix
+            %label
+              %i.icon-coin
+              %span 配送料の負担
+            .pfom-check
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label すべて
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 着払い
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 送料込み
+          .form-group.crerfix
+            %label
+              %i.icon-coin
+              %span 販売状況
+            .pfom-check
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label すべて
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 販売中
+              .checkbox-default
+                %input{type: "checkbox"}
+                %label 売り切れ
+          .search-extend-btn.clearfix
+            .btn-default.gray クリア
+            %button.btn-default.red{type: "submit"} 完了
+
+
+  = render 'shared/footer'
+  = link_to  new_item_path, class: 'submit-btn-link' do
+    .submit-btn 出品
+    = fa_icon 'camera', class: 'submit-button-icon'

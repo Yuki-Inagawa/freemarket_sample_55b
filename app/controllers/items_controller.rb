@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
+
+    @q = Item.ransack(params[:q])
+    @search_items = @q.result(distinct: true)
   end
 
   def new 
@@ -127,8 +130,14 @@ end
   def buy_confirmation
   end
 
+  def search
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @keyword = "#{params[:keyword]}"
+  end
+
 
 private
+
   def item_params
     params.require(:item).permit(:name, :text, :state, :postage_type, :region, :shopping_date, :delivery_method, :price, :category_id).merge(user_id: current_user.id)
   end
@@ -143,6 +152,10 @@ private
 
   def image_params
     params.require(:new_images).permit({images: []})
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
   
   def set_categories
