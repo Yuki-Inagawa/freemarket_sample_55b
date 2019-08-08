@@ -76,14 +76,12 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       phone_number: session[:phone_number]
     )
-
     if address.save
       # session[:id] = user.id
       # redirect_to clear_compleate_signup_index_path
     else
       redirect_to "/signup"
     end
-
     respond_to do |format|
       format.json {
         require 'payjp'
