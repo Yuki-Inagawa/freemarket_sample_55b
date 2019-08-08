@@ -42,13 +42,13 @@
             %tr
               %th カテゴリー
               %td
-                = link_to @item.category.parent.parent.name
+                = link_to @item.category.parent.parent.name, root_path
                 %p
                   = fa_icon 'chevron-right', class: 'icon-arrow'
-                  = link_to @item.category.parent.name
+                  = link_to @item.category.parent.name, root_path
                   %p
                     = fa_icon 'chevron-right', class: 'icon-arrow'
-                    = link_to @item.category.name
+                    = link_to @item.category.name, root_path
             %tr
               %th ブランド
               %td
