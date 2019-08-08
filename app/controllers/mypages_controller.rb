@@ -1,5 +1,5 @@
 class MypagesController < ApplicationController
-  before_action :set_category
+  before_action :set_categories
   def show
     # @item = Item.find(params[:id])
     # @image = @item.images[0]
@@ -29,7 +29,7 @@ class MypagesController < ApplicationController
 
 private
     
-  def set_category
+  def set_categories
     @category = Category.all
   end  
 

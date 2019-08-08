@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: :index
-  before_action :set_category, only: [:index, :new]
+  before_action :set_categories, only: [:index, :new]
 
   
   def index
@@ -145,7 +145,7 @@ private
     params.require(:new_images).permit({images: []})
   end
   
-  def set_category
+  def set_categories
     @category = Category.all
   end  
 
