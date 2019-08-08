@@ -36,7 +36,7 @@
     %h3.top-main__contents__category
       = link_to "レディース 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @ladies.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
@@ -62,7 +62,7 @@
     %h3.top-main__contents__category
       = link_to "メンズ 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @mens.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
@@ -88,7 +88,7 @@
     %h3.top-main__contents__category
       = link_to "ベビー・キッズ 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @kids.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
@@ -114,7 +114,7 @@
     %h3.top-main__contents__category
       = link_to "コスメ・香水・美容 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @beauty.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
