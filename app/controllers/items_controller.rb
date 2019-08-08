@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: :index
-  before_action :set_categories, only: [:index, :new]
+  before_action :set_categories, only: [:index, :new, :search]
   before_action :authenticate_user!, except: [:index, :search, :show]
 
   def index
