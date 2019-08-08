@@ -109,15 +109,37 @@
           = link_to  root_path, class: "item-box__btn--right__safety" do
             %i.fa.fa-lock
             %span あんしん・あんぜんへの取り組み
-    
     .item-message
       .item-message__container
+        .item__comment--box
+          - if @item.comments
+            - @item.comments.each do |comment|
+              - if comment.user.id == @item.user_id
+                .balloon5
+                  .faceicon
+                    %img{src: "/assets/member_photo_noimage_thumb.png"}/
+                  .chatting
+                    .says
+                      %p 
+                        = comment.text
+                    .comment-users--name
+                      = comment.user.nickname
+              - else
+                .balloon5
+                  .faceicon
+                    %img{src: "/assets/member_photo_noimage_thumb.png", style: 'border: solid 3px #FF7F50'}/
+                  .chatting
+                    .says{style: 'background-color: #FF7F50'}
+                      %p 
+                        = comment.text
+                    .comment-users--name
+                      = comment.user.nickname
+                  
         .item-message__container__content
-          %form.item-message__container__content__form
+          = form_for [@item,@comment], html: {class: "item-message__container__content__form"} do |f|
             %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            %textarea
-            %button.item-message__container__content__form__submit-btn
-              %span コメントする
+            = f.text_area :text 
+            = f.submit 'コメントする', class: "item-message__container__content__form__submit-btn"
 
     %ul.item-link
       %li.item-link__prev

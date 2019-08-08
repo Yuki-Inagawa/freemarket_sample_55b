@@ -501,6 +501,46 @@
     }
   }
 }
+.balloon5 {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.balloon5 .faceicon {
+  float: left;
+  margin-right: -90px;
+  width: 80px;
+}
+
+.balloon5 .faceicon img{
+  width: 100%;
+  height: auto;
+  border: solid 3px #d7ebfe;
+  border-radius: 50%;
+}
+
+.balloon5 .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #d7ebfe;
+}
+.comment-users--name{
+  margin-left: 105px;
+  padding-top: 10px;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
+}
 // トップページのスライダー（swiper)のスタイル調整用記述
 .top-sub-visual{
   height: 390px;
