@@ -1,17 +1,20 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: :index
-  before_action :set_categories, only: [:index, :new]
+  before_action :set_categories, except: [:create]
+  before_action :authenticate_user!, except: [:index, :search, :show]
 
-  
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
-
+    @ladies = Item.where(category_id: 159..338).order("id DESC").limit(4)
+    @mens = Item.where(category_id: 339..469).order("id DESC").limit(4)
+    @kids = Item.where(category_id: 470..588).order("id DESC").limit(4)
+    @beauty = Item.where(category_id: 869..956).order("id DESC").limit(4)
     @q = Item.ransack(params[:q])
     @search_items = @q.result(distinct: true)
     
   end
 
-  def new 
+  def new
     @item = Item.new
     @item.images.build
     @category_parent_array = ["---"]
@@ -28,7 +31,7 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
-  
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -46,12 +49,12 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     gon.item = @item
     gon.item_images = @item.images
-    
+
     require 'base64'
     require 'aws-sdk'
 
     gon.item_images_binary_datas = []
-    
+
     if Rails.env.production?
       client = Aws::S3::Client.new(
                             region: 'ap-northeast-1',
@@ -120,12 +123,12 @@ end
       redirect_to root_path
     end
   end
-  
+
   def show
     @item = Item.find(params[:id])
     @images = @item.images
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
-    
+    @comment = Comment.new
   end
 
   def buy_confirmation
@@ -158,10 +161,11 @@ private
   def search_params
     params.require(:q).permit!
   end
-  
+
   def set_categories
     @categories = Category.all
   end  
+
 
 
 end
