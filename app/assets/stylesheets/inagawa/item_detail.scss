@@ -340,6 +340,8 @@
     background: rgba(0, 0, 0, 0.3);
     display: none;
     z-index: 1;
+    background-image: image-url("titan.jpg");
+    background-repeat: no-repeat;
   }
   
 #modalWindow {
@@ -362,6 +364,7 @@
       width:100%;
     }
   .modal-message-box {
+    background-size: cover;
     width: 100%;
 //下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
     height: calc(100% - 60px);
@@ -383,4 +386,11 @@
     width: 100%;
     height: 60px;
   }
+}
+.titan{
+  display: none;
+  width:700px;
+  height: 400px;
+  background-image: image-url("titan.jpg");
+  margin:0 auto;
 }
