@@ -17,6 +17,10 @@
           - @items.each_with_index do |item,i|
             - if (i+1)%4 != 0
               %section.item
+                -if item.status == 1
+                  .sold-out
+                    .sold_tag 
+                      %p SOLD
                 .top-main__contents__item-box__image
                   - item.images.each_with_index do |image, index|
                     - if index == 0
