@@ -1,54 +1,6 @@
+//〜〜ユーザーの詳細ページ（１ページのみ）〜〜
 .default-container {
   background-color:  #f5f5f5;
-  .bread-crumbs{
-    list-style: none;
-    position: relative;
-    border-top: 1px solid #eee;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-    background: #fff;
-    ul{
-      width: 1020px;
-      padding: 16px;
-      margin: 0 auto;
-      display: block;
-      padding-inline-start: 40px;
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        .bread-crumbs__link{
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          border-style: solid;
-          border-width: 0;
-          opacity:0.7;
-          cursor: pointer;
-          cursor: hand;
-        }
-        & :hover{
-          border-bottom: solid 1px;
-        }
-        i.fa.fa-chevron-right{
-          font-size: 9px;
-          color: #888;
-        }
-        span.name {
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 1.2;
-        }
-      }
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        span{
-          font-weight: 600;
-        }
-      }
-    }
-  }
   .user-details {
     width: 700px;
     margin: 40px auto;
