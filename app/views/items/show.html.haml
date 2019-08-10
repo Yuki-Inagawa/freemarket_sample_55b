@@ -102,7 +102,6 @@
           = link_to '販売停止', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
         %section#modal-open-btn.item-box__main-content__buy
           %button#item-delete-btn.item-box__main-content__buy__btn この商品を削除する
-          -# = link_to 'この商品を削除する', "/items/#{@item.id}",class: "item-box__main-content__buy__btn", id: 'item-delete-btn', method: :delete
           #overlay
             #modalWindow
               .modal-message-box
