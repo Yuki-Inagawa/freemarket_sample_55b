@@ -147,7 +147,7 @@
 
     %ul.item-link
       %li.item-link__prev
-        - if @item.next.present?
+        - if @item.previous.present?
           = link_to "/items/#{@item.previous.id}" do
 
             %i.fa.fa-chevron-left
