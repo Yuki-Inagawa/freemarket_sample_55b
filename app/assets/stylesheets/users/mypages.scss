@@ -1,49 +1,9 @@
+// 〜〜〜マイページ関係〜〜〜（全て
+
 .default-container{
   background-color: #f5f5f5;
-  .bread-crumbs{
-    list-style: none;
-    position: relative;
-    border-top: 1px solid #eee;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-    background: #fff;
-    ul{
-      width: 1020px;
-      padding: 16px;
-      margin: 0 auto;
-      display: block;
-      padding-inline-start: 40px;
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        .bread-crumbs__link{
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          border-style: solid;
-          border-width: 0;
-          opacity:0.7;
-          cursor: pointer;
-          cursor: hand;
-        }
-        & :hover{
-          border-bottom: solid 1px;
-        }
-        i.fa.fa-chevron-right{
-          font-size: 9px;
-          color: #888;
-        }
-      }
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        span.name {
-          font-weight: 600;
-        }
-      }
-    }
-  }
+
+// 〜〜〜ユーザープロフィールここから〜〜〜
   main.user-profile {
     margin: 40px auto 0;
     width: 1020px;
@@ -285,50 +245,112 @@
       height: 1440px;
     }
   }
-  .bread-crumbs{
-    list-style: none;
-    position: relative;
-    border-top: 1px solid #eee;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-    background: #fff;
-    ul{
-      width: 1020px;
-      padding: 16px;
-      margin: 0 auto;
-      display: block;
-      padding-inline-start: 40px;
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        .bread-crumbs__link{
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          border-style: solid;
-          border-width: 0;
-          opacity:0.7;
-          cursor: pointer;
-          cursor: hand;
-        }
-        & :hover{
-          border-bottom: solid 1px;
-        }
-        i.fa.fa-chevron-right{
-          font-size: 9px;
-          color: #888;
-        }
+// プロフィールここまで
+
+// ここからマイページの支払い方法追加ページ
+  main.mypage-card {
+    margin: 40px auto 0;
+    width: 1020px;
+    display: block;
+    overflow: auto;
+    section.payment-info {
+      float: right;
+      background: #fff; 
+      width: 700px;
+      margin-top: 8px;
+      h2.payment-info__head {
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        text-align: center;
+        font-weight: 600;
       }
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        span{
-          font-weight: 600;
+      .payment-info-contents {
+        padding: 64px;
+        section.payment-info-content {
+          .payment-info-content__title {
+            max-width: 320px;
+            margin: 0 auto;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+        section.settings-add-card {
+          padding: 24px 0;
+          border-bottom: 1px solid #eee;
+          text-align: center;
+          button.add-card-content {
+            max-width: 320px;
+            margin: 0 auto;
+            height: 50px;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            margin-bottom: 8px;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            
+            .card-submit-button {
+              color: #fff;
+              text-decoration: none;
+            }
+            .card-submit-button-icon {
+              color: white;
+              margin-right: 16px
+            }
+          }
+        }
+        .settings-not-regist {
+          
+          .settings-not-regist-link {
+            display: block;
+            margin: 40px 0 0;
+            text-align: right;
+            text-decoration: none;
+            color: #0099e8;
+            position: relative;
+          }
+          .settings-not-regist-icon {
+            height: 17px;
+            width: 17px;
+            position: absolute;
+            top: 15%;
+            color: #0099e8;
+          }
+          span.settings-not-regist-text {
+            font-size: 15px;
+          }
         }
       }
     }
+    .mypage-card-side {
+      float: left;
+      margin: 0 40px 0 0;
+      height: 1440px;
+    }
   }
+  .mypage-card{
+    overflow: hidden;
+    margin: 40px auto 0;
+    width: 1020px;
+    display: block;
+    
+    .mypage-card-main{
+      float: right; 
+      margin-top: 8px; 
+    }
+    .mypage-card-side {
+      float: left;
+      margin: 0 40px 0 0;
+      height: 1440px;
+    }
+  }
+  // ここまで支払情報追加ページ
+
+  // ここからマイページカード情報登録ページ
   main.mypage-card {
     margin: 40px auto 0;
     width: 1020px;
@@ -414,113 +436,9 @@
       height: 1440px;
     }
   }
-  .bread-crumbs{
-    list-style: none;
-    position: relative;
-    border-top: 1px solid #eee;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-    background: #fff;
-    ul{
-      width: 1020px;
-      padding: 16px;
-      margin: 0 auto;
-      display: block;
-      padding-inline-start: 40px;
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        .bread-crumbs__link{
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          border-style: solid;
-          border-width: 0;
-          opacity:0.7;
-          cursor: pointer;
-          cursor: hand;
-        }
-        & :hover{
-          border-bottom: solid 1px;
-        }
-        i.fa.fa-chevron-right{
-          font-size: 9px;
-          color: #888;
-        }
-      }
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        span.name {
-          font-weight: 600;
-        }
-      }
-    }
-  }
+// ここまでマイページカード情報登録ページ
 
-  .mypage-card{
-    overflow: hidden;
-    margin: 40px auto 0;
-    width: 1020px;
-    display: block;
-    
-    .mypage-card-main{
-      float: right; 
-      margin-top: 8px; 
-    }
-
-    .mypage-card-side {
-      float: left;
-      margin: 0 40px 0 0;
-      height: 1440px;
-
-    }
-  }
-  .bread-crumbs{
-    list-style: none;
-    position: relative;
-    border-top: 1px solid #eee;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-    background: #fff;
-    ul{
-      width: 1020px;
-      padding: 16px;
-      margin: 0 auto;
-      display: block;
-      padding-inline-start: 40px;
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        .bread-crumbs__link{
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          border-style: solid;
-          border-width: 0;
-          opacity:0.7;
-          cursor: pointer;
-          cursor: hand;
-        }
-        & :hover{
-          border-bottom: solid 1px;
-        }
-        i.fa.fa-chevron-right{
-          font-size: 9px;
-          color: #888;
-        }
-      }
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        span.name{
-          font-weight: 600;
-        }
-      }
-    }
-  }
+  // ここからユーザープロフィールページ
   main.user-profile {
     margin: 40px auto 0;
     width: 1020px;
@@ -537,7 +455,6 @@
         line-height: 1.4;
       }
       .profile-form {
-    
         .profile-icon {
           padding: 72px 16px 24px;
           background-image: image-url("user-bg.jpg");
@@ -597,50 +514,9 @@
       margin: 0 40px 0 0;
     }
   }
-  .bread-crumbs{
-    list-style: none;
-    position: relative;
-    border-top: 1px solid #eee;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-    background: #fff;
-    ul{
-      width: 1020px;
-      padding: 16px;
-      margin: 0 auto;
-      display: block;
-      padding-inline-start: 40px;
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        .bread-crumbs__link{
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          border-style: solid;
-          border-width: 0;
-          opacity:0.7;
-          cursor: pointer;
-          cursor: hand;
-        }
-        & :hover{
-          border-bottom: solid 1px;
-        }
-        i.fa.fa-chevron-right{
-          font-size: 9px;
-          color: #888;
-        }
-      }
-      li{
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.2;
-        span.name{
-          font-weight: 600;
-        }
-      }
-    }
-  }
+  // プロフィールここまで
+
+  // ここからログアウトページ
   main.logout-content {
     margin: 40px auto 0;
     width: 1020px;
@@ -676,6 +552,7 @@
         
       }
     }
+    // ここまでログアウトページ
     .mypage-card-side {
       float: left;
       margin: 0 40px 0 0;
@@ -683,3 +560,185 @@
     }
   }
 }
+
+
+
+
+
+// ここから本人確認ページの記述
+.user-identification-form__body__page--body{
+  width: 100%;
+  background-color: #f5f5f5;
+  .user-identification-form__body-wrapper{
+    display: flex;
+    margin: 40px auto 0;
+    width: 1020px;
+    padding-bottom: 40px;
+    justify-content: space-around;
+    align-items: start;
+    .user-identification-form{
+      width: 700px;
+      margin-left: 40px;
+      &__body{
+        background-color: #fff;
+        margin-top: 8px;
+        &__title{
+          font-weight: bold;
+          font-size: 24px;
+          padding: 8px 24px;
+          border-bottom: 1px solid #f5f5f5;
+          text-align: center;
+          line-height: 1.4;
+        }
+        &__forms{
+          border-top: 1px solid #f5f5f5;
+          padding:64px;
+          &__content{
+            height: 71;
+            &__text{
+              margin: 8px 0 0;
+              line-height: 1.5;
+              font-size: 14px;
+            }
+            &__up-link{
+              font-size: 13px;
+              color: #0099e8;
+              margin: 8px 0 0;
+              line-height: 1.5;
+              text-align: right;
+              &__text{
+                color: #0099e8;
+              }
+            }
+          }
+          &__content__form-groups{
+            margin: 40px 0 0;
+            label{
+              font-weight: 600;
+              font-size: 14px;
+              display: inline-block;
+            }
+            p{
+              font-weight: 100;
+              font-size: 14px;
+            }
+            span{
+              background-color: #ccc;
+              color: #fff;
+              border-radius: 2px;
+              font-size: 13px;
+              padding: 2px;
+            }
+            &__input-area{
+              width: 94%;
+              margin: 8px 0 0;
+              height: 28px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+            &__prefectures{
+              position: relative;
+              background: #fff;
+              margin: 8px 0 0;
+              width: 100%;
+              &--icon{
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                z-index: 2;
+                color: #888;
+                font-size: 8px;
+              }
+              &--list{
+                width: 100%;
+                outline: 0;
+                -webkit-appearance: none;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 20px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+              }
+            }
+          }
+          &__content__form-groups--btn{
+            margin: 40px 0 0 0;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+          }
+          .user-identification-form__body__forms__content__form-groups__question{
+            margin: 40px 0 0;
+            text-align: right;
+            margin: 8px 0 0;
+            line-height: 1.5;
+            color: #0099e8;
+            &__text{
+              margin: 40px 0 0;
+              line-height: 1.5;
+              color: #0099e8;
+              &__link{
+                color: #0099e8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ここまで本人情報確認
+
+
+// ここからマイページのサイドナビゲーション
+.mypage-nav{
+  ul.mypage-nav-lists {
+    margin: 8px 0 0;
+    li.mypage-nav-list {
+      width: 280px;
+      a.information-link { 
+        text-decoration: none;
+        .mypage-nav-list__item {
+          position: relative;
+          display: block;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          border-bottom: solid 2px #f5f5f5;
+          .list-icon {
+            position: absolute;
+            top: 40%;
+            right: 16px;
+            color: #ccc;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+      a.information-link :hover{
+        opacity: 0.6;
+        font-size: 1.2;
+      }
+    }
+  }
+  h3.mypage-nav-head {
+    margin: 40px 0 0;
+  }
+}
+// ここまでマイページサイドナビゲーション

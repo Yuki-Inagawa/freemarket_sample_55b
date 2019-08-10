@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   def show
     @items = @user.items
-    @category = Category.all
+    @categories = Category.all
   end
 
   private
