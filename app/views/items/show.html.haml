@@ -100,8 +100,18 @@
           = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn",  data: {"turbolinks": false}
         %section.item-box__main-content__buy
           = link_to '販売停止', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
-        %section.item-box__main-content__buy
-          = link_to 'この商品を削除する', "/items/#{@item.id}",class: "item-box__main-content__buy__btn", method: :delete
+        %section#modal-open-btn.item-box__main-content__buy
+          %button#item-delete-btn.item-box__main-content__buy__btn この商品を削除する
+          -# = link_to 'この商品を削除する', "/items/#{@item.id}",class: "item-box__main-content__buy__btn", id: 'item-delete-btn', method: :delete
+          #overlay
+            #modalWindow
+              .modal-message-box
+                %div 確認
+                %div 本当に削除しますか？
+              .modal-message-bottom
+                %button#modal-close-btn キャンセル
+                = link_to "/items/#{@item.id}", id: "modal-close-btn-delete", method: :delete do
+                  %button#delete-comformation-btn 削除する
       .item-box__btn
       - if user_signed_in? && current_user.id != @item.user_id
         .item-box__btn--left
