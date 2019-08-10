@@ -24,7 +24,8 @@
           %ul.transaction
             - @items.each do |item|
               %li.transaction-now
-                .figure a
+                .figure
+                  = item.images
                 .mypage-item-body
                   .mypage-item-body__text
                     = item.name
