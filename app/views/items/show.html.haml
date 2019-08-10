@@ -100,14 +100,23 @@
           = link_to '商品の編集', edit_item_path, class: "item-box__main-content__buy__btn",  data: {"turbolinks": false}
         %section.item-box__main-content__buy
           = link_to '販売停止', buy_confirmation_items_path, class: "item-box__main-content__buy__btn"
-        %section.item-box__main-content__buy
-          = link_to 'この商品を削除する', "/items/#{@item.id}",class: "item-box__main-content__buy__btn", method: :delete
+        %section#modal-open-btn.item-box__main-content__buy
+          %button#item-delete-btn.item-box__main-content__buy__btn この商品を削除する
+          #overlay
+            #modalWindow
+              .modal-message-box
+                %div 確認
+                %div 本当に削除しますか？
+              .modal-message-bottom
+                %button#modal-close-btn キャンセル
+                = link_to item_path, id: "modal-close-btn-delete", method: :delete do
+                  %button#delete-comformation-btn 削除する
       .item-box__btn
-      - if user_signed_in? && current_user.id != @item.user_id
+      
         .item-box__btn--left
           %button.item-box__btn--left--like
-            %i.fa.fa-heart
-            %span いいね! 0
+            = render partial: 'likes/likes', locals: {item: @item }
+            %span 
           = link_to  root_path, class: "item-box__btn--left--report" do
             %i.fa.fa-flag
             %span 不適切な商品の報告
@@ -147,7 +156,7 @@
 
     %ul.item-link
       %li.item-link__prev
-        - if @item.next.present?
+        - if @item.previous.present?
           = link_to "/items/#{@item.previous.id}" do
 
             %i.fa.fa-chevron-left
