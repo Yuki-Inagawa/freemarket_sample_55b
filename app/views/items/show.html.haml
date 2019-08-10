@@ -121,26 +121,24 @@
           - if @item.comments
             - @item.comments.each do |comment|
               - if comment.user.id == @item.user_id
-                .balloon5
-                  .faceicon
-                    %img{src: "/assets/member_photo_noimage_thumb.png"}/
-                  .chatting
-                    .says
-                      %p 
-                        = comment.text
-                    .comment-users--name
+                .balloon
+                  %figure.balloon-image-left
+                    %img{:alt => "画像名", :src => "/assets/member_photo_noimage_thumb.png"}/
+                    %figcaption.balloon-image-description
                       = comment.user.nickname
+                  .balloon-text-right
+                    %p
+                      = comment.text
               - else
-                .balloon5
-                  .faceicon
-                    %img{src: "/assets/member_photo_noimage_thumb.png", style: 'border: solid 3px #FF7F50'}/
-                  .chatting
-                    .says{style: 'background-color: #FF7F50'}
-                      %p 
-                        = comment.text
-                    .comment-users--name
+                .balloon--right
+                  %figure.balloon-image-right
+                    %img{:alt => "画像名", :src => "/assets/member_photo_noimage_thumb.png"}/
+                    %figcaption.balloon-image-description
                       = comment.user.nickname
-                  
+                  .balloon-text-left
+                    %p
+                      = comment.text
+
         .item-message__container__content
           = form_for [@item,@comment], html: {class: "item-message__container__content__form"} do |f|
             %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
