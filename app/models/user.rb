@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :addresses
   has_many :comments
+  has_many :likes
 
   validates :nickname, presence: true, length: { maximum: 20 }
   validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
@@ -18,6 +19,7 @@ class User < ApplicationRecord
   validates :birthday_yiar, presence: true
   validates :birthday_month, presence: true
   validates :birthday_day, presence: true
+
 
   def self.find_oauth(auth)
     # snsのユーザーのidとproviderを変数に代入
