@@ -1,7 +1,7 @@
 - @other_items.each do |item|
   - if item.id != @item.id
     %section.item
-      = link_to  "/items/#{item.id}" do
+      = link_to  "/items/#{item.id}", data: {"turbolinks": false} do
         .item__photo
           - item.images.each_with_index do |image, index|
             - if index == 0
