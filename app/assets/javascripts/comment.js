@@ -1,16 +1,32 @@
 $(document).on('turbolinks:load', function(){
-  function buildHTML(comment){
-    var html = `<div class="balloon5">
-                <div class="faceicon">
-                  <img src="/assets/member_photo_noimage_thumb.png">
-                </div>
-                <div class="chatting">
-                  <div class="says">
-                    <p>${comment.text}</p>
+  function buildHtmlBlue(comment){
+    var html = `<div class="balloon">
+                  <figure class="balloon-image-left">
+                    <img src="/assets/member_photo_noimage_thumb.png" alt="画像名">
+                  <figcaption class="balloon-image-description">
+                  ${comment.user_nickname}
+                  </figcaption>
+                  </figure>
+                  <div class="balloon-text-right">
+                    <p>
+                    ${comment.text}
+                    </p>
                   </div>
-                  <div class="comment-users--name">
-                    <p>${comment.user_nickname}</p>
-                  </div>
+                </div>`
+    return html;
+  }
+  function buildHtmlOrange(comment){
+    var html =`<div class="balloon--right">
+                <figure class="balloon-image-right">
+                  <img src="/assets/member_photo_noimage_thumb.png" alt="画像名">
+                <figcaption class="balloon-image-description">
+                  ${comment.user_nickname}
+                </figcaption>
+                </figure>
+                <div class="balloon-text-left">
+                  <p>
+                  ${comment.text}
+                  </p>
                 </div>
               </div>`
     return html;
@@ -29,9 +45,15 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(data){
-      var html = buildHTML(data);
-      $('.item__comment--box').append(html);
-      $('#new_comment')[0].reset();
+      if (data.current_user_id === data.item_id){
+        var html = buildHtmlBlue(data);
+        $('.item__comment--box').append(html);
+        $('#new_comment')[0].reset();
+      } else {
+        var html = buildHtmlOrange(data);
+        $('.item__comment--box').append(html);
+        $('#new_comment')[0].reset();
+      }
     })
     .fail(function(data){
       alert('コメント送信エラー');

@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     @beauty = Item.where(category_id: 869..956).order("id DESC").limit(4)
     @q = Item.ransack(params[:q])
     @search_items = @q.result(distinct: true)
+    
   end
 
   def new
@@ -162,8 +163,9 @@ private
   end
 
   def set_categories
-    @category = Category.all
-  end
+    @categories = Category.all
+  end  
+
 
 
 end

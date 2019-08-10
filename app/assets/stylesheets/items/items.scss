@@ -1,3 +1,6 @@
+// 〜〜〜アイテム関係全般〜〜〜
+
+// アイテム詳細ページ全体のスタイル
 .container{
   position: relative;
   background: #f5f5f5;
@@ -177,11 +180,17 @@
             background: #f5f5f5;
             border-radius: 40px;
             padding: 8px 16px;
-            .fa.fa-heart{
+            &--font1{
               font-size: 14px;
               vertical-align: middle;
-              color: #ccc;
+              color: pink; 
             }
+            &--font{
+              font-size: 14px;
+              vertical-align: middle;
+              color:#ccc;
+            }
+
           }
           &--report{
             margin: 0 0 0 8px;
@@ -328,6 +337,308 @@
     }
   }
 }
+// ここまでアイテム詳細ページ全体のスタイル
+
+// アイテム詳細ページのアイテム一つあたりのスタイル
+.item{
+  width: 220px;
+  margin: 10px 6px 10px;
+  background-color: white;
+  a{
+    display: block;
+    text-decoration: none;
+    .item__photo{
+      display: block;
+      img{
+        object-fit: cover;
+        width: 220px;
+        height: 220px;
+        display: inline;
+      }
+    }
+    .item__body{
+      padding: 16px;
+      height: 110px;
+      &__name{
+        font-weight: 400;
+        height: 90px;
+        line-height: 1.5;
+        word-break: break-word;
+        white-space: normal;
+        font-size: 16px;
+        color: #333;
+      }
+      &__num{
+        display: flex;
+        justify-content: space-between;
+        height: 15px;
+        &__price{
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          font-size: 17px;
+          font-weight: 600;
+          color:#333;
+          max-width: 40px;
+        }
+        &__like{
+          font-size: 16px;
+          font-weight: 400;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+// ここまでアイテム詳細ページのアイテム一つあたりのスタイル
+
+// アイテムの売り切れ表示
+.sold_tag {
+  position: absolute;
+  top: 0;
+  font-size: 23px;
+  left: 0;
+  z-index: 2;
+  color: #fff;
+  
+  letter-spacing: 2px;
+  font-weight: 600;
+  p {
+    transform: rotate(-45deg);
+    position: relative;
+    z-index: 3;
+    top : 15px;
+    right: 2px;
+  }
+}
+.sold_tag:after {
+  border-width: 100px 100px 0 0;
+  border-color: #ea352d transparent transparent transparent;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+// ここまで売り切れ表示
+
+
+// ここから商品購入確認ページ
+.buy_comfirmation {
+  position: relative;
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+
+  .buy_comfirmation-header {
+    height: 128px;
+    .buy_comfirmation-wrapper {
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+      margin: 0 auto;
+      padding-top: 40px;
+    }
+  }
+
+  .buy_comfirmation-main {
+    display: block;
+    .buy-item-container {
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      &__title {
+        padding: 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      &__details {
+        margin: 0;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        text-align: center;
+        &__box {
+          max-width: 320px;
+          margin: 0 auto;
+          .box-wrapper {
+            display: flex;
+            h3 {
+              font-size: 22px;
+              height: 24%;
+              width: 24%;
+              clear: right;
+              .lazyloaded {
+                width: 64px;
+              }
+            }
+            .buy-item-name {
+              margin-left: 16px;
+              text-align: left;
+              font-size: 16px;
+              line-height: 1.5;
+              font-weight: 600;
+            }
+          }
+
+          .payment-form {
+            width: 100%;
+            .buy-price {
+              margin-top: 8px;
+              line-height: 1.5;
+              font-size: 22px;
+              font-weight: bold;
+              .shipping-fee {
+                margin-left: 8px;
+                font-size: 14px;
+                font-weight: 400;
+              }
+            }
+            .user-point {
+              background: #ccc;
+              margin-top: 16px;
+              .user-point-box {
+                .now-point {
+                  padding: 16px;
+                  border: 1px solid #ccc;
+                }
+              }
+            }
+            .price-table {
+              .final-price-box {
+                font-size: 18px;
+                font-weight: 600;
+                width: 100%;
+                .price-cell-left {
+                  text-align: left;
+                  display: table-cell;
+                  padding: 16px 0;
+                  width: 187px;
+                }
+                .price-cell-right {
+                  text-align: right;
+                  display: table-cell;
+                  padding: 16px 0;
+                  width: 133px;
+                  span {
+                    font-size: 28px;
+                    text-align: right;
+                  }
+                }
+              }
+            }
+            .buy-btn {
+              width: 100%;
+              margin-top: 8px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              line-height: 48px;
+              font-size: 14px;
+              display: block;
+            }
+          }
+        }
+      }
+
+      &__user-info {
+        margin-top: 40px;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        &__box {
+          max-width: 320px;
+          margin: 0 auto;
+          h3 {
+            font-weight: bold;
+          }
+          address {
+            display: block;
+            margin-top: 8px;
+            line-height: 1.4;
+          }
+          p {
+            margin-top: 8px;
+          }
+          a {
+            display: block;
+            text-align: right;
+            color: #0099e8;
+            text-decoration: none;
+            span {
+              vertical-align: middle;
+            }
+            i {
+              margin-left: 8px;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+
+      &__payment {
+        margin-top: 40px;
+        padding: 24px 12.5% 40px;
+        border-top: 1px solid #f5f5f5;
+        &__box {
+          max-width: 320px;
+          margin: 0 auto;
+          h3 {
+            font-weight: bold;
+          }
+          p {
+            margin-top: 8px;
+            line-height: 1.4;
+          }
+          figure {
+            margin: 0;
+          }
+          a {
+            display: block;
+            text-align: right;
+            color: #0099e8;
+            text-decoration: none;
+            span {
+              vertical-align: middle;
+            }
+            i {
+              margin-left: 8px;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .buy_comfirmation-footer {
+    text-align: center;
+    padding: 10px 0;
+    &__list {
+      word-spacing: 0.4rem;
+      margin: 16px 0 0;
+      list-style: none;
+      font-size: 12px;
+    }
+    &__logo {
+      display: block;
+      margin: 40px 188px;
+      p {
+        margin: 8px 0 0;
+        small {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+// ここまで商品購入確認ページ
 
 #overlay {
   //モーダルウィンドウの背景を設定

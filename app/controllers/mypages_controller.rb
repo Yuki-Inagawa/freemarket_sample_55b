@@ -23,7 +23,7 @@ class MypagesController < ApplicationController
   end
 
   def listing_list
-    @user = User.find(1)
+    @user = User.find(current_user.id)
     @items = @user.items
   end
 

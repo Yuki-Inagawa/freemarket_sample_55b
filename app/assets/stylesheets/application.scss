@@ -1,20 +1,28 @@
-@import        "./reset";
-@import        "font-awesome";
-@import        "./jinno.scss";  //仮置き
-@import        "./asakura.scss";  //仮置き
-@import        "./buy_confirmation.scss";
-@import        "./noguchi.scss";  //仮置き
-@import        "./inagawa.scss";  //仮置き
-@import        "./yukawa.scss";  //仮置き
-@import        "./mypage_nav.scss";
-@import        "./shared/item";
-@import        "./shared/sell_page_btn";
-@import        "./mypage.scss";
-@import        "./user_show.scss";
-@import        "./search.scss";
+// 〜〜初期設定等〜〜
+@import        "./reset";                   ///リセットCSS
+@import        "font-awesome";              ///フォント
 
-// 以下slick用
-@import        "./slick-theme.scss";
-@import        "./slick.scss";
-@import        "./sumbnail_slider.scss";
+// 〜〜アプリ本体〜〜
 
+// 〜〜トップページとパーツ系〜〜（main-partフォルダ内
+@import        "./main-part/top-page.scss";           ///トップページ、グローバルヘッダー、フッター、スライダー、アコーディオン
+@import        "./main-part/breadcrumbs.scss";        ///パンくずリスト
+@import        "./main-part/sell_page_btn";           ///出品ボタン（カメラマーク
+
+// 〜〜ユーザー関係〜〜（usersフォルダ内
+@import        "./users/sign_up.scss";            ///ユーザー新規登録ページ関係
+@import        "./users/user_show.scss";          ///ユーザーのSHOWページ
+@import        "./users/mypages.scss";            ///マイページ関係全て
+
+// 〜〜商品関係〜〜（itemsフォルダ内
+@import        "./items/comments.scss";           ///コメント機能関係
+@import        "./items/search.scss";             ///アイテム（商品検索結果ページ
+@import        "./items/exhibit.scss";            ///アイテム（出品ページ
+@import        "./items/items.scss";              ///アイテム（詳細ページ、アイテム個別のスタイル、購入確認
+
+
+// 〜〜プラグイン〜〜
+/// 以下slickスライダー（slickフォルダ内
+@import        "./slick/slick-theme.scss";
+@import        "./slick/slick.scss";
+@import        "./slick/sumbnail_slider.scss";
