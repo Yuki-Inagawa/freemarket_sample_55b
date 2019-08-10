@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
     @q = Item.ransack(params[:q])
     @search_items = @q.result(distinct: true)
+    
   end
 
   def new 
@@ -159,7 +160,7 @@ private
   end
   
   def set_categories
-    @category = Category.all
+    @categories = Category.all
   end  
 
 

@@ -1,0 +1,16 @@
+- if user_signed_in?
+  - if item.like_user(current_user.id)
+    = link_to item_likes_path(item), method: :delete, id: "like-button", remote: true do
+      = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font1"
+      %span
+      = item.likes.count
+  - else
+    = link_to item_likes_path(item), method: :post, id: "like-button", remote: true do
+      = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+      %span 
+      = item.likes.count
+        
+- else
+  = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+  %span
+  = item.likes.count

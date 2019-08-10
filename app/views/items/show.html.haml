@@ -103,11 +103,11 @@
         %section.item-box__main-content__buy
           = link_to 'この商品を削除する', "/items/#{@item.id}",class: "item-box__main-content__buy__btn", method: :delete
       .item-box__btn
-      - if user_signed_in? && current_user.id != @item.user_id
+      
         .item-box__btn--left
           %button.item-box__btn--left--like
-            %i.fa.fa-heart
-            %span いいね! 0
+            = render partial: 'likes/likes', locals: {item: @item }
+            %span 
           = link_to  root_path, class: "item-box__btn--left--report" do
             %i.fa.fa-flag
             %span 不適切な商品の報告
