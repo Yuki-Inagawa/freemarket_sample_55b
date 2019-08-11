@@ -23,7 +23,7 @@
         .mypage-tab-content
           %ul.transaction
             - @items.each do |item|
-              - if item.status == 0
+              - if item.status == 1
                 %li.transaction-now
                   .figure
                     = link_to image_tag("#{item.images.first.image}", height: 48, width: 48, alt: '画像')
