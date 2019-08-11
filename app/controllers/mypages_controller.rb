@@ -30,7 +30,7 @@ class MypagesController < ApplicationController
 private
     
   def set_categories
-    @category = Category.all
+    @categories = Category.all
   end  
 
 

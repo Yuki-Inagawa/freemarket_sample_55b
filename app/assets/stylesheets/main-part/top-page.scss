@@ -90,6 +90,30 @@
             }
           }
         }
+        &__child--brand{
+          padding-right: 11px;
+          position: relative;
+          display: inline-block;
+          &-text{
+            font-size: 14px;
+            &-link{
+              font-weight: bold;
+              display: block;
+              height: 44px;
+              line-height: 32px;
+              &--icon{
+                color: #ea352d;
+                margin-right: 4px;
+              }
+              span{
+                vertical-align: middle;
+              }
+              .header-hide-item{
+                display: none;
+              }
+            }
+          }
+        }
       }
     }
     &__right{
