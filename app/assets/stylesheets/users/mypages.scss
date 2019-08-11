@@ -149,6 +149,31 @@
             width: 700px;
             display: flex;
             height: 74px;
+
+            .mypage-tabs-left-bottom {
+              width: 50%;
+              text-align: center;
+              padding-top: 25px;
+              border-right: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypage-tabs-left-bottom__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
+            }
+            .mypage-tabs-right-bottom {
+              width: 50%;
+              text-align: center;
+              padding-top: 25px;
+              li.mypage-tabs-right-bottom__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
+            }
             .mypage-tabs-left-selling {
               width: 33.3%;
               text-align: center;
