@@ -150,7 +150,7 @@
             display: flex;
             height: 74px;
             .mypage-tabs-left {
-              width: 50%;
+              width: 33.3%;
               text-align: center;
               padding-top: 25px;
               li.mypage-tabs-left__tab {
@@ -160,11 +160,24 @@
                 }
               }
             }
-            ul.mypage-tabs-right {
-              width: 50%;
+            ul.mypage-tabs-center {
+              width: 33.3%;
               text-align: center;
               padding-top: 25px;
-              li.mypge-tabs-right__tab{
+              li.mypge-tabs-center__tab{
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
+            }
+            ul.mypage-tabs-right-done {
+              width: 33.3%;
+              text-align: center;
+              padding-top: 25px;
+              border-left: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypgage-tabs-right-done__tab {
 
                 h3.tabs-title {
                   font-weight: 600;
@@ -231,7 +244,7 @@
                   }
                 }
               }
-            li.transaction-not-found {
+              li.transaction-not-found {
                 background-image: url("logo-gray-icon.svg");
                 padding: 160px 0 60px;
                 background-repeat: no-repeat;
@@ -240,7 +253,6 @@
                 text-align: center;
                 font-size: 16px;
                 color: #ccc;
-            
               }
             }
           }
