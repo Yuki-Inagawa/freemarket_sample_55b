@@ -23,20 +23,21 @@
         .mypage-tab-content
           %ul.transaction
             - @items.each do |item|
-              %li.transaction-now
-                .figure
-                  = link_to image_tag("#{item.images.first.image}", height: 48, width: 48, alt: '画像')
-                .mypage-item-body
-                  .mypage-item-body__text
-                    = item.name
-                  .mypage-item-body-icon
-                    %span.listing-item-count
-                      こめ
-                    %span.listing-item-count
-                      ハート
-                    .mypage-item-status
-                      公開中
-                  = fa_icon "chevron-right"
+              - if item.status == 0
+                %li.transaction-now
+                  .figure
+                    = link_to image_tag("#{item.images.first.image}", height: 48, width: 48, alt: '画像')
+                  .mypage-item-body
+                    .mypage-item-body__text
+                      = item.name
+                    .mypage-item-body-icon
+                      %span.listing-item-count
+                        こめ
+                      %span.listing-item-count
+                        ハート
+                      .mypage-item-status
+                        公開中
+                    = fa_icon "chevron-right"
 
     .profile-side
       = render 'shared/mypage_nav'
