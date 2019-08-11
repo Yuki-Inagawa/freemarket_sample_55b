@@ -15,9 +15,8 @@ $( document ).on('turbolinks:load', function() {
 
   $('#new_item').on("change", 'input[type= "file"].upload-image', function() {
 
-
+  
     var file = $(this).prop("files")[0];
-
     new_image_files.push(file)
     var reader = new FileReader();
 
@@ -187,6 +186,9 @@ $( document ).on('turbolinks:load', function() {
       data:        formData,
       contentType: false,
       processData: false,
+    })
+    .always(function(){
+      $('.sell-item-btn').prop("disabled", false);
     })
   });
   }
