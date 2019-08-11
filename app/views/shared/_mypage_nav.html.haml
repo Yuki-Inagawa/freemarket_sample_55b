@@ -37,7 +37,7 @@
           出品した商品 - 取引中
           %i.fa.fa-chevron-right.list-icon
     %li.mypage-nav-list
-      = link_to  root_path, class: 'information-link' do
+      = link_to "/mypages/#{current_user.id}/listing_completed", class: 'information-link' do
         .mypage-nav-list__item 
           出品した商品 - 売却済み
           %i.fa.fa-chevron-right.list-icon
