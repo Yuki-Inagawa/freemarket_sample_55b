@@ -17,8 +17,9 @@
             %li.mypge-tabs-right__tab
               %h3.tabs-title 取引中
           %ul.mypage-tabs-right
-            %li.mypge-tabs-right__tab
-              %h3.tabs-title 売却済み
+            = link_to "/mypages/#{current_user.id}/listing_completed", class: 'information-link' do
+              %li.mypge-tabs-right__tab
+                %h3.tabs-title 売却済み
 
         .mypage-tab-content
           %ul.transaction

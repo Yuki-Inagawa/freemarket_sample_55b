@@ -11,8 +11,9 @@
           出品した商品
         .mypage-tabs
           %ul.mypage-tabs-left
-            %li.mypage-tabs-left__tab
-              %h3.tabs-title 出品中
+            = link_to "/mypages/#{current_user.id}/listing_list", class: 'information-link' do
+              %li.mypage-tabs-left__tab
+                %h3.tabs-title 出品中
           %ul.mypage-tabs-right
             %li.mypge-tabs-right__tab
               %h3.tabs-title 取引中
