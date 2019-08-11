@@ -149,12 +149,48 @@
             width: 700px;
             display: flex;
             height: 74px;
-            .mypage-tabs-left {
+
+            .mypage-tabs-left-bottom {
               width: 50%;
               text-align: center;
               padding-top: 25px;
               border-right: 1px solid #ccc;
               border-top: 2px solid #ea352d;
+              li.mypage-tabs-left-bottom__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
+            }
+            .mypage-tabs-right-bottom {
+              width: 50%;
+              text-align: center;
+              padding-top: 25px;
+              li.mypage-tabs-right-bottom__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
+            }
+            .mypage-tabs-left-selling {
+              width: 33.3%;
+              text-align: center;
+              padding-top: 25px;
+              border-right: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypage-tabs-left-selling__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
+            }
+            .mypage-tabs-left {
+              width: 33.3%;
+              text-align: center;
+              padding-top: 25px;
               li.mypage-tabs-left__tab {
                 
                 h3.tabs-title{
@@ -162,11 +198,35 @@
                 }
               }
             }
-            ul.mypage-tabs-right {
-              width: 50%;
+            ul.mypage-tabs-center {
+              width: 33.3%;
               text-align: center;
               padding-top: 25px;
-              li.mypge-tabs-right__tab{
+              li.mypge-tabs-center__tab{
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
+            }
+            ul.mypage-tabs-right {
+              width: 33.3%;
+              text-align: center;
+              padding-top: 25px;
+              li.mypgage-tabs-right__tab {
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
+            }
+            ul.mypage-tabs-right-done {
+              width: 33.3%;
+              text-align: center;
+              padding-top: 25px;
+              border-left: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypgage-tabs-right-done__tab {
 
                 h3.tabs-title {
                   font-weight: 600;
@@ -189,10 +249,13 @@
                   width: 48px;
                   height: 48px;
                 }
-                i {
-                  position: absolute;
-                  top: 50%;
-                  right: 16px;
+                .sell_item_image {
+                  height: 48px;
+                  width: 48px;
+                }
+                .purchased_item_image {
+                  height: 48px;
+                  width: 48px;
                 }
                 .mypage-item-body {
                   margin-right: 100px;
@@ -206,6 +269,7 @@
                     line-height: 1.5;
                   }
                   .mypage-item-body-icon {
+                    width: 100%;
                     vertical-align: 2px;
                     margin: 0 6px 0 0;
                     span.listing-item-count {
@@ -221,10 +285,27 @@
                       font-size: 12px;
                       color: #fff;
                     }
+                    .icon {
+                      position: absolute;
+                      right: 16px;
+                    }
+                  }
+                  .mypage-item-status-done {
+                    background: #888;
+                    display: inline-block;
+                    margin-top: 8px;
+                    padding: 5px 6px;
+                    border-radius: 2px;
+                    font-size: 12px;
+                    color: #fff;
+                  }
+                  .icon {
+                    position: absolute;
+                    right: 16px;
                   }
                 }
               }
-            li.transaction-not-found {
+              li.transaction-not-found {
                 background-image: url("logo-gray-icon.svg");
                 padding: 160px 0 60px;
                 background-repeat: no-repeat;
@@ -233,7 +314,6 @@
                 text-align: center;
                 font-size: 16px;
                 color: #ccc;
-            
               }
             }
           }

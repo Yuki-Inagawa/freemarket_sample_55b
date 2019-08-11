@@ -10,15 +10,16 @@
         %h2.mypage-tab-head 
           出品した商品
         .mypage-tabs
-          %ul.mypage-tabs-left
-            %li.mypage-tabs-left__tab
+          %ul.mypage-tabs-left-selling
+            %li.mypage-tabs-left-selling__tab
               %h3.tabs-title 出品中
-          %ul.mypage-tabs-right
-            %li.mypge-tabs-right__tab
+          %ul.mypage-tabs-center
+            %li.mypge-tabs-center__tab
               %h3.tabs-title 取引中
           %ul.mypage-tabs-right
-            %li.mypge-tabs-right__tab
-              %h3.tabs-title 売却済み
+            = link_to "/mypages/#{current_user.id}/listing_completed", class: 'information-link' do
+              %li.mypge-tabs-right__tab
+                %h3.tabs-title 売却済み
 
         .mypage-tab-content
           %ul.transaction
@@ -26,7 +27,7 @@
               - if item.status == 0
                 %li.transaction-now
                   .figure
-                    = link_to image_tag("#{item.images.first.image}", height: 48, width: 48, alt: '画像')
+                    = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'sell_item_image')
                   .mypage-item-body
                     .mypage-item-body__text
                       = item.name
@@ -37,7 +38,7 @@
                         ハート
                       .mypage-item-status
                         公開中
-                    = fa_icon "chevron-right"
+                      = fa_icon "chevron-right", class: 'icon'
 
     .profile-side
       = render 'shared/mypage_nav'

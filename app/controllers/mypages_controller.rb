@@ -27,6 +27,11 @@ class MypagesController < ApplicationController
     @items = @user.items
   end
 
+  def listing_completed
+    @user = User.find(current_user.id)
+    @items = @user.items
+  end
+
 private
     
   def set_categories
