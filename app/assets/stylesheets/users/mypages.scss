@@ -149,6 +149,19 @@
             width: 700px;
             display: flex;
             height: 74px;
+            .mypage-tabs-left-selling {
+              width: 33.3%;
+              text-align: center;
+              padding-top: 25px;
+              border-right: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypage-tabs-left-selling__tab {
+                
+                h3.tabs-title{
+                  font-weight: 600;
+                }
+              }
+            }
             .mypage-tabs-left {
               width: 33.3%;
               text-align: center;
@@ -165,6 +178,17 @@
               text-align: center;
               padding-top: 25px;
               li.mypge-tabs-center__tab{
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
+            }
+            ul.mypage-tabs-right {
+              width: 33.3%;
+              text-align: center;
+              padding-top: 25px;
+              li.mypgage-tabs-right__tab {
 
                 h3.tabs-title {
                   font-weight: 600;
