@@ -24,7 +24,8 @@
           %ul.transaction
             - @items.each do |item|
               %li.transaction-now
-                .figure a
+                .figure
+                  = link_to image_tag("#{item.images.first.image}", height: 48, width: 48, alt: '画像')
                 .mypage-item-body
                   .mypage-item-body__text
                     = item.name
