@@ -48,3 +48,6 @@ class User < ApplicationRecord
   end
 
 end
+
+# みんなのパソコンがおかしい
+
