@@ -4,6 +4,12 @@ class MypagesController < ApplicationController
     # @item = Item.find(params[:id])
     # @image = @item.images[0]
     # @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
+    transaction = Transaction.where(user_id: current_user.id)
+    item = []
+    transaction.each do |transaction|
+      item << transaction.item_id
+    end
+    @items = Item.where(id: item)
   end
 
   def profile
@@ -39,7 +45,6 @@ class MypagesController < ApplicationController
       item << transaction.item_id
     end
     @items = Item.where(id: item)
-    
   end
 
 private
