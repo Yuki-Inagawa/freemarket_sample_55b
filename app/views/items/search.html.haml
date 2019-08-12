@@ -102,54 +102,54 @@
               %span 商品の状態
             .pfom-check
               .checkbox-default
-                %input{type: "checkbox"}
-                %label すべて
+                =f.check_box :state_eq_any,{multiple: true},'',''
+                =f.label :state_eq_any, "すべて"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 新品、未使用
+                =f.check_box :state_eq_any,{multiple: true},"新品、未使用",''
+                =f.label :state_eq_any, "新品、未使用"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 未使用に近い
+                =f.check_box :state_eq_any,{multiple: true},"未使用に近い",''
+                =f.label :state_eq_any, "未使用に近い"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 目立った傷や汚れなし
+                =f.check_box :state_eq_any,{multiple: true},"目立った傷や汚れなし",''
+                =f.label :state_eq_any, "目立った傷や汚れなし"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label やや傷や汚れあり
+                =f.check_box :state_eq_any,{multiple: true},"やや傷や汚れあり",''
+                =f.label :state_eq_any, "やや傷や汚れあり"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 傷や汚れあり
+                =f.check_box :state_eq_any,{multiple: true},"傷や汚れあり",''
+                =f.label :state_eq_any, "傷や汚れあり"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 全体的に状態が悪い
+                =f.check_box :state_eq_any,{multiple: true},"全体的に状態が悪い",''
+                =f.label :state_eq_any, "全体的に状態が悪い"
           .form-group.crerfix
             %label
               %i.icon-coin
               %span 配送料の負担
             .pfom-check
               .checkbox-default
-                %input{type: "checkbox"}
-                %label すべて
+                =f.check_box :postage_type_eq_any,{multiple: true},'',''
+                =f.label :postage_type_eq_any, "すべて"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 着払い
+                =f.check_box :postage_type_eq_any,{multiple: true},"着払い(購入者負担)",''
+                =f.label :postage_type_eq_any, "着払い"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 送料込み
+                =f.check_box :postage_type_eq_any,{multiple: true},"送料込み(出品者負担)",''
+                =f.label :postage_type_eq_any, "送料込み"
           .form-group.crerfix
             %label
               %i.icon-coin
               %span 販売状況
             .pfom-check
               .checkbox-default
-                %input{type: "checkbox"}
-                %label すべて
+                =f.check_box :status_eq_any,{multiple: true},'',''
+                =f.label :status_eq_any, "すべて"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 販売中
+                =f.check_box :status_eq_any,{multiple: true},'0',''
+                =f.label :status_eq_any, "販売中"
               .checkbox-default
-                %input{type: "checkbox"}
-                %label 売り切れ
+                =f.check_box :status_eq_any,{multiple: true},'1',''
+                =f.label :status_eq_any, "売り切れ"
           .search-extend-btn.clearfix
             .btn-default.gray クリア
             =f.submit "完了", class: "btn-default red"

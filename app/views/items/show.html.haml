@@ -4,10 +4,10 @@
 
   - breadcrumb :item_show_page
   = render "./shared/breadcrumbs"
-  
+
   .item-wrapper
     .item-box
-      %h1.item-box__item-name 
+      %h1.item-box__item-name
         = @item.name
       .item-box__main-content
         .item-box__main-content__photo
@@ -16,13 +16,13 @@
               - @images.each do |image|
                 %li.slide-item
                   = image_tag "#{image.image.url}", height: 300, width: 300, alt: '画像'
-                  
+
             %ul#thumbnail-list
               - @images.each do |image|
                 %li.thumbnail-item
                   = image_tag "#{image.image.url}", height: 60, width: 60, alt: 'サムネイル'
-              
-          
+
+
         %table.item-box__main-content__detail
           %tbody
             %tr
@@ -58,11 +58,11 @@
               %td 80cm
             %tr
               %th 商品の状態
-              %td 
+              %td
                 = @item.state
             %tr
               %th 配送料の負担
-              %td 
+              %td
                 = @item.postage_type
             %tr
               %th 配送の方法
@@ -70,11 +70,11 @@
                 = @item.delivery_method
             %tr
               %th 配送元地域
-              %td 
+              %td
                 = @item.region
             %tr
               %th 発送日の目安
-              %td 
+              %td
                 = @item.shopping_date
         .item-box__main-content__price-box
           %span.item-box__main-content__price-box__price
@@ -89,7 +89,7 @@
         -elsif @item.status == 1
           %section.item-box__main-content__buy
             %a.item-box__main-content__buy__btn{style: "background-color: #888;"} 売り切れました
-        
+
       .item-box__description
         %p.item-box__description__text
           = @item.text
@@ -115,7 +115,7 @@
           = link_to  root_path, class: "item-box__btn--right__safety" do
             %i.fa.fa-lock
             %span あんしん・あんぜんへの取り組み
-    
+
     .item-message
       .item-message__container
         .item-message__container__content
@@ -127,14 +127,14 @@
 
     %ul.item-link
       %li.item-link__prev
-        - if @item.next.present?
+        - if @item.previous.present?
           = link_to "/items/#{@item.previous.id}" do
 
             %i.fa.fa-chevron-left
             = @item.previous.name
       %li.item-link__next
         - if @item.next.present?
-        
+
           = link_to  "/items/#{@item.next.id}" do
             = @item.next.name
             %i.fa.fa-chevron-right
@@ -153,7 +153,7 @@
     .other-items
       %section.other-items__user
         .other-items__user__head
-          = link_to '出品者さんのその他の出品',  root_path 
+          = link_to '出品者さんのその他の出品',  root_path
         .other-items__user__contents
           = render 'shared/item'
 
