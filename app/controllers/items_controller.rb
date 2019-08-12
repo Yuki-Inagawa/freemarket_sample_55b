@@ -135,8 +135,20 @@ end
   end
 
   def search
-    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order('id DESC').page(params[:page]).per(132)
-    @keyword = "#{params[:keyword]}"
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    if params[:q].present?
+      @search = Item.ransack(search_params)
+      @items = @search.result
+    else
+      params[:q] = { sorts: 'id desc' }
+      @search = Item.ransack()
+      @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order('id DESC').page(params[:page]).per(132)
+      @keyword = "#{params[:keyword]}"
+    end
   end
 
 
