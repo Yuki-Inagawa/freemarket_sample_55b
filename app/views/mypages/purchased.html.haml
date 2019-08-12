@@ -23,12 +23,12 @@
             - @items.each do |item|
               %li.transaction-now
                 .figure
-                  -# = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'purchased_item_image')
+                  = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'purchased_item_image')
                 .mypage-item-body
                   .mypage-item-body__text
-                    -# = item.name
+                    = item.name
                   .mypage-item-status-done
-                    売却済
+                    取引終了
                   = fa_icon "chevron-right", class: 'icon'
 
     .profile-side

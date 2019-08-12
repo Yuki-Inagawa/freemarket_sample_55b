@@ -33,8 +33,13 @@ class MypagesController < ApplicationController
   end
 
   def purchased
-    @user = User.find(current_user.id)
-    @items = Transaction.where(user_id: current_user.id)
+    transaction = Transaction.where(user_id: current_user.id)
+    item = []
+    transaction.each do |transaction|
+      item << transaction.item_id
+    end
+    @items = Item.where(id: item)
+    
   end
 
 private
