@@ -5,16 +5,9 @@ describe ItemsController do
   context "ユーザーログアウト時の挙動" do
   end
   context "ユーザーログイン時の挙動" do
-    # before do
-    #   login_user @user
-    # end
-
     describe 'GET #index' do
       before do
         get :index
-      end
-      it 'リクエストは200 OKとなること' do
-        expect(response.status).to eq 200
       end
       it "indexのビューに遷移するか" do
         get :index
@@ -34,7 +27,7 @@ describe ItemsController do
       it 'リクエストは200 OKとなること' do
         expect(response.status).to eq 200
       end
-      it "newのビューに遷移するが" do
+      it "newのビューに遷移するか" do
         expect(response).to render_template :new
       end
       it '@itemに新しい商品を割り当てること' do
