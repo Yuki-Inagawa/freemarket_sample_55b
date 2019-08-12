@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_many :comments
   belongs_to :category
   has_many :likes, dependent: :destroy
-
+  has_many :transactions
 
   
 
