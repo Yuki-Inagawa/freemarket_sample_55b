@@ -23,22 +23,25 @@
 
         .mypage-tab-content
           %ul.transaction
-            - @items.each do |item|
-              - if item.status == 0
-                %li.transaction-now
-                  .figure
-                    = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'sell_item_image')
-                  .mypage-item-body
-                    .mypage-item-body__text
-                      = item.name
-                    .mypage-item-body-icon
-                      %span.listing-item-count
-                        こめ
-                      %span.listing-item-count
-                        ハート
-                      .mypage-item-status
-                        公開中
-                      = fa_icon "chevron-right", class: 'icon'
+            - if @items.count >= 1
+              - @items.each do |item|
+                - if item.status == 0
+                  %li.transaction-now
+                    .figure
+                      = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'sell_item_image')
+                    .mypage-item-body
+                      .mypage-item-body__text
+                        = item.name
+                      .mypage-item-body-icon
+                        %span.listing-item-count
+                          こめ
+                        %span.listing-item-count
+                          ハート
+                        .mypage-item-status
+                          公開中
+                        = fa_icon "chevron-right", class: 'icon'
+            - else
+              %li.transaction-not-found 出品中の商品がありません
 
     .profile-side
       = render 'shared/mypage_nav'
