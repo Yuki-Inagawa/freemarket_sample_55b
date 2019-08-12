@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_many :comments
   belongs_to :category
+  has_many :likes, dependent: :destroy
+
+
   
 
   has_many :images, dependent: :destroy
@@ -23,4 +27,9 @@ class Item < ApplicationRecord
   def next
     Item.where("id > ?", self.id).order("id ASC").first
   end  
+
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
+
 end

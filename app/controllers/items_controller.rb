@@ -5,9 +5,13 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.includes(:images).order('id DESC').limit(4)
-
+    @ladies = Item.where(category_id: 159..338).order("id DESC").limit(4)
+    @mens = Item.where(category_id: 339..469).order("id DESC").limit(4)
+    @kids = Item.where(category_id: 470..588).order("id DESC").limit(4)
+    @beauty = Item.where(category_id: 869..956).order("id DESC").limit(4)
     @q = Item.ransack(params[:q])
     @search_items = @q.result(distinct: true)
+    
   end
 
   def new
@@ -124,7 +128,7 @@ end
     @item = Item.find(params[:id])
     @images = @item.images
     @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
-
+    @comment = Comment.new
   end
 
   def buy_confirmation
@@ -171,8 +175,9 @@ private
   end
 
   def set_categories
-    @category = Category.all
-  end
+    @categories = Category.all
+  end  
+
 
 
 end

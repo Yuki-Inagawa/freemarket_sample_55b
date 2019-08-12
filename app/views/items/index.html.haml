@@ -36,7 +36,7 @@
     %h3.top-main__contents__category
       = link_to "レディース 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @ladies.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
@@ -45,7 +45,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -56,13 +56,14 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", "/", class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
     %h3.top-main__contents__category
       = link_to "メンズ 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @mens.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
@@ -71,7 +72,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -82,13 +83,14 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", "/", class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
     %h3.top-main__contents__category
       = link_to "ベビー・キッズ 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @kids.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
@@ -97,7 +99,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -108,13 +110,14 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", root_path, class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
     %h3.top-main__contents__category
       = link_to "コスメ・香水・美容 新着アイテム", root_path, class: "top-main__contents__category__link"
     .top-main__contents__items-wrap
-      - @items.each do |item|
+      - @beauty.each do |item|
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
@@ -123,7 +126,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -134,6 +137,7 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", "/", class: "top-main__contents__all-links__text"
 %section.top-main__contents
@@ -152,7 +156,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -163,6 +167,7 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", "/", class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
@@ -178,7 +183,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -189,6 +194,7 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", "/", class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
@@ -204,7 +210,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -215,6 +221,7 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", "/", class: "top-main__contents__all-links__text"
   %section.top-main__contents__wrapper
@@ -230,7 +237,7 @@
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
               - if index == 0
-                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), "/items/#{item.id}", class: "top-main__contents__item-box__image__img"
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
                 - break
           .top-main__contents__item-box__body
             %h3.top-main__contents__item-box__body__text
@@ -241,6 +248,7 @@
               .top-main__contents__item-box__body__flex-box--status
                 = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                 %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
     .top-main__contents__all-links
       = link_to "すべての商品を見る", "/", class: "top-main__contents__all-links__text"
 = render 'shared/footer'

@@ -51,7 +51,7 @@ end
 # アイテム詳細ページのパン
 crumb :item_show_page do
   item = Item.find_by(id: params[:id])
-  link item.name, "/items/#{item.id}"
+  link item.name, item_path(item.id), data: {"turbolinks": false}
 end
 
 

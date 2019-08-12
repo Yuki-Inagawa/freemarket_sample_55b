@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
     resources :comments, only: [:create]
+    resource :likes, only: [:create, :destroy]
     collection do
 
     get 'buy/confirmation', to: 'items#buy_confirmation'
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
   resources :mypages, only: [:show] do
       get 'profile', on: :member
       get 'listing_list',  on: :member
+      get 'listing_completed',  on: :member
       get 'identification',  on: :member
       get 'card',  on: :member
       get 'card_create',  on: :member

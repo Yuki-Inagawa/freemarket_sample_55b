@@ -1,0 +1,127 @@
+//〜〜ユーザーの詳細ページ（１ページのみ）〜〜
+.default-container {
+  background-color:  #f5f5f5;
+  .user-details {
+    width: 700px;
+    margin: 40px auto;
+    .profile-box {
+      padding-top: 50px;
+      background-image: image-url("merkari_user_page.jpg");
+      background-size: cover;
+      &__text-center{
+        text-align: center;
+      }
+        .text-center-link{
+          text-align: center;
+          text-decoration: none;
+          .member_photo_noimage_thumb{
+            border-radius: 50%;
+            height: 180px;
+            width: 180px;
+            margin-left: 260px;
+            
+          }
+          .users-detail {
+            
+            &__name{
+              margin: 8px 0 16px;
+              font-size: 18px;
+              font-weight: 400;
+              color: #333;
+            }
+          }
+          .scores {
+            padding-bottom: 30px;
+            &__score {
+              margin-left: 12px;
+              font-size: 14px;
+              font-weight: 600;
+              color: #333;
+            }
+          }
+        }
+      }
+    .profile-under {
+      background-color: white;
+      .users-detail-ratings-box {
+        display: flex;
+        height: 50px;
+        padding-top: 14px;
+        width: 360px;
+        margin: 0 auto;
+        .user-detail-ratings-parent{
+          padding-right: 30px;
+          .users-detail-ratings{
+            display: flex;
+            line-height: 26px;
+            .fa.fa-search{
+              font-size: 24px;
+            }
+            .text-center.users-detail-ragtings-score{
+              vertical-align: middle;
+              margin: 0 0 0 14px;
+              width: 60px;
+          }
+        }
+      }
+      }
+      .users-detail-description_box {
+        padding: 30px 50px 60px 50px;
+        border-top: 2px solid #f5f5f5;
+        p.profile-text {
+          font-size: 16px;
+          font-weight: 400;
+          color: #333;
+        }
+      }
+    }
+    .item-social-media-box {
+      padding: 32px 0 24px;
+      width: 700px;
+      background: #fff;
+      .social-media-box{
+        margin: 16px 0 0;
+        text-align: center;
+        font-size: 30px;
+      }
+      li.social-media-box {
+        margin: 0 0px 8px 0;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+        border-radius: 4px;
+        font-size: 44px;
+        i.fa.fa-facebook-square {
+          color:#385185;
+        }
+        i.fa.fa-twitter-square {
+          color: #5d9dc9;
+        }
+        i.fa.fa-line {
+          color:#00c137;
+        }
+      }
+    }
+  }
+
+
+  .exhibition-items {
+    
+    &__title{
+      margin:24px 0 8px;
+      font-size: 22px;
+    }
+    .items-box{
+      display: flex;
+      flex-wrap: wrap;
+      &__item {
+        margin-right: 20px;
+        margin-bottom: 20px;
+        min-width: 213px;
+        height: 330px;
+        background-color: coral;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+//〜パンくずリスト〜
+.breadcrumbs{
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background-color: #fff;
+  height: 49px;
+  &-list{
+    overflow: visible;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    font-size: 14px;
+    a{
+      line-height: 1.2;
+    }
+    :hover{
+      border-bottom: solid 1px #000;
+    }
+    :last-child{
+      border: none;
+    }
+    span{
+      font-weight: bold;
+    }
+  }
+}
