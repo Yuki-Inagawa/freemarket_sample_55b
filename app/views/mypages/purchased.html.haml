@@ -11,9 +11,8 @@
           購入した商品
         .mypage-tabs
           %ul.mypage-tabs-left-trading
-            = link_to "/mypages/#{current_user.id}/listing_list", class: 'information-link' do
-              %li.mypage-tabs-left-trading__tab
-                %h3.tabs-title 取引中
+            %li.mypage-tabs-left-trading__tab
+              %h3.tabs-title 取引中
           %ul.mypage-tabs-right-traded
             %li.mypge-tabs-right-traded__tab
               %h3.tabs-title 過去の取引
