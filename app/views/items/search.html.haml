@@ -8,9 +8,9 @@
           -if @keyword != ""
             #{@keyword}
             %span.search-result__nal の検索結果
-          -else 
+          -else
             新着商品
-          
+
         .result-number
           1 - 132件表示
         .items-box__content
@@ -19,7 +19,7 @@
               %section.item
                 -if item.status == 1
                   .sold-out
-                    .sold_tag 
+                    .sold_tag
                       %p SOLD
                 .top-main__contents__item-box__image
                   - item.images.each_with_index do |image, index|
@@ -50,44 +50,32 @@
                     = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
                     %span.top-main__contents__item-box__body__flex-box--status--good-count
 
-      -# - @items.each do |item|
-      -#   #{item.name}
     .serch-container__side
-      %form.search-extend
+      = search_form_for @search, :html => {class: "search-extend"} do |f|
         .search-sort
           .form-group
             %i.icon-arrow-bottom
-            %select.select-default
-              %option 並び替え
-              %option 価格の安い順
-              %option 価格の高い順
-              %option 出品の古い順
-              %option 出品の新しい順
-              %option いいね!の多い順
+            = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { selected: params[:q][:sorts] }, { onchange: 'this.form.submit()'})
         .search-dropdown
           %h3 詳細検索
           .form-group
             %label
               %i.icon-plus
               %span キーワードを追加する
-            %input.input-default{placeholder: "例) 値下げ"}
+            = f.text_field :name_cont, placeholder: "例) 値下げ", class: "input-default"
           .form-group
             %label
               %i.icon-plus
               %span カテゴリーを選択する
             .select-wrap
               %i.icon-arrow-bottom
-              %select
-                %option 全て
-                %option レディース
-                %option メンズ
-                %option 僕の宝物
+              = f.select :category_id, @category_parent_array, {}, class: "select-default", id: 'parent_category'
           .form-group.search-brand
             %label
               %i.icon-plus
               %span ブランド名から探す
             %input.input-default{placeholder: "例) シャネル"}
-          .form-group 
+          .form-group
             %label
               %i.icon-size
               %span サイズを指定する
@@ -104,10 +92,12 @@
               %span 値段
             .select-wrap
               %i.icon-arrow-bottom
-              %select
-                %option 300 ~ 1000
-                %option 1001 ~ 10000
-                %option 10001 ~ 100000
+              = f.select :price, [['選択してください', ''],['300 ~ 1000', "300..1000"], ['1001 ~ 10000', "1001..10000"], ['10001 ~ 100000', "10001..100000"]]
+              -# %select
+              -#   %option 選択してください
+              -#   %option 300 ~ 1000
+              -#   %option 1001 ~ 10000
+              -#   %option 10001 ~ 100000
               %input.input-default.herf{placeholder: "¥ Min"}
               %span ~
               %input.input-default.herf{placeholder: "¥ Max"}
