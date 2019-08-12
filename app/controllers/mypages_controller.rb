@@ -4,7 +4,7 @@ class MypagesController < ApplicationController
     # @item = Item.find(params[:id])
     # @image = @item.images[0]
     # @other_items = Item.where("user_id= #{@item.user.id}").order('id DESC').limit(6)
-    transaction = Transaction.where(user_id: current_user.id)
+    transaction = current_user.transactions
     item = []
     transaction.each do |transaction|
       item << transaction.item_id
@@ -39,7 +39,7 @@ class MypagesController < ApplicationController
   end
 
   def purchased
-    transaction = Transaction.where(user_id: current_user.id)
+    transaction = current_user.transactions
     item = []
     transaction.each do |transaction|
       item << transaction.item_id
