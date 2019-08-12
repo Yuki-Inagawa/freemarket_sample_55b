@@ -167,7 +167,7 @@ private
   end
 
   def search_params
-    params.require(:q).permit(:sorts)
+    params.require(:q).permit!
   end
 
   def set_categories

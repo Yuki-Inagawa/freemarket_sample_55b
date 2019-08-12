@@ -51,7 +51,7 @@
                     %span.top-main__contents__item-box__body__flex-box--status--good-count
 
     .serch-container__side
-      = search_form_for @search, :html => {class: "search-extend"} do |f|
+      = search_form_for @search, url: search_items_path, :html => {class: "search-extend"} do |f|
         .search-sort
           .form-group
             %i.icon-arrow-bottom
@@ -62,7 +62,7 @@
             %label
               %i.icon-plus
               %span キーワードを追加する
-            = f.text_field :name_cont, placeholder: "例) 値下げ", class: "input-default"
+            = f.text_field :name_cont, placeholder: "例) 値下げ", class: "input-default", value: "#{@keyword}"
           .form-group
             %label
               %i.icon-plus
@@ -92,15 +92,10 @@
               %span 値段
             .select-wrap
               %i.icon-arrow-bottom
-              = f.select :price, [['選択してください', ''],['300 ~ 1000', "300..1000"], ['1001 ~ 10000', "1001..10000"], ['10001 ~ 100000', "10001..100000"]]
-              -# %select
-              -#   %option 選択してください
-              -#   %option 300 ~ 1000
-              -#   %option 1001 ~ 10000
-              -#   %option 10001 ~ 100000
-              %input.input-default.herf{placeholder: "¥ Min"}
+              = f.select :price_in, [['選択してください', ''],['300 ~ 1000', 300..1000], ['1001 ~ 10000', 1001..10000], ['10001 ~ 100000', 10001..100000]]
+              = f.text_field :price_gteq, placeholder: "¥ Min", class: "input-default herf"
               %span ~
-              %input.input-default.herf{placeholder: "¥ Max"}
+              = f.text_field :price_lteq, placeholder: "¥ Max", class: "input-default herf"
           .form-group.crerfix
             %label
               %i.icon-coin
@@ -157,7 +152,7 @@
                 %label 売り切れ
           .search-extend-btn.clearfix
             .btn-default.gray クリア
-            %button.btn-default.red{type: "submit"} 完了
+            =f.submit "完了", class: "btn-default red"
 
 
   = render 'shared/footer'
