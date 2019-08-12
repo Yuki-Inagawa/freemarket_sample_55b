@@ -34,7 +34,7 @@ class MypagesController < ApplicationController
 
   def purchased
     @user = User.find(current_user.id)
-    @items = @user.items
+    @items = Transaction.where(user_id: current_user.id)
   end
 
 private
