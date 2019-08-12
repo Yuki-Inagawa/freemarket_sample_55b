@@ -32,6 +32,11 @@ class MypagesController < ApplicationController
     @items = @user.items
   end
 
+  def purchased
+    @user = User.find(current_user.id)
+    @items = @user.items
+  end
+
 private
     
   def set_categories

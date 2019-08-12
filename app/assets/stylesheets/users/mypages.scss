@@ -233,6 +233,30 @@
                 }
               }
             }
+            ul.mypage-tabs-left-trading {
+              width: 50%;
+              text-align: center;
+              padding-top: 25px;
+              li.mypgage-tabs-left-trading__tab {
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
+            }
+            ul.mypage-tabs-right-traded {
+              width: 50%;
+              text-align: center;
+              padding-top: 25px;
+              border-left: 1px solid #ccc;
+              border-top: 2px solid #ea352d;
+              li.mypgage-tabs-right-traded__tab {
+
+                h3.tabs-title {
+                  font-weight: 600;
+                }
+              }
+            }
           }
           .mypage-tab-content {
             background: #fff;
