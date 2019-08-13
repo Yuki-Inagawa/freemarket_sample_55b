@@ -14,31 +14,34 @@
             %li.mypage-tabs-left-selling__tab
               %h3.tabs-title 出品中
           %ul.mypage-tabs-center
-            %li.mypge-tabs-center__tab
+            %li.mypage-tabs-center__tab
               %h3.tabs-title 取引中
           %ul.mypage-tabs-right
             = link_to "/mypages/#{current_user.id}/listing_completed", class: 'information-link' do
-              %li.mypge-tabs-right__tab
+              %li.mypage-tabs-right__tab
                 %h3.tabs-title 売却済み
 
         .mypage-tab-content
           %ul.transaction
-            - @items.each do |item|
-              - if item.status == 0
-                %li.transaction-now
-                  .figure
-                    = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'sell_item_image')
-                  .mypage-item-body
-                    .mypage-item-body__text
-                      = item.name
-                    .mypage-item-body-icon
-                      %span.listing-item-count
-                        こめ
-                      %span.listing-item-count
-                        ハート
-                      .mypage-item-status
-                        公開中
-                      = fa_icon "chevron-right", class: 'icon'
+            - if @items.count >= 1
+              - @items.each do |item|
+                - if item.status == 0
+                  %li.transaction-now
+                    .figure
+                      = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'sell_item_image')
+                    .mypage-item-body
+                      .mypage-item-body__text
+                        = item.name
+                      .mypage-item-body-icon
+                        %span.listing-item-count
+                        = fa_icon "comment", class: "icon-comment"
+                        %span.listing-item-count
+                        = fa_icon "heart", class: "icon-heart"
+                        .mypage-item-status
+                          公開中
+                        = fa_icon "chevron-right", class: 'icon'
+            - else
+              %li.transaction-not-found 出品中の商品がありません
 
     .profile-side
       = render 'shared/mypage_nav'
