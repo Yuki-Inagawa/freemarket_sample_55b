@@ -97,6 +97,8 @@ class SignupController < ApplicationController
   end
 
   def clear_compleate
+    @user = User.all.order('id DESC').first
+    sign_in_and_redirect @user, event: :authentication 
   end
 
   def login
