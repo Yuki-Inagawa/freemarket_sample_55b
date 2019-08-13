@@ -2,6 +2,7 @@ require 'rails_helper'
 RSpec.describe Item do
   before do
     @user = create(:user)
+    @category = create(:category)
   end
 
   describe '出品機能に関して' do

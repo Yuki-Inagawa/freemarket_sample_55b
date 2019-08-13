@@ -22,7 +22,7 @@
           いいね！一覧
           %i.fa.fa-chevron-right.list-icon
     %li.mypage-nav-list
-      = link_to  root_path, class: 'information-link' do
+      = link_to  = link_to "/items/new", class: 'information-link' do
         .mypage-nav-list__item 
           出品する
           %i.fa.fa-chevron-right.list-icon
@@ -37,7 +37,7 @@
           出品した商品 - 取引中
           %i.fa.fa-chevron-right.list-icon
     %li.mypage-nav-list
-      = link_to  root_path, class: 'information-link' do
+      = link_to "/mypages/#{current_user.id}/listing_completed", class: 'information-link' do
         .mypage-nav-list__item 
           出品した商品 - 売却済み
           %i.fa.fa-chevron-right.list-icon
@@ -47,7 +47,7 @@
           購入した商品 - 取引中
           %i.fa.fa-chevron-right.list-icon
     %li.mypage-nav-list
-      = link_to  root_path, class: 'information-link' do
+      = link_to "/mypages/#{current_user.id}/purchased", class: 'information-link' do
         .mypage-nav-list__item 
           購入した商品 - 過去の取引
           %i.fa.fa-chevron-right.list-icon

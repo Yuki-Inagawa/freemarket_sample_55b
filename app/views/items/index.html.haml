@@ -1,7 +1,7 @@
 = render 'shared/header'
 /////グローバルヘッダーここまで
 ////ここからメインヴィジュアル(スライダー)
-.swiper-parent 
+.swiper-parent
   .maincontainer
     .swiper-container
       .swiper-wrapper
@@ -40,7 +40,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -67,7 +67,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -94,7 +94,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -121,7 +121,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -151,7 +151,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -178,7 +178,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -205,7 +205,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -232,7 +232,7 @@
         %section.top-main__contents__item-box
           -if item.status == 1
             .sold-out
-              .sold_tag 
+              .sold_tag
                 %p SOLD
           .top-main__contents__item-box__image
             - item.images.each_with_index do |image, index|
@@ -255,3 +255,6 @@
 = link_to  new_item_path, class: 'submit-btn-link' do
   .submit-btn 出品
   = fa_icon 'camera', class: 'submit-button-icon'
+
+.modal-content-ay
+.modal-overlay-ay

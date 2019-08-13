@@ -83,15 +83,27 @@
         %h2.mypage-tab-head 
           購入した商品
         .mypage-tabs
-          %ul.mypage-tabs-left
-            %li.mypage-tabs-left__tab
+          %ul.mypage-tabs-left-bottom
+            %li.mypage-tabs-left-bottom__tab
               %h3.tabs-title 取引中
-          %ul.mypage-tabs-right
-            %li.mypge-tabs-right__tab
+          %ul.mypage-tabs-right-bottom
+            %li.mypage-tabs-right-bottom__tab
               %h3.tabs-title 過去の取引
         .mypage-tab-content
-          %ul.transaction-now
-            %li.transaction-not-found 取引中の商品がありません
+          %ul.transaction
+            - if @items.count >= 1
+              - @items.each do |item|
+                %li.transaction-now
+                  .figure
+                    = link_to image_tag("#{item.images.first.image}", alt: '画像', class: 'purchased_item_image')
+                  .mypage-item-body
+                    .mypage-item-body__text
+                      = item.name
+                    .mypage-item-status-done
+                      取引終了
+                    = fa_icon "chevron-right", class: 'icon'
+            - else
+              %li.transaction-not-found 過去に取引した商品がありません
 
 
 

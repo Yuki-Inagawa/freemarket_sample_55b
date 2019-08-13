@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   resources :mypages, only: [:show] do
       get 'profile', on: :member
       get 'listing_list',  on: :member
+      get 'listing_completed',  on: :member
+      get 'purchased', on: :member
       get 'identification',  on: :member
       get 'card',  on: :member
       get 'card_create',  on: :member
