@@ -5,6 +5,9 @@ $(function(){
       $(".modal-overlay-ay").fadeIn("slow");
       $(".modal-content-ay").fadeIn("slow");
     }
-
   });
+  $(".modal-overlay-ay").on('click', function(){
+    $(".modal-overlay-ay").fadeOut("slow");
+    $(".modal-content-ay").fadeOut("slow");
+  })
 });

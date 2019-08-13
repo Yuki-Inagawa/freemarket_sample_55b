@@ -705,7 +705,7 @@
 }
 
 .modal-content-ay {
-  // display:none;
+  display:none;
   width: 30%;
   height: 75%;
   background-color: rgba(#717171, 0.95);
@@ -762,7 +762,7 @@
 
 .modal-overlay-ay {
   z-index: 200;
-  // display:none;
+  display:none;
   position:fixed;
   top:0;
   left:0;
