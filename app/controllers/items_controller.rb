@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
     @beauty = Item.where(category_id: 869..956).order("id DESC").limit(4)
     @q = Item.ransack(params[:q])
     @search_items = @q.result(distinct: true)
-    
+
   end
 
   def new
@@ -148,6 +148,17 @@ end
       @search = Item.ransack()
       @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order('id DESC').page(params[:page]).per(132)
       @keyword = "#{params[:keyword]}"
+
+      if @keyword == "使い方"
+        @items = Item.all.includes(:images).order('id DESC').limit(4)
+        @ladies = Item.where(category_id: 159..338).order("id DESC").limit(4)
+        @mens = Item.where(category_id: 339..469).order("id DESC").limit(4)
+        @kids = Item.where(category_id: 470..588).order("id DESC").limit(4)
+        @beauty = Item.where(category_id: 869..956).order("id DESC").limit(4)
+        @q = Item.ransack(params[:q])
+        @search_items = @q.result(distinct: true)
+        render action: :index
+      end
     end
   end
 
@@ -176,7 +187,7 @@ private
 
   def set_categories
     @categories = Category.all
-  end  
+  end
 
 
 
