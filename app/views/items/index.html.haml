@@ -256,5 +256,29 @@
   .submit-btn 出品
   = fa_icon 'camera', class: 'submit-button-icon'
 
-.modal-content-ay
+.modal-content-ay.buy
+  .how_to-guid
+    = image_tag("mercari_profile.png", width: '50', height: '50', alt: "メルカリアプリ", class: 'merumeru')
+    .how_to-guid__text 買う
+  .guidance
+    .guidance__tec
+      .guidance__tec--text 1,まずは登録!!
+      %ul.login-nav
+        %li
+          =link_to "新規会員登録", signup_index_path, class: "header-new-registration"
+        %li
+          =link_to "ログイン", new_user_session_path, class: "header-new-login", data: {"turbolinks" => false}
+
+.modal-content-ay.sell
+  .how_to-guid
+    = image_tag("mercari_profile.png", width: '50', height: '50', alt: "メルカリアプリ", class: 'merumeru')
+    .how_to-guid__text 売る
+  .guidance
+    .guidance__tec
+      .guidance__tec--text 1,まずは登録!!
+      %ul.login-nav
+        %li
+          =link_to "新規会員登録", signup_index_path, class: "header-new-registration"
+        %li
+          =link_to "ログイン", new_user_session_path, class: "header-new-login", data: {"turbolinks" => false}
 .modal-overlay-ay
