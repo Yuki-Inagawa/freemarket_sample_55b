@@ -109,11 +109,7 @@ $( window ).on('turbolinks:load', function() {
       });
     }
   }
-
-  var new_image = $(
-    `<input multiple= "multiple" name="item_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`
-  );
-  input_area.append(new_image);
+  $(this).val('');
 })
 
 

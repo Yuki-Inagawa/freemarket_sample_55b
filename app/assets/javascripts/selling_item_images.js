@@ -14,8 +14,6 @@ $( document ).on('turbolinks:load', function() {
   var new_image_files = [];
 
   $('#new_item').on("change", 'input[type= "file"].upload-image', function() {
-
-  
     var file = $(this).prop("files")[0];
     new_image_files.push(file)
     var reader = new FileReader();
@@ -87,11 +85,7 @@ $( document ).on('turbolinks:load', function() {
         });
       }
     }
-
-    var new_image = $(
-      `<input multiple= "multiple" name="item_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`
-    );
-    input_area.append(new_image);
+    $(this).val('');
   });
 
 
@@ -173,7 +167,7 @@ $( document ).on('turbolinks:load', function() {
     e.preventDefault();
     var formData = new FormData($(this).get(0));
     if (new_image_files.length == 0) {
-      formData.append("new_images[images][]", " ")
+      return false
     } else {
       new_image_files.forEach(function(file){
         formData.append("new_images[images][]", file)
