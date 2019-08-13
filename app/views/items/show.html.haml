@@ -132,7 +132,7 @@
               - if comment.user.id == @item.user_id
                 .balloon
                   %figure.balloon-image-left
-                    %img{:alt => "画像名", :src => "/assets/member_photo_noimage_thumb.png"}/
+                    = image_tag("member_photo_noimage_thumb.png")
                     %figcaption.balloon-image-description
                       = comment.user.nickname
                   .balloon-text-right
@@ -141,7 +141,7 @@
               - else
                 .balloon--right
                   %figure.balloon-image-right
-                    %img{:alt => "画像名", :src => "/assets/member_photo_noimage_thumb.png"}/
+                    = image_tag("member_photo_noimage_thumb.png")
                     %figcaption.balloon-image-description
                       = comment.user.nickname
                   .balloon-text-left
