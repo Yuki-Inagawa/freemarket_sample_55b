@@ -63,7 +63,7 @@
             width: 50%;
             text-align: center;
             padding-top: 25px;
-            li.mypge-tabs-right__tab {
+            li.mypage-tabs-right__tab {
               vertical-align: top;
               h3.tabs-title{
                 font-weight: 600;
@@ -149,6 +149,7 @@
             width: 700px;
             display: flex;
             height: 74px;
+            background: #eee;
 
             .mypage-tabs-left-bottom {
               width: 50%;
@@ -165,8 +166,9 @@
               width: 50%;
               text-align: center;
               padding-top: 25px;
-              border-right: 1px solid #ccc;
+              border-left: 1px solid #ccc;
               border-top: 2px solid #ea352d;
+              background: #fff;
               li.mypage-tabs-right-bottom__tab {
                 
                 h3.tabs-title{
@@ -180,6 +182,7 @@
               padding-top: 25px;
               border-right: 1px solid #ccc;
               border-top: 2px solid #ea352d;
+              background: #fff;
               li.mypage-tabs-left-selling__tab {
                 
                 h3.tabs-title{
@@ -202,7 +205,7 @@
               width: 33.3%;
               text-align: center;
               padding-top: 25px;
-              li.mypge-tabs-center__tab{
+              li.mypage-tabs-center__tab{
 
                 h3.tabs-title {
                   font-weight: 600;
@@ -213,7 +216,7 @@
               width: 33.3%;
               text-align: center;
               padding-top: 25px;
-              li.mypgage-tabs-right__tab {
+              li.mypage-tabs-right__tab {
 
                 h3.tabs-title {
                   font-weight: 600;
@@ -226,8 +229,8 @@
               padding-top: 25px;
               border-left: 1px solid #ccc;
               border-top: 2px solid #ea352d;
-              li.mypgage-tabs-right-done__tab {
-
+              background: #fff;
+              li.mypage-tabs-right-done__tab {
                 h3.tabs-title {
                   font-weight: 600;
                 }
@@ -237,7 +240,7 @@
               width: 50%;
               text-align: center;
               padding-top: 25px;
-              li.mypgage-tabs-left-trading__tab {
+              li.mypage-tabs-left-trading__tab {
 
                 h3.tabs-title {
                   font-weight: 600;
@@ -250,7 +253,8 @@
               padding-top: 25px;
               border-left: 1px solid #ccc;
               border-top: 2px solid #ea352d;
-              li.mypgage-tabs-right-traded__tab {
+              background: #fff;
+              li.mypage-tabs-right-traded__tab {
 
                 h3.tabs-title {
                   font-weight: 600;
@@ -263,9 +267,11 @@
             height: 236px;
             ul.transaction {
               display: block;
+              min-height: 80px;
               li.transaction-now {
                 border-bottom: 1px solid #eee;
                 position: relative;
+                padding: 16px;
                 .figure {
                   position: relative;
                   overflow: hidden;
@@ -282,7 +288,7 @@
                   width: 48px;
                 }
                 .mypage-item-body {
-                  margin-right: 100px;
+                  margin: 0 40px 0 68px;
                   &__text {
                     overflow: hidden;
                     display: -webkit-box;
@@ -299,6 +305,16 @@
                     span.listing-item-count {
                       vertical-align: middle;
                       color: #ccc;
+                    }
+                    .icon-comment {
+                      font-size: 14px;
+                      vertical-align: middle;
+                      color:#ccc;
+                    }
+                    .icon-heart {
+                      font-size: 14px;
+                      vertical-align: middle;
+                      color:#ccc;
                     }
                     .mypage-item-status {
                       background: #ea352d;
