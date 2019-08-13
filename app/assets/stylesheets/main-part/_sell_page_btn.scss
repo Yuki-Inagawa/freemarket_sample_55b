@@ -10,6 +10,9 @@
   position: fixed;
   background: #ea352d;
   text-align: center;
+  box-shadow: 4px 4px 9px 0px rgba(255,255,255,0.45) inset, -4px -4px 9px 0px rgba(0, 0, 0, 0.06) inset;
+  margin:0.5em 0;
+  transition: .3s;
   .submit-btn{
     margin: 32px 0 0;
     font-size: 22px;
@@ -17,4 +20,19 @@
   .submit-button-icon {
     font-size: 54px;
   }
+}
+.submit-btn-link:hover:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(6px);
+  transform: translateY(6px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.submit-btn-link:hover {
+  background: #fff;
+  color: #ea352d;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
