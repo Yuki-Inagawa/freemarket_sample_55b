@@ -731,13 +731,58 @@
 
 .modal-content-ay {
   display:none;
-  width: 50%;
-  height: 300px;
-  background-color: #000;
+  width: 30%;
+  height: 75%;
+  background-color: rgba(#717171, 0.95);
   position:fixed;
-  top:0;
-  left:0;
   z-index: 201;
+  border-radius: 30px;
+  padding: 0 15px 10px;
+  .how_to-guid {
+    padding: 20px 40px;
+    text-align: center;
+    border-bottom: dashed 1px rgb(73, 73, 73);
+    .merumeru {
+      display: inline-block;
+      vertical-align: top;
+    }
+    &__text {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 20px;
+      font-size: 200%;
+      font-weight: 500;
+    }
+  }
+  .guidance {
+    .guidance__tec {
+      .guidance__tec--text {
+        text-align: center;
+      }
+      .login-nav {
+        text-align: center;
+        margin-top: 20px;
+        li {
+          display: inline-block;
+          height: 100px;
+        }
+        .header-new-registration {
+          background-color: tomato;
+        }
+        .header-new-login {
+          background-color: gray;
+        }
+      }
+    }
+  }
+}
+.buy {
+  top:100px;
+  left:160px;
+}
+.sell {
+  top:100px;
+  right:160px;
 }
 
 .modal-overlay-ay {

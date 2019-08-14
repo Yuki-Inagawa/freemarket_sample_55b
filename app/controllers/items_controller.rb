@@ -157,7 +157,7 @@ end
         @beauty = Item.where(category_id: 869..956).order("id DESC").limit(4)
         @q = Item.ransack(params[:q])
         @search_items = @q.result(distinct: true)
-        render action: :index
+        # render action: :index
       end
     end
   end

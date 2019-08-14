@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     get 'login', to: 'users/sessions#new'
   end
 
-
   root 'items#index'
   resources :items do
     resources :comments, only: [:create]
@@ -41,7 +40,7 @@ Rails.application.routes.draw do
       get 'logout',  on: :member
     end
 
-  resources :categories, only: [:index] 
+  resources :categories, only: [:index]
 
 
   # 新規登録画面
