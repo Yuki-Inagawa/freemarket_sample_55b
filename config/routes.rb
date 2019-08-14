@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     get 'login', to: 'users/sessions#new'
   end
 
-
   root 'items#index'
   resources :items do
     resources :comments, only: [:create]
@@ -33,13 +32,15 @@ Rails.application.routes.draw do
   resources :mypages, only: [:show] do
       get 'profile', on: :member
       get 'listing_list',  on: :member
+      get 'listing_completed',  on: :member
+      get 'purchased', on: :member
       get 'identification',  on: :member
       get 'card',  on: :member
       get 'card_create',  on: :member
       get 'logout',  on: :member
     end
 
-  resources :categories, only: [:index] 
+  resources :categories, only: [:index]
 
 
   # 新規登録画面

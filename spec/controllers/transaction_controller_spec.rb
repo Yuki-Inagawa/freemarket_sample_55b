@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe TransactionController, type: :controller do
+# RSpec.describe TransactionController, type: :controller do
 
-end
+# end

@@ -1,6 +1,12 @@
 class MypagesController < ApplicationController
   before_action :set_categories
   def show
+    transaction = current_user.transactions
+    item = []
+    transaction.each do |transaction|
+      item << transaction.item_id
+    end
+    @items = Item.where(id: item)
   end
 
   def profile
@@ -28,6 +34,20 @@ class MypagesController < ApplicationController
   def listing_list
     @user = User.find(current_user.id)
     @items = @user.items
+  end
+
+  def listing_completed
+    @user = User.find(current_user.id)
+    @items = @user.items
+  end
+
+  def purchased
+    transaction = current_user.transactions
+    item = []
+    transaction.each do |transaction|
+      item << transaction.item_id
+    end
+    @items = Item.where(id: item)
   end
 
 private

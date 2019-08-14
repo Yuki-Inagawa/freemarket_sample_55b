@@ -11,8 +11,9 @@ $( window ).on('turbolinks:load', function() {
   var images = [];
   // 新規追加画像を格納する配列（DB用）
   var new_image_files = [];
-
+  // 既に登録している画像を格納する配列
   var registered_images_ids =[]
+
   if(window.location.href.match(/\/items\/\d+\/edit/)){
   gon.item_images.forEach(function(image, index){
     
@@ -108,11 +109,7 @@ $( window ).on('turbolinks:load', function() {
       });
     }
   }
-
-  var new_image = $(
-    `<input multiple= "multiple" name="item_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`
-  );
-  input_area.append(new_image);
+  $(this).val('');
 })
 
 
@@ -295,7 +292,6 @@ $( window ).on('turbolinks:load', function() {
     } else {
       registered_images_ids.forEach(function(registered_image){
         formData.append("registered_images_ids[ids][]", registered_image)
-        
       });
     }
 
@@ -315,6 +311,9 @@ $( window ).on('turbolinks:load', function() {
       data:        formData,
       contentType: false,
       processData: false,
+    })
+    .always(function(){
+      $('.sell-item-btn').prop("disabled", false);
     })
   });
 });

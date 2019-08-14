@@ -18,7 +18,7 @@
               .subtitle 最大10枚までアップロードできます
 
       
-              = f.fields_for :images, @item.images.first do |image|
+              = f.fields_for :images, @item.images do |image|
                 .sell-form__image__container
                   .sell-form__image__container__chirdren
                     #preview
