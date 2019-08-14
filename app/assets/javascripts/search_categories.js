@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+  if(window.location.href.match(/\/items\/search/)) {
   function appendOption(category){
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
@@ -82,4 +83,5 @@ $(document).on('turbolinks:load', function(){
       $('#children_wrapper').remove();
     }
   })
+}
 });
