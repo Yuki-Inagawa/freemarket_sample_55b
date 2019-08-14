@@ -1,5 +1,5 @@
 .header-category-list
-  - @categories.each do |parent| 
+  - @categories.find_each do |parent| 
     - if parent[:ancestry] == nil
       %ul.parent-wrap
         %li.parent
@@ -7,13 +7,13 @@
             = link_to "/",class:"category-list-link" do
               = parent[:name]
           %ul.child-wrap
-            - parent.children.each do |child|
+            - parent.children.find_each do |child|
               %li.child
                 %h3
                   = link_to "/", class: "category-child" do
                     = child[:name]
                 %ul.grand-child-wrap
-                  - child.children.each do |grandchild|
+                  - child.children.find_each do |grandchild|
                     %li.grand-child
                       %h3
                         =link_to '/' do

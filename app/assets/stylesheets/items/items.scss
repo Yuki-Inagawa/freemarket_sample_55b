@@ -152,6 +152,10 @@
             text-align: center;
             font-weight: 600;
             font-size: 18px;
+            border-radius: 3px;
+            box-shadow: 4px 4px 9px 0px rgba(255,255,255,0.45) inset, -4px -4px 9px 0px rgba(0, 0, 0, 0.06) inset;
+            margin:0.5em 0;
+            transition: .3s;
           }
           #item-delete-btn {
             width: 100%;
@@ -159,6 +163,27 @@
           }
         }
       }
+      .item-box__main-content__buy__btn:hover:active {
+        /*ボタンを押したとき*/
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);/*下に動く*/
+        
+      }
+      .item-box__main-content__buy__btn:hover {
+        background: #fff;
+        color: #ea352d;
+        border: 1px solid #ea352d;
+        -webkit-transform: scale(10.2);
+        -moz-transform: scale(10.2);
+        -o-transform: scale(10.2);
+        -ms-transform: scale(10.2);
+        transform: scale(10.2);
+      
+      }
+      
+
+      
+
 
       .item-box__description{
         padding: 24px 0 0;
