@@ -124,30 +124,31 @@
           = link_to  root_path, class: "item-box__btn--right__safety" do
             %i.fa.fa-lock
             %span あんしん・あんぜんへの取り組み
-    .item-message
-      .item-message__container
-        .item__comment--box
-          - if @item.comments
-            - @item.comments.each do |comment|
-              - if comment.user.id == @item.user_id
-                .balloon
-                  %figure.balloon-image-left
-                    = image_tag("member_photo_noimage_thumb.png")
-                    %figcaption.balloon-image-description
-                      = comment.user.nickname
-                  .balloon-text-right
-                    %p
-                      = comment.text
-              - else
-                .balloon--right
-                  %figure.balloon-image-right
-                    = image_tag("member_photo_noimage_thumb.png")
-                    %figcaption.balloon-image-description
-                      = comment.user.nickname
-                  .balloon-text-left
-                    %p
-                      = comment.text
-
+    - if @item.comments && user_signed_in?
+      .item-message
+        .item-message__container
+          .item__comment--box
+            - if @item.comments
+              - @item.comments.each do |comment|
+                - if comment.user.id == @item.user_id
+                  .balloon
+                    %figure.balloon-image-left
+                      = image_tag("member_photo_noimage_thumb.png")
+                      %figcaption.balloon-image-description
+                        = comment.user.nickname
+                    .balloon-text-right
+                      %p
+                        = comment.text
+                - else
+                  .balloon--right
+                    %figure.balloon-image-right
+                      = image_tag("member_photo_noimage_thumb.png")
+                      %figcaption.balloon-image-description
+                        = comment.user.nickname
+                    .balloon-text-left
+                      %p
+                        = comment.text
+      - if user_signed_in?
         .item-message__container__content
           = form_for [@item,@comment], html: {class: "item-message__container__content__form"} do |f|
             %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
