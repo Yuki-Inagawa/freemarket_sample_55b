@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
   var mySwiper = new Swiper('.swiper-container', {
-  effect: 'cube',
+  effect: 'slide',
   speed: 1000,
   loop: true,
 	autoplay: {
