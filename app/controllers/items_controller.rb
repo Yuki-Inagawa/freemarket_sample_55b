@@ -4,11 +4,11 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :search, :show]
 
   def index
-    @items = Item.all.includes(:images).order('id DESC').limit(4)
-    @ladies = Item.where(category_id: 159..338).order("id DESC").limit(4)
-    @mens = Item.where(category_id: 339..469).order("id DESC").limit(4)
-    @kids = Item.where(category_id: 470..588).order("id DESC").limit(4)
-    @beauty = Item.where(category_id: 869..956).order("id DESC").limit(4)
+    @items = Item.where(status: 0).includes(:images).order('id DESC').limit(4)
+    @ladies = Item.where(category_id: 159..338, status: 0).order("id DESC").limit(4)
+    @mens = Item.where(category_id: 339..469, status: 0).order("id DESC").limit(4)
+    @kids = Item.where(category_id: 470..588, status: 0).order("id DESC").limit(4)
+    @beauty = Item.where(category_id: 869..956, status: 0).order("id DESC").limit(4)
     @q = Item.ransack(params[:q])
     @search_items = @q.result(distinct: true)
 
