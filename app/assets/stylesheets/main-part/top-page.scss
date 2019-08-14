@@ -1,10 +1,15 @@
 //〜ヘッダー、フッター、トップページのメインコンテンツ、スライダー、アコーディオンメニュー〜
 
+.summer{
+	background-image: image-url("ocean.jpg");
+	width: 100%;
+  height: 100%;
+}
 
 //〜〜ヘッダー〜〜
 .global-header{
   width: 100vw;
-  background-color: #fff;
+  // background-color: #fff;
   position: relative;
   &-inner{
     width:1020px;
@@ -148,11 +153,11 @@
             }
           }
           & :hover{
-            color: #0099e8
+            color: #000;
           }
         }
         & :hover{
-          color: #0099e8
+          color: blue;
         }
         &__child--my-page{
           display: inline-block;
@@ -185,7 +190,7 @@
             }
           }
           & :hover{
-            color: #0099e8
+            color: blue;
           }
         }
       }
@@ -299,7 +304,8 @@
 //〜〜メインヴィジュアル〜〜
 .top-main-visual{
   height: 390px;
-  background-image: image-url("main_bg_pc.jpg");
+  // background-image: image-url("main_bg_pc.jpg");
+  background-image: image-url("summer_top.jpg");
   background-size: cover;
   &__inner{
     height: 390px;
@@ -345,8 +351,8 @@
 //メインビジュアルのスライダー（swiper)のスタイル調整用記述
 .top-sub-visual{
   height: 390px;
-  background-image: image-url("banner-camp.jpg");
-  background-size: cover;
+  width: 100%;
+  object-fit: cover;
 }
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 10px;
@@ -390,7 +396,7 @@
 //〜〜メインコンテンツ（トップの一覧）〜〜
 .top-main__contents{
   padding: 40px 0;
-  background-color: #f5f5f5;
+  // background-color: #f5f5f5;
   &__topic{
     height: 39px;
     width: 100vw;
@@ -399,7 +405,7 @@
     font-weight: bold;
   }
   &__wrapper{
-    background-color: #f5f5f5;
+    // background-color: #f5f5f5;
     margin: 0 auto;
     width: 940px;
     height: 442px;
@@ -409,7 +415,8 @@
       text-align: center;
       font-weight: bold;
       &__link{
-        color: #0099e8;
+        // color: #0099e8;
+        color: #fff;
       }
       & :hover{
         border-bottom: solid rgba(0,153,232,0.7);
@@ -465,7 +472,8 @@
       padding: 20px 0 30px;
       width: 99.5%;
       &__text{
-        color: #0099e8;
+        // color: #0099e8;
+        color: #fff;
         font-size: 14px;
       }
       & :hover{
@@ -482,6 +490,7 @@
 // 横スクロール除去
 .footer-container__over-flow-reset{
   overflow: hidden;
+  clear: both;
 }
 // フッターの上のビジュアル
 .app__banner{

@@ -10,18 +10,20 @@
         支払い方法
       
       .payment-info-contents
-        %section.payment-info-content
-          .payment-info-content__title クレジットカード一覧
-      
-        %section.settings-add-card
-          %button.add-card-content
-            = fa_icon 'credit-card', class: 'card-submit-button-icon'
-            = link_to 'クレジットカードを追加する', "/users/#{current_user.id}/card/create", class: 'card-submit-button'
+        .buy-item-container__payment
+        .buy-item-container__payment__box
+          %h3.buy-item-container__payment__box--list クレジットカード一覧
+          %p.user-card-info
+            = "************#{@default_card_information.last4}"
+            %br
+            = "#{@default_card_information.exp_month} / #{@default_card_information.exp_year.to_s.slice(2,4)}"
+          %figure
+            = image_tag("card_logo_#{@default_card_information.brand}", alt: 'カード会社画像', width: '80', height: '80')
         
         .settings-not-regist
           = link_to  root_path, class: 'settings-not-regist-link' do
             %span.settings-not-regist-text 支払い方法について
-            = image_tag("carousel-next.png", class: 'settings-not-regist-icon')
+            = fa_icon 'chevron-right', class: 'icon-arrow'
 
 
 
