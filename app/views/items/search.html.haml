@@ -67,8 +67,7 @@
             %label
               %i.icon-plus
               %span カテゴリーを選択する
-            .select-wrap
-              %i.icon-arrow-bottom
+            .select-wrap-category
               = f.select :category_id, @category_parent_array, {}, class: "select-default", id: 'parent_category'
           .form-group.search-brand
             %label
