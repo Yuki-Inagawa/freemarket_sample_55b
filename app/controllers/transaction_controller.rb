@@ -1,4 +1,5 @@
 class TransactionController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_item, :set_user
 
   def index
