@@ -30,7 +30,34 @@
       .swiper-pagination.swiper-pagination-black
 //ヘッダー＆メインヴィジュアル終了
 //ここからメインコンテンツ
-
+%section.top-main__contents
+  %h2.top-main__contents__topic
+    オールジャンル
+  %section.top-main__contents__wrapper
+    %h3.top-main__contents__category
+      = link_to "オール新着アイテム", root_path, class: "top-main__contents__category__link"
+    .top-main__contents__items-wrap
+      - @items.each do |item|
+        %section.top-main__contents__item-box
+          -if item.status == 1
+            .sold-out
+              .sold_tag 
+                %p SOLD
+          .top-main__contents__item-box__image
+            - item.images.each_with_index do |image, index|
+              - if index == 0
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img", data: {"turbolinks": false}
+                - break
+          .top-main__contents__item-box__body
+            %h3.top-main__contents__item-box__body__text
+              = item.name
+            .top-main__contents__item-box__body__flex-box
+              .top-main__contents__item-box__body__flex-box--price
+                = number_to_currency(item.price, unit: "￥", precision: 0, format: "%u%n")
+              .top-main__contents__item-box__body__flex-box--status
+                = fa_icon "heart", class: "top-main__contents__item-box__body__flex-box--status--font"
+                %span.top-main__contents__item-box__body__flex-box--status--good-count
+                = item.likes.count
 %section.top-main__contents
   %h2.top-main__contents__topic
     ピックアップカテゴリー
