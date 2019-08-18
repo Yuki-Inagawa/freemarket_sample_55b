@@ -4,7 +4,6 @@ $( document ).on('turbolinks:load', function() {
   var dropzone = $('.sell-form__image__container__input');
   var dropzone2 = $('.sell-form__image__container__input2');
   var appendzone = $('.sell-form__image__container2');
-  var input_area = $('.input-area');
   var preview = $('#preview');
   var preview2 = $('#preview2');
 
