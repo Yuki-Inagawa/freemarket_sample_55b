@@ -26,10 +26,6 @@
                       = image.label :image, for: "upload-image" do
                         .input-area
                           = image.file_field :image, multiple: true, name: 'item_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                  -# %pre
-                  -#   :preserve
-                  -#     ドラッグアンドドロップ
-                  -#     またはクリックしてファイルをアップロード
                 .sell-form__image__container2
                   .sell-form__image__container__chirdren2
                     #preview2
@@ -37,10 +33,6 @@
                       = image.label :image, for: "upload-image" do
                         .input-area
                           = image.file_field :image, multiple: true, name: 'item_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                  -# %pre
-                  -#   :preserve
-                  -#     ドラッグアンドドロップ
-                  -#     またはクリックしてファイルをアップロード
                 %p.error_message.type1
                     
 
@@ -56,7 +48,7 @@
                 = f.label :商品の説明
                 %span.mandatory 必須
               %p
-                = f.text_field :text, class: 'long-text', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+                = f.text_area :text, class: 'long-text', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
                 %p.error_message.type3
                 %p.error_message.type11
               
@@ -77,8 +69,8 @@
                     商品の状態
                     %span.mandatory 必須
                   .select-wrap
-                    = fa_icon 'chevron-down', class: 'icon-arrow'
                     = f.select :state, [["---", ""], ["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]]
+                    = fa_icon 'chevron-down', class: 'icon-arrow'
                     %p.error_message.type4
             .sell-form__shipping
               .sell-form__shipping__title 配送について
