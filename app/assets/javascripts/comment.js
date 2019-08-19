@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
   function buildHtmlBlue(comment){
     var html = `<div class="balloon">
                   <figure class="balloon-image-left">
-                    <img src="/assets/member_photo_noimage_thumb.png" alt="画像名">
+                    <img src="/member_photo_noimage_thumb.png" alt="画像名">
                   <figcaption class="balloon-image-description">
                   ${comment.user_nickname}
                   </figcaption>
@@ -18,7 +18,7 @@ $(document).on('turbolinks:load', function(){
   function buildHtmlOrange(comment){
     var html =`<div class="balloon--right">
                 <figure class="balloon-image-right">
-                  <img src="/assets/member_photo_noimage_thumb.png" alt="画像名">
+                  <img src="/member_photo_noimage_thumb.png" alt="画像名">
                 <figcaption class="balloon-image-description">
                   ${comment.user_nickname}
                 </figcaption>

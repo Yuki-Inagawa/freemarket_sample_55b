@@ -368,13 +368,13 @@
                 position: relative;
                 background: #fff;
                 .icon-arrow {
-                  float: right;
-                  position: absolute;
-                  top : 30%;
-                  right: 16px;
+                  line-height: 48px;
                   color: #888;
                   font-size: 18px;
-                  z-index: 2;
+                  cursor: pointer;
+                  position: absolute;
+                  top: 0;
+                  right: 16px;
                 }
                 select#item_state{
                   z-index: 1;
@@ -442,13 +442,13 @@
                 position: relative;
                 background: #fff;
                 .icon-arrow {
-                  float: right;
-                  position: absolute;
-                  top : 30%;
-                  right: 16px;
+                  line-height: 48px;
                   color: #888;
                   font-size: 18px;
-                  z-index: 2;
+                  cursor: pointer;
+                  position: absolute;
+                  top: 0;
+                  right: 16px;
                 }
                 select#item_postage_type {
                   font-weight: normal;
@@ -490,13 +490,13 @@
                 position: relative;
                 background: #fff;
                 .icon-arrow {
-                  float: right;
-                  position: absolute;
-                  top : 30%;
-                  right: 16px;
+                  line-height: 48px;
                   color: #888;
                   font-size: 18px;
-                  z-index: 2;
+                  cursor: pointer;
+                  position: absolute;
+                  top: 0;
+                  right: 16px;
                 }
                 select#item_delivery_method {
                   font-weight: normal;
@@ -538,13 +538,13 @@
                 position: relative;
                 background: #fff;
                 .icon-arrow {
-                  float: right;
-                  position: absolute;
-                  top : 30%;
-                  right: 16px;
+                  line-height: 48px;
                   color: #888;
                   font-size: 18px;
-                  z-index: 2;
+                  cursor: pointer;
+                  position: absolute;
+                  top: 0;
+                  right: 16px;
                 }
                 select#item_region {
                   font-weight: normal;
@@ -586,13 +586,13 @@
                 position: relative;
                 background: #fff;
                 .icon-arrow {
-                  float: right;
-                  position: absolute;
-                  top : 30%;
-                  right: 16px;
+                  line-height: 48px;
                   color: #888;
                   font-size: 18px;
-                  z-index: 2;
+                  cursor: pointer;
+                  position: absolute;
+                  top: 0;
+                  right: 16px;
                 }
                 select#item_shopping_date {
                   font-weight: normal;
