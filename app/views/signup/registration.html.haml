@@ -28,7 +28,7 @@
             .new-registration-form__content--form{style: "margin-top: 0;"}
               %label{for: "nickname"} ニックネーム
               %span.form-require 必須
-              = f.text_field :nickname, placeholder: "例) おでん君", class: 'input-default',value: session[:nickname]
+              = f.text_field :nickname, placeholder: "例) 金木 研", class: 'input-default',value: session[:nickname]
               - if @user.errors.any?
                 .alert.alert-warning
                   %ul
