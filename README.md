@@ -1,3 +1,10 @@
+*概要
+フリーマーケットサービス　メルカリのコピーサイトです。
+
+お手数ですが詳しくは下記ドキュメントを参照して下さい。
+
+https://docs.google.com/document/d/15z49b4aul08EHtPzDS4wS7NxN-cMjYGIvIs3Pk7YouU/edit
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
