@@ -27,7 +27,46 @@
             .new-registration-form__content--form{style: "margin-top: 16px;"}
               = f.password_field :password, autocomplete: "current-password", class: "input-default", placeholder: "パスワード"
             .g-recaptcha{"data-sitekey" => "6LeBL7EUAAAAAPuc9A1oD1oe3Ro4hSs_AyxKBzEm", "data-secretkey" => "6LeBL7EUAAAAAAfDRuftjXdbZ8blN_GzjaEc7AJq"}
+            %input#youtube-box{:type => "checkbox"}
+            
             = f.submit "ログイン", class: "next-btn"
             =link_to "パスワードをお忘れの方", "signup", class: "foreine-passward" 
 
   = render 'shared/signup_footer'
+.youtube-wrapper#youtube-wrapper1
+  .youtube-wrapper__top-content 
+    .youtube-wrapper__top-content__text-box
+      .youtube-wrapper__top-content__text-box__title ピーター
+      .youtube-wrapper__top-content__text-box__discription 
+        %p
+          のタイルを全て選択してください
+          %br
+          該当するものが無い場合は[スキップ]をクリックしてください。
+    .youtube-wrapper__top-content__right
+  .bottom-contents
+    .content1
+    .content2
+    .content3
+    .content4
+    .content5
+    .content6
+    .content7
+    .content8
+    .content9
+  .bottom-btn
+    .skip-btn スキップ
+
+.youtube-wrapper#youtube-wrapper2
+  .youtube-wrapper__top-content 
+    .youtube-wrapper__top-content__text-box
+      .youtube-wrapper__top-content__text-box__title test
+      .youtube-wrapper__top-content__text-box__discription 
+        %p
+          のタイルを全て選択してください
+          %br
+          該当するものが無い場合は[スキップ]をクリックしてください。
+    .youtube-wrapper__top-content__right
+  .bottom-contents
+    #content1
+  .bottom-btn
+    .skip-btn スキップ
